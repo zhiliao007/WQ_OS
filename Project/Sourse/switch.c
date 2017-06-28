@@ -1,22 +1,28 @@
-__asm void PendSV_Handler (void)
+#include "WQ_OS.h"
+#include "ARMCM3.h"
+
+#define NVIC_INT_CTRL          0xE000ED04
+#define NVIC_PENDSVSET         0x10000000
+#define NVIC_SYSPRI2           0xE000ED22
+#define NVIC_PENDSV_PRT        0x000000FF
+
+#define MEM32(addr)            *(volatile unsigned long *)(addr)
+#define MEM8(addr)             *(volatile unsigned char *)(addr)
+
+__asm void PendSV_Handler(void)
 {
-	IMPORT blockPtr
 	
-	LDR R0, =blockPtr
-	LDR R0, [R0]
-	LDR R0, [R0]
+}
+
+void wTaskRunFirst()
+{
+	__set_PSP(0);
 	
-	STMDB   R0!, {R4-R11}
-	
-	LDR R1, =blockPtr
-	LDR R1, [R1]
-	STR R0, [R1]
-	
-	ADD R4, R4, #1
-	ADD R5, R5, #1
-	
-	LDMIA R0!, {R4-R11}
-	
-	BX LR
-	NOP
+	MEM8(NVIC_SYSPRI2) = NVIC_PENDSV_PRT;
+	MEM32(NVIC_INT_CTRL) = NVIC_PENDSVSET;
+}
+
+void wTaskSwitch()
+{
+	MEM32(NVIC_INT_CTRL) = NVIC_PENDSVSET;
 }
