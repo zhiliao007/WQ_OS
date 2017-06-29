@@ -1,8 +1,10 @@
 #include "WQ_OS.h"
+#include <ARMCM3.h>
 
 wTask * currentTask;
 wTask * nextTask;
-wTask * taskTable[2];
+wTask * idleTask;
+wTask * taskTable[2];  
 
 /**
   * @brief  任务初始化函数
@@ -35,6 +37,7 @@ void wTaskInit(wTask * task, void (*entry)(void *), void * param, wTaskStack * s
     *(--stack) = (unsigned long)0x4;                    // R4,  未用
 	 
 	task->stack = stack;								// 保存最终的值，使任务栈指针指向缓冲区栈顶
+	task->delayTicks = 0;
 }
 
 /**
@@ -44,17 +47,118 @@ void wTaskInit(wTask * task, void (*entry)(void *), void * param, wTaskStack * s
   */	
 void wTaskSched()
 {
-	if (currentTask == taskTable[0])
-	{
-		nextTask = taskTable[1];
-	}
-	else
-	{
-		nextTask = taskTable[0];
-	}
+	// 空闲任务只有在所有其它任务都不是延时状态时才执行
+    // 所以，我们先检查下当前任务是否是空闲任务
+    if (currentTask == idleTask) 
+    {
+        // 如果是的话，那么去执行task1或者task2中的任意一个
+        // 当然，如果某个任务还在延时状态，那么就不应该切换到他。
+        // 如果所有任务都在延时，那么就继续运行空闲任务，不进行任何切换了
+        if (taskTable[0]->delayTicks == 0) 
+        {
+            nextTask = taskTable[0];
+        }           
+        else if (taskTable[1]->delayTicks == 0) 
+        {
+            nextTask = taskTable[1];
+        } else 
+        {
+            return;
+        }
+    } 
+    else 
+    {
+        // 如果是task1或者task2的话，检查下另外一个任务
+        // 如果另外的任务不在延时中，就切换到该任务
+        // 否则，判断下当前任务是否应该进入延时状态，如果是的话，就切换到空闲任务。否则就不进行任何切换
+        if (currentTask == taskTable[0]) 
+        {
+            if (taskTable[1]->delayTicks == 0) 
+            {
+                nextTask = taskTable[1];
+            }
+            else if (currentTask->delayTicks != 0) 
+            {
+                nextTask = idleTask;
+            } 
+            else 
+            {
+                return;
+            }
+        }
+        else if (currentTask == taskTable[1]) 
+        {
+            if (taskTable[0]->delayTicks == 0) 
+            {
+                nextTask = taskTable[0];
+            }
+            else if (currentTask->delayTicks != 0) 
+            {
+                nextTask = idleTask;
+            }
+            else 
+            {
+                return;
+            }
+        }
+    }
+	
 	wTaskSwitch();
 }
 
+/**
+  * @brief  任务SystemTick中断服务函数
+  * @param  无
+  * @retval 无
+  */	
+void wTaskSystemTickHandler()
+{
+	int i;
+	for(i = 0; i < 2; i++)
+	{
+		if(taskTable[i]->delayTicks > 0)
+		{
+			taskTable[i]->delayTicks--;
+		}
+	}
+	wTaskSched();
+}
+
+/**
+  * @brief  任务延时函数
+  * @param  delay： 任务延时时间(x10ms)
+  * @retval 无
+  */	
+void wTaskDelay(uint32_t delay)
+{
+	currentTask->delayTicks = delay;
+	wTaskSched();
+}
+
+/**
+  * @brief  SysTick初始化函数
+  * @param  ms： 定时时间
+  * @retval 无
+  */	
+void wSetSysTickPeriod(uint32_t ms)
+{
+	SysTick->LOAD = ms * SystemCoreClock / 1000 - 1;
+	NVIC_SetPriority(SysTick_IRQn, (1 << __NVIC_PRIO_BITS) - 1);
+	SysTick->VAL = 0;
+	SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | 
+					SysTick_CTRL_TICKINT_Msk |
+					SysTick_CTRL_ENABLE_Msk;
+}
+
+/**
+  * @brief  SysTick中断服务函数
+  * @param  无
+  * @retval 无
+  */	
+void SysTick_Handler()
+{
+	wTaskSystemTickHandler();
+}
 /**
   * @brief  粗暴延时函数
   * @param  count： 延时时间
@@ -64,12 +168,6 @@ void delay(int count)
 {
      while(--count>0);
 }
-
-wTask wTask1;
-wTask wTask2;
-
-wTaskStack Task1Env[1024];
-wTaskStack Task2Env[1024];
 
 int task1Flag;
 int task2Flag;
@@ -81,14 +179,13 @@ int task2Flag;
   */	
 void task1Entry(void * param)
 {
+	wSetSysTickPeriod(10);
 	for(;;)
 	{
 		task1Flag = 0;
-		delay(100);
+		wTaskDelay(1);
 		task1Flag = 1;
-		delay(100);
-		
-		wTaskSched();
+		wTaskDelay(1);
 	}
 }
 
@@ -102,13 +199,32 @@ void task2Entry(void * param)
 	for(;;)
 	{
 		task2Flag = 0;
-		delay(100);
+		wTaskDelay(2);
 		task2Flag = 1;
-		delay(100);
-		
-		wTaskSched();
+		wTaskDelay(2);
 	}
 }
+
+wTask wTaskIdle;
+wTaskStack idleTaskEnv[1024];
+
+/**
+  * @brief  空闲任务函数
+  * @param  无
+  * @retval 无
+  */	
+void idleTaskEntry(void * param)
+{
+	for(;;)
+	{
+	}
+}
+
+wTask wTask1;
+wTask wTask2;
+
+wTaskStack Task1Env[1024];
+wTaskStack Task2Env[1024];
 
 /**
   * @brief  主函数
@@ -120,9 +236,13 @@ int main()
 	wTaskInit(&wTask1, task1Entry, (void *)0x11111111, &Task1Env[1024]);	//初始化任务
 	wTaskInit(&wTask2, task2Entry, (void *)0x22222222, &Task2Env[1024]);
 	
+	
 	taskTable[0] = &wTask1;		//初始化任务列表
 	taskTable[1] = &wTask2;
 
+	wTaskInit(&wTaskIdle, idleTaskEntry, (void *)0, &idleTaskEnv[1024]);
+	idleTask = &wTaskIdle;
+	
     nextTask = taskTable[0];	//第一个要运行的任务指向任务1
 	
 	wTaskRunFirst();			//将CPU控制权交给OS，开始运行系统

@@ -8,6 +8,7 @@ typedef uint32_t wTaskStack;
 typedef struct _wTask
 {
 	wTaskStack * stack;
+	uint32_t delayTicks;
 }wTask;
 
 extern wTask * currentTask;
