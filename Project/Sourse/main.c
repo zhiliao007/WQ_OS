@@ -1,19 +1,19 @@
 #include "WQ_OS.h"
 #include <ARMCM3.h>
 
-wTask * currentTask;
-wTask * nextTask;
-wTask * idleTask;
-wTask * taskTable[2];  
+wTask * currentTask;       //指向当前任务的指针
+wTask * nextTask;          //指向将要运行任务的指针
+wTask * idleTask;          //指向空闲任务的指针
+wTask * taskTable[2];      //任务数组指针
 
-/**
+/*******************************************************************************************************************
   * @brief  任务初始化函数
   * @param  task： 任务结构体地址
-			entry：任务入口函数名
-			param：传递给任务的参数
-            stack：任务栈空间地址
+		  entry：任务入口函数名
+		  param：传递给任务的参数
+          stack：任务栈空间地址
   * @retval 无
-  */	
+  ******************************************************************************************************************/	
 void wTaskInit(wTask * task, void (*entry)(void *), void * param, wTaskStack * stack)
 {
 	*(--stack) = (unsigned long)(1<<24);                // XPSR, 设置了Thumb模式，恢复到Thumb状态而非ARM状态运行
@@ -40,13 +40,14 @@ void wTaskInit(wTask * task, void (*entry)(void *), void * param, wTaskStack * s
 	task->delayTicks = 0;
 }
 
-/**
+/*******************************************************************************************************************
   * @brief  任务调度函数
   * @param  无
   * @retval 无
-  */	
+  ******************************************************************************************************************/	
 void wTaskSched()
 {
+	uint32_t status = wTaskEnterCritical();
 	// 空闲任务只有在所有其它任务都不是延时状态时才执行
     // 所以，我们先检查下当前任务是否是空闲任务
     if (currentTask == idleTask) 
@@ -63,6 +64,7 @@ void wTaskSched()
             nextTask = taskTable[1];
         } else 
         {
+			wTaskExitCritical(status);
             return;
         }
     } 
@@ -83,6 +85,7 @@ void wTaskSched()
             } 
             else 
             {
+				wTaskExitCritical(status);
                 return;
             }
         }
@@ -98,22 +101,28 @@ void wTaskSched()
             }
             else 
             {
+				wTaskExitCritical(status);
                 return;
             }
         }
     }
 	
 	wTaskSwitch();
+	
+	wTaskExitCritical(status);
 }
 
-/**
+/*******************************************************************************************************************
   * @brief  任务SystemTick中断服务函数
   * @param  无
   * @retval 无
-  */	
+  ******************************************************************************************************************/
 void wTaskSystemTickHandler()
-{
+{	
 	int i;
+	
+	uint32_t status = wTaskEnterCritical();
+	
 	for(i = 0; i < 2; i++)
 	{
 		if(taskTable[i]->delayTicks > 0)
@@ -121,25 +130,33 @@ void wTaskSystemTickHandler()
 			taskTable[i]->delayTicks--;
 		}
 	}
+	
+	wTaskExitCritical(status);
+	
 	wTaskSched();
 }
 
-/**
+/*******************************************************************************************************************
   * @brief  任务延时函数
   * @param  delay： 任务延时时间(x10ms)
   * @retval 无
-  */	
+  ******************************************************************************************************************/
 void wTaskDelay(uint32_t delay)
 {
+	uint32_t status = wTaskEnterCritical();
+	
 	currentTask->delayTicks = delay;
+	
+	wTaskExitCritical(status);
+	
 	wTaskSched();
 }
 
-/**
+/*******************************************************************************************************************
   * @brief  SysTick初始化函数
   * @param  ms： 定时时间
   * @retval 无
-  */	
+  ******************************************************************************************************************/
 void wSetSysTickPeriod(uint32_t ms)
 {
 	SysTick->LOAD = ms * SystemCoreClock / 1000 - 1;
@@ -150,20 +167,20 @@ void wSetSysTickPeriod(uint32_t ms)
 					SysTick_CTRL_ENABLE_Msk;
 }
 
-/**
+/*******************************************************************************************************************
   * @brief  SysTick中断服务函数
   * @param  无
   * @retval 无
-  */	
+  ******************************************************************************************************************/
 void SysTick_Handler()
 {
 	wTaskSystemTickHandler();
 }
-/**
+/*******************************************************************************************************************
   * @brief  粗暴延时函数
   * @param  count： 延时时间
   * @retval 无
-  */	
+  ******************************************************************************************************************/
 void delay(int count)
 {
      while(--count>0);
@@ -172,11 +189,11 @@ void delay(int count)
 int task1Flag;
 int task2Flag;
 
-/**
+/*******************************************************************************************************************
   * @brief  任务1入口函数
   * @param  param：传给任务的参数
   * @retval 无
-  */	
+  ******************************************************************************************************************/
 void task1Entry(void * param)
 {
 	wSetSysTickPeriod(10);
@@ -189,11 +206,11 @@ void task1Entry(void * param)
 	}
 }
 
-/**
+/*******************************************************************************************************************
   * @brief  任务2入口函数
   * @param  param：传给任务的参数
   * @retval 无
-  */	
+  ******************************************************************************************************************/
 void task2Entry(void * param)
 {
 	for(;;)
@@ -208,11 +225,11 @@ void task2Entry(void * param)
 wTask wTaskIdle;
 wTaskStack idleTaskEnv[1024];
 
-/**
+/*******************************************************************************************************************
   * @brief  空闲任务函数
   * @param  无
   * @retval 无
-  */	
+  ******************************************************************************************************************/
 void idleTaskEntry(void * param)
 {
 	for(;;)
@@ -226,11 +243,11 @@ wTask wTask2;
 wTaskStack Task1Env[1024];
 wTaskStack Task2Env[1024];
 
-/**
+/*******************************************************************************************************************
   * @brief  主函数
   * @param  无
   * @retval 无
-  */	
+  ******************************************************************************************************************/	
 int main()
 {
 	wTaskInit(&wTask1, task1Entry, (void *)0x11111111, &Task1Env[1024]);	//初始化任务
@@ -240,7 +257,7 @@ int main()
 	taskTable[0] = &wTask1;		//初始化任务列表
 	taskTable[1] = &wTask2;
 
-	wTaskInit(&wTaskIdle, idleTaskEntry, (void *)0, &idleTaskEnv[1024]);
+	wTaskInit(&wTaskIdle, idleTaskEntry, (void *)0, &idleTaskEnv[1024]);    //初始化空闲任务
 	idleTask = &wTaskIdle;
 	
     nextTask = taskTable[0];	//第一个要运行的任务指向任务1
