@@ -394,6 +394,16 @@
               <FileType>5</FileType>
               <FilePath>.\Sourse\WQ_OS.h</FilePath>
             </File>
+            <File>
+              <FileName>wLib.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sourse\wLib.h</FilePath>
+            </File>
+            <File>
+              <FileName>wBitmap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wBitmap.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

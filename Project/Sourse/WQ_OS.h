@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#include "wLib.h"
+
 typedef uint32_t wTaskStack;	//定义任务堆栈类型
 
 typedef struct _wTask        //任务结构
@@ -19,5 +21,10 @@ void wTaskSwitch(void);
 
 uint32_t wTaskEnterCritical(void);
 void wTaskExitCritical(uint32_t status);
+
+void wTaskSchedInit(void);	
+void wTaskSchedDisable(void);	
+void wTaskSchedEnable(void);
+void wTaskSched(void);
 
 #endif
