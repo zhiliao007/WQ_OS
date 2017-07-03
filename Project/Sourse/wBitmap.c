@@ -27,7 +27,7 @@ uint32_t wBitmapPosCount(void)
   * @retval 无
   ******************************************************************************************************************/	uint32_t wBitmapPosCount(void);
 void wBitmapSet(wBitmap * bitmap, uint32_t pos)
-{
+{ 
 	bitmap->bitmap |= 1 << pos;
 }
 

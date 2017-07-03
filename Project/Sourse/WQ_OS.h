@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 
+#include "wConfig.h"
 #include "wLib.h"
 
 typedef uint32_t wTaskStack;	//定义任务堆栈类型
@@ -11,6 +12,7 @@ typedef struct _wTask        //任务结构
 {								
 	wTaskStack * stack;		 //任务堆栈指针
 	uint32_t delayTicks;	 //任务延时个数
+	uint32_t prio;           //任务优先级
 }wTask;
 
 extern wTask * currentTask;

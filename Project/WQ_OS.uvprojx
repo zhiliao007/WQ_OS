@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\Sourse</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -377,7 +377,7 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>src</GroupName>
           <Files>
             <File>
               <FileName>main.c</FileName>
@@ -390,9 +390,24 @@
               <FilePath>.\Sourse\switch.c</FilePath>
             </File>
             <File>
-              <FileName>WQ_OS.h</FileName>
+              <FileName>wBitmap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wBitmap.c</FilePath>
+            </File>
+            <File>
+              <FileName>wList.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wList.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>inc</GroupName>
+          <Files>
+            <File>
+              <FileName>wConfig.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Sourse\WQ_OS.h</FilePath>
+              <FilePath>.\Sourse\wConfig.h</FilePath>
             </File>
             <File>
               <FileName>wLib.h</FileName>
@@ -400,9 +415,9 @@
               <FilePath>.\Sourse\wLib.h</FilePath>
             </File>
             <File>
-              <FileName>wBitmap.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Sourse\wBitmap.c</FilePath>
+              <FileName>WQ_OS.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sourse\WQ_OS.h</FilePath>
             </File>
           </Files>
         </Group>
