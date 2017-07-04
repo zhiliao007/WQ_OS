@@ -94,7 +94,7 @@ wNode * wListPre (wList * list, wNode * node)
   ******************************************************************************************************************/	
 wNode * wListNext (wList * list, wNode * node)
 {
-	if (node->preNode == node) 
+	if (node->nextNode == node) 
 	{
 		return (wNode *)0;
 	} 
