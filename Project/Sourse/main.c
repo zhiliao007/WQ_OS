@@ -10,6 +10,8 @@ wTask * taskTable[WQ_OS_PRO_COUNT];      //任务就绪表
 
 uint8_t schedlockCount;     //调度锁计数器
 
+wList wTaskDelayList;       //延时队列
+
 /*******************************************************************************************************************
   * @brief  任务初始化函数
   * @param  task： 任务结构体地址
@@ -43,6 +45,9 @@ void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, 
 	task->stack = stack;								// 保存最终的值，使任务栈指针指向缓冲区栈顶
 	task->delayTicks = 0;
 	task->prio = prio;
+	task->state = WQOS_TASK_STATE_RDY;
+	
+	wNodeInit(&(task->delayNode));
 	
 	taskTable[prio] = task;                             //将任务就绪表对应位指向任务
 	wBitmapSet(&taskPrioBitmap, prio);                  //并将该位置1
@@ -105,6 +110,28 @@ void wTaskSchedEnable(void)
 }
 
 /*******************************************************************************************************************
+  * @brief  将任务插入就绪列表（将任务从延时队列中移除时）函数
+  * @param  task   任务结构指针
+  * @retval 无
+  ******************************************************************************************************************/	
+void wTaskSchedRdy(wTask * task)
+{
+	taskTable[task->prio] = task;
+	wBitmapSet(&taskPrioBitmap,task->prio);
+}
+
+/*******************************************************************************************************************
+  * @brief  将任务从就绪列表中删除函数
+  * @param  task   任务结构指针
+  * @retval 无
+  ******************************************************************************************************************/	
+void wTaskSchedUnRdy(wTask * task)
+{
+	taskTable[task->prio] = (wTask *)0;
+	wBitmapClear(&taskPrioBitmap,task->prio);
+}
+
+/*******************************************************************************************************************
   * @brief  任务调度函数
   * @param  无
   * @retval 无
@@ -131,28 +158,59 @@ void wTaskSched(void)
 }
 
 /*******************************************************************************************************************
+  * @brief  任务延时初始化函数
+  * @param  无
+  * @retval 无
+  ******************************************************************************************************************/
+void wTaskDelayInit(void)
+{
+	wListInit(&wTaskDelayList);             //初始化延时队列
+}
+
+/*******************************************************************************************************************
+  * @brief  将任务插入延时队列函数
+  * @param  task   任务结构指针
+            ticks  延时的ticks数
+  * @retval 无
+  ******************************************************************************************************************/
+void wTimeTaskWait(wTask * task, uint32_t ticks)
+{
+	task->delayTicks = ticks;
+	wListAddLast(&wTaskDelayList, &(task->delayNode));
+	task->state |= WQOS_TASK_STATE_DELAYED;
+}
+
+/*******************************************************************************************************************
+  * @brief  将任务从延时队列删除函数
+  * @param  task   延时结构指针
+  * @retval 无
+  ******************************************************************************************************************/
+void wTimeTaskWakeUp(wTask * task)
+{
+	wListRemove(&wTaskDelayList,&(task->delayNode));
+	task->state &= ~WQOS_TASK_STATE_DELAYED;
+}
+	
+/*******************************************************************************************************************
   * @brief  任务SystemTick中断服务函数
   * @param  无
   * @retval 无
   ******************************************************************************************************************/
 void wTaskSystemTickHandler()
 {	
-	int i;
+	wNode * node;
 	
 	uint32_t status = wTaskEnterCritical();
-	
-	for(i = 0; i < WQ_OS_PRO_COUNT; i++)
+	for(node = wTaskDelayList.headNode.nextNode; node != &(wTaskDelayList.headNode); node = node->nextNode)
 	{
-		if(taskTable[i]->delayTicks > 0)
+		wTask * task = wNodeParent(node, wTask, delayNode);
+		if(--task->delayTicks == 0)
 		{
-			taskTable[i]->delayTicks--;
-		}
-		else 
-		{
-			wBitmapSet(&taskPrioBitmap, i);
+			wTimeTaskWakeUp(task);       //从延时队列中删除
+			
+			wTaskSchedRdy(task);         //插入就绪列表
 		}
 	}
-	
 	wTaskExitCritical(status);
 	
 	wTaskSched();
@@ -167,8 +225,9 @@ void wTaskDelay(uint32_t delay)
 {
 	uint32_t status = wTaskEnterCritical();
 	
-	currentTask->delayTicks = delay;
-	wBitmapClear(&taskPrioBitmap, currentTask->prio);         //清零就绪表中该任务
+	wTimeTaskWait(currentTask, delay);
+	
+	wTaskSchedUnRdy(currentTask);
 	
 	wTaskExitCritical(status);
 	
@@ -274,6 +333,8 @@ wTaskStack Task2Env[1024];
 int main()
 {
 	wTaskSchedInit();            //内核功能初始化
+	
+	wTaskDelayInit();            //初始化延时队列
 	
 	wTaskInit(&wTask1, task1Entry, (void *)0x11111111, 0, &Task1Env[1024]);	//初始化任务
 	wTaskInit(&wTask2, task2Entry, (void *)0x22222222, 1, &Task2Env[1024]);
