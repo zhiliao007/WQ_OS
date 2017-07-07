@@ -6,7 +6,7 @@ wTask * nextTask;          //指向将要运行任务的指针
 wTask * idleTask;          //指向空闲任务的指针
 
 wBitmap taskPrioBitmap;    //任务优先级位图
-wTask * taskTable[WQ_OS_PRO_COUNT];      //任务就绪表
+wList taskTable[WQ_OS_PRO_COUNT];      //任务就绪表
 
 uint8_t schedlockCount;     //调度锁计数器
 
@@ -41,36 +41,46 @@ void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, 
     *(--stack) = (unsigned long)0x6;                    // R6,  未用
     *(--stack) = (unsigned long)0x5;                    // R5,  未用
     *(--stack) = (unsigned long)0x4;                    // R4,  未用
-	 
+	
+	task->slice = WQ_OS_SLICE_MAX; 
 	task->stack = stack;								// 保存最终的值，使任务栈指针指向缓冲区栈顶
 	task->delayTicks = 0;
 	task->prio = prio;
 	task->state = WQOS_TASK_STATE_RDY;
 	
 	wNodeInit(&(task->delayNode));
+	wNodeInit(&(task->linkNode));
+	wListAddFirst(&taskTable[prio], &(task->linkNode));
 	
-	taskTable[prio] = task;                             //将任务就绪表对应位指向任务
 	wBitmapSet(&taskPrioBitmap, prio);                  //并将该位置1
 }
 
 /*******************************************************************************************************************
-  * @brief  查找就绪表中优先级最高的任务函数
+  * @brief  获取当前最高优先级且可运行的任务函数
   * @param  无
-  * @retval 就绪表中优先级最高的任务指针
+  * @retval 优先级最高的且可运行的任务
   ******************************************************************************************************************/	
 wTask * wTaskHighestReady(void)
 {
 	uint32_t highestPrio = wBitmapGetFirstSet(&taskPrioBitmap);
-	return taskTable[highestPrio];
+	wNode * node = wListFirst(&taskTable[highestPrio]);
+	return wNodeParent(node, wTask, linkNode);
 }
+
 /*******************************************************************************************************************
-  * @brief  内核初始化函数
+  * @brief  内核初始化函数（初始化调度器）
   * @param  无
   * @retval 无
   ******************************************************************************************************************/	
 void wTaskSchedInit(void)
 {
-	wBitmapInit(&taskPrioBitmap);        //初始化位图
+	int i;
+	
+	wBitmapInit(&taskPrioBitmap);          //初始化位图
+	for(i = 0; i < WQ_OS_PRO_COUNT; i++)   //初始化优先级数组的各个列表项
+	{
+		wListInit(&taskTable[i]);
+	}
 	schedlockCount = 0;
 }
 
@@ -116,7 +126,7 @@ void wTaskSchedEnable(void)
   ******************************************************************************************************************/	
 void wTaskSchedRdy(wTask * task)
 {
-	taskTable[task->prio] = task;
+	wListAddFirst(&(taskTable[task->prio]),&(task->linkNode));
 	wBitmapSet(&taskPrioBitmap,task->prio);
 }
 
@@ -127,8 +137,11 @@ void wTaskSchedRdy(wTask * task)
   ******************************************************************************************************************/	
 void wTaskSchedUnRdy(wTask * task)
 {
-	taskTable[task->prio] = (wTask *)0;
-	wBitmapClear(&taskPrioBitmap,task->prio);
+	wListRemove(&(taskTable[task->prio]),&(task->linkNode));
+	if(wListCount(&taskTable[task->prio]) == 0)
+	{
+		wBitmapClear(&taskPrioBitmap,task->prio);
+	}
 }
 
 /*******************************************************************************************************************
@@ -196,7 +209,7 @@ void wTimeTaskWakeUp(wTask * task)
   * @param  无
   * @retval 无
   ******************************************************************************************************************/
-void wTaskSystemTickHandler()
+void wTaskSystemTickHandler(void)
 {	
 	wNode * node;
 	
@@ -209,6 +222,17 @@ void wTaskSystemTickHandler()
 			wTimeTaskWakeUp(task);       //从延时队列中删除
 			
 			wTaskSchedRdy(task);         //插入就绪列表
+		}
+	}
+	
+	if(--currentTask->slice == 0)
+	{
+		if(wListCount(&taskTable[currentTask->prio]) > 0)
+		{
+			wListRemoveFirst(&taskTable[currentTask->prio]);
+			wListAddLast(&taskTable[currentTask->prio], &(currentTask->linkNode));
+			
+			currentTask->slice = WQ_OS_SLICE_MAX;
 		}
 	}
 	wTaskExitCritical(status);
@@ -270,6 +294,7 @@ void delay(int count)
 
 int task1Flag;
 int task2Flag;
+int task3Flag;
 
 /*******************************************************************************************************************
   * @brief  任务1入口函数
@@ -282,9 +307,9 @@ void task1Entry(void * param)
 	for(;;)
 	{
 		task1Flag = 0;
-		wTaskDelay(100);
+		wTaskDelay(1);
 		task1Flag = 1;
-		wTaskDelay(100);
+		wTaskDelay(1);
 	}
 }
 
@@ -298,9 +323,20 @@ void task2Entry(void * param)
 	for(;;)
 	{
 		task2Flag = 0;
-		wTaskDelay(200);
+		delay(0xff);
 		task2Flag = 1;
-		wTaskDelay(200);
+		delay(0xff);
+	}
+}
+
+void task3Entry(void * param)
+{
+	for(;;)
+	{
+		task3Flag = 0;
+		delay(0xff);
+		task3Flag = 1;
+		delay(0xff);
 	}
 }
 
@@ -321,9 +357,11 @@ void idleTaskEntry(void * param)
 
 wTask wTask1;
 wTask wTask2;
+wTask wTask3;
 
 wTaskStack Task1Env[1024];
 wTaskStack Task2Env[1024];
+wTaskStack Task3Env[1024];
 
 /*******************************************************************************************************************
   * @brief  主函数
@@ -338,10 +376,8 @@ int main()
 	
 	wTaskInit(&wTask1, task1Entry, (void *)0x11111111, 0, &Task1Env[1024]);	//初始化任务
 	wTaskInit(&wTask2, task2Entry, (void *)0x22222222, 1, &Task2Env[1024]);
+	wTaskInit(&wTask3, task3Entry, (void *)0x22222222, 1, &Task3Env[1024]);
 	
-	
-	taskTable[0] = &wTask1;		//初始化任务列表
-	taskTable[1] = &wTask2;
 
 	wTaskInit(&wTaskIdle, idleTaskEntry, (void *)0, WQ_OS_PRO_COUNT - 1, &idleTaskEnv[1024]);    //初始化空闲任务
 	idleTask = &wTaskIdle;
