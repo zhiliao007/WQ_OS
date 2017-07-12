@@ -399,6 +399,26 @@
               <FileType>1</FileType>
               <FilePath>.\Sourse\wList.c</FilePath>
             </File>
+            <File>
+              <FileName>wtask.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wtask.c</FilePath>
+            </File>
+            <File>
+              <FileName>wtime.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wtime.c</FilePath>
+            </File>
+            <File>
+              <FileName>wcpu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wcpu.c</FilePath>
+            </File>
+            <File>
+              <FileName>app.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\app.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

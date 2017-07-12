@@ -13,49 +13,6 @@ uint8_t schedlockCount;     //调度锁计数器
 wList wTaskDelayList;       //延时队列
 
 /*******************************************************************************************************************
-  * @brief  任务初始化函数
-  * @param  task： 任务结构体地址
-		    entry：任务入口函数名
-		    param：传递给任务的参数
-            stack：任务栈空间地址
-  * @retval 无
-  ******************************************************************************************************************/	
-void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, wTaskStack * stack)
-{
-	*(--stack) = (unsigned long)(1<<24);                // XPSR, 设置了Thumb模式，恢复到Thumb状态而非ARM状态运行
-    *(--stack) = (unsigned long)entry;                  // R15(PC) 程序的入口地址
-    *(--stack) = (unsigned long)0x14;                   // R14(LR), 任务不会通过return xxx结束自己，所以未用
-														// R14内核寄存器用来保存函数的返回值地址
-    *(--stack) = (unsigned long)0x12;                   // R12, 未用
-    *(--stack) = (unsigned long)0x3;                    // R3,  未用
-    *(--stack) = (unsigned long)0x2;                    // R2,  未用
-    *(--stack) = (unsigned long)0x1;                    // R1,  未用
-    *(--stack) = (unsigned long)param;                  // R0 = param, 传给任务的入口函数
-	                                                    // 函数的第一个参数的地址保存在R0内核寄存器
-	
-    *(--stack) = (unsigned long)0x11;                   // R11, 未用
-    *(--stack) = (unsigned long)0x10;                   // R10, 未用
-    *(--stack) = (unsigned long)0x9;                    // R9,  未用
-    *(--stack) = (unsigned long)0x8;                    // R8,  未用
-    *(--stack) = (unsigned long)0x7;                    // R7,  未用
-    *(--stack) = (unsigned long)0x6;                    // R6,  未用
-    *(--stack) = (unsigned long)0x5;                    // R5,  未用
-    *(--stack) = (unsigned long)0x4;                    // R4,  未用
-	
-	task->slice = WQ_OS_SLICE_MAX; 
-	task->stack = stack;								// 保存最终的值，使任务栈指针指向缓冲区栈顶
-	task->delayTicks = 0;
-	task->prio = prio;
-	task->state = WQOS_TASK_STATE_RDY;
-	
-	wNodeInit(&(task->delayNode));
-	wNodeInit(&(task->linkNode));
-	wListAddFirst(&taskTable[prio], &(task->linkNode));
-	
-	wBitmapSet(&taskPrioBitmap, prio);                  //并将该位置1
-}
-
-/*******************************************************************************************************************
   * @brief  获取当前最高优先级且可运行的任务函数
   * @param  无
   * @retval 优先级最高的且可运行的任务
@@ -241,48 +198,6 @@ void wTaskSystemTickHandler(void)
 }
 
 /*******************************************************************************************************************
-  * @brief  任务延时函数
-  * @param  delay： 任务延时时间(x10ms)
-  * @retval 无
-  ******************************************************************************************************************/
-void wTaskDelay(uint32_t delay)
-{
-	uint32_t status = wTaskEnterCritical();
-	
-	wTimeTaskWait(currentTask, delay);
-	
-	wTaskSchedUnRdy(currentTask);
-	
-	wTaskExitCritical(status);
-	
-	wTaskSched();
-}
-
-/*******************************************************************************************************************
-  * @brief  SysTick初始化函数
-  * @param  ms： 定时时间
-  * @retval 无
-  ******************************************************************************************************************/
-void wSetSysTickPeriod(uint32_t ms)
-{
-	SysTick->LOAD = ms * SystemCoreClock / 1000 - 1;
-	NVIC_SetPriority(SysTick_IRQn, (1 << __NVIC_PRIO_BITS) - 1);
-	SysTick->VAL = 0;
-	SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | 
-					SysTick_CTRL_TICKINT_Msk |
-					SysTick_CTRL_ENABLE_Msk;
-}
-
-/*******************************************************************************************************************
-  * @brief  SysTick中断服务函数
-  * @param  无
-  * @retval 无
-  ******************************************************************************************************************/
-void SysTick_Handler()
-{
-	wTaskSystemTickHandler();
-}
-/*******************************************************************************************************************
   * @brief  粗暴延时函数
   * @param  count： 延时时间
   * @retval 无
@@ -292,56 +207,8 @@ void delay(int count)
      while(--count>0);
 }
 
-int task1Flag;
-int task2Flag;
-int task3Flag;
-
-/*******************************************************************************************************************
-  * @brief  任务1入口函数
-  * @param  param：传给任务的参数
-  * @retval 无
-  ******************************************************************************************************************/
-void task1Entry(void * param)
-{
-	wSetSysTickPeriod(10);
-	for(;;)
-	{
-		task1Flag = 0;
-		wTaskDelay(1);
-		task1Flag = 1;
-		wTaskDelay(1);
-	}
-}
-
-/*******************************************************************************************************************
-  * @brief  任务2入口函数
-  * @param  param：传给任务的参数
-  * @retval 无
-  ******************************************************************************************************************/
-void task2Entry(void * param)
-{
-	for(;;)
-	{
-		task2Flag = 0;
-		delay(0xff);
-		task2Flag = 1;
-		delay(0xff);
-	}
-}
-
-void task3Entry(void * param)
-{
-	for(;;)
-	{
-		task3Flag = 0;
-		delay(0xff);
-		task3Flag = 1;
-		delay(0xff);
-	}
-}
-
 wTask wTaskIdle;
-wTaskStack idleTaskEnv[1024];
+wTaskStack idleTaskEnv[WQ_OS_IDLETASK_STACK_SIZE];
 
 /*******************************************************************************************************************
   * @brief  空闲任务函数
@@ -355,13 +222,6 @@ void idleTaskEntry(void * param)
 	}
 }
 
-wTask wTask1;
-wTask wTask2;
-wTask wTask3;
-
-wTaskStack Task1Env[1024];
-wTaskStack Task2Env[1024];
-wTaskStack Task3Env[1024];
 
 /*******************************************************************************************************************
   * @brief  主函数
@@ -374,12 +234,9 @@ int main()
 	
 	wTaskDelayInit();            //初始化延时队列
 	
-	wTaskInit(&wTask1, task1Entry, (void *)0x11111111, 0, &Task1Env[1024]);	//初始化任务
-	wTaskInit(&wTask2, task2Entry, (void *)0x22222222, 1, &Task2Env[1024]);
-	wTaskInit(&wTask3, task3Entry, (void *)0x22222222, 1, &Task3Env[1024]);
+    wInitApp();                  //初始化任务
 	
-
-	wTaskInit(&wTaskIdle, idleTaskEntry, (void *)0, WQ_OS_PRO_COUNT - 1, &idleTaskEnv[1024]);    //初始化空闲任务
+	wTaskInit(&wTaskIdle, idleTaskEntry, (void *)0, WQ_OS_PRO_COUNT - 1, &idleTaskEnv[WQ_OS_IDLETASK_STACK_SIZE]);    //初始化空闲任务
 	idleTask = &wTaskIdle;
 	
     nextTask = wTaskHighestReady();	//第一个要运行的任务指向任务1

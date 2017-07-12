@@ -8,6 +8,7 @@
 
 #define WQOS_TASK_STATE_RDY              0
 #define WQOS_TASK_STATE_DELAYED          (1 << 1)
+#define WQOS_TASK_STATE_SUSPEND          (1 << 2)
 
 typedef uint32_t wTaskStack;	//定义任务堆栈类型
 
@@ -20,6 +21,7 @@ typedef struct _wTask        //任务结构
 	uint32_t prio;           //任务优先级
 	uint32_t state;          //状态字段，用于判断是不是处于延时状态
 	uint32_t slice;          //时间片计数器
+	uint32_t suspendCount;   //挂起状态计数器
 }wTask;
 
 extern wTask * currentTask;
@@ -43,5 +45,8 @@ void wTaskSystemTickHandler(void);
 void wTaskDelay(uint32_t delay);
 void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, wTaskStack * stack);
 void wSetSysTickPeriod(uint32_t ms);
+void wInitApp(void);
+void wTaskSuspend(wTask * task);
+void wTaskWakeUp(wTask * task);
 
 #endif
