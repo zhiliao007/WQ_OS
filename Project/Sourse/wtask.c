@@ -35,6 +35,10 @@ void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, 
 	task->delayTicks = 0;
 	task->prio = prio;
 	task->state = WQOS_TASK_STATE_RDY;
+	task->suspendCount = 0;
+	task->clean = (void(*)(void *))0;
+	task->cleanparam = (void *)0;
+	task->requestDeleteFlag = 0;
 	
 	wNodeInit(&(task->delayNode));
 	wNodeInit(&(task->linkNode));
@@ -84,4 +88,100 @@ void wTaskWakeUp(wTask * task)
 	    } 
 }
 	wTaskExitCritical(status);
+}
+
+/*******************************************************************************************************************
+  * @brief  任务被删除时调用的清理函数
+  * @param  task   任务结构指针
+			clean  清理函数入口地址
+			param  传递给清理函数的参数
+  * @retval 无
+  ******************************************************************************************************************/
+void wTaskSetCleanCallFunc(wTask * task, void(*clean)(void * param), void * param)
+{
+	task->clean = clean;
+	task->cleanparam = param;
+}	
+
+/*******************************************************************************************************************
+  * @brief  恢复被挂起函数
+  * @param  task   任务结构指针
+  * @retval 无
+  ******************************************************************************************************************/
+void wTaskForceDelete(wTask * task) 
+{
+    uint32_t status = wTaskEnterCritical();
+
+    if (task->state & WQOS_TASK_STATE_DELAYED)            // 如果任务处于延时状态，则从延时队列中删除
+    {
+        wTimeTaskRemove(task);
+    }
+    else if (!(task->state & WQOS_TASK_STATE_SUSPEND))   // 如果任务不处于挂起状态，那么就是就绪态，从就绪表中删除
+    {
+        wTaskSchedRemove(task);
+    }
+
+    if (task->clean)               // 删除时，如果有设置清理函数，则调用清理函数
+    {
+        task->clean(task->cleanparam);
+    }
+    
+    if (currentTask == task)      // 如果删除的是自己，那么需要切换至另一个任务，所以执行一次任务调度
+    {
+        wTaskSched();
+    }
+
+    wTaskExitCritical(status); 
+}
+
+/*******************************************************************************************************************
+  * @brief  任务请求删除函数
+  * @param  task   任务结构指针
+  * @retval 无
+  ******************************************************************************************************************/
+void wTaskRequestDelete (wTask * task)
+{
+    uint32_t status = wTaskEnterCritical();
+
+    task->requestDeleteFlag = 1;
+
+    wTaskExitCritical(status); 
+}
+/*******************************************************************************************************************
+  * @brief  检查任务是否请求删除函数
+  * @param  无
+  * @retval 请求删除标志 非0表示请求删除，0表示无请求
+  ******************************************************************************************************************/
+uint8_t wTaskIsRequestedDelete (void)
+{
+    uint8_t delete;
+
+    uint32_t status = wTaskEnterCritical();
+
+    delete = currentTask->requestDeleteFlag;
+
+    wTaskExitCritical(status); 
+
+    return delete;
+}
+
+/*******************************************************************************************************************
+  * @brief  任务自删除函数
+  * @param  无
+  * @retval 无
+  ******************************************************************************************************************/
+void wTaskDeleteSelf (void)
+{
+    uint32_t status = wTaskEnterCritical();
+
+    wTaskSchedRemove(currentTask);
+
+    if (currentTask->clean)        // 删除时，如果有设置清理函数，则调用清理函数
+    {
+        currentTask->clean(currentTask->cleanparam);
+    }
+
+    wTaskSched();
+
+    wTaskExitCritical(status);
 }
