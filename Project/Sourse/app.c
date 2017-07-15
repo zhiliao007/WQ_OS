@@ -16,27 +16,22 @@ wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
 /*******************************************************************************************************************
-  * @brief  任务清理函数
-  * @param  param：传给任务的参数
-  * @retval 无
-  ******************************************************************************************************************/
-void task1DestroyFunc (void * param) 
-{
-    task1Flag = 0;
-}
-
-/*******************************************************************************************************************
   * @brief  任务1入口函数
   * @param  param：传给任务的参数
   * @retval 无
   ******************************************************************************************************************/
 void task1Entry(void * param)
 {
+	wTaskInfo taskInfo;
+	
 	wSetSysTickPeriod(10);
 	
-	 wTaskSetCleanCallFunc(currentTask, task1DestroyFunc, (void *)0);
 	for(;;)
 	{
+		wTaskGetInfo(currentTask, &taskInfo);
+		
+		wTaskGetInfo(&wTask4, &taskInfo);
+		
 		task1Flag = 0;
         wTaskSuspend(currentTask);
 		task1Flag = 1;
@@ -51,21 +46,12 @@ void task1Entry(void * param)
   ******************************************************************************************************************/
 void task2Entry(void * param)
 {
-	int task1Deleted = 0;
-	
 	for(;;)
 	{
 		task2Flag = 1;
         wTaskDelay(1);
         task2Flag = 0;
         wTaskDelay(1);
-
-        // 请求删除任务1
-        if (!task1Deleted) 
-        {
-            wTaskForceDelete(&wTask1);
-            task1Deleted = 1;
-        }
 	}
 }
 
@@ -78,16 +64,6 @@ void task3Entry(void * param)
 {
 	for(;;)
 	{
-		// 检查是否要求删除任务自己
-        if (wTaskIsRequestedDelete())
-        {
-            // 做一些清理工作
-            task3Flag = 0;
-
-            // 然后主动删除自己
-            wTaskDeleteSelf();
-        }
-		
 		task3Flag = 0;
 		wTaskDelay(1);
 		task3Flag = 1;
@@ -102,21 +78,12 @@ void task3Entry(void * param)
   ******************************************************************************************************************/
 void task4Entry(void * param)
 {
-	int task3Deleted = 0;
-	
 	for(;;)
 	{
 		task4Flag = 0;
 		wTaskDelay(1);
 		task4Flag = 1;
 		wTaskDelay(1);
-		
-		// 请求删除任务3
-        if (!task3Deleted) 
-        {
-            wTaskRequestDelete(&wTask3);
-            task3Deleted = 1;
-        }
 	}
 }
 /*******************************************************************************************************************

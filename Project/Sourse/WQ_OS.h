@@ -50,6 +50,16 @@ void wTimeTaskWakeUp(wTask * task);
 void wTimeTaskRemove(wTask * task);
 void wTaskSystemTickHandler(void);
 void wTaskDelay(uint32_t delay);
+
+typedef struct _wTaskInfo
+{
+	uint32_t delayTicks;
+	uint32_t prio;
+	uint32_t state;
+	uint32_t slice;
+	uint32_t suspendCount;
+}wTaskInfo;
+
 void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, wTaskStack * stack);
 void wTaskSuspend(wTask * task);
 void wTaskWakeUp(wTask * task);
@@ -58,6 +68,7 @@ void wTaskForceDelete(wTask * task);
 void wTaskRequestDelete(wTask * task);
 uint8_t wTaskIsRequestedDelete(void);
 void wTaskDeleteSelf(void);
+void wTaskGetInfo(wTask * task, wTaskInfo * info);
 void wSetSysTickPeriod(uint32_t ms);
 void wInitApp(void);
 

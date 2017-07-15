@@ -185,3 +185,21 @@ void wTaskDeleteSelf (void)
 
     wTaskExitCritical(status);
 }
+
+/*******************************************************************************************************************
+  * @brief  任务自删除函数
+  * @param  无
+  * @retval 无
+  ******************************************************************************************************************/
+void wTaskGetInfo(wTask * task, wTaskInfo * info)
+{
+	uint32_t status = wTaskEnterCritical();
+	
+	info->delayTicks = task->delayTicks;
+	info->prio = task->prio;
+	info->state = task->state;
+	info->slice = task->slice;
+	info->suspendCount = task->suspendCount;
+	  
+	wTaskExitCritical(status);
+}
