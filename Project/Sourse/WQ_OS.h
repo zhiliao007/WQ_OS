@@ -4,7 +4,14 @@
 #include <stdint.h>
 
 #include "wConfig.h"
+
 #include "wLib.h"
+
+#include "wEvent.h"
+
+typedef enum _wError {
+	wErrorNoError = 0,         //错误码
+}wError;
 
 #define WQOS_TASK_STATE_RDY              0
 #define WQOS_TASK_STATE_DESTORYED        (1 << 1)
@@ -27,6 +34,11 @@ typedef struct _wTask        //任务结构
 	void (*clean) (void * param);   //任务被删除时调用的清理函数
 	void * cleanparam;                //传递给清理函数的参数
 	uint8_t requestDeleteFlag;       //请求删除标志
+	
+	wEvent * waitEvent;        //正在等待的任务控制块
+	void * eventMsg;           //等待事件的数据存放位置
+	uint32_t waitEventResult;  //等待事件的结果 
+	
 }wTask;
 
 extern wTask * currentTask;

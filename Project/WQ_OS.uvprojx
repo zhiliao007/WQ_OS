@@ -419,6 +419,11 @@
               <FileType>1</FileType>
               <FilePath>.\Sourse\app.c</FilePath>
             </File>
+            <File>
+              <FileName>wEvent.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wEvent.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -438,6 +443,11 @@
               <FileName>WQ_OS.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Sourse\WQ_OS.h</FilePath>
+            </File>
+            <File>
+              <FileName>wEvent.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sourse\wEvent.h</FilePath>
             </File>
           </Files>
         </Group>
