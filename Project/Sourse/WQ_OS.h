@@ -7,39 +7,15 @@
 
 #include "wLib.h"
 
+#include "wTask.h"
+
 #include "wEvent.h"
 
-typedef enum _wError {
-	wErrorNoError = 0,         //错误码
+typedef enum _wError           //WQ_OS的错误码
+{
+	wErrorNoError = 0,         //没有错误
+	wErrorTimeout = 1,        //超时
 }wError;
-
-#define WQOS_TASK_STATE_RDY              0
-#define WQOS_TASK_STATE_DESTORYED        (1 << 1)
-#define WQOS_TASK_STATE_DELAYED          (1 << 2)
-#define WQOS_TASK_STATE_SUSPEND          (1 << 3)
-
-typedef uint32_t wTaskStack;	//定义任务堆栈类型
-
-typedef struct _wTask        //任务结构
-{								
-	wTaskStack * stack;		 //任务堆栈指针
-	wNode linkNode;          //优先级队列链接结点
-	uint32_t delayTicks;	 //任务延时个数 
-	wNode delayNode;         //通用延时结点结构
-	uint32_t prio;           //任务优先级
-	uint32_t state;          //状态字段，用于判断是不是处于延时状态
-	uint32_t slice;          //时间片计数器
-	uint32_t suspendCount;   //挂起状态计数器
-	
-	void (*clean) (void * param);   //任务被删除时调用的清理函数
-	void * cleanparam;                //传递给清理函数的参数
-	uint8_t requestDeleteFlag;       //请求删除标志
-	
-	wEvent * waitEvent;        //正在等待的任务控制块
-	void * eventMsg;           //等待事件的数据存放位置
-	uint32_t waitEventResult;  //等待事件的结果 
-	
-}wTask;
 
 extern wTask * currentTask;
 extern wTask * nextTask;
@@ -63,24 +39,7 @@ void wTimeTaskRemove(wTask * task);
 void wTaskSystemTickHandler(void);
 void wTaskDelay(uint32_t delay);
 
-typedef struct _wTaskInfo
-{
-	uint32_t delayTicks;
-	uint32_t prio;
-	uint32_t state;
-	uint32_t slice;
-	uint32_t suspendCount;
-}wTaskInfo;
 
-void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, wTaskStack * stack);
-void wTaskSuspend(wTask * task);
-void wTaskWakeUp(wTask * task);
-void wTaskSetCleanCallFunc(wTask * task, void(*clean)(void * param), void * param);
-void wTaskForceDelete(wTask * task); 
-void wTaskRequestDelete(wTask * task);
-uint8_t wTaskIsRequestedDelete(void);
-void wTaskDeleteSelf(void);
-void wTaskGetInfo(wTask * task, wTaskInfo * info);
 void wSetSysTickPeriod(uint32_t ms);
 void wInitApp(void);
 

@@ -15,6 +15,9 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
+wEvent eventWaitTimeout;
+wEvent eventWaitNormal;
+
 /*******************************************************************************************************************
   * @brief  任务1入口函数
   * @param  param：传给任务的参数
@@ -22,20 +25,18 @@ wTaskStack Task4Env[1024];
   ******************************************************************************************************************/
 void task1Entry(void * param)
 {
-	wTaskInfo taskInfo;
-	
 	wSetSysTickPeriod(10);
 	
+	wEventInit(&eventWaitTimeout, wEventTypeUnknown);
 	for(;;)
-	{
-		wTaskGetInfo(currentTask, &taskInfo);
-		
-		wTaskGetInfo(&wTask4, &taskInfo);
+	{		
+		wEventWait(&eventWaitTimeout, currentTask, (void *)0, 0, 5);
+        wTaskSched();
 		
 		task1Flag = 0;
-        wTaskSuspend(currentTask);
-		task1Flag = 1;
-		wTaskSuspend(currentTask);
+        wTaskDelay(1);
+        task1Flag = 1;
+        wTaskDelay(1);
 	}
 }
 
@@ -48,9 +49,12 @@ void task2Entry(void * param)
 {
 	for(;;)
 	{
-		task2Flag = 1;
+		wEventWait(&eventWaitNormal, currentTask, (void *)0, 0, 0);
+        wTaskSched();
+		
+		task2Flag = 0;
         wTaskDelay(1);
-        task2Flag = 0;
+        task2Flag = 1;
         wTaskDelay(1);
 	}
 }
@@ -62,8 +66,12 @@ void task2Entry(void * param)
   ******************************************************************************************************************/
 void task3Entry(void * param)
 {
+	wEventInit(&eventWaitNormal, wEventTypeUnknown);
 	for(;;)
 	{
+		wEventWait(&eventWaitNormal, currentTask, (void *)0, 0, 0);
+        wTaskSched();
+		
 		task3Flag = 0;
 		wTaskDelay(1);
 		task3Flag = 1;
@@ -80,6 +88,8 @@ void task4Entry(void * param)
 {
 	for(;;)
 	{
+		wTask * rdyTask = wEventWakeUp(&eventWaitNormal, (void *)0, 0);
+        wTaskSched();
 		task4Flag = 0;
 		wTaskDelay(1);
 		task4Flag = 1;

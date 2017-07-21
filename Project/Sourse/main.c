@@ -200,9 +200,13 @@ void wTaskSystemTickHandler(void)
 		wTask * task = wNodeParent(node, wTask, delayNode);
 		if(--task->delayTicks == 0)
 		{
+			if (task->waitEvent) 
+            {
+                wEventRemoveTask(task, (void *)0, wErrorTimeout);  //此时，消息为空，等待结果为超时
+            }
 			wTimeTaskWakeUp(task);       //从延时队列中删除
 			
-			wTaskSchedRdy(task);         //插入就绪列表
+			wTaskSchedRdy(task);        
 		}
 	}
 	

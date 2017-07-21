@@ -29,6 +29,7 @@ typedef struct _wList                 //链表结构体
 }wList;
 
 #define wNodeParent(node,parent,name) (parent *)((uint32_t)node - (uint32_t)&((parent *)0)->name)
+//获取结点所在的父struct结构首地址
 
 void wListInit(wList * list); 	
 uint32_t wListCount(wList * list);
