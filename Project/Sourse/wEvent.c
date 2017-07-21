@@ -99,3 +99,58 @@ void wEventRemoveTask (wTask * task, void * msg, uint32_t result)
     wTaskExitCritical(status); 
 }
 
+/*******************************************************************************************************************
+  * @brief  初始化事件控制块函数
+  * @param  event 事件控制块指针
+			msg 事件消息
+			result 事件等待结果
+  * @retval 唤醒的任务数量
+  ******************************************************************************************************************/
+uint32_t wEventRemoveAll (wEvent * event, void * msg, uint32_t result)
+{
+    wNode  * node;
+    uint32_t count;
+    
+    uint32_t status = wTaskEnterCritical();
+
+    count = wListCount(&event->waitList);
+
+    while ((node = wListRemoveFirst(&event->waitList)) != (wNode *)0)
+    {                                                                                                        
+        wTask * task = (wTask *)wNodeParent(node, wTask, linkNode);  // 转换为相应的任务结构  
+   
+        task->waitEvent = (wEvent *)0;
+        task->eventMsg = msg;
+        task->waitEventResult = result;
+        task->state &= ~WQOS_TASK_WAIT_MASK;
+
+        if (task->delayTicks != 0)
+        { 
+            wTimeTaskWakeUp(task);
+        }
+
+        wTaskSchedRdy(task);        
+    }  
+
+    wTaskExitCritical(status); 
+
+    return  count;
+}
+
+/*******************************************************************************************************************
+  * @brief  查询事件控制块中等待的任务数量函数
+  * @param  event 事件控制块指针
+  * @retval 唤醒的任务数量
+  ******************************************************************************************************************/
+uint32_t wEventWaitCount (wEvent * event)
+{  
+    uint32_t count = 0;
+
+    uint32_t status = wTaskEnterCritical();
+
+    count = wListCount(&event->waitList);  
+
+    wTaskExitCritical(status);     
+
+    return count;
+}  

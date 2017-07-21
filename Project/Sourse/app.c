@@ -15,7 +15,6 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
-wEvent eventWaitTimeout;
 wEvent eventWaitNormal;
 
 /*******************************************************************************************************************
@@ -27,12 +26,18 @@ void task1Entry(void * param)
 {
 	wSetSysTickPeriod(10);
 	
-	wEventInit(&eventWaitTimeout, wEventTypeUnknown);
+	wEventInit(&eventWaitNormal, wEventTypeUnknown);
 	for(;;)
 	{		
-		wEventWait(&eventWaitTimeout, currentTask, (void *)0, 0, 5);
-        wTaskSched();
-		
+		uint32_t count = wEventWaitCount(&eventWaitNormal);
+
+        uint32_t wakeUpCount = wEventRemoveAll(&eventWaitNormal, (void *)0, 0);
+        if (wakeUpCount > 0)
+        {
+            wTaskSched();
+
+            count = wEventWaitCount(&eventWaitNormal);
+        }
 		task1Flag = 0;
         wTaskDelay(1);
         task1Flag = 1;
@@ -66,7 +71,6 @@ void task2Entry(void * param)
   ******************************************************************************************************************/
 void task3Entry(void * param)
 {
-	wEventInit(&eventWaitNormal, wEventTypeUnknown);
 	for(;;)
 	{
 		wEventWait(&eventWaitNormal, currentTask, (void *)0, 0, 0);
@@ -88,7 +92,7 @@ void task4Entry(void * param)
 {
 	for(;;)
 	{
-		wTask * rdyTask = wEventWakeUp(&eventWaitNormal, (void *)0, 0);
+		wEventWait(&eventWaitNormal, currentTask, (void *)0, 0, 0);
         wTaskSched();
 		task4Flag = 0;
 		wTaskDelay(1);
@@ -105,7 +109,7 @@ void wInitApp(void)
 {
 	wTaskInit(&wTask1, task1Entry, (void *)0x11111111, 0, &Task1Env[1024]);	//初始化任务
 	wTaskInit(&wTask2, task2Entry, (void *)0x22222222, 1, &Task2Env[1024]);
-	wTaskInit(&wTask3, task3Entry, (void *)0x22222222, 0, &Task3Env[1024]);
+	wTaskInit(&wTask3, task3Entry, (void *)0x22222222, 1, &Task3Env[1024]);
 	wTaskInit(&wTask4, task4Entry, (void *)0x44444444, 1, &Task4Env[1024]);
 	
 }
