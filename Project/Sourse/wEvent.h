@@ -7,7 +7,8 @@
 
 typedef enum  _wEventType       //事件类型
 {   
-    wEventTypeUnknown   = 0, 	// 未知类型
+    wEventTypeUnknown = 0, 	// 未知类型
+	wEventTypeSem = 1,      //信号量类型   
 }wEventType;
 
 typedef struct _wEvent          //事件控制结构

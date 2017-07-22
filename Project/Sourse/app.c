@@ -15,7 +15,7 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
-wEvent eventWaitNormal;
+wSem sem;
 
 /*******************************************************************************************************************
   * @brief  任务1入口函数
@@ -26,18 +26,9 @@ void task1Entry(void * param)
 {
 	wSetSysTickPeriod(10);
 	
-	wEventInit(&eventWaitNormal, wEventTypeUnknown);
 	for(;;)
-	{		
-		uint32_t count = wEventWaitCount(&eventWaitNormal);
-
-        uint32_t wakeUpCount = wEventRemoveAll(&eventWaitNormal, (void *)0, 0);
-        if (wakeUpCount > 0)
-        {
-            wTaskSched();
-
-            count = wEventWaitCount(&eventWaitNormal);
-        }
+	{	
+        wSemInit(&sem, 1, 10);		
 		task1Flag = 0;
         wTaskDelay(1);
         task1Flag = 1;
@@ -54,9 +45,6 @@ void task2Entry(void * param)
 {
 	for(;;)
 	{
-		wEventWait(&eventWaitNormal, currentTask, (void *)0, 0, 0);
-        wTaskSched();
-		
 		task2Flag = 0;
         wTaskDelay(1);
         task2Flag = 1;
@@ -73,9 +61,6 @@ void task3Entry(void * param)
 {
 	for(;;)
 	{
-		wEventWait(&eventWaitNormal, currentTask, (void *)0, 0, 0);
-        wTaskSched();
-		
 		task3Flag = 0;
 		wTaskDelay(1);
 		task3Flag = 1;
@@ -92,8 +77,6 @@ void task4Entry(void * param)
 {
 	for(;;)
 	{
-		wEventWait(&eventWaitNormal, currentTask, (void *)0, 0, 0);
-        wTaskSched();
 		task4Flag = 0;
 		wTaskDelay(1);
 		task4Flag = 1;

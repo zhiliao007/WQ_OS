@@ -424,6 +424,11 @@
               <FileType>1</FileType>
               <FilePath>.\Sourse\wEvent.c</FilePath>
             </File>
+            <File>
+              <FileName>wSem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wSem.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -453,6 +458,11 @@
               <FileName>wTask.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Sourse\wTask.h</FilePath>
+            </File>
+            <File>
+              <FileName>wSem.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sourse\wSem.h</FilePath>
             </File>
           </Files>
         </Group>
