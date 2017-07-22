@@ -15,7 +15,8 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
-wSem sem;
+wSem sem1;
+wSem sem2;
 
 /*******************************************************************************************************************
   * @brief  任务1入口函数
@@ -26,9 +27,10 @@ void task1Entry(void * param)
 {
 	wSetSysTickPeriod(10);
 	
+	wSemInit(&sem1, 0, 10);
 	for(;;)
 	{	
-        wSemInit(&sem, 1, 10);		
+        wSemWait(&sem1, 0);		
 		task1Flag = 0;
         wTaskDelay(1);
         task1Flag = 1;
@@ -43,12 +45,15 @@ void task1Entry(void * param)
   ******************************************************************************************************************/
 void task2Entry(void * param)
 {
+	//int error = 0;
 	for(;;)
 	{
 		task2Flag = 0;
         wTaskDelay(1);
         task2Flag = 1;
         wTaskDelay(1);
+		wSemNotify(&sem1);
+		//error = wSemNoWaitGet(&sem2);
 	}
 }
 
@@ -59,8 +64,10 @@ void task2Entry(void * param)
   ******************************************************************************************************************/
 void task3Entry(void * param)
 {
+	 wSemInit(&sem2, 0, 0);
 	for(;;)
 	{
+		wSemWait(&sem2, 10);
 		task3Flag = 0;
 		wTaskDelay(1);
 		task3Flag = 1;

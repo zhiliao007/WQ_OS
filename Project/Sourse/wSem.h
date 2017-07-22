@@ -13,5 +13,7 @@ typedef struct _wSem    //定义信号量类型
 }wSem;
 
 void wSemInit (wSem * sem, uint32_t startCount, uint32_t maxCount);
-
+uint32_t wSemWait(wSem * sem, uint32_t waitTicks);
+uint32_t wSemNoWaitGet (wSem * sem);
+void wSemNotify (wSem * sem);
 #endif
