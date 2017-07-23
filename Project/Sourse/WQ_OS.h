@@ -18,6 +18,7 @@ typedef enum _wError           //WQ_OS的错误码
 	wErrorNoError = 0,         //没有错误
 	wErrorTimeout,             //超时
 	wErrorResourceUnavaliable, //没有资源可用
+	wErrorDel,                 //删除任务
 }wError;
 
 extern wTask * currentTask;

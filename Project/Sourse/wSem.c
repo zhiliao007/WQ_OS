@@ -2,7 +2,7 @@
 #include "WQ_OS.h"
 /*******************************************************************************************************************
   * @brief  初始化信号量函数
-  * @param  sem         信号量结果指针
+  * @param  sem         信号量结构指针
 			startCount  初始计数值
 			maxCount    最大计数值，若为0则不限数量 
   * @retval 无
@@ -24,7 +24,7 @@ void wSemInit (wSem * sem, uint32_t startCount, uint32_t maxCount)
 
 /*******************************************************************************************************************
   * @brief  等待信号量函数
-  * @param  sem       信号量结果指针
+  * @param  sem       信号量结构指针
 			waitTicks 当信号量计数为0时，等待的ticks数，为0时表示永远等待
 * @retval 等待结果  wErrorNoError 
 	                wErrorTimeout             
@@ -50,7 +50,7 @@ uint32_t wSemWait(wSem * sem, uint32_t waitTicks)
 
 /*******************************************************************************************************************
   * @brief  获取信号量函数
-  * @param  sem       信号量结果指针
+  * @param  sem       信号量结构指针
   * @retval 等待结果  wErrorNoError 
 	                  wErrorTimeout             
 	                  wErrorResourceUnavaliable 
@@ -74,7 +74,7 @@ uint32_t wSemNoWaitGet (wSem * sem)
 	
 /*******************************************************************************************************************
   * @brief  信号量唤醒任务函数
-  * @param  sem       信号量结果指针
+  * @param  sem       信号量结构指针
   * @retval 无
   ******************************************************************************************************************/
 void wSemNotify (wSem * sem)
@@ -100,6 +100,42 @@ void wSemNotify (wSem * sem)
     		sem->count = sem->maxCount;
     	}
     }
+    wTaskExitCritical(status);
+}
+
+/*******************************************************************************************************************
+  * @brief  信号量状态查询函数
+  * @param  sem  信号量结构指针
+			info 状态查询存储的位置
+  * @retval 无
+  ******************************************************************************************************************/
+void wSemGetInfo (wSem * sem, wSemInfo * info)
+{
+    uint32_t status = wTaskEnterCritical();        
+    
+    info->count = sem->count;
+    info->maxCount = sem->maxCount;
+    info->taskCount = wEventWaitCount(&sem->event);
     
     wTaskExitCritical(status);
+}
+
+	/*******************************************************************************************************************
+  * @brief  销毁信号量函数
+  * @param  sem       信号量结构指针
+  * @retval 因销毁该信号量而唤醒的任务数量
+  ******************************************************************************************************************/
+uint32_t wSemDestroy (wSem * sem)
+{       
+    uint32_t status = wTaskEnterCritical(); 
+
+    uint32_t count = wEventRemoveAll(&sem->event, (void *)0, wErrorDel);  
+    sem->count = 0;
+    wTaskExitCritical(status);
+    
+    if (count > 0) 
+    {
+        wTaskSched();
+    } 
+    return count;  
 }
