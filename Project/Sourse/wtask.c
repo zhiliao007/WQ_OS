@@ -104,7 +104,7 @@ void wTaskSetCleanCallFunc(wTask * task, void(*clean)(void * param), void * para
 }	
 
 /*******************************************************************************************************************
-  * @brief  恢复被挂起函数
+  * @brief  任务强制删除函数
   * @param  task   任务结构指针
   * @retval 无
   ******************************************************************************************************************/
@@ -130,6 +130,8 @@ void wTaskForceDelete(wTask * task)
     {
         wTaskSched();
     }
+	
+	currentTask->state |= WQOS_TASK_STATE_DESTORYED;
 
     wTaskExitCritical(status); 
 }
@@ -144,7 +146,7 @@ void wTaskRequestDelete (wTask * task)
     uint32_t status = wTaskEnterCritical();
 
     task->requestDeleteFlag = 1;
-
+	
     wTaskExitCritical(status); 
 }
 /*******************************************************************************************************************
@@ -183,13 +185,15 @@ void wTaskDeleteSelf (void)
 
     wTaskSched();
 
+	currentTask->state |= WQOS_TASK_STATE_DESTORYED;
+	
     wTaskExitCritical(status);
 }
 
 /*******************************************************************************************************************
-  * @brief  任务自删除函数
-  * @param  无
-  * @retval 无
+  * @brief  任务状态查询函数
+  * @param  task   任务结构指针
+  * @retval info   状态查询结构指针
   ******************************************************************************************************************/
 void wTaskGetInfo(wTask * task, wTaskInfo * info)
 {
