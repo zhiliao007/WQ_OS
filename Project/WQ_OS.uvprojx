@@ -429,6 +429,11 @@
               <FileType>1</FileType>
               <FilePath>.\Sourse\wSem.c</FilePath>
             </File>
+            <File>
+              <FileName>wMbox.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wMbox.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -463,6 +468,11 @@
               <FileName>wSem.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Sourse\wSem.h</FilePath>
+            </File>
+            <File>
+              <FileName>wMbox.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sourse\wMbox.h</FilePath>
             </File>
           </Files>
         </Group>

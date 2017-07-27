@@ -15,8 +15,8 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
-wSem sem1;
-wSem sem2;
+wMbox mbox1;
+void * mbox1MsgBuffer[20];
 
 /*******************************************************************************************************************
   * @brief  任务1入口函数
@@ -25,14 +25,9 @@ wSem sem2;
   ******************************************************************************************************************/
 void task1Entry(void * param)
 {
-	uint32_t status = 0;
 	wSetSysTickPeriod(10);
 	
-	// 最大10个信号量计数，初始化值为0
-    wSemInit(&sem1, 0, 10);
-    
-    // 等待信号量，sem1将由task2删除后，才能继续恢复运行
-    status = wSemWait(&sem1, 0);
+	wMboxInit(&mbox1,(void *)mbox1MsgBuffer, 20);
 	for(;;)
 	{		
 		task1Flag = 0;
@@ -49,23 +44,12 @@ void task1Entry(void * param)
   ******************************************************************************************************************/
 void task2Entry(void * param)
 {
-	wSemInfo semInfo;
-    int destroyed = 0;
-
 	for(;;)
 	{
 		task2Flag = 0;
         wTaskDelay(1);
         task2Flag = 1;
         wTaskDelay(1);
-		wSemNotify(&sem1);
-		//删除信号量，将唤醒task1
-        if (!destroyed) 
-		{
-            wSemGetInfo(&sem1, &semInfo);
-            wSemDestroy(&sem1);
-            destroyed = 1;
-        }
 	}
 }
 
@@ -76,10 +60,8 @@ void task2Entry(void * param)
   ******************************************************************************************************************/
 void task3Entry(void * param)
 {
-	 wSemInit(&sem2, 0, 0);
 	for(;;)
 	{
-		wSemWait(&sem2, 10);
 		task3Flag = 0;
 		wTaskDelay(1);
 		task3Flag = 1;
