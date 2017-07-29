@@ -3,6 +3,9 @@
 
 #include "wEvent.h"
 
+#define wMBOXSendNormal       0x00  
+#define wMBOXSendFront        0x01
+
 typedef struct _wMbox        //定义邮箱类型
 {
 	wEvent event;            //事件控制块，wMbox同时是一个wEvent
@@ -19,5 +22,8 @@ typedef struct _wMbox        //定义邮箱类型
 }wMbox;
 
 void wMboxInit(wMbox * mbox, void **msgBuffer, uint32_t maxCount);
+uint32_t wMboxWait(wMbox * mbox, void **msg, uint32_t waitTicks);
+uint32_t wMboxNoWaitGet(wMbox * mbox,void **msg);
+uint32_t wMboxNotify(wMbox * mbox, void *msg, uint32_t notifyOption);
 
 #endif
