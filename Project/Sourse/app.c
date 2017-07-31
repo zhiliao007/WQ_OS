@@ -15,12 +15,6 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
-wMbox mbox1;
-wMbox mbox2;
-void * mbox1MsgBuffer[20];
-void * mbox2MsgBuffer[20];
-uint32_t msg[20];
-
 /*******************************************************************************************************************
   * @brief  任务1入口函数
   * @param  param：传给任务的参数
@@ -30,24 +24,8 @@ void task1Entry(void * param)
 {
 	wSetSysTickPeriod(10);
 	
-	wMboxInit(&mbox1, mbox1MsgBuffer, 20);
 	for(;;)
 	{	
-		uint32_t i = 0;
-        for (i = 0; i < 20; i++) 
-        {
-            msg[i] = i;
-            wMboxNotify(&mbox1, &msg[i], wMBOXSendNormal);
-        }
-        wTaskDelay(100);
-		
-	    for (i = 0; i < 20; i++) 
-        {
-            msg[i] = i;
-            wMboxNotify(&mbox1, &msg[i], wMBOXSendFront);
-        }   
-        wTaskDelay(100);	
-		
 		task1Flag = 0;
         wTaskDelay(1);
         task1Flag = 1;
@@ -64,14 +42,6 @@ void task2Entry(void * param)
 {
 	for(;;)
 	{
-		void * msg;
-        uint32_t err = wMboxWait(&mbox1, &msg, 10);
-        if (err == wErrorNoError) 
-        {
-            uint32_t value = *(uint32_t*)msg;
-            task2Flag = value;
-            wTaskDelay(1);
-        }
 		task2Flag = 0;
 		wTaskDelay(1);
 		task2Flag = 1;
@@ -86,12 +56,8 @@ void task2Entry(void * param)
   ******************************************************************************************************************/
 void task3Entry(void * param)
 {
-	 wMboxInit(&mbox2, mbox2MsgBuffer, 20);
 	for(;;)
 	{
-		void * msg;
-        wMboxWait(&mbox2, &msg, 100);
-
 		task3Flag = 0;
 		wTaskDelay(1);
 		task3Flag = 1;

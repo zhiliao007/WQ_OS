@@ -140,3 +140,39 @@ uint32_t wMboxNotify(wMbox * mbox, void *msg, uint32_t notifyOption)
 	wTaskExitCritical(status);
 	return wErrorNoError;
 }
+
+/*******************************************************************************************************************
+  * @brief  清空邮箱函数
+  * @param  mbox  邮箱结构指针
+  * @retval 无
+  ******************************************************************************************************************/	
+void wMboxFlush(wMbox * mbox)
+{
+	uint32_t status = wTaskEnterCritical();
+	
+	if(wEventWaitCount(&mbox->event) == 0)
+	{
+		mbox->read = 0;
+		mbox->write = 0;
+		mbox->count = 0;
+	}
+	wTaskExitCritical(status);
+}
+	
+/*******************************************************************************************************************
+  * @brief  删除邮箱函数
+  * @param  mbox        邮箱结构指针
+  * @retval 邮箱中任务数量
+  ******************************************************************************************************************/	
+uint32_t wMboxDestory(wMbox * mbox)
+{
+	uint32_t status = wTaskEnterCritical();
+	uint32_t count = wEventRemoveAll(&mbox->event,(void *)0, wErrorDel);
+	wTaskExitCritical(status);
+	
+	if(count > 0)
+	{
+		wTaskSched();
+	}
+	return count;
+}

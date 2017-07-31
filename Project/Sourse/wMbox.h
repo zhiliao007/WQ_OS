@@ -25,5 +25,6 @@ void wMboxInit(wMbox * mbox, void **msgBuffer, uint32_t maxCount);
 uint32_t wMboxWait(wMbox * mbox, void **msg, uint32_t waitTicks);
 uint32_t wMboxNoWaitGet(wMbox * mbox,void **msg);
 uint32_t wMboxNotify(wMbox * mbox, void *msg, uint32_t notifyOption);
-
+void wMboxFlush(wMbox * mbox);
+uint32_t wMboxDestory(wMbox * mbox);
 #endif
