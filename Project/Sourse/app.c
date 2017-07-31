@@ -15,17 +15,30 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
+wMbox mbox;
+void * mboxMsgBuffer[20];
+uint32_t msg[20];
+
 /*******************************************************************************************************************
   * @brief  任务1入口函数
   * @param  param：传给任务的参数
   * @retval 无
   ******************************************************************************************************************/
 void task1Entry(void * param)
-{
+{	
 	wSetSysTickPeriod(10);
 	
+	wMboxInit(&mbox, mboxMsgBuffer, 20);
 	for(;;)
 	{	
+		wMboxInfo mboxInfo;
+		int i = 0;
+		for(i = 0; i < 20; i++)
+		{
+			msg[i] = i;
+			wMboxNotify(&mbox, &msg[i], wMBOXSendNormal);
+			wMboxGetInfo(&mbox,&mboxInfo);
+		}
 		task1Flag = 0;
         wTaskDelay(1);
         task1Flag = 1;

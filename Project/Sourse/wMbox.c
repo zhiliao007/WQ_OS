@@ -176,3 +176,20 @@ uint32_t wMboxDestory(wMbox * mbox)
 	}
 	return count;
 }
+
+/*******************************************************************************************************************
+  * @brief  邮箱状态查询函数
+  * @param  mbox   邮箱结构指针
+			info   状态查询结构指针
+  * @retval 无
+  ******************************************************************************************************************/	
+void wMboxGetInfo(wMbox * mbox, wMboxInfo * info)
+{
+	uint32_t status = wTaskEnterCritical();        
+    
+    info->count = mbox->count;
+    info->maxCount = mbox->maxCount;
+    info->taskCount = wEventWaitCount(&mbox->event);
+    
+    wTaskExitCritical(status);
+}

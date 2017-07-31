@@ -21,10 +21,18 @@ typedef struct _wMbox        //定义邮箱类型
 	void ** msgBuffer;       //消息存储缓冲区
 }wMbox;
 
+typedef struct _wMboxInfo    //定义邮箱信息结构
+{
+	uint32_t count;          //当前消息数
+	uint32_t maxCount;       //最大消息数
+	uint32_t taskCount;      //等待的任务数
+}wMboxInfo;
+
 void wMboxInit(wMbox * mbox, void **msgBuffer, uint32_t maxCount);
 uint32_t wMboxWait(wMbox * mbox, void **msg, uint32_t waitTicks);
 uint32_t wMboxNoWaitGet(wMbox * mbox,void **msg);
 uint32_t wMboxNotify(wMbox * mbox, void *msg, uint32_t notifyOption);
 void wMboxFlush(wMbox * mbox);
 uint32_t wMboxDestory(wMbox * mbox);
+void wMboxGetInfo(wMbox * mbox, wMboxInfo * info);
 #endif
