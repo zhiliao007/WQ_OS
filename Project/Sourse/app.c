@@ -15,9 +15,9 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
-wMbox mbox;
-void * mboxMsgBuffer[20];
-uint32_t msg[20];
+// 20个100字节大小存储块
+uint8_t mem1[20][100];
+wMemBlock memBlock1;
 
 /*******************************************************************************************************************
   * @brief  任务1入口函数
@@ -28,17 +28,9 @@ void task1Entry(void * param)
 {	
 	wSetSysTickPeriod(10);
 	
-	wMboxInit(&mbox, mboxMsgBuffer, 20);
+	 wMemBlockInit(&memBlock1, (uint8_t *)mem1, 100, 20);
 	for(;;)
 	{	
-		wMboxInfo mboxInfo;
-		int i = 0;
-		for(i = 0; i < 20; i++)
-		{
-			msg[i] = i;
-			wMboxNotify(&mbox, &msg[i], wMBOXSendNormal);
-			wMboxGetInfo(&mbox,&mboxInfo);
-		}
 		task1Flag = 0;
         wTaskDelay(1);
         task1Flag = 1;
