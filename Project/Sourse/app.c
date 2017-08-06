@@ -19,6 +19,8 @@ wTaskStack Task4Env[1024];
 uint8_t mem1[20][100];
 wMemBlock memBlock1;
 
+typedef uint8_t (*wBlock)[100];
+
 /*******************************************************************************************************************
   * @brief  任务1入口函数
   * @param  param：传给任务的参数
@@ -26,9 +28,25 @@ wMemBlock memBlock1;
   ******************************************************************************************************************/
 void task1Entry(void * param)
 {	
+	uint8_t i;
+	wBlock block[20];
+	
 	wSetSysTickPeriod(10);
 	
-	 wMemBlockInit(&memBlock1, (uint8_t *)mem1, 100, 20);
+	wMemBlockInit(&memBlock1, (uint8_t *)mem1, 100, 20);
+
+	for (i = 0; i < 20; i++)
+	{
+		 wMemBlockWait(&memBlock1, (uint8_t **)&block[i], 0);
+	}
+
+    wTaskDelay(2);
+	for (i = 0; i < 20; i++)
+	{
+    	memset(block[i], i, 100);
+    	wMemBlockNotify(&memBlock1, (uint8_t *)block[i]);
+        wTaskDelay(2);
+	}
 	for(;;)
 	{	
 		task1Flag = 0;
@@ -45,13 +63,12 @@ void task1Entry(void * param)
   ******************************************************************************************************************/
 void task2Entry(void * param)
 {
-	for(;;)
-	{
-		task2Flag = 0;
-		wTaskDelay(1);
-		task2Flag = 1;
-		wTaskDelay(1);
-	}
+	for (;;) 
+    {
+    	wBlock block;
+    	wMemBlockWait(&memBlock1, (uint8_t **)&block, 0);
+        task2Flag = *(uint8_t *)block;;
+    }
 }
 
 /*******************************************************************************************************************

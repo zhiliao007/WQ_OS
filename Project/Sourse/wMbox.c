@@ -23,9 +23,9 @@ void wMboxInit(wMbox * mbox, void **msgBuffer, uint32_t maxCount)
   * @param  mbox        邮箱结构指针
 			msg         消息存储缓存区
 			waitTicks   等待的最大ticks数 
-  * @retval 等待结果    wErrorResourceUnavaliable    资源不可用
-                        wErrorNoError                没有错误
-                        wErrorTimeout                等待超时
+  * @retval 等待结果    wErrorResourceUnavaliable    
+                        wErrorNoError               
+                        wErrorTimeout               
   ******************************************************************************************************************/	
 uint32_t wMboxWait(wMbox * mbox, void **msg, uint32_t waitTicks)
 {

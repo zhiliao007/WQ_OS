@@ -25,7 +25,8 @@ void wSemInit (wSem * sem, uint32_t startCount, uint32_t maxCount)
 /*******************************************************************************************************************
   * @brief  等待信号量函数
   * @param  sem       信号量结构指针
-			waitTicks 当信号量计数为0时，等待的ticks数，为0时表示永远等待
+			waitTicks 等待的最大ticks数
+                      //当信号量计数为0时，等待的ticks数，为0时表示永远等待
 * @retval 等待结果  wErrorNoError 
 	                wErrorTimeout             
 	                wErrorResourceUnavaliable 
