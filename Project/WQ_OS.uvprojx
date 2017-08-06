@@ -434,6 +434,11 @@
               <FileType>1</FileType>
               <FilePath>.\Sourse\wMbox.c</FilePath>
             </File>
+            <File>
+              <FileName>wMemBlock.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wMemBlock.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -473,6 +478,11 @@
               <FileName>wMbox.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Sourse\wMbox.h</FilePath>
+            </File>
+            <File>
+              <FileName>wMemBlock.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sourse\wMemBlock.h</FilePath>
             </File>
           </Files>
         </Group>
