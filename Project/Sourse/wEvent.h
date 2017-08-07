@@ -11,6 +11,7 @@ typedef enum  _wEventType       //事件类型
 	wEventTypeSem,          //信号量类型
 	wEventTypeMbox,         //邮箱类型
 	wEventTypeMemBlock,     //存储块类型
+	wEventTypeFlagGroup,    //事件标志组类型
 }wEventType;
 
 typedef struct _wEvent          //事件控制结构

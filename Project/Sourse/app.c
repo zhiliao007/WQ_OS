@@ -15,9 +15,7 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
-// 20个100字节大小存储块
-uint8_t mem1[20][100];
-wMemBlock memBlock1;
+wFlagGroup flagGroup;
 
 /*******************************************************************************************************************
   * @brief  任务1入口函数
@@ -26,21 +24,9 @@ wMemBlock memBlock1;
   ******************************************************************************************************************/
 void task1Entry(void * param)
 {	
-	int i = 0;
-    uint8_t * mem;
-
-    wMemBlockInfo info;
     wSetSysTickPeriod(10);
-
-    wMemBlockInit(&memBlock1, (uint8_t *)mem1, 100, 20);
-    wMemBlockGetInfo(&memBlock1, &info);
-
-    for (i = 0; i < 20; i++)
-    {
-        wMemBlockWait(&memBlock1, (uint8_t **)&mem, 0);
-    }
-
-    wMemBlockWait(&memBlock1, (uint8_t **)&mem, 0);
+	
+	wFlagGroupInit(&flagGroup, 0x00);
 	for(;;)
 	{	
 		task1Flag = 0;
@@ -57,7 +43,6 @@ void task1Entry(void * param)
   ******************************************************************************************************************/
 void task2Entry(void * param)
 {
-	int destroy = 0;
 	for (;;) 
     {
     	
@@ -65,12 +50,6 @@ void task2Entry(void * param)
         wTaskDelay(1);
         task2Flag = 1;
         wTaskDelay(1);
-
-        if (!destroy)
-        {
-            wMemBlockDestroy(&memBlock1);
-            destroy = 1;
-        }
     }
 }
 

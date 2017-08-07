@@ -439,6 +439,11 @@
               <FileType>1</FileType>
               <FilePath>.\Sourse\wMemBlock.c</FilePath>
             </File>
+            <File>
+              <FileName>wFlagGroup.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wFlagGroup.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -483,6 +488,11 @@
               <FileName>wMemBlock.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Sourse\wMemBlock.h</FilePath>
+            </File>
+            <File>
+              <FileName>wFlagGroup.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sourse\wFlagGroup.h</FilePath>
             </File>
           </Files>
         </Group>
