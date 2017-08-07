@@ -115,3 +115,39 @@ void wMemBlockNotify(wMemBlock * memBlock, uint8_t * mem)
 	wTaskExitCritical(status);
 	
 }
+
+/*******************************************************************************************************************
+  * @brief  ´æ´¢¿é×´Ì¬²éÑ¯º¯Êı
+  * @param  memBlock    ´æ´¢¿é½á¹¹Ö¸Õë
+			info        ×´Ì¬²éÑ¯½á¹¹Ö¸Õë
+  * @retval ÎŞ
+  ******************************************************************************************************************/	
+void wMemBlockGetInfo(wMemBlock * memBlock, wMemBlockInfo * info)
+{
+	uint32_t status = wTaskEnterCritical();
+	
+	info->count = wListCount(&memBlock->blockList);
+	info->maxCount = memBlock->maxCount;
+	info->blockSize = memBlock->blockSize;
+	info->taskCount = wEventWaitCount(&memBlock->event);
+	
+	wTaskExitCritical(status);
+}
+
+/*******************************************************************************************************************
+  * @brief  É¾³ı´æ´¢¿éº¯Êı
+  * @param  memBlock    ´æ´¢¿é½á¹¹Ö¸Õë
+  * @retval ´æ´¢¿éÖĞÈÎÎñÊıÁ¿
+  ******************************************************************************************************************/	
+uint32_t wMemBlockDestroy(wMemBlock * memBlock)
+{
+	uint32_t status = wTaskEnterCritical();
+	uint32_t count = wEventRemoveAll(&memBlock->event, (void *)0, wErrorDel);
+	wTaskExitCritical(status);
+	
+	if(count > 0)
+	{
+		wTaskSched();
+	}
+	return count;
+}
