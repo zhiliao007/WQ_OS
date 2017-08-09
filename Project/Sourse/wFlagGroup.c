@@ -158,3 +158,37 @@ void wFlagGroupNotify(wFlagGroup * flagGroup, uint8_t isSet, uint32_t flag)
 	}
 	wTaskExitCritical(status);
 }
+
+/*******************************************************************************************************************
+  * @brief  存储块状态查询函数
+  * @param  flagGroup   事件标志组结构指针
+			info        状态查询结构指针
+  * @retval 无
+  ******************************************************************************************************************/	
+void wFlagGroupGetInfo(wFlagGroup * flagGroup, wFlagGroupInfo * info)
+{
+	uint32_t status = wTaskEnterCritical();
+	
+	info->flags = flagGroup->flag;
+	info->taskCount = wEventWaitCount(&flagGroup->event);
+	
+	wTaskExitCritical(status);
+}	
+
+/*******************************************************************************************************************
+  * @brief  删除存储块函数
+  * @param  flagGroup   事件标志组结构指针
+  * @retval 存储块中任务数量
+  ******************************************************************************************************************/	
+uint32_t wFlagGroupDestroy(wFlagGroup * flagGroup)
+{
+	uint32_t status = wTaskEnterCritical();
+	uint32_t count = wEventRemoveAll(&flagGroup->event, (void *)0, wErrorDel);
+	wTaskExitCritical(status);
+	
+	if(count > 0)
+	{
+		wTaskSched();
+	}
+	return count;
+}

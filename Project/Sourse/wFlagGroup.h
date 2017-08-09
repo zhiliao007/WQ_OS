@@ -9,6 +9,12 @@ typedef struct _wFlagGroup     //定义事件标志组类型
 	uint32_t flag;             //当前事件标志
 }wFlagGroup; 
 
+typedef struct _wFlagGroupInfo   //定义事件标志组信息结构
+{
+	uint32_t flags;              //当前的事件标志
+	uint32_t taskCount;          //当前等待的任务数
+}wFlagGroupInfo;
+	
 #define WFLAGGROUP_CLEAR       (0x0 << 0)
 #define WFLAGGROUP_SET         (0x1 << 0)
 #define WFLAGGROUP_ANY         (0x0 << 1)
@@ -26,5 +32,7 @@ void wFlagGroupInit(wFlagGroup * flagGroup, uint32_t flags);
 uint32_t wFlagGroupWait(wFlagGroup * flagGroup, uint32_t waitType, uint32_t requestFlag, uint32_t * resultFlag, uint32_t waitTicks);
 uint32_t wFlagGroupNoWaitGet(wFlagGroup * flagGroup, uint32_t waitType, uint32_t requestFlag, uint32_t * resultFlag);
 void wFlagGroupNotify(wFlagGroup * flagGroup, uint8_t isSet, uint32_t flag);
+void wFlagGroupGetInfo(wFlagGroup * flagGroup, wFlagGroupInfo * info);
+uint32_t wFlagGroupDestroy(wFlagGroup * flagGroup);
 
 #endif
