@@ -69,9 +69,9 @@ uint32_t wMemBlockWait(wMemBlock * memBlock, uint8_t **mem, uint32_t waitTicks)
   * @brief  获取存储块函数
   * @param  memBlock    存储块结构指针
 			mem        存储块存储的地址 
-  * @retval 等待结果     wErrorNoError 
-	                     wErrorTimeout             
-	                     wErrorResourceUnavaliable
+  * @retval 等待结果    wErrorResourceUnavaliable    资源不可用
+                        wErrorNoError                没有错误
+                        wErrorTimeout                等待超时
   ******************************************************************************************************************/	
 uint32_t wMemBlockNoWaitGet(wMemBlock * memBlock, void **mem)
 {

@@ -24,6 +24,7 @@ typedef struct _wEvent          //事件控制结构
 void wEventInit(wEvent * event, wEventType type);
 void wEventWait (wEvent * event, wTask * task, void * msg, uint32_t state, uint32_t timeout);
 wTask * wEventWakeUp (wEvent * event, void * msg, uint32_t result);
+wTask * wEventWakeUpTask(wEvent * event, wTask * task, void * msg, uint32_t result);
 void wEventRemoveTask (wTask * task, void * msg, uint32_t result);
 uint32_t wEventRemoveAll (wEvent * event, void * msg, uint32_t result);
 uint32_t wEventWaitCount (wEvent * event);

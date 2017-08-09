@@ -27,10 +27,12 @@ typedef struct _wTask        //任务结构
 	void * cleanparam;                //传递给清理函数的参数
 	uint8_t requestDeleteFlag;       //请求删除标志
 	
-	struct _wEvent * waitEvent;        //正在等待的任务控制块
+	struct _wEvent * waitEvent;      //正在等待的任务控制块
 	void * eventMsg;           //等待事件的数据存放位置
 	uint32_t waitEventResult;  //等待事件的结果 
 	
+	uint32_t waitFlagsType;    //等待的事件方式
+	uint32_t eventFlags;       //等待的事件标志
 }wTask;
 
 typedef struct _wTaskInfo      //任务相关信息结构

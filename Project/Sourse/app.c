@@ -15,7 +15,7 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
-wFlagGroup flagGroup;
+wFlagGroup flagGroup1;
 
 /*******************************************************************************************************************
   * @brief  任务1入口函数
@@ -26,13 +26,16 @@ void task1Entry(void * param)
 {	
     wSetSysTickPeriod(10);
 	
-	wFlagGroupInit(&flagGroup, 0x00);
+	wFlagGroupInit(&flagGroup1, 0xFF);
+
 	for(;;)
 	{	
 		task1Flag = 0;
         wTaskDelay(1);
         task1Flag = 1;
         wTaskDelay(1);
+		
+		wFlagGroupNotify(&flagGroup1, 0, 0x6);
 	}
 }
 
@@ -43,9 +46,13 @@ void task1Entry(void * param)
   ******************************************************************************************************************/
 void task2Entry(void * param)
 {
+	uint32_t resultFlags = 0;
+	
 	for (;;) 
     {
-    	
+    	wFlagGroupWait(&flagGroup1, WFLAGGROUP_CLEAR_ALL, 0x4, &resultFlags, 10);
+        wFlagGroupNoWaitGet(&flagGroup1, WFLAGGROUP_CLEAR_ALL, 0x3, &resultFlags);
+
         task2Flag = 0;
         wTaskDelay(1);
         task2Flag = 1;
