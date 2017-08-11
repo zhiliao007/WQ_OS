@@ -15,7 +15,7 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
-wFlagGroup flagGroup1;
+wMutex mutex;
 
 /*******************************************************************************************************************
   * @brief  任务1入口函数
@@ -25,10 +25,7 @@ wFlagGroup flagGroup1;
 void task1Entry(void * param)
 {	
     wSetSysTickPeriod(10);
-	
-	wFlagGroupInit(&flagGroup1, 0xFF);
-	wTaskDelay(1);
-	wFlagGroupDestroy(&flagGroup1);
+	wMutexInit(&mutex);
 	
 	for(;;)
 	{	
@@ -37,7 +34,6 @@ void task1Entry(void * param)
         task1Flag = 1;
         wTaskDelay(1);
 		
-		wFlagGroupNotify(&flagGroup1, 0, 0x6);
 	}
 }
 
@@ -48,17 +44,8 @@ void task1Entry(void * param)
   ******************************************************************************************************************/
 void task2Entry(void * param)
 {
-	uint32_t resultFlags = 0;
-	wFlagGroupInfo info;
-	wFlagGroupWait(&flagGroup1, WFLAGGROUP_SET_ALL | WFLAGGROUP_CONSUME, 0x1, &resultFlags, 0);
-    wFlagGroupGetInfo(&flagGroup1, &info);
-	wFlagGroupWait(&flagGroup1, WFLAGGROUP_SET_ALL | WFLAGGROUP_CONSUME, 0x1, &resultFlags, 0);
-
 	for (;;) 
     {
-    	wFlagGroupWait(&flagGroup1, WFLAGGROUP_CLEAR_ALL, 0x4, &resultFlags, 10);
-        wFlagGroupNoWaitGet(&flagGroup1, WFLAGGROUP_CLEAR_ALL, 0x3, &resultFlags);
-
         task2Flag = 0;
         wTaskDelay(1);
         task2Flag = 1;

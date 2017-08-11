@@ -444,6 +444,11 @@
               <FileType>1</FileType>
               <FilePath>.\Sourse\wFlagGroup.c</FilePath>
             </File>
+            <File>
+              <FileName>wMutex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wMutex.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -493,6 +498,11 @@
               <FileName>wFlagGroup.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Sourse\wFlagGroup.h</FilePath>
+            </File>
+            <File>
+              <FileName>wMutex.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sourse\wMutex.h</FilePath>
             </File>
           </Files>
         </Group>
