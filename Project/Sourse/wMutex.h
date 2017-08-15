@@ -12,5 +12,8 @@ typedef struct _wMutex           //定义互斥信号量类型
 }wMutex;
 
 void wMutexInit(wMutex * mutex);
+uint32_t wMutexWait(wMutex * mutex, uint32_t waitTicks);
+uint32_t wMutexNoWaitGet(wMutex * mutex);
+uint32_t wMutexNotify(wMutex * mutex);
 
 #endif

@@ -25,7 +25,7 @@ void wEventWait(wEvent * event, wTask * task, void * msg, uint32_t state, uint32
 {
     uint32_t status = wTaskEnterCritical();
 
-  task->state |= state;        
+  task->state |= state << 16;        
   task->waitEvent = event;        
   task->eventMsg = msg;         
   task->waitEventResult = wErrorNoError;  

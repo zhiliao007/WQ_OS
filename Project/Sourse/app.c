@@ -29,11 +29,16 @@ void task1Entry(void * param)
 	
 	for(;;)
 	{	
+		wMutexWait(&mutex, 0);
+        wMutexWait(&mutex, 0);
+		
 		task1Flag = 0;
         wTaskDelay(1);
         task1Flag = 1;
         wTaskDelay(1);
 		
+		wMutexNotify(&mutex);
+        wMutexNotify(&mutex);
 	}
 }
 
@@ -46,10 +51,16 @@ void task2Entry(void * param)
 {
 	for (;;) 
     {
+		wMutexWait(&mutex, 0);
+        wMutexWait(&mutex, 0);
+
         task2Flag = 0;
         wTaskDelay(1);
         task2Flag = 1;
         wTaskDelay(1);
+		
+		wMutexNotify(&mutex);
+        wMutexNotify(&mutex);
     }
 }
 
