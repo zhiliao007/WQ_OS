@@ -23,22 +23,26 @@ wMutex mutex;
   * @retval нч
   ******************************************************************************************************************/
 void task1Entry(void * param)
-{	
+{	wMutexInfo info;
+	
     wSetSysTickPeriod(10);
+	
 	wMutexInit(&mutex);
+	
+	wMutexWait(&mutex, 0);;
+
+    wTaskDelay(2);
+
+    wMutexGetInfo(&mutex, &info);
+
+    wMutexDestroy(&mutex);
 	
 	for(;;)
 	{	
-		wMutexWait(&mutex, 0);
-        wMutexWait(&mutex, 0);
-		
 		task1Flag = 0;
         wTaskDelay(1);
         task1Flag = 1;
         wTaskDelay(1);
-		
-		wMutexNotify(&mutex);
-        wMutexNotify(&mutex);
 	}
 }
 
@@ -49,18 +53,13 @@ void task1Entry(void * param)
   ******************************************************************************************************************/
 void task2Entry(void * param)
 {
+	wMutexWait(&mutex, 0);
 	for (;;) 
     {
-		wMutexWait(&mutex, 0);
-        wMutexWait(&mutex, 0);
-
         task2Flag = 0;
         wTaskDelay(1);
         task2Flag = 1;
         wTaskDelay(1);
-		
-		wMutexNotify(&mutex);
-        wMutexNotify(&mutex);
     }
 }
 

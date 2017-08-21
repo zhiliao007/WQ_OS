@@ -162,3 +162,70 @@ uint32_t wMutexNotify(wMutex * mutex)
 	wTaskExitCritical(status);
 	return wErrorNoError;
 }
+
+/*******************************************************************************************************************
+  * @brief  删除互斥信号量函数
+  * @param  mutex       互斥信号量结构指针
+  * @retval 因销毁该信号量而唤醒的任务数量
+  ******************************************************************************************************************/	
+uint32_t wMutexDestroy(wMutex * mutex)
+{
+	uint32_t count = 0;
+	uint32_t status = wTaskEnterCritical();
+	
+	// 信号量是否已经被锁定，未锁定时没有任务等待，不必处理
+	if(mutex->lockedCount > 0)
+	{
+		//是否有发生优先级继承?如果发生，需要恢复拥有者的原优先级
+		if(mutex->ownerOriginalPrio != mutex->owner->prio)
+		{
+			if(mutex->owner->stack == WQOS_TASK_STATE_RDY)
+			{
+				// 如果任务处于就绪状态时，更改任务在就绪表中的位置
+				wTaskSchedUnRdy(mutex->owner);
+				mutex->owner->prio = mutex->ownerOriginalPrio;
+				wTaskSchedRdy(mutex->owner);
+			}
+			else
+			{
+				// 其它状态，只需要修改优先级
+				mutex->owner->prio = mutex->ownerOriginalPrio;
+			}
+		}
+		
+		count = wEventRemoveAll(&mutex->event, (void *)0,wErrorDel);
+		if(count > 0)
+		{
+			wTaskSched();
+		}
+	}
+	
+	wTaskExitCritical(status);
+	return count;
+}
+
+/*******************************************************************************************************************
+  * @brief  互斥信号量状态查询函数
+  * @param  mutex       互斥信号量结构指针
+			info        状态查询结构指针
+  * @retval 无
+  ******************************************************************************************************************/	
+void wMutexGetInfo(wMutex * mutex, wMutexInfo * info)
+{
+	uint32_t status = wTaskEnterCritical();
+	
+	info->taskCount = wEventWaitCount(&mutex->event);
+	info->ownerPrio = mutex->ownerOriginalPrio;
+	if(mutex->owner != (wTask *)0)
+	{
+		info->inheritedPrio = mutex->owner->prio;
+	}
+	else
+	{
+		info->inheritedPrio = WQ_OS_PRO_COUNT;
+	}
+	info->owner = mutex->owner;
+	info->lockedCount = mutex->lockedCount;
+	
+	wTaskExitCritical(status);
+}
