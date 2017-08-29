@@ -449,6 +449,11 @@
               <FileType>1</FileType>
               <FilePath>.\Sourse\wMutex.c</FilePath>
             </File>
+            <File>
+              <FileName>wTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wTimer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -503,6 +508,11 @@
               <FileName>wMutex.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Sourse\wMutex.h</FilePath>
+            </File>
+            <File>
+              <FileName>wTimer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sourse\wTimer.h</FilePath>
             </File>
           </Files>
         </Group>

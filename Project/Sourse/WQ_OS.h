@@ -21,6 +21,8 @@
 
 #include "wMutex.h"
 
+#include "wTimer.h"
+
 typedef enum _wError           //WQ_OS的错误码
 {
 	wErrorNoError = 0,         //没有错误
