@@ -107,7 +107,37 @@ void wTimerStop (wTimer * timer)
             break;
     }
 } 
-	
+
+/*******************************************************************************************************************
+  * @brief  软件定时器销毁函数
+  * @param  timer 软件定时器结构指针
+  * @retval 无
+  ******************************************************************************************************************/	
+void wTimerDestroy (wTimer * timer)
+{
+    wTimerStop(timer);
+    timer->state = timerDestroyed;
+}
+
+/*******************************************************************************************************************
+  * @brief  软件定时器销毁函数
+  * @param  timer 软件定时器结构指针
+  * @retval 无
+  ******************************************************************************************************************/	
+void wTimerGetInfo (wTimer * timer, wTimerInfo * info)
+{
+    uint32_t status = wTaskEnterCritical();
+
+    info->startDelayTicks = timer->startDelayTicks;
+    info->durationTicks = timer->durationTicks;
+    info->timerFunc = timer->timerFunc;
+    info->arg = timer->arg;
+    info->config = timer->config;
+    info->state = timer->state;
+
+    wTaskExitCritical(status);
+}
+
 /*******************************************************************************************************************
   * @brief  软件定时器链表处理函数
   * @param  timerList 定时器链表结构指针
