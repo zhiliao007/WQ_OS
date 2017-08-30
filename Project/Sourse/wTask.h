@@ -10,38 +10,38 @@
 
 struct _wEvent;
 
-typedef uint32_t wTaskStack;	//¶¨ÒåÈÎÎñ¶ÑÕ»ÀàĞÍ
+typedef uint32_t wTaskStack;	//å®šä¹‰ä»»åŠ¡å †æ ˆç±»å‹
 
-typedef struct _wTask        //ÈÎÎñ½á¹¹
+typedef struct _wTask        //ä»»åŠ¡ç»“æ„
 {								
-	wTaskStack * stack;		 //ÈÎÎñ¶ÑÕ»Ö¸Õë
-	wNode linkNode;          //ÓÅÏÈ¼¶¶ÓÁĞÁ´½Ó½áµã
-	uint32_t delayTicks;	 //ÈÎÎñÑÓÊ±¸öÊı 
-	wNode delayNode;         //Í¨ÓÃÑÓÊ±½áµã½á¹¹
-	uint32_t prio;           //ÈÎÎñÓÅÏÈ¼¶
-	uint32_t state;          //×´Ì¬×Ö¶Î£¬ÓÃÓÚÅĞ¶ÏÊÇ²»ÊÇ´¦ÓÚÑÓÊ±×´Ì¬
-	uint32_t slice;          //Ê±¼äÆ¬¼ÆÊıÆ÷
-	uint32_t suspendCount;   //¹ÒÆğ×´Ì¬¼ÆÊıÆ÷
+	wTaskStack * stack;		 //ä»»åŠ¡å †æ ˆæŒ‡é’ˆ
+	wNode linkNode;          //ä¼˜å…ˆçº§é˜Ÿåˆ—é“¾æ¥ç»“ç‚¹
+	uint32_t delayTicks;	 //ä»»åŠ¡å»¶æ—¶ä¸ªæ•° 
+	wNode delayNode;         //é€šç”¨å»¶æ—¶ç»“ç‚¹ç»“æ„
+	uint32_t prio;           //ä»»åŠ¡ä¼˜å…ˆçº§
+	uint32_t state;          //çŠ¶æ€å­—æ®µï¼Œç”¨äºåˆ¤æ–­æ˜¯ä¸æ˜¯å¤„äºå»¶æ—¶çŠ¶æ€
+	uint32_t slice;          //æ—¶é—´ç‰‡è®¡æ•°å™¨
+	uint32_t suspendCount;   //æŒ‚èµ·çŠ¶æ€è®¡æ•°å™¨
 	
-	void (*clean) (void * param);   //ÈÎÎñ±»É¾³ıÊ±µ÷ÓÃµÄÇåÀíº¯Êı
-	void * cleanparam;                //´«µİ¸øÇåÀíº¯ÊıµÄ²ÎÊı
-	uint8_t requestDeleteFlag;       //ÇëÇóÉ¾³ı±êÖ¾
+	void (*clean) (void * param);   //ä»»åŠ¡è¢«åˆ é™¤æ—¶è°ƒç”¨çš„æ¸…ç†å‡½æ•°
+	void * cleanparam;                //ä¼ é€’ç»™æ¸…ç†å‡½æ•°çš„å‚æ•°
+	uint8_t requestDeleteFlag;       //è¯·æ±‚åˆ é™¤æ ‡å¿—
 	
-	struct _wEvent * waitEvent;      //ÕıÔÚµÈ´ıµÄÈÎÎñ¿ØÖÆ¿é
-	void * eventMsg;           //µÈ´ıÊÂ¼şµÄÊı¾İ´æ·ÅÎ»ÖÃ
-	uint32_t waitEventResult;  //µÈ´ıÊÂ¼şµÄ½á¹û 
+	struct _wEvent * waitEvent;      //æ­£åœ¨ç­‰å¾…çš„ä»»åŠ¡æ§åˆ¶å—
+	void * eventMsg;           //ç­‰å¾…äº‹ä»¶çš„æ•°æ®å­˜æ”¾ä½ç½®
+	uint32_t waitEventResult;  //ç­‰å¾…äº‹ä»¶çš„ç»“æœ 
 	
-	uint32_t waitFlagsType;    //µÈ´ıµÄÊÂ¼ş·½Ê½
-	uint32_t eventFlags;       //µÈ´ıµÄÊÂ¼ş±êÖ¾
+	uint32_t waitFlagsType;    //ç­‰å¾…çš„äº‹ä»¶æ–¹å¼
+	uint32_t eventFlags;       //ç­‰å¾…çš„äº‹ä»¶æ ‡å¿—
 }wTask;
 
-typedef struct _wTaskInfo      //ÈÎÎñÏà¹ØĞÅÏ¢½á¹¹
+typedef struct _wTaskInfo      //ä»»åŠ¡ç›¸å…³ä¿¡æ¯ç»“æ„
 {
-	uint32_t delayTicks;       //ÑÓÊ±¼ÆÊıÆ÷
-	uint32_t prio;             //ÈÎÎñÓÅÏÈ¼¶
-	uint32_t state;            //ÈÎÎñµ±Ç°×´Ì¬
-	uint32_t slice;            //µ±Ç°Ê£ÓàµÄÊ±¼äÆ¬
-	uint32_t suspendCount;     //±»¹ÒÆğµÄ´ÎÊı
+	uint32_t delayTicks;       //å»¶æ—¶è®¡æ•°å™¨
+	uint32_t prio;             //ä»»åŠ¡ä¼˜å…ˆçº§
+	uint32_t state;            //ä»»åŠ¡å½“å‰çŠ¶æ€
+	uint32_t slice;            //å½“å‰å‰©ä½™çš„æ—¶é—´ç‰‡
+	uint32_t suspendCount;     //è¢«æŒ‚èµ·çš„æ¬¡æ•°
 }wTaskInfo;
 
 void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, wTaskStack * stack);

@@ -3,16 +3,16 @@
 
 #include "wEvent.h"
 
-typedef struct _wFlagGroup     //¶¨ÒåÊÂ¼ş±êÖ¾×éÀàĞÍ
+typedef struct _wFlagGroup     //å®šä¹‰äº‹ä»¶æ ‡å¿—ç»„ç±»å‹
 {
-	wEvent event;              //ÊÂ¼ş¿ØÖÆ¿é£¬wFlagGroupÍ¬Ê±ÊÇÒ»¸öwEvent
-	uint32_t flag;             //µ±Ç°ÊÂ¼ş±êÖ¾
+	wEvent event;              //äº‹ä»¶æ§åˆ¶å—ï¼ŒwFlagGroupåŒæ—¶æ˜¯ä¸€ä¸ªwEvent
+	uint32_t flag;             //å½“å‰äº‹ä»¶æ ‡å¿—
 }wFlagGroup; 
 
-typedef struct _wFlagGroupInfo   //¶¨ÒåÊÂ¼ş±êÖ¾×éĞÅÏ¢½á¹¹
+typedef struct _wFlagGroupInfo   //å®šä¹‰äº‹ä»¶æ ‡å¿—ç»„ä¿¡æ¯ç»“æ„
 {
-	uint32_t flags;              //µ±Ç°µÄÊÂ¼ş±êÖ¾
-	uint32_t taskCount;          //µ±Ç°µÈ´ıµÄÈÎÎñÊı
+	uint32_t flags;              //å½“å‰çš„äº‹ä»¶æ ‡å¿—
+	uint32_t taskCount;          //å½“å‰ç­‰å¾…çš„ä»»åŠ¡æ•°
 }wFlagGroupInfo;
 	
 #define WFLAGGROUP_CLEAR       (0x0 << 0)

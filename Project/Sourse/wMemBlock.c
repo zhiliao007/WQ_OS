@@ -1,12 +1,12 @@
 #include "WQ_OS.h"
 
 /*******************************************************************************************************************
-  * @brief  ³õÊ¼»¯´æ´¢¿éº¯Êı
-  * @param  memBlock    ´æ´¢¿é½á¹¹Ö¸Õë
-			memStart    ´æ´¢¿éÊ×µØÖ·
-			blockSize   Ã¿¸ö´æ´¢¿é´óĞ¡ 
-			blockCnt    ´æ´¢¿é¸öÊı
-  * @retval ÎŞ
+  * @brief  åˆå§‹åŒ–å­˜å‚¨å—å‡½æ•°
+  * @param  memBlock    å­˜å‚¨å—ç»“æ„æŒ‡é’ˆ
+			memStart    å­˜å‚¨å—é¦–åœ°å€
+			blockSize   æ¯ä¸ªå­˜å‚¨å—å¤§å° 
+			blockCnt    å­˜å‚¨å—ä¸ªæ•°
+  * @retval æ— 
   ******************************************************************************************************************/	
 void wMemBlockInit(wMemBlock * memBlock, uint8_t * memStart, uint32_t blockSize, uint32_t blockCnt)
 {
@@ -34,13 +34,13 @@ void wMemBlockInit(wMemBlock * memBlock, uint8_t * memStart, uint32_t blockSize,
 }
 
 /*******************************************************************************************************************
-  * @brief  µÈ´ı´æ´¢¿éº¯Êı
-  * @param  memBlock    ´æ´¢¿é½á¹¹Ö¸Õë
-			mem        ´æ´¢¿é´æ´¢µÄµØÖ·
-			waitTicks   µÈ´ıµÄ×î´óticksÊı
-  * @retval µÈ´ı½á¹û    wErrorResourceUnavaliable    ×ÊÔ´²»¿ÉÓÃ
-                        wErrorNoError                Ã»ÓĞ´íÎó
-                        wErrorTimeout                µÈ´ı³¬Ê±
+  * @brief  ç­‰å¾…å­˜å‚¨å—å‡½æ•°
+  * @param  memBlock    å­˜å‚¨å—ç»“æ„æŒ‡é’ˆ
+			mem        å­˜å‚¨å—å­˜å‚¨çš„åœ°å€
+			waitTicks   ç­‰å¾…çš„æœ€å¤§ticksæ•°
+  * @retval ç­‰å¾…ç»“æœ    wErrorResourceUnavaliable    èµ„æºä¸å¯ç”¨
+                        wErrorNoError                æ²¡æœ‰é”™è¯¯
+                        wErrorTimeout                ç­‰å¾…è¶…æ—¶
   ******************************************************************************************************************/	
 uint32_t wMemBlockWait(wMemBlock * memBlock, uint8_t **mem, uint32_t waitTicks)
 {
@@ -66,12 +66,12 @@ uint32_t wMemBlockWait(wMemBlock * memBlock, uint8_t **mem, uint32_t waitTicks)
 }
 
 /*******************************************************************************************************************
-  * @brief  »ñÈ¡´æ´¢¿éº¯Êı
-  * @param  memBlock    ´æ´¢¿é½á¹¹Ö¸Õë
-			mem        ´æ´¢¿é´æ´¢µÄµØÖ· 
-  * @retval µÈ´ı½á¹û    wErrorResourceUnavaliable    ×ÊÔ´²»¿ÉÓÃ
-                        wErrorNoError                Ã»ÓĞ´íÎó
-                        wErrorTimeout                µÈ´ı³¬Ê±
+  * @brief  è·å–å­˜å‚¨å—å‡½æ•°
+  * @param  memBlock    å­˜å‚¨å—ç»“æ„æŒ‡é’ˆ
+			mem        å­˜å‚¨å—å­˜å‚¨çš„åœ°å€ 
+  * @retval ç­‰å¾…ç»“æœ    wErrorResourceUnavaliable    èµ„æºä¸å¯ç”¨
+                        wErrorNoError                æ²¡æœ‰é”™è¯¯
+                        wErrorTimeout                ç­‰å¾…è¶…æ—¶
   ******************************************************************************************************************/	
 uint32_t wMemBlockNoWaitGet(wMemBlock * memBlock, void **mem)
 {
@@ -91,10 +91,10 @@ uint32_t wMemBlockNoWaitGet(wMemBlock * memBlock, void **mem)
 }
 
 /*******************************************************************************************************************
-  * @brief  ´æ´¢¿é»½ĞÑÈÎÎñº¯Êı
-  * @param  memBlock    ´æ´¢¿é½á¹¹Ö¸Õë
-			mem        ´æ´¢¿é´æ´¢µÄµØÖ· 
-  * @retval ÎŞ
+  * @brief  å­˜å‚¨å—å”¤é†’ä»»åŠ¡å‡½æ•°
+  * @param  memBlock    å­˜å‚¨å—ç»“æ„æŒ‡é’ˆ
+			mem        å­˜å‚¨å—å­˜å‚¨çš„åœ°å€ 
+  * @retval æ— 
   ******************************************************************************************************************/
 void wMemBlockNotify(wMemBlock * memBlock, uint8_t * mem)
 {
@@ -117,10 +117,10 @@ void wMemBlockNotify(wMemBlock * memBlock, uint8_t * mem)
 }
 
 /*******************************************************************************************************************
-  * @brief  ´æ´¢¿é×´Ì¬²éÑ¯º¯Êı
-  * @param  memBlock    ´æ´¢¿é½á¹¹Ö¸Õë
-			info        ×´Ì¬²éÑ¯½á¹¹Ö¸Õë
-  * @retval ÎŞ
+  * @brief  å­˜å‚¨å—çŠ¶æ€æŸ¥è¯¢å‡½æ•°
+  * @param  memBlock    å­˜å‚¨å—ç»“æ„æŒ‡é’ˆ
+			info        çŠ¶æ€æŸ¥è¯¢ç»“æ„æŒ‡é’ˆ
+  * @retval æ— 
   ******************************************************************************************************************/	
 void wMemBlockGetInfo(wMemBlock * memBlock, wMemBlockInfo * info)
 {
@@ -135,9 +135,9 @@ void wMemBlockGetInfo(wMemBlock * memBlock, wMemBlockInfo * info)
 }
 
 /*******************************************************************************************************************
-  * @brief  É¾³ı´æ´¢¿éº¯Êı
-  * @param  memBlock    ´æ´¢¿é½á¹¹Ö¸Õë
-  * @retval ´æ´¢¿éÖĞÈÎÎñÊıÁ¿
+  * @brief  åˆ é™¤å­˜å‚¨å—å‡½æ•°
+  * @param  memBlock    å­˜å‚¨å—ç»“æ„æŒ‡é’ˆ
+  * @retval å­˜å‚¨å—ä¸­ä»»åŠ¡æ•°é‡
   ******************************************************************************************************************/	
 uint32_t wMemBlockDestroy(wMemBlock * memBlock)
 {

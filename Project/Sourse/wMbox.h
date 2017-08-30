@@ -6,26 +6,26 @@
 #define wMBOXSendNormal       0x00  
 #define wMBOXSendFront        0x01
 
-typedef struct _wMbox        //¶¨ÒåÓÊÏäÀàĞÍ
+typedef struct _wMbox        //å®šä¹‰é‚®ç®±ç±»å‹
 {
-	wEvent event;            //ÊÂ¼ş¿ØÖÆ¿é£¬wMboxÍ¬Ê±ÊÇÒ»¸öwEvent
+	wEvent event;            //äº‹ä»¶æ§åˆ¶å—ï¼ŒwMboxåŒæ—¶æ˜¯ä¸€ä¸ªwEvent
 	
-	uint32_t count;          //µ±Ç°ÏûÏ¢Êı
+	uint32_t count;          //å½“å‰æ¶ˆæ¯æ•°
 	
-	uint32_t read;           //¶ÁË÷Òı
+	uint32_t read;           //è¯»ç´¢å¼•
 	
-	uint32_t write;          //Ğ´Ë÷Òı
+	uint32_t write;          //å†™ç´¢å¼•
 	
-	uint32_t maxCount;       //×î´óÏûÏ¢Êı
+	uint32_t maxCount;       //æœ€å¤§æ¶ˆæ¯æ•°
 	
-	void ** msgBuffer;       //ÏûÏ¢´æ´¢»º³åÇø
+	void ** msgBuffer;       //æ¶ˆæ¯å­˜å‚¨ç¼“å†²åŒº
 }wMbox;
 
-typedef struct _wMboxInfo    //¶¨ÒåÓÊÏäĞÅÏ¢½á¹¹
+typedef struct _wMboxInfo    //å®šä¹‰é‚®ç®±ä¿¡æ¯ç»“æ„
 {
-	uint32_t count;          //µ±Ç°ÏûÏ¢Êı
-	uint32_t maxCount;       //×î´óÏûÏ¢Êı
-	uint32_t taskCount;      //µÈ´ıµÄÈÎÎñÊı
+	uint32_t count;          //å½“å‰æ¶ˆæ¯æ•°
+	uint32_t maxCount;       //æœ€å¤§æ¶ˆæ¯æ•°
+	uint32_t taskCount;      //ç­‰å¾…çš„ä»»åŠ¡æ•°
 }wMboxInfo;
 
 void wMboxInit(wMbox * mbox, void **msgBuffer, uint32_t maxCount);

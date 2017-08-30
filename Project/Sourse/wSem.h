@@ -3,22 +3,22 @@
 
 #include "wEvent.h"
 
-typedef struct _wSem    //¶¨ÒåĞÅºÅÁ¿ÀàĞÍ
+typedef struct _wSem    //å®šä¹‰ä¿¡å·é‡ç±»å‹
 {
-	wEvent event;       //ÊÂ¼ş¿ØÖÆ¿é£¬wSemÍ¬Ê±ÊÇÒ»¸öwEvent
+	wEvent event;       //äº‹ä»¶æ§åˆ¶å—ï¼ŒwSemåŒæ—¶æ˜¯ä¸€ä¸ªwEvent
 	
-	uint32_t count;     // µ±Ç°µÄ¼ÆÊıÖµ
+	uint32_t count;     // å½“å‰çš„è®¡æ•°å€¼
 
-	uint32_t maxCount;  // ×î´ó¼ÆÊıÖµ
+	uint32_t maxCount;  // æœ€å¤§è®¡æ•°å€¼
 }wSem;
 
-typedef struct _wSemInfo  //ĞÅºÅÁ¿µÄĞÅÏ¢ÀàĞÍ
+typedef struct _wSemInfo  //ä¿¡å·é‡çš„ä¿¡æ¯ç±»å‹
 {
-    uint32_t count;       // µ±Ç°ĞÅºÅÁ¿µÄ¼ÆÊı
+    uint32_t count;       // å½“å‰ä¿¡å·é‡çš„è®¡æ•°
 
-    uint32_t maxCount;    // ĞÅºÅÁ¿ÔÊĞíµÄ×î´ó¼ÆÊı
+    uint32_t maxCount;    // ä¿¡å·é‡å…è®¸çš„æœ€å¤§è®¡æ•°
 
-    uint32_t taskCount;   // µ±Ç°µÈ´ıµÄÈÎÎñÊı
+    uint32_t taskCount;   // å½“å‰ç­‰å¾…çš„ä»»åŠ¡æ•°
 }wSemInfo;
 
 void wSemInit (wSem * sem, uint32_t startCount, uint32_t maxCount);

@@ -3,21 +3,21 @@
 
 #include"wEvent.h"
 
-typedef struct _wMemBlock     //¶¨Òå´æ´¢¿éÀàĞÍ
+typedef struct _wMemBlock     //å®šä¹‰å­˜å‚¨å—ç±»å‹
 {
-	wEvent event;             //ÊÂ¼ş¿ØÖÆ¿é£¬wMemBlockÍ¬Ê±ÊÇÒ»¸öwEvent
-	void * memStart;          //´æ´¢¿éÊ×µØÖ·
-	uint32_t blockSize;       //´æ´¢¿é´óĞ¡
-	uint32_t maxCount;        //´æ´¢¿é×î´ó¸öÊı
-	wList blockList;          //´æ´¢¿éÁ´±í
+	wEvent event;             //äº‹ä»¶æ§åˆ¶å—ï¼ŒwMemBlockåŒæ—¶æ˜¯ä¸€ä¸ªwEvent
+	void * memStart;          //å­˜å‚¨å—é¦–åœ°å€
+	uint32_t blockSize;       //å­˜å‚¨å—å¤§å°
+	uint32_t maxCount;        //å­˜å‚¨å—æœ€å¤§ä¸ªæ•°
+	wList blockList;          //å­˜å‚¨å—é“¾è¡¨
 }wMemBlock;
 
-typedef struct _wMemBlockInfo   //¶¨Òå´æ´¢¿éĞÅÏ¢½á¹¹
+typedef struct _wMemBlockInfo   //å®šä¹‰å­˜å‚¨å—ä¿¡æ¯ç»“æ„
 {
-	uint32_t count;             //µ±Ç°´æ´¢¿éµÄ¼ÆÊı
-	uint32_t maxCount;          //ÔÊĞíµÄ´æ´¢¿é×î´ó¼ÆÊı
-	uint32_t blockSize;         //Ã¿¸ö´æ´¢¿éµÄ´óĞ¡
-	uint32_t taskCount;         //µ±Ç°µÈ´ıµÄÈÎÎñ¼ÆÊı
+	uint32_t count;             //å½“å‰å­˜å‚¨å—çš„è®¡æ•°
+	uint32_t maxCount;          //å…è®¸çš„å­˜å‚¨å—æœ€å¤§è®¡æ•°
+	uint32_t blockSize;         //æ¯ä¸ªå­˜å‚¨å—çš„å¤§å°
+	uint32_t taskCount;         //å½“å‰ç­‰å¾…çš„ä»»åŠ¡è®¡æ•°
 }wMemBlockInfo;
 
 void wMemBlockInit(wMemBlock * memBlock, uint8_t * memStart, uint32_t blockSize, uint32_t blockCnt);

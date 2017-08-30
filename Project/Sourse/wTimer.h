@@ -3,30 +3,34 @@
 
 #include "wEvent.h"
 
-typedef enum _wTimerState               //¶¨Ê±Æ÷×´Ì¬ÀàĞÍ
+typedef enum _wTimerState               //å®šæ—¶å™¨çŠ¶æ€ç±»å‹
 {
-	timerCreated,                       //¶¨Ê±Æ÷ÒÑ´´½¨
-	timerStarted,                       //¶¨Ê±Æ÷ÒÑÆô¶¯
-	timerRunning,                       //¶¨Ê±Æ÷ÕıÔÚÖ´ĞĞ»Øµ÷º¯Êı
-	timerStopped,                       //¶¨Ê±Æ÷ÒÑÍ£Ö¹
-	timerDestroyed                      //¶¨Ê±Æ÷ÒÑÏú»Ù
+	timerCreated,                       //å®šæ—¶å™¨å·²åˆ›å»º
+	timerStarted,                       //å®šæ—¶å™¨å·²å¯åŠ¨
+	timerRunning,                       //å®šæ—¶å™¨æ­£åœ¨æ‰§è¡Œå›è°ƒå‡½æ•°
+	timerStopped,                       //å®šæ—¶å™¨å·²åœæ­¢
+	timerDestroyed                      //å®šæ—¶å™¨å·²é”€æ¯
 }wTimerState;
 
-typedef struct _wTimer                  //¶¨ÒåÈí¼ş¶¨Ê±Æ÷ÀàĞÍ
+typedef struct _wTimer                  //å®šä¹‰è½¯ä»¶å®šæ—¶å™¨ç±»å‹
 {
-	wNode linkNode;                     //Á´±í½áµã
-	uint32_t startDelayTicks;           //³õ´ÎÆô¶¯ºóµÄticksÊı
-	uint32_t durationTicks;             //ÖÜÆÚ¶¨Ê±Ê±µÄticksÊı
-	uint32_t delayTicks;                //µ±Ç°¶¨Ê±µİ¼õ¼ÆÊıÖµ
-	void (*timerFunc) (void * arg);     //¶¨Ê±»Øµ÷º¯Êı
-	void * arg;                         //´«¸ø»Øµ÷º¯ÊıµÄ²ÎÊı
-	uint32_t config;                    //¶¨Ê±Æ÷ÅäÖÃ²ÎÊı
-	wTimerState state;                  //¶¨Ê±Æ÷×´Ì¬
+	wNode linkNode;                     //é“¾è¡¨ç»“ç‚¹
+	uint32_t startDelayTicks;           //åˆæ¬¡å¯åŠ¨åçš„ticksæ•°
+	uint32_t durationTicks;             //å‘¨æœŸå®šæ—¶æ—¶çš„ticksæ•°
+	uint32_t delayTicks;                //å½“å‰å®šæ—¶é€’å‡è®¡æ•°å€¼
+	void (*timerFunc) (void * arg);     //å®šæ—¶å›è°ƒå‡½æ•°
+	void * arg;                         //ä¼ ç»™å›è°ƒå‡½æ•°çš„å‚æ•°
+	uint32_t config;                    //å®šæ—¶å™¨é…ç½®å‚æ•°
+	wTimerState state;                  //å®šæ—¶å™¨çŠ¶æ€
 }wTimer;
 
-#define TIMER_CONFIG_TYPE_HARD        (1 << 0)    //Ó²¼ş¶¨Ê±Æ÷£¨ÖĞ¶Ïº¯ÊıÀï£©
-#define TIMER_CONFIG_TYPE_SOFT        (0 << 0)    //Èí¼ş¶¨Ê±Æ÷£¨ÈÎÎñº¯ÊıÀï£©
+#define TIMER_CONFIG_TYPE_HARD        (1 << 0)    //ç¡¬ä»¶å®šæ—¶å™¨ï¼ˆä¸­æ–­å‡½æ•°é‡Œï¼‰
+#define TIMER_CONFIG_TYPE_SOFT        (0 << 0)    //è½¯ä»¶å®šæ—¶å™¨ï¼ˆä»»åŠ¡å‡½æ•°é‡Œï¼‰
 
 void wTimerInit(wTimer * timer, uint32_t delayTicks, uint32_t derationTicks, void(*timerFunc) (void * arg), void * arg, uint32_t config);
+void wTimerStart (wTimer * timer);
+void wTimerStop (wTimer * timer);
+void wTimerModuleTickNotify(void);
+void wTimerModuleInit(void);
 
 #endif

@@ -1,15 +1,21 @@
 #include "WQ_OS.h"
 
+static wList wTimerHardList;
+static wList wTimerSoftList;
+
+static wSem wTimerProtectSem;
+static wSem wTimerTicksSem;
+
 /*******************************************************************************************************************
-  * @brief  ³õÊ¼»¯Èí¼þ¶¨Ê±Æ÷º¯Êý
-  * @param  timer µÈ´ý³õÊ¼»¯µÄ¶¨Ê±Æ÷½á¹¹Ö¸Õë
-			delayTicks ¶¨Ê±Æ÷³õÊ¼Æô¶¯µÄÑÓÊ±ticksÊý¡£
-			durationTicks ¸øÖÜÆÚÐÔ¶¨Ê±Æ÷ÓÃµÄÖÜÆÚtickÊý£¬Ò»´ÎÐÔ¶¨Ê±Æ÷ÎÞÐ§
-			timerFunc ¶¨Ê±Æ÷»Øµ÷º¯Êý
-			arg ´«µÝ¸ø¶¨Ê±Æ÷»Øµ÷º¯ÊýµÄ²ÎÊý
-			timerFunc ¶¨Ê±Æ÷»Øµ÷º¯Êý
-			config ¶¨Ê±Æ÷µÄ³õÊ¼ÅäÖÃ
-  * @retval ÎÞ
+  * @brief  åˆå§‹åŒ–è½¯ä»¶å®šæ—¶å™¨å‡½æ•°
+  * @param  timer ç­‰å¾…åˆå§‹åŒ–çš„å®šæ—¶å™¨ç»“æž„æŒ‡é’ˆ
+			delayTicks å®šæ—¶å™¨åˆå§‹å¯åŠ¨çš„å»¶æ—¶ticksæ•°ã€‚
+			durationTicks ç»™å‘¨æœŸæ€§å®šæ—¶å™¨ç”¨çš„å‘¨æœŸtickæ•°ï¼Œä¸€æ¬¡æ€§å®šæ—¶å™¨æ— æ•ˆ
+			timerFunc å®šæ—¶å™¨å›žè°ƒå‡½æ•°
+			arg ä¼ é€’ç»™å®šæ—¶å™¨å›žè°ƒå‡½æ•°çš„å‚æ•°
+			timerFunc å®šæ—¶å™¨å›žè°ƒå‡½æ•°
+			config å®šæ—¶å™¨çš„åˆå§‹é…ç½®
+  * @retval æ— 
   ******************************************************************************************************************/	
 void wTimerInit(wTimer * timer, uint32_t delayTicks, uint32_t durationTicks, void(*timerFunc) (void * arg), void * arg, uint32_t config)
 {
@@ -30,4 +36,160 @@ void wTimerInit(wTimer * timer, uint32_t delayTicks, uint32_t durationTicks, voi
 	}
 	
 	timer->state = timerCreated;
+}
+
+/*******************************************************************************************************************
+  * @brief  è½¯ä»¶å®šæ—¶å™¨å¯åŠ¨å‡½æ•°
+  * @param  timer è½¯ä»¶å®šæ—¶å™¨ç»“æž„æŒ‡é’ˆ
+  * @retval æ— 
+  ******************************************************************************************************************/	
+void wTimerStart (wTimer * timer)
+{
+    switch (timer->state)
+    {
+        case timerCreated:
+        case timerStopped:
+            timer->delayTicks = timer->startDelayTicks ? timer->startDelayTicks : timer->durationTicks;
+            timer->state = timerStarted;
+		
+            if (timer->config & TIMER_CONFIG_TYPE_HARD)
+            {
+                uint32_t status = wTaskEnterCritical();
+
+                wListAddLast(&wTimerHardList, &timer->linkNode);
+
+                wTaskExitCritical(status);
+            }
+            else
+            {
+                wSemWait(&wTimerProtectSem, 0);
+				
+                wListAddLast(&wTimerSoftList, &timer->linkNode);
+				
+                wSemNotify(&wTimerProtectSem);
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+/*******************************************************************************************************************
+  * @brief  è½¯ä»¶å®šæ—¶å™¨åœæ­¢å‡½æ•°
+  * @param  timer è½¯ä»¶å®šæ—¶å™¨ç»“æž„æŒ‡é’ˆ
+  * @retval æ— 
+  ******************************************************************************************************************/	
+void wTimerStop (wTimer * timer)
+{
+    switch (timer->state)
+    {
+        case timerStarted:
+        case timerRunning:
+            if (timer->config & TIMER_CONFIG_TYPE_HARD)
+            {
+                uint32_t status = wTaskEnterCritical();
+
+                wListRemove(&wTimerHardList, &timer->linkNode);
+
+                wTaskExitCritical(status);
+            }
+            else
+            {
+                wSemWait(&wTimerProtectSem, 0);
+				
+                wListRemove(&wTimerSoftList, &timer->linkNode);
+				
+                wSemNotify(&wTimerProtectSem);
+            }
+            timer->state = timerStopped;
+            break;
+        default:
+            break;
+    }
+} 
+	
+/*******************************************************************************************************************
+  * @brief  è½¯ä»¶å®šæ—¶å™¨é“¾è¡¨å¤„ç†å‡½æ•°
+  * @param  timerList å®šæ—¶å™¨é“¾è¡¨ç»“æž„æŒ‡é’ˆ
+  * @retval æ— 
+  ******************************************************************************************************************/	
+static void wTimerCallFuncList(wList * timerList)
+{
+	wNode * node;
+	for(node = timerList->headNode.nextNode; node != &(timerList->headNode); node = node->nextNode)
+	{
+		wTimer * timer = wNodeParent(node, wTimer, linkNode);
+		if((timer->delayTicks == 0) || (--timer->delayTicks == 0))
+		{
+			timer->state = timerRunning;
+			timer->timerFunc(timer->arg);
+			if(timer->durationTicks > 0)
+			{
+				timer->delayTicks = timer->durationTicks;
+				timer->state = timerStarted;
+			}
+			else
+			{
+				wListRemove(timerList, &timer->linkNode);
+				timer->state = timerStopped;
+			}
+		}
+	}
+}
+
+static wTask wTimerTask;
+static wTaskStack wTimerTaskStack[WQ_OS_TIMERTASK_STACK_SIZE];
+
+/*******************************************************************************************************************
+  * @brief  è½¯ä»¶å®šæ—¶å™¨ä»»åŠ¡å‡½æ•°
+  * @param  param å‚æ•°
+  * @retval æ— 
+  ******************************************************************************************************************/	
+static void wTimerSoftTask(void * param)
+{
+	for(;;)
+	{
+		wSemWait(&wTimerTicksSem, 0);
+		
+		wSemWait(&wTimerProtectSem, 0);
+		
+		wTimerCallFuncList(&wTimerSoftList);
+		
+		wSemNotify(&wTimerProtectSem);
+	}
+}
+
+/*******************************************************************************************************************
+  * @brief  è½¯ä»¶å®šæ—¶å™¨æ¨¡å—æ—¶é’ŸèŠ‚æ‹å¤„ç†å‡½æ•°
+  * @param  æ— 
+  * @retval æ— 
+  ******************************************************************************************************************/	
+void wTimerModuleTickNotify(void)
+{
+	uint32_t status = wTaskEnterCritical();
+
+    wTimerCallFuncList(&wTimerHardList);
+
+    wTaskExitCritical(status);
+
+    wSemNotify(&wTimerTicksSem);	
+}
+	
+/*******************************************************************************************************************
+  * @brief  å®šæ—¶å™¨æ¨¡å—åˆå§‹åŒ–å‡½æ•°
+  * @param  æ— 
+  * @retval æ— 
+  ******************************************************************************************************************/	
+void wTimerModuleInit(void)
+{
+	wListInit(&wTimerHardList);
+	wListInit(&wTimerSoftList);
+	wSemInit(&wTimerProtectSem, 1,1);
+	wSemInit(&wTimerTicksSem,0,0);
+	 
+#if WQ_OS_TIMERTASK_PRIO >= (WQ_OS_PRO_COUNT - 1)
+	#error "The proprity of timer task must be greater then (WQ_OS_PRO_COUNT - 1)"
+#endif /*WQ_OS_TIMERTASK_PRIO >= (WQ_OS_PRO_COUNT - 1)*/
+
+	wTaskInit(&wTimerTask, wTimerSoftTask, (void *)0, WQ_OS_TIMERTASK_PRIO, &wTimerTaskStack[WQ_OS_TIMERTASK_STACK_SIZE]);
 }

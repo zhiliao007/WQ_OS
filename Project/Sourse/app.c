@@ -30,16 +30,22 @@ void timerFunc(void * arg)
 }
 
 /*******************************************************************************************************************
-  * @brief  ÈÎÎñ1Èë¿Úº¯Êı
-  * @param  param£º´«¸øÈÎÎñµÄ²ÎÊı
-  * @retval ÎŞ
+  * @brief  ä»»åŠ¡1å…¥å£å‡½æ•°
+  * @param  paramï¼šä¼ ç»™ä»»åŠ¡çš„å‚æ•°
+  * @retval æ— 
   ******************************************************************************************************************/
 void task1Entry(void * param)
 {	
+	uint32_t stopped = 0;
+	
 	wSetSysTickPeriod(10);
+	
 	wTimerInit(&timer1, 100, 10, timerFunc, (void *)&bit1, TIMER_CONFIG_TYPE_HARD);
+	wTimerStart(&timer1);
 	wTimerInit(&timer2, 200, 20, timerFunc, (void *)&bit2, TIMER_CONFIG_TYPE_HARD);
+	wTimerStart(&timer2);
 	wTimerInit(&timer3, 300, 0, timerFunc, (void *)&bit3, TIMER_CONFIG_TYPE_SOFT);
+	wTimerStart(&timer3);
 
 	for(;;)
 	{	
@@ -47,13 +53,20 @@ void task1Entry(void * param)
         wTaskDelay(1);
         task1Flag = 1;
         wTaskDelay(1);
+		
+		if (stopped == 0)
+        {
+            wTaskDelay(200);
+            wTimerStop(&timer1);
+            stopped = 1;
+        }
 	}
 }
 
 /*******************************************************************************************************************
-  * @brief  ÈÎÎñ2Èë¿Úº¯Êı
-  * @param  param£º´«¸øÈÎÎñµÄ²ÎÊı
-  * @retval ÎŞ
+  * @brief  ä»»åŠ¡2å…¥å£å‡½æ•°
+  * @param  paramï¼šä¼ ç»™ä»»åŠ¡çš„å‚æ•°
+  * @retval æ— 
   ******************************************************************************************************************/
 void task2Entry(void * param)
 {
@@ -67,9 +80,9 @@ void task2Entry(void * param)
 }
 
 /*******************************************************************************************************************
-  * @brief  ÈÎÎñ3Èë¿Úº¯Êı
-  * @param  param£º´«¸øÈÎÎñµÄ²ÎÊı
-  * @retval ÎŞ
+  * @brief  ä»»åŠ¡3å…¥å£å‡½æ•°
+  * @param  paramï¼šä¼ ç»™ä»»åŠ¡çš„å‚æ•°
+  * @retval æ— 
   ******************************************************************************************************************/
 void task3Entry(void * param)
 {
@@ -83,9 +96,9 @@ void task3Entry(void * param)
 }
 
 /*******************************************************************************************************************
-  * @brief  ÈÎÎñ4Èë¿Úº¯Êı
-  * @param  param£º´«¸øÈÎÎñµÄ²ÎÊı
-  * @retval ÎŞ
+  * @brief  ä»»åŠ¡4å…¥å£å‡½æ•°
+  * @param  paramï¼šä¼ ç»™ä»»åŠ¡çš„å‚æ•°
+  * @retval æ— 
   ******************************************************************************************************************/
 void task4Entry(void * param)
 {
@@ -98,13 +111,13 @@ void task4Entry(void * param)
 	}
 }
 /*******************************************************************************************************************
-  * @brief  ÈÎÎñ³õÊ¼»¯º¯Êı
-  * @param  ÎŞ
-  * @retval ÎŞ
+  * @brief  ä»»åŠ¡åˆå§‹åŒ–å‡½æ•°
+  * @param  æ— 
+  * @retval æ— 
   ******************************************************************************************************************/
 void wInitApp(void)
 {
-	wTaskInit(&wTask1, task1Entry, (void *)0x11111111, 0, &Task1Env[1024]);	//³õÊ¼»¯ÈÎÎñ
+	wTaskInit(&wTask1, task1Entry, (void *)0x11111111, 0, &Task1Env[1024]);	//åˆå§‹åŒ–ä»»åŠ¡
 	wTaskInit(&wTask2, task2Entry, (void *)0x22222222, 1, &Task2Env[1024]);
 	wTaskInit(&wTask3, task3Entry, (void *)0x22222222, 1, &Task3Env[1024]);
 	wTaskInit(&wTask4, task4Entry, (void *)0x44444444, 1, &Task4Env[1024]);

@@ -5,21 +5,21 @@
 #include "wConfig.h"
 #include "wTask.h"
 
-typedef enum  _wEventType       //ÊÂ¼şÀàĞÍ
+typedef enum  _wEventType       //äº‹ä»¶ç±»å‹
 {   
-    wEventTypeUnknown,  	// Î´ÖªÀàĞÍ
-	wEventTypeSem,          //ĞÅºÅÁ¿ÀàĞÍ
-	wEventTypeMbox,         //ÓÊÏäÀàĞÍ
-	wEventTypeMemBlock,     //´æ´¢¿éÀàĞÍ
-	wEventTypeFlagGroup,    //ÊÂ¼ş±êÖ¾×éÀàĞÍ
-	wEventTypeMutex,        //»¥³âĞÅºÅÁ¿ÀàĞÍ
+    wEventTypeUnknown,  	// æœªçŸ¥ç±»å‹
+	wEventTypeSem,          //ä¿¡å·é‡ç±»å‹
+	wEventTypeMbox,         //é‚®ç®±ç±»å‹
+	wEventTypeMemBlock,     //å­˜å‚¨å—ç±»å‹
+	wEventTypeFlagGroup,    //äº‹ä»¶æ ‡å¿—ç»„ç±»å‹
+	wEventTypeMutex,        //äº’æ–¥ä¿¡å·é‡ç±»å‹
 }wEventType;
 
-typedef struct _wEvent          //ÊÂ¼ş¿ØÖÆ½á¹¹
+typedef struct _wEvent          //äº‹ä»¶æ§åˆ¶ç»“æ„
 {
-    wEventType type;			// EventÀàĞÍ
+    wEventType type;			// Eventç±»å‹
 
-    wList waitList;				// ÈÎÎñµÈ´ıÁĞ±í
+    wList waitList;				// ä»»åŠ¡ç­‰å¾…åˆ—è¡¨
 }wEvent;
 
 void wEventInit(wEvent * event, wEventType type);

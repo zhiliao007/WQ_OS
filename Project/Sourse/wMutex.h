@@ -3,21 +3,21 @@
 
 #include "wEvent.h"
 
-typedef struct _wMutex           //¶¨Òå»¥³âĞÅºÅÁ¿ÀàĞÍ
+typedef struct _wMutex           //å®šä¹‰äº’æ–¥ä¿¡å·é‡ç±»å‹
 {
-	wEvent event;                //ÊÂ¼ş¿ØÖÆ¿é£¬wMutexÍ¬Ê±ÊÇÒ»¸öwEvent
-	uint32_t lockedCount;        //ÒÑ±»Ëø¶¨µÄ´ÎÊı
-	wTask * owner;               //ÓµÓĞÕß
-	uint32_t ownerOriginalPrio;  //ÓµÓĞÕßÔ­Ê¼µÄÓÅÏÈ¼¶
+	wEvent event;                //äº‹ä»¶æ§åˆ¶å—ï¼ŒwMutexåŒæ—¶æ˜¯ä¸€ä¸ªwEvent
+	uint32_t lockedCount;        //å·²è¢«é”å®šçš„æ¬¡æ•°
+	wTask * owner;               //æ‹¥æœ‰è€…
+	uint32_t ownerOriginalPrio;  //æ‹¥æœ‰è€…åŸå§‹çš„ä¼˜å…ˆçº§
 }wMutex;
 
-typedef struct _wMutexInfo       //¶¨Òå»¥³âĞÅºÅÁ¿ĞÅÏ¢½á¹¹
+typedef struct _wMutexInfo       //å®šä¹‰äº’æ–¥ä¿¡å·é‡ä¿¡æ¯ç»“æ„
 {
-	uint32_t taskCount;          //µÈ´ıµÄÈÎÎñÊıÁ¿
-	uint32_t ownerPrio;          //ÓµÓĞÕßÔ­Ê¼ÓÅÏÈ¼¶
-	uint32_t inheritedPrio;      //¼Ì³ĞÕßÓÅÏÈ¼¶
-	wTask * owner;               //ÓµÓĞÕß
-	uint32_t lockedCount;        //Ëø¶¨´ÎÊı
+	uint32_t taskCount;          //ç­‰å¾…çš„ä»»åŠ¡æ•°é‡
+	uint32_t ownerPrio;          //æ‹¥æœ‰è€…åŸå§‹ä¼˜å…ˆçº§
+	uint32_t inheritedPrio;      //ç»§æ‰¿è€…ä¼˜å…ˆçº§
+	wTask * owner;               //æ‹¥æœ‰è€…
+	uint32_t lockedCount;        //é”å®šæ¬¡æ•°
 }wMutexInfo;
 
 void wMutexInit(wMutex * mutex);

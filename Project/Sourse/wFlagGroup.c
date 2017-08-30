@@ -1,10 +1,10 @@
 #include "WQ_OS.h"
 
 /*******************************************************************************************************************
-  * @brief  ³õÊ¼»¯ÊÂ¼ş±êÖ¾×éº¯Êı
-  * @param  flagGroup   ÊÂ¼ş±êÖ¾×é½á¹¹Ö¸Õë
-			flags       ÊÂ¼ş±êÖ¾
-  * @retval ÎŞ
+  * @brief  åˆå§‹åŒ–äº‹ä»¶æ ‡å¿—ç»„å‡½æ•°
+  * @param  flagGroup   äº‹ä»¶æ ‡å¿—ç»„ç»“æ„æŒ‡é’ˆ
+			flags       äº‹ä»¶æ ‡å¿—
+  * @retval æ— 
   ******************************************************************************************************************/	
 void wFlagGroupInit(wFlagGroup * flagGroup, uint32_t flags)
 {
@@ -13,12 +13,12 @@ void wFlagGroupInit(wFlagGroup * flagGroup, uint32_t flags)
 }
 
 /*******************************************************************************************************************
-  * @brief  ¼ì²é²¢ÏûºÄµôÊÂ¼ş±êÖ¾º¯Êı
-  * @param  flagGroup   ÊÂ¼ş±êÖ¾×é½á¹¹Ö¸Õë
-			type        ÊÂ¼ş±êÖ¾¼ì²éÀàĞÍ
-			flags       ÊÂ¼ş±êÖ¾
-  * @retval wErrorNoError ÊÂ¼şÆ¥Åä
-			wErrorResourceUnavaliable ÊÂ¼şÎ´Æ¥Åä
+  * @brief  æ£€æŸ¥å¹¶æ¶ˆè€—æ‰äº‹ä»¶æ ‡å¿—å‡½æ•°
+  * @param  flagGroup   äº‹ä»¶æ ‡å¿—ç»„ç»“æ„æŒ‡é’ˆ
+			type        äº‹ä»¶æ ‡å¿—æ£€æŸ¥ç±»å‹
+			flags       äº‹ä»¶æ ‡å¿—
+  * @retval wErrorNoError äº‹ä»¶åŒ¹é…
+			wErrorResourceUnavaliable äº‹ä»¶æœªåŒ¹é…
   ******************************************************************************************************************/	
 static uint32_t wFlagGroupCheckAndConsume(wFlagGroup * flagGroup, uint32_t type, uint32_t * flags)
 {
@@ -51,15 +51,15 @@ static uint32_t wFlagGroupCheckAndConsume(wFlagGroup * flagGroup, uint32_t type,
 }
 	
 /*******************************************************************************************************************
-  * @brief  µÈ´ıÊÂ¼ş±êÖ¾×éº¯Êı
-  * @param  flagGroup   ÊÂ¼ş±êÖ¾×é½á¹¹Ö¸Õë
-			waitType    µÈ´ıÊÂ¼şµÄÀàĞÍ     
-			requstFlag  ÇëÇóµÄÊÂ¼ş±êÖ¾
-			resultFlag  µÈ´ı±êÖ¾½á¹û
-			waitTicks   µÈ´ıµÄ×î´óticksÊı
-  * @retval µÈ´ı½á¹û    wErrorResourceUnavaliable    ×ÊÔ´²»¿ÉÓÃ
-                        wErrorNoError                Ã»ÓĞ´íÎó
-                        wErrorTimeout                µÈ´ı³¬Ê±
+  * @brief  ç­‰å¾…äº‹ä»¶æ ‡å¿—ç»„å‡½æ•°
+  * @param  flagGroup   äº‹ä»¶æ ‡å¿—ç»„ç»“æ„æŒ‡é’ˆ
+			waitType    ç­‰å¾…äº‹ä»¶çš„ç±»å‹     
+			requstFlag  è¯·æ±‚çš„äº‹ä»¶æ ‡å¿—
+			resultFlag  ç­‰å¾…æ ‡å¿—ç»“æœ
+			waitTicks   ç­‰å¾…çš„æœ€å¤§ticksæ•°
+  * @retval ç­‰å¾…ç»“æœ    wErrorResourceUnavaliable    èµ„æºä¸å¯ç”¨
+                        wErrorNoError                æ²¡æœ‰é”™è¯¯
+                        wErrorTimeout                ç­‰å¾…è¶…æ—¶
   ******************************************************************************************************************/	
 uint32_t wFlagGroupWait(wFlagGroup * flagGroup, uint32_t waitType, uint32_t requestFlag, uint32_t * resultFlag, uint32_t waitTicks)
 {
@@ -90,14 +90,14 @@ uint32_t wFlagGroupWait(wFlagGroup * flagGroup, uint32_t waitType, uint32_t requ
 }
 
 /*******************************************************************************************************************
-  * @brief  »ñÈ¡ÊÂ¼ş±êÖ¾×éº¯Êı
-  * @param  flagGroup   ÊÂ¼ş±êÖ¾×é½á¹¹Ö¸Õë
-			waitType    µÈ´ıÊÂ¼şµÄÀàĞÍ     
-			requstFlag  ÇëÇóµÄÊÂ¼ş±êÖ¾
-			resultFlag  µÈ´ı±êÖ¾½á¹û
-  * @retval µÈ´ı½á¹û    wErrorResourceUnavaliable    ×ÊÔ´²»¿ÉÓÃ
-                        wErrorNoError                Ã»ÓĞ´íÎó
-                        wErrorTimeout                µÈ´ı³¬Ê±
+  * @brief  è·å–äº‹ä»¶æ ‡å¿—ç»„å‡½æ•°
+  * @param  flagGroup   äº‹ä»¶æ ‡å¿—ç»„ç»“æ„æŒ‡é’ˆ
+			waitType    ç­‰å¾…äº‹ä»¶çš„ç±»å‹     
+			requstFlag  è¯·æ±‚çš„äº‹ä»¶æ ‡å¿—
+			resultFlag  ç­‰å¾…æ ‡å¿—ç»“æœ
+  * @retval ç­‰å¾…ç»“æœ    wErrorResourceUnavaliable    èµ„æºä¸å¯ç”¨
+                        wErrorNoError                æ²¡æœ‰é”™è¯¯
+                        wErrorTimeout                ç­‰å¾…è¶…æ—¶
   ******************************************************************************************************************/	
 uint32_t wFlagGroupNoWaitGet(wFlagGroup * flagGroup, uint32_t waitType, uint32_t requestFlag, uint32_t * resultFlag)
 {
@@ -112,11 +112,11 @@ uint32_t wFlagGroupNoWaitGet(wFlagGroup * flagGroup, uint32_t waitType, uint32_t
 }
 
 /*******************************************************************************************************************
-  * @brief  ÊÂ¼ş±êÖ¾×é»½ĞÑÈÎÎñº¯Êı
-  * @param  flagGroup   ÊÂ¼ş±êÖ¾×é½á¹¹Ö¸Õë
-			isSet       ÊÇ·ñÊÇÉèÖÃÊÂ¼ş±êÖ¾
-			flags       ²úÉúµÄÊÂ¼ş±êÖ¾
-  * @retval ÎŞ
+  * @brief  äº‹ä»¶æ ‡å¿—ç»„å”¤é†’ä»»åŠ¡å‡½æ•°
+  * @param  flagGroup   äº‹ä»¶æ ‡å¿—ç»„ç»“æ„æŒ‡é’ˆ
+			isSet       æ˜¯å¦æ˜¯è®¾ç½®äº‹ä»¶æ ‡å¿—
+			flags       äº§ç”Ÿçš„äº‹ä»¶æ ‡å¿—
+  * @retval æ— 
   ******************************************************************************************************************/	
 void wFlagGroupNotify(wFlagGroup * flagGroup, uint8_t isSet, uint32_t flag)
 {
@@ -160,10 +160,10 @@ void wFlagGroupNotify(wFlagGroup * flagGroup, uint8_t isSet, uint32_t flag)
 }
 
 /*******************************************************************************************************************
-  * @brief  ´æ´¢¿é×´Ì¬²éÑ¯º¯Êı
-  * @param  flagGroup   ÊÂ¼ş±êÖ¾×é½á¹¹Ö¸Õë
-			info        ×´Ì¬²éÑ¯½á¹¹Ö¸Õë
-  * @retval ÎŞ
+  * @brief  å­˜å‚¨å—çŠ¶æ€æŸ¥è¯¢å‡½æ•°
+  * @param  flagGroup   äº‹ä»¶æ ‡å¿—ç»„ç»“æ„æŒ‡é’ˆ
+			info        çŠ¶æ€æŸ¥è¯¢ç»“æ„æŒ‡é’ˆ
+  * @retval æ— 
   ******************************************************************************************************************/	
 void wFlagGroupGetInfo(wFlagGroup * flagGroup, wFlagGroupInfo * info)
 {
@@ -176,9 +176,9 @@ void wFlagGroupGetInfo(wFlagGroup * flagGroup, wFlagGroupInfo * info)
 }	
 
 /*******************************************************************************************************************
-  * @brief  É¾³ı´æ´¢¿éº¯Êı
-  * @param  flagGroup   ÊÂ¼ş±êÖ¾×é½á¹¹Ö¸Õë
-  * @retval ´æ´¢¿éÖĞÈÎÎñÊıÁ¿
+  * @brief  åˆ é™¤å­˜å‚¨å—å‡½æ•°
+  * @param  flagGroup   äº‹ä»¶æ ‡å¿—ç»„ç»“æ„æŒ‡é’ˆ
+  * @retval å­˜å‚¨å—ä¸­ä»»åŠ¡æ•°é‡
   ******************************************************************************************************************/	
 uint32_t wFlagGroupDestroy(wFlagGroup * flagGroup)
 {

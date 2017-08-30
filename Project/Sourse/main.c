@@ -222,6 +222,8 @@ void wTaskSystemTickHandler(void)
 	}
 	wTaskExitCritical(status);
 	
+	wTimerModuleTickNotify();
+
 	wTaskSched();
 }
 
@@ -261,6 +263,8 @@ int main()
 	wTaskSchedInit();            //内核功能初始化
 	
 	wTaskDelayInit();            //初始化延时队列
+	
+	wTimerModuleInit();          //初始化定时器模块
 	
     wInitApp();                  //初始化任务
 	
