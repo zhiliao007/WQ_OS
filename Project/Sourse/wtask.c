@@ -52,6 +52,10 @@ void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, 
 	wNodeInit(&(task->delayNode));
 	wNodeInit(&(task->linkNode));
 	wTaskSchedRdy(task);
+	
+#if WQ_OS_ENABLE_HOOKS == 1
+	wHooksTaskInit(task);
+#endif
 }
 
 /*******************************************************************************************************************

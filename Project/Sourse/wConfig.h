@@ -17,5 +17,6 @@
 #define WQ_OS_ENABLE_MEMBLOCK          1                       // 是否使能存储块
 #define WQ_OS_ENABLE_TIMER             1                       // 是否使能定时器
 #define WQ_OS_ENABLE_CPUUSAGE_STAT     1                       // 是否使能CPU使用率统计
+#define WQ_OS_ENABLE_HOOKS             1                       // 是否使能Hooks
 
 #endif

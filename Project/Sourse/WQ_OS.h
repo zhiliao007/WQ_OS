@@ -23,6 +23,8 @@
 
 #include "wTimer.h"
 
+#include "wHooks.h"
+
 #define TICKS_PER_SEC (1000 / WQ_OS_SYSTICK_MS)
 
 typedef enum _wError           //WQ_OS的错误码

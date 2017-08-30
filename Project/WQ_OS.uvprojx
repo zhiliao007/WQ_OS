@@ -454,6 +454,11 @@
               <FileType>1</FileType>
               <FilePath>.\Sourse\wTimer.c</FilePath>
             </File>
+            <File>
+              <FileName>wHooks.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Sourse\wHooks.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -513,6 +518,11 @@
               <FileName>wTimer.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Sourse\wTimer.h</FilePath>
+            </File>
+            <File>
+              <FileName>wHooks.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Sourse\wHooks.h</FilePath>
             </File>
           </Files>
         </Group>

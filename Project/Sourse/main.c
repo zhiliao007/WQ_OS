@@ -71,7 +71,7 @@ void wTaskSchedDisable(void)
 }
 
 /*******************************************************************************************************************
-  * @brief  任务调度函数
+  * @brief  允许任务调度函数
   * @param  无
   * @retval 无
   ******************************************************************************************************************/	
@@ -148,6 +148,10 @@ void wTaskSched(void)
 	{
 		nextTask = tempTask;
 		wTaskSwitch();
+		
+#if WQ_OS_ENABLE_HOOKS == 1
+	wHooksTaskSwitch(currentTask, nextTask);
+#endif
 	}
 	
 	wTaskExitCritical(status);
@@ -253,6 +257,10 @@ void wTaskSystemTickHandler(void)
 	
 #if WQ_OS_ENABLE_TIMER == 1
 	wTimerModuleTickNotify();
+#endif
+
+#if WQ_OS_ENABLE_HOOKS == 1
+	    wHooksSysTick();
 #endif
 	
 	wTaskSched();
@@ -367,6 +375,9 @@ void idleTaskEntry(void * param)
         wTaskExitCritical(status);
 #endif
 		
+#if WQ_OS_ENABLE_HOOKS == 1
+	wHooksCpuIdle();
+#endif		
     }
 }
 
