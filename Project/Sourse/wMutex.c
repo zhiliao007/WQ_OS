@@ -1,5 +1,6 @@
 #include "WQ_OS.h"
 
+#if WQ_OS_ENABLE_MUTEX == 1
 /*******************************************************************************************************************
   * @brief  初始化互斥信号量函数
   * @param  mutex   互斥信号量结构指针
@@ -229,3 +230,5 @@ void wMutexGetInfo(wMutex * mutex, wMutexInfo * info)
 	
 	wTaskExitCritical(status);
 }
+
+#endif

@@ -1,5 +1,6 @@
 #include "WQ_OS.h"
 
+#if WQ_OS_ENABLE_FLAGGROUP == 1
 /*******************************************************************************************************************
   * @brief  初始化事件标志组函数
   * @param  flagGroup   事件标志组结构指针
@@ -192,3 +193,5 @@ uint32_t wFlagGroupDestroy(wFlagGroup * flagGroup)
 	}
 	return count;
 }
+
+#endif

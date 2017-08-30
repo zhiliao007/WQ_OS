@@ -1,5 +1,6 @@
 #include "WQ_OS.h"
 
+#if WQ_OS_ENABLE_MEMBLOCK == 1
 /*******************************************************************************************************************
   * @brief  初始化存储块函数
   * @param  memBlock    存储块结构指针
@@ -151,3 +152,5 @@ uint32_t wMemBlockDestroy(wMemBlock * memBlock)
 	}
 	return count;
 }
+
+#endif

@@ -14,6 +14,7 @@ uint32_t tickCount;         //时钟节拍计数器
 
 wList wTaskDelayList;       //延时队列
 
+#if WQ_OS_ENABLE_CPUUSAGE_STAT == 1
 uint32_t idleCount;         //空闲任务计数器
 
 uint32_t idleMaxCount;      //空闲任务最大计数器
@@ -21,6 +22,7 @@ uint32_t idleMaxCount;      //空闲任务最大计数器
 static void initCpuUsageStat (void);
 static void checkCpuUsage (void);
 static void cpuUsageSyncWithSysTick (void);
+#endif
 
 /*******************************************************************************************************************
   * @brief  获取当前最高优先级且可运行的任务函数
@@ -243,15 +245,20 @@ void wTaskSystemTickHandler(void)
 	
 	tickCount++;
 	
+#if WQ_OS_ENABLE_CPUUSAGE_STAT == 1	
 	checkCpuUsage();
+#endif
 	
 	wTaskExitCritical(status);
 	
+#if WQ_OS_ENABLE_TIMER == 1
 	wTimerModuleTickNotify();
-
+#endif
+	
 	wTaskSched();
 }
 
+#if WQ_OS_ENABLE_CPUUSAGE_STAT == 1	
 static float cpuUsage;                      // cpu使用率统计
 static uint32_t enableCpuUsageStat;         // 是否使能cpu统计
 
@@ -315,7 +322,7 @@ static void cpuUsageSyncWithSysTick (void)
   * @param  无
   * @retval CPU使用率
   ******************************************************************************************************************/
-float tCpuUsageGet (void)
+float wCpuUsageGet (void)
 {
     float usage = 0;
 
@@ -325,6 +332,7 @@ float tCpuUsageGet (void)
 
     return usage;
 }
+#endif
 
 wTask wTaskIdle;
 wTaskStack idleTaskEnv[WQ_OS_IDLETASK_STACK_SIZE];
@@ -340,17 +348,25 @@ void idleTaskEntry(void * param)
 	
     wInitApp();                  //初始化任务
 	
+#if WQ_OS_ENABLE_TIMER == 1
 	wTimerInitTask();            //初始化定时器任务
+#endif
 	
-	wSetSysTickPeriod(WQ_OS_SYSTICK_MS);   
+	wSetSysTickPeriod(WQ_OS_SYSTICK_MS);  
 	
+#if WQ_OS_ENABLE_CPUUSAGE_STAT == 1		
 	cpuUsageSyncWithSysTick();       //等待与时钟同步
-
+#endif
+	
     for (;;)
     {
+		
+#if WQ_OS_ENABLE_CPUUSAGE_STAT == 1	
         uint32_t status = wTaskEnterCritical();
         idleCount++;
         wTaskExitCritical(status);
+#endif
+		
     }
 }
 
@@ -365,13 +381,22 @@ int main()
 	wTaskSchedInit();            //内核功能初始化
 	
 	wTaskDelayInit();            //初始化延时队列
+
+#if WQ_OS_ENABLE_TIMER == 1
+	
+	#if WQ_OS_ENABLE_SEM == 0
+	#error "Sem module did not open!"
+	#endif
 	
 	wTimerModuleInit();          //初始化定时器模块
+#endif
 	
 	wTimeTickInit();             //初始化时钟节拍
 	
+#if WQ_OS_ENABLE_CPUUSAGE_STAT == 1	
 	initCpuUsageStat();          //初始化CPU统计
-
+#endif
+	
 	wTaskInit(&wTaskIdle, idleTaskEntry, (void *)0, WQ_OS_PRO_COUNT - 1, idleTaskEnv, WQ_OS_IDLETASK_STACK_SIZE);    //初始化空闲任务
 	idleTask = &wTaskIdle;
 	

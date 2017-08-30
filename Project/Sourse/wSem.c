@@ -1,5 +1,8 @@
 #include "wSem.h"
 #include "WQ_OS.h"
+
+#if WQ_OS_ENABLE_SEM == 1
+
 /*******************************************************************************************************************
   * @brief  初始化信号量函数
   * @param  sem         信号量结构指针
@@ -140,3 +143,5 @@ uint32_t wSemDestroy (wSem * sem)
     } 
     return count;  
 }
+
+#endif

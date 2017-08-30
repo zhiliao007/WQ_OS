@@ -15,20 +15,6 @@ wTaskStack Task2Env[1024];
 wTaskStack Task3Env[1024];
 wTaskStack Task4Env[1024];
 
-wTimer timer1;
-wTimer timer2;
-wTimer timer3;
-
-uint32_t bit1 = 0;
-uint32_t bit2 = 0;
-uint32_t bit3 = 0;
-
-void timerFunc(void * arg)
-{
-	uint32_t * ptrBit = (uint32_t *)arg;
-	*ptrBit ^= 0x1;
-}
-
 /*******************************************************************************************************************
   * @brief  粗暴延时函数
   * @param  count： 延时时间
@@ -46,15 +32,6 @@ void delay(int count)
   ******************************************************************************************************************/
 void task1Entry(void * param)
 {	
-	uint32_t stopped = 0;
-		
-	wTimerInit(&timer1, 100, 10, timerFunc, (void *)&bit1, TIMER_CONFIG_TYPE_HARD);
-	wTimerStart(&timer1);
-	wTimerInit(&timer2, 200, 20, timerFunc, (void *)&bit2, TIMER_CONFIG_TYPE_HARD);
-	wTimerStart(&timer2);
-	wTimerInit(&timer3, 300, 0, timerFunc, (void *)&bit3, TIMER_CONFIG_TYPE_SOFT);
-	wTimerStart(&timer3);
-
 	for(;;)
 	{	
 		task1Flag = 0;
@@ -62,12 +39,6 @@ void task1Entry(void * param)
         task1Flag = 1;
         wTaskDelay(1);
 		
-		if (stopped == 0)
-        {
-            wTaskDelay(200);
-            wTimerStop(&timer1);
-            stopped = 1;
-        }
 	}
 }
 

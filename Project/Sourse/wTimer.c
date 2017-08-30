@@ -1,5 +1,6 @@
 #include "WQ_OS.h"
 
+#if WQ_OS_ENABLE_TIMER == 1
 static wList wTimerHardList;
 static wList wTimerSoftList;
 
@@ -231,3 +232,5 @@ void wTimerInitTask(void)
 
 	wTaskInit(&wTimerTask, wTimerSoftTask, (void *)0, WQ_OS_TIMERTASK_PRIO, wTimerTaskStack, WQ_OS_TIMERTASK_STACK_SIZE);
 }
+
+#endif

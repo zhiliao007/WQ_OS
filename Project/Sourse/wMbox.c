@@ -1,5 +1,6 @@
 #include "WQ_OS.h"
 
+#if WQ_OS_ENABLE_MBOX == 1
 /*******************************************************************************************************************
   * @brief  初始化邮箱函数
   * @param  mbox        邮箱结构指针
@@ -193,3 +194,5 @@ void wMboxGetInfo(wMbox * mbox, wMboxInfo * info)
     
     wTaskExitCritical(status);
 }
+
+#endif
