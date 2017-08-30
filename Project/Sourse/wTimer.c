@@ -221,5 +221,5 @@ void wTimerModuleInit(void)
 	#error "The proprity of timer task must be greater then (WQ_OS_PRO_COUNT - 1)"
 #endif /*WQ_OS_TIMERTASK_PRIO >= (WQ_OS_PRO_COUNT - 1)*/
 
-	wTaskInit(&wTimerTask, wTimerSoftTask, (void *)0, WQ_OS_TIMERTASK_PRIO, &wTimerTaskStack[WQ_OS_TIMERTASK_STACK_SIZE]);
+	wTaskInit(&wTimerTask, wTimerSoftTask, (void *)0, WQ_OS_TIMERTASK_PRIO, wTimerTaskStack, WQ_OS_TIMERTASK_STACK_SIZE);
 }

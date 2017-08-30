@@ -117,9 +117,9 @@ void task4Entry(void * param)
   ******************************************************************************************************************/
 void wInitApp(void)
 {
-	wTaskInit(&wTask1, task1Entry, (void *)0x11111111, 0, &Task1Env[1024]);	//初始化任务
-	wTaskInit(&wTask2, task2Entry, (void *)0x22222222, 1, &Task2Env[1024]);
-	wTaskInit(&wTask3, task3Entry, (void *)0x22222222, 1, &Task3Env[1024]);
-	wTaskInit(&wTask4, task4Entry, (void *)0x44444444, 1, &Task4Env[1024]);
+	wTaskInit(&wTask1, task1Entry, (void *)0x11111111, 0, Task1Env, sizeof(Task1Env));	//初始化任务
+	wTaskInit(&wTask2, task2Entry, (void *)0x22222222, 1, Task2Env, sizeof(Task2Env));
+	wTaskInit(&wTask3, task3Entry, (void *)0x22222222, 1, Task3Env, sizeof(Task3Env));
+	wTaskInit(&wTask4, task4Entry, (void *)0x44444444, 1, Task4Env, sizeof(Task4Env));
 	
 }

@@ -15,6 +15,8 @@ typedef uint32_t wTaskStack;	//定义任务堆栈类型
 typedef struct _wTask        //任务结构
 {								
 	wTaskStack * stack;		 //任务堆栈指针
+	uint32_t * stackBase;    //任务堆栈首地址
+	uint32_t stackSize;      //堆栈大小
 	wNode linkNode;          //优先级队列链接结点
 	uint32_t delayTicks;	 //任务延时个数 
 	wNode delayNode;         //通用延时结点结构
@@ -42,9 +44,11 @@ typedef struct _wTaskInfo      //任务相关信息结构
 	uint32_t state;            //任务当前状态
 	uint32_t slice;            //当前剩余的时间片
 	uint32_t suspendCount;     //被挂起的次数
+	uint32_t stackSize;        //堆栈大小
+	uint32_t stackFree;        //空闲堆栈大小
 }wTaskInfo;
 
-void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, wTaskStack * stack);
+void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, wTaskStack * stack, uint32_t size);
 void wTaskSuspend(wTask * task);
 void wTaskWakeUp(wTask * task);
 void wTaskSetCleanCallFunc(wTask * task, void(*clean)(void * param), void * param);

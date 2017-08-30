@@ -1,4 +1,5 @@
 #include "WQ_OS.h"
+#include <string.h>
 
 /*******************************************************************************************************************
   * @brief  任务初始化函数
@@ -8,30 +9,38 @@
             stack：任务栈空间地址
   * @retval 无
   ******************************************************************************************************************/	
-void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, wTaskStack * stack)
+void wTaskInit(wTask * task, void (*entry)(void *), void * param,uint32_t prio, wTaskStack * stack, uint32_t size)
 {
-	*(--stack) = (unsigned long)(1<<24);                // XPSR, 设置了Thumb模式，恢复到Thumb状态而非ARM状态运行
-    *(--stack) = (unsigned long)entry;                  // R15(PC) 程序的入口地址
-    *(--stack) = (unsigned long)0x14;                   // R14(LR), 任务不会通过return xxx结束自己，所以未用
+	uint32_t * stackTop;
+	
+	task->stackBase = stack;
+	task->stackSize = size;
+	memset(stack, 0, size);
+	
+	stackTop = stack + size / sizeof(wTaskStack);
+	
+	*(--stackTop) = (unsigned long)(1<<24);                // XPSR, 设置了Thumb模式，恢复到Thumb状态而非ARM状态运行
+    *(--stackTop) = (unsigned long)entry;                  // R15(PC) 程序的入口地址
+    *(--stackTop) = (unsigned long)0x14;                   // R14(LR), 任务不会通过return xxx结束自己，所以未用
 														// R14内核寄存器用来保存函数的返回值地址
-    *(--stack) = (unsigned long)0x12;                   // R12, 未用
-    *(--stack) = (unsigned long)0x3;                    // R3,  未用
-    *(--stack) = (unsigned long)0x2;                    // R2,  未用
-    *(--stack) = (unsigned long)0x1;                    // R1,  未用
-    *(--stack) = (unsigned long)param;                  // R0 = param, 传给任务的入口函数
+    *(--stackTop) = (unsigned long)0x12;                   // R12, 未用
+    *(--stackTop) = (unsigned long)0x3;                    // R3,  未用
+    *(--stackTop) = (unsigned long)0x2;                    // R2,  未用
+    *(--stackTop) = (unsigned long)0x1;                    // R1,  未用
+    *(--stackTop) = (unsigned long)param;                  // R0 = param, 传给任务的入口函数
 	                                                    // 函数的第一个参数的地址保存在R0内核寄存器
 	
-    *(--stack) = (unsigned long)0x11;                   // R11, 未用
-    *(--stack) = (unsigned long)0x10;                   // R10, 未用
-    *(--stack) = (unsigned long)0x9;                    // R9,  未用
-    *(--stack) = (unsigned long)0x8;                    // R8,  未用
-    *(--stack) = (unsigned long)0x7;                    // R7,  未用
-    *(--stack) = (unsigned long)0x6;                    // R6,  未用
-    *(--stack) = (unsigned long)0x5;                    // R5,  未用
-    *(--stack) = (unsigned long)0x4;                    // R4,  未用
+    *(--stackTop) = (unsigned long)0x11;                   // R11, 未用
+    *(--stackTop) = (unsigned long)0x10;                   // R10, 未用
+    *(--stackTop) = (unsigned long)0x9;                    // R9,  未用
+    *(--stackTop) = (unsigned long)0x8;                    // R8,  未用
+    *(--stackTop) = (unsigned long)0x7;                    // R7,  未用
+    *(--stackTop) = (unsigned long)0x6;                    // R6,  未用
+    *(--stackTop) = (unsigned long)0x5;                    // R5,  未用
+    *(--stackTop) = (unsigned long)0x4;                    // R4,  未用
 	
 	task->slice = WQ_OS_SLICE_MAX; 
-	task->stack = stack;								// 保存最终的值，使任务栈指针指向缓冲区栈顶
+	task->stack = stackTop;								// 保存最终的值，使任务栈指针指向缓冲区栈顶
 	task->delayTicks = 0;
 	task->prio = prio;
 	task->state = WQOS_TASK_STATE_RDY;
@@ -197,6 +206,7 @@ void wTaskDeleteSelf (void)
   ******************************************************************************************************************/
 void wTaskGetInfo(wTask * task, wTaskInfo * info)
 {
+	uint32_t * stackEnd;
 	uint32_t status = wTaskEnterCritical();
 	
 	info->delayTicks = task->delayTicks;
@@ -204,6 +214,15 @@ void wTaskGetInfo(wTask * task, wTaskInfo * info)
 	info->state = task->state;
 	info->slice = task->slice;
 	info->suspendCount = task->suspendCount;
-	  
+	
+	info->stackSize = task->stackSize; 
+	info->stackFree = 0;
+	stackEnd = task->stackBase;
+	while((*stackEnd++ == 0) && (stackEnd <= task->stackBase + task->stackSize / sizeof(wTaskStack)))
+	{
+		info->stackFree++;
+	}
+	info->stackFree *= sizeof(wTaskStack);
+	
 	wTaskExitCritical(status);
 }

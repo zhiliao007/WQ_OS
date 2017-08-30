@@ -268,7 +268,7 @@ int main()
 	
     wInitApp();                  //初始化任务
 	
-	wTaskInit(&wTaskIdle, idleTaskEntry, (void *)0, WQ_OS_PRO_COUNT - 1, &idleTaskEnv[WQ_OS_IDLETASK_STACK_SIZE]);    //初始化空闲任务
+	wTaskInit(&wTaskIdle, idleTaskEntry, (void *)0, WQ_OS_PRO_COUNT - 1, idleTaskEnv, WQ_OS_IDLETASK_STACK_SIZE);    //初始化空闲任务
 	idleTask = &wTaskIdle;
 	
     nextTask = wTaskHighestReady();	//第一个要运行的任务指向任务1
