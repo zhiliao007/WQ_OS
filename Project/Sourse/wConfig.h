@@ -7,4 +7,5 @@
 #define WQ_OS_TIMERTASK_STACK_SIZE 1024          //定时器任务的堆栈大小
 #define WQ_OS_TIMERTASK_PRIO       1             //定时器任务的优先级
 
+#define WQ_OS_SYSTICK_MS           10            //时钟节拍的周期，以ms为单位
 #endif

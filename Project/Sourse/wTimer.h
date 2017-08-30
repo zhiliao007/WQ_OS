@@ -44,5 +44,5 @@ void wTimerDestroy (wTimer * timer);
 void wTimerGetInfo (wTimer * timer, wTimerInfo * info);
 void wTimerModuleTickNotify(void);
 void wTimerModuleInit(void);
-
+void wTimerInitTask(void);
 #endif

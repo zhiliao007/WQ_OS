@@ -30,6 +30,16 @@ void timerFunc(void * arg)
 }
 
 /*******************************************************************************************************************
+  * @brief  粗暴延时函数
+  * @param  count： 延时时间
+  * @retval 无
+  ******************************************************************************************************************/
+void delay(int count)
+{
+     while(--count>0);
+}
+
+/*******************************************************************************************************************
   * @brief  任务1入口函数
   * @param  param：传给任务的参数
   * @retval 无
@@ -37,9 +47,7 @@ void timerFunc(void * arg)
 void task1Entry(void * param)
 {	
 	uint32_t stopped = 0;
-	
-	wSetSysTickPeriod(10);
-	
+		
 	wTimerInit(&timer1, 100, 10, timerFunc, (void *)&bit1, TIMER_CONFIG_TYPE_HARD);
 	wTimerStart(&timer1);
 	wTimerInit(&timer2, 200, 20, timerFunc, (void *)&bit2, TIMER_CONFIG_TYPE_HARD);

@@ -216,7 +216,15 @@ void wTimerModuleInit(void)
 	wListInit(&wTimerSoftList);
 	wSemInit(&wTimerProtectSem, 1,1);
 	wSemInit(&wTimerTicksSem,0,0);
-	 
+}	 
+
+/*******************************************************************************************************************
+  * @brief  定时器模块任务初始化函数
+  * @param  无
+  * @retval 无
+  ******************************************************************************************************************/	
+void wTimerInitTask(void)
+{
 #if WQ_OS_TIMERTASK_PRIO >= (WQ_OS_PRO_COUNT - 1)
 	#error "The proprity of timer task must be greater then (WQ_OS_PRO_COUNT - 1)"
 #endif /*WQ_OS_TIMERTASK_PRIO >= (WQ_OS_PRO_COUNT - 1)*/

@@ -10,7 +10,17 @@ wList taskTable[WQ_OS_PRO_COUNT];      //任务就绪表
 
 uint8_t schedlockCount;     //调度锁计数器
 
+uint32_t tickCount;         //时钟节拍计数器
+
 wList wTaskDelayList;       //延时队列
+
+uint32_t idleCount;         //空闲任务计数器
+
+uint32_t idleMaxCount;      //空闲任务最大计数器
+
+static void initCpuUsageStat (void);
+static void checkCpuUsage (void);
+static void cpuUsageSyncWithSysTick (void);
 
 /*******************************************************************************************************************
   * @brief  获取当前最高优先级且可运行的任务函数
@@ -186,6 +196,16 @@ void wTimeTaskRemove(wTask * task)
 }	
 
 /*******************************************************************************************************************
+  * @brief  时钟节拍计数器初始化函数
+  * @param  无
+  * @retval 无
+  ******************************************************************************************************************/
+void wTimeTickInit(void)
+{
+	tickCount = 0;
+}
+	
+/*******************************************************************************************************************
   * @brief  任务SystemTick中断服务函数
   * @param  无
   * @retval 无
@@ -220,6 +240,11 @@ void wTaskSystemTickHandler(void)
 			currentTask->slice = WQ_OS_SLICE_MAX;
 		}
 	}
+	
+	tickCount++;
+	
+	checkCpuUsage();
+	
 	wTaskExitCritical(status);
 	
 	wTimerModuleTickNotify();
@@ -227,14 +252,78 @@ void wTaskSystemTickHandler(void)
 	wTaskSched();
 }
 
+static float cpuUsage;                      // cpu使用率统计
+static uint32_t enableCpuUsageStat;         // 是否使能cpu统计
+
 /*******************************************************************************************************************
-  * @brief  粗暴延时函数
-  * @param  count： 延时时间
+  * @brief  初始化CPU统计函数
+  * @param  无
   * @retval 无
   ******************************************************************************************************************/
-void delay(int count)
+static void initCpuUsageStat (void)
 {
-     while(--count>0);
+    idleCount = 0;
+    idleMaxCount = 0;
+    cpuUsage = 0.0f;
+    enableCpuUsageStat = 0;
+}
+
+/*******************************************************************************************************************
+  * @brief  检查CPU使用率函数
+  * @param  无
+  * @retval 无
+  ******************************************************************************************************************/
+static void checkCpuUsage (void)
+{
+    if (enableCpuUsageStat == 0)
+    {
+        enableCpuUsageStat = 1;
+        tickCount = 0;
+        return;
+    }
+
+    if (tickCount == TICKS_PER_SEC)
+    {
+        idleMaxCount = idleCount;
+        idleCount = 0;
+
+        wTaskSchedEnable();
+    }
+    else if (tickCount % TICKS_PER_SEC == 0)
+    {
+        cpuUsage = 100 - (idleCount * 100.0 / idleMaxCount);
+        idleCount = 0;
+    }
+}
+
+/*******************************************************************************************************************
+  * @brief  等待时钟同步函数
+  * @param  无
+  * @retval 无
+  ******************************************************************************************************************/
+static void cpuUsageSyncWithSysTick (void)
+{
+    // 等待与时钟节拍同步
+    while (enableCpuUsageStat == 0)
+    {
+        ;;
+    }
+}
+
+/*******************************************************************************************************************
+  * @brief  获取CPU使用率函数
+  * @param  无
+  * @retval CPU使用率
+  ******************************************************************************************************************/
+float tCpuUsageGet (void)
+{
+    float usage = 0;
+
+    uint32_t status = wTaskEnterCritical();
+    usage = cpuUsage;
+    wTaskExitCritical(status);
+
+    return usage;
 }
 
 wTask wTaskIdle;
@@ -243,13 +332,26 @@ wTaskStack idleTaskEnv[WQ_OS_IDLETASK_STACK_SIZE];
 /*******************************************************************************************************************
   * @brief  空闲任务函数
   * @param  无
-  * @retval 无2
+  * @retval 无
   ******************************************************************************************************************/
 void idleTaskEntry(void * param)
 {
-	for(;;)
-	{
-	}
+	wTaskSchedDisable();
+	
+    wInitApp();                  //初始化任务
+	
+	wTimerInitTask();            //初始化定时器任务
+	
+	wSetSysTickPeriod(WQ_OS_SYSTICK_MS);   
+	
+	cpuUsageSyncWithSysTick();       //等待与时钟同步
+
+    for (;;)
+    {
+        uint32_t status = wTaskEnterCritical();
+        idleCount++;
+        wTaskExitCritical(status);
+    }
 }
 
 
@@ -266,8 +368,10 @@ int main()
 	
 	wTimerModuleInit();          //初始化定时器模块
 	
-    wInitApp();                  //初始化任务
+	wTimeTickInit();             //初始化时钟节拍
 	
+	initCpuUsageStat();          //初始化CPU统计
+
 	wTaskInit(&wTaskIdle, idleTaskEntry, (void *)0, WQ_OS_PRO_COUNT - 1, idleTaskEnv, WQ_OS_IDLETASK_STACK_SIZE);    //初始化空闲任务
 	idleTask = &wTaskIdle;
 	
