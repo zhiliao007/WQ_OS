@@ -14,7 +14,10 @@ void wBitmapSet(wBitmap * bitmap, uint32_t pos);
 void wBitmapClear(wBitmap * bitmap, uint32_t pos);
 uint32_t wBitmapGetFirstSet(wBitmap * bitmap);
 
-typedef struct _wNode                 //结点结构体
+/*! 
+ * @brief 结点结构体 
+ */
+typedef struct _wNode                 
 {
 	struct _wNode * preNode;
 	struct _wNode * nextNode;
@@ -22,14 +25,20 @@ typedef struct _wNode                 //结点结构体
 
 void wNodeInit(wNode * node);
 
-typedef struct _wList                 //链表结构体
+/*! 
+ * @brief 链表结构体
+ */
+typedef struct _wList                 
 {
 	wNode headNode;
 	uint32_t nodeCount;
 }wList;
 
+/*******************************************************************************
+ * 宏定义
+ ******************************************************************************/
+/*! 获取结点所在的父struct结构首地址 */
 #define wNodeParent(node,parent,name) (parent *)((uint32_t)node - (uint32_t)&((parent *)0)->name)
-//获取结点所在的父struct结构首地址
 
 void wListInit(wList * list); 	
 uint32_t wListCount(wList * list);

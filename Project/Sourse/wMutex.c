@@ -1,28 +1,43 @@
+/*
+ * @file wMutex.c
+ * @author 李文晴
+ * @version 1.0.0.0
+ * @brief   互斥信号量
+ * 
+ * 更新历史
+ * --
+ * 版本号|说明|修订者|修订日期
+ * ------|----|------|--------
+ * v1.0.0.0|创建文档|李文晴|2017-7
+ * 
+ */
+
 #include "WQ_OS.h"
 
 #if WQ_OS_ENABLE_MUTEX == 1
-/*******************************************************************************************************************
-  * @brief  初始化互斥信号量函数
-  * @param  mutex   互斥信号量结构指针
-  * @retval 无
-  ******************************************************************************************************************/	
+/*!
+ * @brief  初始化互斥信号量函数
+ * @param  mutex   互斥信号量结构指针
+ * @retval 无
+ */	
 void wMutexInit(wMutex * mutex)
 {
 	wEventInit(&mutex->event, wEventTypeMutex);
 	
 	mutex->lockedCount = 0;
 	mutex->owner = (wTask *)0;
+	/* 配置为无效值，因为优先级为0~31 */
 	mutex->ownerOriginalPrio = WQ_OS_PRO_COUNT;  //配置为无效值，因为优先级为0~31
 }
 
-/*******************************************************************************************************************
-  * @brief  等待互斥信号量函数
-  * @param  mutex       互斥信号量结构指针
-			waitTicks   等待的最大ticks数
-  * @retval 等待结果    wErrorResourceUnavaliable    资源不可用
-                        wErrorNoError                没有错误
-                        wErrorTimeout                等待超时
-  ******************************************************************************************************************/	
+/*!
+ * @brief  等待互斥信号量函数
+ * @param  mutex       互斥信号量结构指针
+ * @param  waitTicks   等待的最大ticks数
+ * @retval wErrorResourceUnavaliable  等待结果为资源不可用    
+ * @retval wErrorNoError              等待结果为正确  
+ * @retval wErrorTimeout              等待结果为超时   
+ */	
 uint32_t wMutexWait(wMutex * mutex, uint32_t waitTicks)
 {
 	uint32_t status = wTaskEnterCritical();
@@ -70,13 +85,13 @@ uint32_t wMutexWait(wMutex * mutex, uint32_t waitTicks)
 	}
 }
 
-/*******************************************************************************************************************
-  * @brief  获取互斥信号量函数
-  * @param  mutex       互斥信号量结构指针
-  * @retval 等待结果    wErrorResourceUnavaliable    资源不可用
-                        wErrorNoError                没有错误
-                        wErrorTimeout                等待超时
-  ******************************************************************************************************************/	
+/*!
+ * @brief  获取互斥信号量函数
+ * @param  mutex       互斥信号量结构指针
+ * @retval wErrorResourceUnavaliable  等待结果为资源不可用    
+ * @retval wErrorNoError              等待结果为正确  
+ * @retval wErrorTimeout              等待结果为超时   
+ */	
 uint32_t wMutexNoWaitGet(wMutex * mutex)
 {
 	uint32_t status = wTaskEnterCritical();
@@ -104,13 +119,13 @@ uint32_t wMutexNoWaitGet(wMutex * mutex)
 	}
 }
 
-/*******************************************************************************************************************
-  * @brief  互斥信号量唤醒任务函数
-  * @param  mutex       互斥信号量结构指针
-  * @retval 等待结果    wErrorResourceUnavaliable    资源不可用
-                        wErrorNoError                没有错误
-                        wErrorTimeout                等待超时
-  ******************************************************************************************************************/	
+/*!
+ * @brief  互斥信号量唤醒任务函数
+ * @param  mutex       互斥信号量结构指针
+ * @retval wErrorResourceUnavaliable  等待结果为资源不可用    
+ * @retval wErrorNoError              等待结果为正确  
+ * @retval wErrorTimeout              等待结果为超时   
+ */	
 uint32_t wMutexNotify(wMutex * mutex)
 {
 	uint32_t status = wTaskEnterCritical();
@@ -164,32 +179,32 @@ uint32_t wMutexNotify(wMutex * mutex)
 	return wErrorNoError;
 }
 
-/*******************************************************************************************************************
-  * @brief  删除互斥信号量函数
-  * @param  mutex       互斥信号量结构指针
-  * @retval 因销毁该信号量而唤醒的任务数量
-  ******************************************************************************************************************/	
+/*!
+ * @brief  删除互斥信号量函数
+ * @param  mutex       互斥信号量结构指针
+ * @retval 因销毁该信号量而唤醒的任务数量
+ */	
 uint32_t wMutexDestroy(wMutex * mutex)
 {
 	uint32_t count = 0;
 	uint32_t status = wTaskEnterCritical();
 	
-	// 信号量是否已经被锁定，未锁定时没有任务等待，不必处理
+	/* 信号量是否已经被锁定，未锁定时没有任务等待，不必处理 */
 	if(mutex->lockedCount > 0)
 	{
-		//是否有发生优先级继承?如果发生，需要恢复拥有者的原优先级
+		/* 是否有发生优先级继承?如果发生，需要恢复拥有者的原优先级 */
 		if(mutex->ownerOriginalPrio != mutex->owner->prio)
 		{
 			if(mutex->owner->stack == WQOS_TASK_STATE_RDY)
 			{
-				// 如果任务处于就绪状态时，更改任务在就绪表中的位置
+				/* 如果任务处于就绪状态时，更改任务在就绪表中的位置 */
 				wTaskSchedUnRdy(mutex->owner);
 				mutex->owner->prio = mutex->ownerOriginalPrio;
 				wTaskSchedRdy(mutex->owner);
 			}
 			else
 			{
-				// 其它状态，只需要修改优先级
+				/* 其它状态，只需要修改优先级 */
 				mutex->owner->prio = mutex->ownerOriginalPrio;
 			}
 		}
@@ -205,12 +220,12 @@ uint32_t wMutexDestroy(wMutex * mutex)
 	return count;
 }
 
-/*******************************************************************************************************************
-  * @brief  互斥信号量状态查询函数
-  * @param  mutex       互斥信号量结构指针
-			info        状态查询结构指针
-  * @retval 无
-  ******************************************************************************************************************/	
+/*!
+ * @brief  互斥信号量状态查询函数
+ * @param  mutex       互斥信号量结构指针
+ * @param  info        状态查询结构指针
+ * @retval 无
+ */	
 void wMutexGetInfo(wMutex * mutex, wMutexInfo * info)
 {
 	uint32_t status = wTaskEnterCritical();

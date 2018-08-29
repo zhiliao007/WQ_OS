@@ -5,21 +5,26 @@
 #include "wConfig.h"
 #include "wTask.h"
 
-typedef enum  _wEventType       //事件类型
+/*! 
+ * @brief 事件类型
+ */
+typedef enum  _wEventType       
 {   
-    wEventTypeUnknown,  	// 未知类型
-	wEventTypeSem,          //信号量类型
-	wEventTypeMbox,         //邮箱类型
-	wEventTypeMemBlock,     //存储块类型
-	wEventTypeFlagGroup,    //事件标志组类型
-	wEventTypeMutex,        //互斥信号量类型
+    wEventTypeUnknown,  	/*!< 未知类型 */
+	wEventTypeSem,          /*!< 信号量类型 */
+	wEventTypeMbox,         /*!< 邮箱类型 */ 
+	wEventTypeMemBlock,     /*!< 存储块类型 */
+	wEventTypeFlagGroup,    /*!< 事件标志组类型 */ 
+	wEventTypeMutex,        /*!< 互斥信号量类型 */
 }wEventType;
 
-typedef struct _wEvent          //事件控制结构
+/*! 
+ * @brief 事件控制结构
+ */
+typedef struct _wEvent          
 {
-    wEventType type;			// Event类型
-
-    wList waitList;				// 任务等待列表
+    wEventType type;			/*!< Event类型 */
+    wList waitList;				/*!< 任务等待列表 */
 }wEvent;
 
 void wEventInit(wEvent * event, wEventType type);

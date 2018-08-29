@@ -1,13 +1,28 @@
+/*
+ * @file wMbox.c
+ * @author 李文晴
+ * @version 1.0.0.0
+ * @brief   邮箱
+ * 
+ * 更新历史
+ * --
+ * 版本号|说明|修订者|修订日期
+ * ------|----|------|--------
+ * v1.0.0.0|创建文档|李文晴|2017-7
+ * 
+ */
+
 #include "WQ_OS.h"
 
 #if WQ_OS_ENABLE_MBOX == 1
-/*******************************************************************************************************************
-  * @brief  初始化邮箱函数
-  * @param  mbox        邮箱结构指针
-			msgBuffer   消息存储缓冲区
-			maxCount    最大消息计数值 
-  * @retval 无
-  ******************************************************************************************************************/	
+
+/*!
+ * @brief  初始化邮箱函数
+ * @param  mbox        邮箱结构指针
+ * @param  msgBuffer   消息存储缓冲区
+ * @param  maxCount    最大消息计数值 
+ * @retval 无
+ */	
 void wMboxInit(wMbox * mbox, void **msgBuffer, uint32_t maxCount)
 {
 	wEventInit(&mbox->event, wEventTypeMbox);
@@ -19,15 +34,15 @@ void wMboxInit(wMbox * mbox, void **msgBuffer, uint32_t maxCount)
 	mbox->count = 0;
 }
 
-/*******************************************************************************************************************
-  * @brief  等待邮箱获取消息函数
-  * @param  mbox        邮箱结构指针
-			msg         消息存储缓存区
-			waitTicks   等待的最大ticks数 
-  * @retval 等待结果    wErrorResourceUnavaliable    
-                        wErrorNoError               
-                        wErrorTimeout               
-  ******************************************************************************************************************/	
+/*!
+ * @brief  等待邮箱获取消息函数
+ * @param  mbox        邮箱结构指针
+ * @param  msg         消息存储缓存区
+ * @param  waitTicks   等待的最大ticks数 
+ * @retval wErrorResourceUnavaliable  等待结果为资源不可用    
+ * @retval wErrorNoError              等待结果为正确  
+ * @retval wErrorTimeout              等待结果为超时   
+ */	
 uint32_t wMboxWait(wMbox * mbox, void **msg, uint32_t waitTicks)
 {
 	uint32_t status = wTaskEnterCritical();
@@ -56,14 +71,14 @@ uint32_t wMboxWait(wMbox * mbox, void **msg, uint32_t waitTicks)
 	
 }
 
-/*******************************************************************************************************************
-  * @brief  无等待的获取邮箱消息函数
-  * @param  mbox        邮箱结构指针
-			msg         消息存储缓存区
-  * @retval 等待结果    wErrorResourceUnavaliable    资源不可用
-                        wErrorNoError                没有错误
-                        wErrorTimeout                等待超时
-  ******************************************************************************************************************/	
+/*！
+ * @brief  无等待的获取邮箱消息函数
+ * @param  mbox        邮箱结构指针
+ * @param  msg         消息存储缓存区
+ * @retval wErrorResourceUnavaliable  等待结果为资源不可用    
+ * @retval wErrorNoError              等待结果为正确  
+ * @retval wErrorTimeout              等待结果为超时   
+ */	
 uint32_t wMboxNoWaitGet(wMbox * mbox,void **msg)
 {
 	uint32_t status = wTaskEnterCritical();
@@ -86,15 +101,15 @@ uint32_t wMboxNoWaitGet(wMbox * mbox,void **msg)
     }
 }
 
-/*******************************************************************************************************************
-  * @brief  邮箱唤醒任务函数
-  * @param  mbox          邮箱结构指针
-			msg           消息存储缓存区
-			notifyOption  发送的选项
-  * @retval 等待结果      wErrorResourceUnavaliable    资源不可用
-                          wErrorNoError                没有错误
-                          wErrorTimeout                等待超时
-  ******************************************************************************************************************/	
+/*！
+ * @brief  邮箱唤醒任务函数
+ * @param  mbox          邮箱结构指针
+ * @param  msg           消息存储缓存区
+ * @param  notifyOption  发送的选项
+ * @retval wErrorResourceUnavaliable  等待结果为资源不可用    
+ * @retval wErrorNoError              等待结果为正确  
+ * @retval wErrorTimeout              等待结果为超时   
+ */	
 uint32_t wMboxNotify(wMbox * mbox, void *msg, uint32_t notifyOption)
 {
 	uint32_t status = wTaskEnterCritical();
@@ -142,11 +157,11 @@ uint32_t wMboxNotify(wMbox * mbox, void *msg, uint32_t notifyOption)
 	return wErrorNoError;
 }
 
-/*******************************************************************************************************************
-  * @brief  清空邮箱函数
-  * @param  mbox  邮箱结构指针
-  * @retval 无
-  ******************************************************************************************************************/	
+/*！
+ * @brief  清空邮箱函数
+ * @param  mbox  邮箱结构指针
+ * @retval 无
+ */	
 void wMboxFlush(wMbox * mbox)
 {
 	uint32_t status = wTaskEnterCritical();
@@ -160,11 +175,11 @@ void wMboxFlush(wMbox * mbox)
 	wTaskExitCritical(status);
 }
 	
-/*******************************************************************************************************************
-  * @brief  删除邮箱函数
-  * @param  mbox        邮箱结构指针
-  * @retval 邮箱中任务数量
-  ******************************************************************************************************************/	
+/*！
+ * @brief  删除邮箱函数
+ * @param  mbox        邮箱结构指针
+ * @retval 邮箱中任务数量
+ */	
 uint32_t wMboxDestory(wMbox * mbox)
 {
 	uint32_t status = wTaskEnterCritical();
@@ -178,12 +193,12 @@ uint32_t wMboxDestory(wMbox * mbox)
 	return count;
 }
 
-/*******************************************************************************************************************
-  * @brief  邮箱状态查询函数
-  * @param  mbox   邮箱结构指针
-			info   状态查询结构指针
-  * @retval 无
-  ******************************************************************************************************************/	
+/*！
+ * @brief  邮箱状态查询函数
+ * @param  mbox   邮箱结构指针
+ * @param  info   状态查询结构指针
+ * @retval 无
+ */	
 void wMboxGetInfo(wMbox * mbox, wMboxInfo * info)
 {
 	uint32_t status = wTaskEnterCritical();        

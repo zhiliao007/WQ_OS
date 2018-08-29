@@ -3,16 +3,22 @@
 
 #include "wEvent.h"
 
-typedef struct _wFlagGroup     //定义事件标志组类型
+/*! 
+ * @brief 定义事件标志组类型
+ */
+typedef struct _wFlagGroup     
 {
-	wEvent event;              //事件控制块，wFlagGroup同时是一个wEvent
-	uint32_t flag;             //当前事件标志
+	wEvent event;              /*!< 事件控制块，wFlagGroup同时是一个wEvent */
+	uint32_t flag;             /*!< 当前事件标志 */
 }wFlagGroup; 
 
-typedef struct _wFlagGroupInfo   //定义事件标志组信息结构
+/*! 
+ * @brief 定义事件标志组信息结构
+ */	
+typedef struct _wFlagGroupInfo   
 {
-	uint32_t flags;              //当前的事件标志
-	uint32_t taskCount;          //当前等待的任务数
+	uint32_t flags;              /*!< 当前的事件标志 */
+	uint32_t taskCount;          /*!< 当前等待的任务数 */
 }wFlagGroupInfo;
 	
 #define WFLAGGROUP_CLEAR       (0x0 << 0)

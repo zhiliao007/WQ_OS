@@ -1,26 +1,41 @@
+/*
+ * @file wFlagGroup.c
+ * @author 李文晴
+ * @version 1.0.0.0
+ * @brief   事件标志组
+ * 
+ * 更新历史
+ * --
+ * 版本号|说明|修订者|修订日期
+ * ------|----|------|--------
+ * v1.0.0.0|创建文档|李文晴|2017-7
+ * 
+ */
+
 #include "WQ_OS.h"
 
 #if WQ_OS_ENABLE_FLAGGROUP == 1
-/*******************************************************************************************************************
-  * @brief  初始化事件标志组函数
-  * @param  flagGroup   事件标志组结构指针
-			flags       事件标志
-  * @retval 无
-  ******************************************************************************************************************/	
+
+/*!
+ * @brief  初始化事件标志组函数
+ * @param  flagGroup   事件标志组结构指针
+ * @param  flags       事件标志
+ * @retval 无
+ */	
 void wFlagGroupInit(wFlagGroup * flagGroup, uint32_t flags)
 {
 	wEventInit(&flagGroup->event, wEventTypeFlagGroup);
 	flagGroup->flag = flags;
 }
 
-/*******************************************************************************************************************
-  * @brief  检查并消耗掉事件标志函数
-  * @param  flagGroup   事件标志组结构指针
-			type        事件标志检查类型
-			flags       事件标志
-  * @retval wErrorNoError 事件匹配
-			wErrorResourceUnavaliable 事件未匹配
-  ******************************************************************************************************************/	
+/*!
+ * @brief  检查并消耗掉事件标志函数
+ * @param  flagGroup   事件标志组结构指针
+ * @param  type        事件标志检查类型
+ * @param  flags       事件标志
+ * @retval wErrorNoError 事件匹配
+ * @retval wErrorResourceUnavaliable 事件未匹配
+ */	
 static uint32_t wFlagGroupCheckAndConsume(wFlagGroup * flagGroup, uint32_t type, uint32_t * flags)
 {
 	uint32_t srcFlag = *flags;
@@ -51,17 +66,17 @@ static uint32_t wFlagGroupCheckAndConsume(wFlagGroup * flagGroup, uint32_t type,
 	return wErrorResourceUnavaliable;
 }
 	
-/*******************************************************************************************************************
-  * @brief  等待事件标志组函数
-  * @param  flagGroup   事件标志组结构指针
-			waitType    等待事件的类型     
-			requstFlag  请求的事件标志
-			resultFlag  等待标志结果
-			waitTicks   等待的最大ticks数
-  * @retval 等待结果    wErrorResourceUnavaliable    资源不可用
-                        wErrorNoError                没有错误
-                        wErrorTimeout                等待超时
-  ******************************************************************************************************************/	
+/*!
+ * @brief  等待事件标志组函数
+ * @param  flagGroup   事件标志组结构指针
+ * @param  waitType    等待事件的类型     
+ * @param  requstFlag  请求的事件标志
+ * @param  resultFlag  等待标志结果
+ * @param  waitTicks   等待的最大ticks数
+ * @retval wErrorResourceUnavaliable  等待结果为资源不可用    
+ * @retval wErrorNoError              等待结果为正确  
+ * @retval wErrorTimeout              等待结果为超时   
+ */	
 uint32_t wFlagGroupWait(wFlagGroup * flagGroup, uint32_t waitType, uint32_t requestFlag, uint32_t * resultFlag, uint32_t waitTicks)
 {
 	uint32_t result;
@@ -90,16 +105,16 @@ uint32_t wFlagGroupWait(wFlagGroup * flagGroup, uint32_t waitType, uint32_t requ
 	return result;
 }
 
-/*******************************************************************************************************************
-  * @brief  获取事件标志组函数
-  * @param  flagGroup   事件标志组结构指针
-			waitType    等待事件的类型     
-			requstFlag  请求的事件标志
-			resultFlag  等待标志结果
-  * @retval 等待结果    wErrorResourceUnavaliable    资源不可用
-                        wErrorNoError                没有错误
-                        wErrorTimeout                等待超时
-  ******************************************************************************************************************/	
+/*!
+ * @brief  获取事件标志组函数
+ * @param  flagGroup   事件标志组结构指针
+ * @param  waitType    等待事件的类型     
+ * @param  requstFlag  请求的事件标志
+ * @param  resultFlag  等待标志结果
+ * @retval wErrorResourceUnavaliable  等待结果为资源不可用    
+ * @retval wErrorNoError              等待结果为正确  
+ * @retval wErrorTimeout              等待结果为超时   
+ */	
 uint32_t wFlagGroupNoWaitGet(wFlagGroup * flagGroup, uint32_t waitType, uint32_t requestFlag, uint32_t * resultFlag)
 {
 	uint32_t flags = requestFlag;
@@ -112,13 +127,13 @@ uint32_t wFlagGroupNoWaitGet(wFlagGroup * flagGroup, uint32_t waitType, uint32_t
 	return wErrorNoError;
 }
 
-/*******************************************************************************************************************
-  * @brief  事件标志组唤醒任务函数
-  * @param  flagGroup   事件标志组结构指针
-			isSet       是否是设置事件标志
-			flags       产生的事件标志
-  * @retval 无
-  ******************************************************************************************************************/	
+/*!
+ * @brief  事件标志组唤醒任务函数
+ * @param  flagGroup   事件标志组结构指针
+ * @param  isSet       是否是设置事件标志
+ * @param  flags       产生的事件标志
+ * @retval 无
+ */	
 void wFlagGroupNotify(wFlagGroup * flagGroup, uint8_t isSet, uint32_t flag)
 {
 	wList * waitList;
@@ -160,12 +175,12 @@ void wFlagGroupNotify(wFlagGroup * flagGroup, uint8_t isSet, uint32_t flag)
 	wTaskExitCritical(status);
 }
 
-/*******************************************************************************************************************
-  * @brief  存储块状态查询函数
-  * @param  flagGroup   事件标志组结构指针
-			info        状态查询结构指针
-  * @retval 无
-  ******************************************************************************************************************/	
+/*!
+ * @brief  存储块状态查询函数
+ * @param  flagGroup   事件标志组结构指针
+ * @param  info        状态查询结构指针
+ * @retval 无
+ */	
 void wFlagGroupGetInfo(wFlagGroup * flagGroup, wFlagGroupInfo * info)
 {
 	uint32_t status = wTaskEnterCritical();
@@ -176,11 +191,11 @@ void wFlagGroupGetInfo(wFlagGroup * flagGroup, wFlagGroupInfo * info)
 	wTaskExitCritical(status);
 }	
 
-/*******************************************************************************************************************
-  * @brief  删除存储块函数
-  * @param  flagGroup   事件标志组结构指针
-  * @retval 存储块中任务数量
-  ******************************************************************************************************************/	
+/*!
+ * @brief  删除存储块函数
+ * @param  flagGroup   事件标志组结构指针
+ * @retval 存储块中任务数量
+ */	
 uint32_t wFlagGroupDestroy(wFlagGroup * flagGroup)
 {
 	uint32_t status = wTaskEnterCritical();

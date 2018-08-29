@@ -27,14 +27,17 @@
 
 #define TICKS_PER_SEC (1000 / WQ_OS_SYSTICK_MS)
 
-typedef enum _wError           //WQ_OS的错误码
+/*! 
+ * @brief WQ_OS的错误码
+ */
+typedef enum _wError           
 {
-	wErrorNoError = 0,         //没有错误
-	wErrorTimeout,             //超时
-	wErrorResourceUnavaliable, //没有资源可用
-	wErrorDel,                 //删除任务
-	wErrorResourseFull,        //资源已满
-	wErrorOwner,               //不匹配的所有者
+	wErrorNoError = 0,         /*!< 没有错误 */
+	wErrorTimeout,             /*!< 超时 */
+	wErrorResourceUnavaliable, /*!< 没有资源可用 */
+	wErrorDel,                 /*!< 删除任务 */
+	wErrorResourseFull,        /*!< 资源已满 */
+	wErrorOwner,               /*!< 不匹配的所有者 */
 }wError;
 
 extern wTask * currentTask;
