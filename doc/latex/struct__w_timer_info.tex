@@ -1,0 +1,73 @@
+\hypertarget{struct__w_timer_info}{}\section{\+\_\+w\+Timer\+Info结构体 参考}
+\label{struct__w_timer_info}\index{\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}}
+
+
+定义软件定时器信息结构  
+
+
+
+
+{\ttfamily \#include $<$w\+Timer.\+h$>$}
+
+\subsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_timer_info_acecf013811265c398517a464e7e6f7b2}{start\+Delay\+Ticks}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_timer_info_a95f8cbd7a4ba89fc9ae542eb04a24bc0}{duration\+Ticks}}
+\item 
+void($\ast$ \mbox{\hyperlink{struct__w_timer_info_a5b39f4308b8e715d9278cbf70f7297c7}{timer\+Func}} )(void $\ast$\mbox{\hyperlink{struct__w_timer_info_a9ce2ec4812a92cb6ab39f6e81e9173a9}{arg}})
+\item 
+void $\ast$ \mbox{\hyperlink{struct__w_timer_info_a9ce2ec4812a92cb6ab39f6e81e9173a9}{arg}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_timer_info_ac0c635110dc503f164fff91b163936d7}{config}}
+\item 
+\mbox{\hyperlink{w_timer_8h_afd5ce485f9f6080eb16b9b0d11c09dcd}{w\+Timer\+State}} \mbox{\hyperlink{struct__w_timer_info_ac82a56d0e6704cdcfdad6e80803b1674}{state}}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+定义软件定时器信息结构 
+
+\subsection{结构体成员变量说明}
+\mbox{\Hypertarget{struct__w_timer_info_a9ce2ec4812a92cb6ab39f6e81e9173a9}\label{struct__w_timer_info_a9ce2ec4812a92cb6ab39f6e81e9173a9}} 
+\index{\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}!arg@{arg}}
+\index{arg@{arg}!\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}}
+\subsubsection{\texorpdfstring{arg}{arg}}
+{\footnotesize\ttfamily void$\ast$ arg}
+
+传递给回调函数的参数 \mbox{\Hypertarget{struct__w_timer_info_ac0c635110dc503f164fff91b163936d7}\label{struct__w_timer_info_ac0c635110dc503f164fff91b163936d7}} 
+\index{\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}!config@{config}}
+\index{config@{config}!\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}}
+\subsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily uint32\+\_\+t config}
+
+定时器配置参数 \mbox{\Hypertarget{struct__w_timer_info_a95f8cbd7a4ba89fc9ae542eb04a24bc0}\label{struct__w_timer_info_a95f8cbd7a4ba89fc9ae542eb04a24bc0}} 
+\index{\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}!duration\+Ticks@{duration\+Ticks}}
+\index{duration\+Ticks@{duration\+Ticks}!\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}}
+\subsubsection{\texorpdfstring{duration\+Ticks}{durationTicks}}
+{\footnotesize\ttfamily uint32\+\_\+t duration\+Ticks}
+
+周期定时时的周期tick数 \mbox{\Hypertarget{struct__w_timer_info_acecf013811265c398517a464e7e6f7b2}\label{struct__w_timer_info_acecf013811265c398517a464e7e6f7b2}} 
+\index{\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}!start\+Delay\+Ticks@{start\+Delay\+Ticks}}
+\index{start\+Delay\+Ticks@{start\+Delay\+Ticks}!\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}}
+\subsubsection{\texorpdfstring{start\+Delay\+Ticks}{startDelayTicks}}
+{\footnotesize\ttfamily uint32\+\_\+t start\+Delay\+Ticks}
+
+初次启动延后的ticks数 \mbox{\Hypertarget{struct__w_timer_info_ac82a56d0e6704cdcfdad6e80803b1674}\label{struct__w_timer_info_ac82a56d0e6704cdcfdad6e80803b1674}} 
+\index{\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}!state@{state}}
+\index{state@{state}!\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_timer_8h_afd5ce485f9f6080eb16b9b0d11c09dcd}{w\+Timer\+State}} state}
+
+定时器状态 \mbox{\Hypertarget{struct__w_timer_info_a5b39f4308b8e715d9278cbf70f7297c7}\label{struct__w_timer_info_a5b39f4308b8e715d9278cbf70f7297c7}} 
+\index{\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}!timer\+Func@{timer\+Func}}
+\index{timer\+Func@{timer\+Func}!\+\_\+w\+Timer\+Info@{\+\_\+w\+Timer\+Info}}
+\subsubsection{\texorpdfstring{timer\+Func}{timerFunc}}
+{\footnotesize\ttfamily void($\ast$ timer\+Func) (void $\ast$\mbox{\hyperlink{struct__w_timer_info_a9ce2ec4812a92cb6ab39f6e81e9173a9}{arg}})}
+
+定时回调函数 
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/\mbox{\hyperlink{w_timer_8h}{w\+Timer.\+h}}\end{DoxyCompactItemize}

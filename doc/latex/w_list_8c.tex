@@ -1,0 +1,403 @@
+\hypertarget{w_list_8c}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+List.c 文件参考}
+\label{w_list_8c}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+List.\+c@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+List.\+c}}
+{\ttfamily \#include \char`\"{}w\+Lib.\+h\char`\"{}}\newline
+w\+List.\+c 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{w_list_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{w_list_8c_ae2c62eed654905a000a0a2628617d446}{first\+Node}}~head\+Node.\+next\+Node
+\item 
+\#define \mbox{\hyperlink{w_list_8c_a672e5fd3c21e41bdd207be0f3b062b20}{last\+Node}}~head\+Node.\+pre\+Node
+\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{w_list_8c_a3506d080ed161c2866b73ad2b2595fdf}{w\+Node\+Init}} (\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em 结点初始化函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_list_8c_aeb31b6fb82b205a25dbf1b11ce8a9c14}{w\+List\+Init}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em 链表初始化函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_list_8c_a7d33baac6b25d816f7cfc67ffdeee8cb}{w\+List\+Count}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em 链表结点数计数函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$ \mbox{\hyperlink{w_list_8c_a3221ea08ff11c2cfbca5c473c2fd6a07}{w\+List\+First}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em 返回首个结点函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$ \mbox{\hyperlink{w_list_8c_ae81713a4d76a1618b554def16757c12a}{w\+List\+Last}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em 返回最后一个结点函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$ \mbox{\hyperlink{w_list_8c_a8ca5b2c031ce7a1e69d72a20539e5ae5}{w\+List\+Pre}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list, \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em 返回链表中指定结点的前一结点 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$ \mbox{\hyperlink{w_list_8c_a67bcfabef437e50178d49b95e6cda50f}{w\+List\+Next}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list, \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em 返回链表中指定结点的后一结点 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_list_8c_a76b178f54a869ecce3d2d06a600fd632}{w\+List\+Remove\+All}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em 清空链表函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_list_8c_a2346f45406d665accfd808f3a1eea052}{w\+List\+Add\+First}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list, \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em 添加指定结点到链表头部函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_list_8c_a2cbc75ad50d6813f0c208a41d565b6d9}{w\+List\+Add\+Last}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list, \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em 添加指定结点到链表尾部函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$ \mbox{\hyperlink{w_list_8c_a3821ea86084ec39dd0e9bab5a5924504}{w\+List\+Remove\+First}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em 移除链表中的第1个结点函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_list_8c_aa876ab78c14d4c902626f359509470f3}{w\+List\+Insert\+After}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list, \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$node\+After, \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$node\+To\+Insert)
+\begin{DoxyCompactList}\small\item\em 插入结点到某个结点后面函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_list_8c_a3a79549b0921e14d6bed1eb8674b720f}{w\+List\+Remove}} (\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$list, \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em 移除链表中指定结点函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{宏定义说明}
+\mbox{\Hypertarget{w_list_8c_ae2c62eed654905a000a0a2628617d446}\label{w_list_8c_ae2c62eed654905a000a0a2628617d446}} 
+\index{w\+List.\+c@{w\+List.\+c}!first\+Node@{first\+Node}}
+\index{first\+Node@{first\+Node}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{first\+Node}{firstNode}}
+{\footnotesize\ttfamily \#define first\+Node~head\+Node.\+next\+Node}
+
+首尾结点 \mbox{\Hypertarget{w_list_8c_a672e5fd3c21e41bdd207be0f3b062b20}\label{w_list_8c_a672e5fd3c21e41bdd207be0f3b062b20}} 
+\index{w\+List.\+c@{w\+List.\+c}!last\+Node@{last\+Node}}
+\index{last\+Node@{last\+Node}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{last\+Node}{lastNode}}
+{\footnotesize\ttfamily \#define last\+Node~head\+Node.\+pre\+Node}
+
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{w_list_8c_a2346f45406d665accfd808f3a1eea052}\label{w_list_8c_a2346f45406d665accfd808f3a1eea052}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+Add\+First@{w\+List\+Add\+First}}
+\index{w\+List\+Add\+First@{w\+List\+Add\+First}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+Add\+First()}{wListAddFirst()}}
+{\footnotesize\ttfamily void w\+List\+Add\+First (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list,  }\item[{\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+添加指定结点到链表头部函数 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+{\em node} & 指定结点指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_list_8c_a2346f45406d665accfd808f3a1eea052_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_list_8c_a2cbc75ad50d6813f0c208a41d565b6d9}\label{w_list_8c_a2cbc75ad50d6813f0c208a41d565b6d9}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+Add\+Last@{w\+List\+Add\+Last}}
+\index{w\+List\+Add\+Last@{w\+List\+Add\+Last}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+Add\+Last()}{wListAddLast()}}
+{\footnotesize\ttfamily void w\+List\+Add\+Last (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list,  }\item[{\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+添加指定结点到链表尾部函数 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+{\em node} & 指定结点指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_list_8c_a2cbc75ad50d6813f0c208a41d565b6d9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_list_8c_a7d33baac6b25d816f7cfc67ffdeee8cb}\label{w_list_8c_a7d33baac6b25d816f7cfc67ffdeee8cb}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+Count@{w\+List\+Count}}
+\index{w\+List\+Count@{w\+List\+Count}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+Count()}{wListCount()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+List\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+链表结点数计数函数 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 链表结点数} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_list_8c_a7d33baac6b25d816f7cfc67ffdeee8cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_list_8c_a3221ea08ff11c2cfbca5c473c2fd6a07}\label{w_list_8c_a3221ea08ff11c2cfbca5c473c2fd6a07}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+First@{w\+List\+First}}
+\index{w\+List\+First@{w\+List\+First}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+First()}{wListFirst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}}$\ast$ w\+List\+First (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+返回首个结点函数 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 第一个结点} & 若无结点，则返回0 \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_list_8c_a3221ea08ff11c2cfbca5c473c2fd6a07_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_list_8c_aeb31b6fb82b205a25dbf1b11ce8a9c14}\label{w_list_8c_aeb31b6fb82b205a25dbf1b11ce8a9c14}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+Init@{w\+List\+Init}}
+\index{w\+List\+Init@{w\+List\+Init}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+Init()}{wListInit()}}
+{\footnotesize\ttfamily void w\+List\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+链表初始化函数 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_list_8c_aeb31b6fb82b205a25dbf1b11ce8a9c14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_list_8c_aa876ab78c14d4c902626f359509470f3}\label{w_list_8c_aa876ab78c14d4c902626f359509470f3}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+Insert\+After@{w\+List\+Insert\+After}}
+\index{w\+List\+Insert\+After@{w\+List\+Insert\+After}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+Insert\+After()}{wListInsertAfter()}}
+{\footnotesize\ttfamily void w\+List\+Insert\+After (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list,  }\item[{\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$}]{node\+After,  }\item[{\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$}]{node\+To\+Insert }\end{DoxyParamCaption})}
+
+
+
+插入结点到某个结点后面函数 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+{\em node\+After} & 参考结点指针 \\
+\hline
+{\em node\+To\+Insert} & 待插入结点指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{w_list_8c_ae81713a4d76a1618b554def16757c12a}\label{w_list_8c_ae81713a4d76a1618b554def16757c12a}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+Last@{w\+List\+Last}}
+\index{w\+List\+Last@{w\+List\+Last}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+Last()}{wListLast()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}}$\ast$ w\+List\+Last (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+返回最后一个结点函数 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 最后一个结点} & 若无结点，则返回0 \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{w_list_8c_a67bcfabef437e50178d49b95e6cda50f}\label{w_list_8c_a67bcfabef437e50178d49b95e6cda50f}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+Next@{w\+List\+Next}}
+\index{w\+List\+Next@{w\+List\+Next}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+Next()}{wListNext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}}$\ast$ w\+List\+Next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list,  }\item[{\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+返回链表中指定结点的后一结点 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+{\em node} & 指定结点指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 链表中指定结点的后一结点名} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{w_list_8c_a8ca5b2c031ce7a1e69d72a20539e5ae5}\label{w_list_8c_a8ca5b2c031ce7a1e69d72a20539e5ae5}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+Pre@{w\+List\+Pre}}
+\index{w\+List\+Pre@{w\+List\+Pre}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+Pre()}{wListPre()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}}$\ast$ w\+List\+Pre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list,  }\item[{\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+返回链表中指定结点的前一结点 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+{\em node} & 指定结点指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 链表中指定结点的前一结点名} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{w_list_8c_a3a79549b0921e14d6bed1eb8674b720f}\label{w_list_8c_a3a79549b0921e14d6bed1eb8674b720f}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+Remove@{w\+List\+Remove}}
+\index{w\+List\+Remove@{w\+List\+Remove}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+Remove()}{wListRemove()}}
+{\footnotesize\ttfamily void w\+List\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list,  }\item[{\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+移除链表中指定结点函数 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+{\em node} & 移除结点指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_list_8c_a3a79549b0921e14d6bed1eb8674b720f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_list_8c_a76b178f54a869ecce3d2d06a600fd632}\label{w_list_8c_a76b178f54a869ecce3d2d06a600fd632}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+Remove\+All@{w\+List\+Remove\+All}}
+\index{w\+List\+Remove\+All@{w\+List\+Remove\+All}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+Remove\+All()}{wListRemoveAll()}}
+{\footnotesize\ttfamily void w\+List\+Remove\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+清空链表函数 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{w_list_8c_a3821ea86084ec39dd0e9bab5a5924504}\label{w_list_8c_a3821ea86084ec39dd0e9bab5a5924504}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+List\+Remove\+First@{w\+List\+Remove\+First}}
+\index{w\+List\+Remove\+First@{w\+List\+Remove\+First}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+List\+Remove\+First()}{wListRemoveFirst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}}$\ast$ w\+List\+Remove\+First (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+移除链表中的第1个结点函数 
+
+
+\begin{DoxyParams}{参数}
+{\em list} & 链表结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 第1个结点} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_list_8c_a3821ea86084ec39dd0e9bab5a5924504_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_list_8c_a3506d080ed161c2866b73ad2b2595fdf}\label{w_list_8c_a3506d080ed161c2866b73ad2b2595fdf}} 
+\index{w\+List.\+c@{w\+List.\+c}!w\+Node\+Init@{w\+Node\+Init}}
+\index{w\+Node\+Init@{w\+Node\+Init}!w\+List.\+c@{w\+List.\+c}}
+\subsubsection{\texorpdfstring{w\+Node\+Init()}{wNodeInit()}}
+{\footnotesize\ttfamily void w\+Node\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+结点初始化函数 
+
+
+\begin{DoxyParams}{参数}
+{\em node} & 结点结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_list_8c_a3506d080ed161c2866b73ad2b2595fdf_icgraph}
+\end{center}
+\end{figure}

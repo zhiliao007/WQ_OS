@@ -1,0 +1,783 @@
+\hypertarget{_w_q___o_s_8h}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/\+W\+Q\+\_\+\+OS.h 文件参考}
+\label{_w_q___o_s_8h}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/\+W\+Q\+\_\+\+O\+S.\+h@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/\+W\+Q\+\_\+\+O\+S.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}w\+Config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Lib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Event.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Sem.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Mbox.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Mem\+Block.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Flag\+Group.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Mutex.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Hooks.\+h\char`\"{}}\newline
+W\+Q\+\_\+\+O\+S.\+h 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_w_q___o_s_8h_a4a0c770328891d8916c1142a26481e4a}{T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC}}~(1000 / \mbox{\hyperlink{w_config_8h_a6bc17a7cd7bcd5c8e3f43b80eb38efbf}{W\+Q\+\_\+\+O\+S\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+MS}})
+\end{DoxyCompactItemize}
+\subsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98b}{\+\_\+w\+Error}} \mbox{\hyperlink{_w_q___o_s_8h_ac3174e22c7d59578fef62b85fab018d3}{w\+Error}}
+\begin{DoxyCompactList}\small\item\em W\+Q\+\_\+\+O\+S的错误码 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98b}{\+\_\+w\+Error}} \{ \newline
+\mbox{\hyperlink{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98bafd726eb2f6e7bfa60b95543c22dff717}{w\+Error\+No\+Error}} = 0, 
+\mbox{\hyperlink{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98ba68cae0d083658dc174b4a23278feefea}{w\+Error\+Timeout}}, 
+\mbox{\hyperlink{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98ba8aeddda7b4c5f8c90ab8f1028a47ef51}{w\+Error\+Resource\+Unavaliable}}, 
+\mbox{\hyperlink{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98bac28937d33cb8e257178e7497a1c6bc5a}{w\+Error\+Del}}, 
+\newline
+\mbox{\hyperlink{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98ba5246fc1f19acff698dcd4edb0e87de1d}{w\+Error\+Resourse\+Full}}, 
+\mbox{\hyperlink{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98baa5214fd3c082418078cb412e63d67a2b}{w\+Error\+Owner}}
+ \}
+\begin{DoxyCompactList}\small\item\em W\+Q\+\_\+\+O\+S的错误码 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a7666aa7be88758a4c37731c268a6131c}{w\+Task\+Run\+First}} (void)
+\begin{DoxyCompactList}\small\item\em 系统开始运行函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a664f524a5ad06e5753881c34c9ed96f7}{w\+Task\+Switch}} (void)
+\begin{DoxyCompactList}\small\item\em 任务切换函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_w_q___o_s_8h_ad052c520126af4654831bf45f5cca530}{w\+Task\+Enter\+Critical}} (void)
+\begin{DoxyCompactList}\small\item\em 进入临界区函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a70fa5a9368387ef47a1d51e2dcb91e32}{w\+Task\+Exit\+Critical}} (uint32\+\_\+t status)
+\begin{DoxyCompactList}\small\item\em 退出临界区函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a4d9a0f3090b684084bbe94f148747cd0}{w\+Task\+Sched\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em 内核初始化函数（初始化调度器） \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a033b0131d8e17bf2e857a743a02313f7}{w\+Task\+Sched\+Disable}} (void)
+\begin{DoxyCompactList}\small\item\em 调度锁上锁函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_ae6dc919e0faa1e15e92c96899202c0a5}{w\+Task\+Sched\+Enable}} (void)
+\begin{DoxyCompactList}\small\item\em 允许任务调度函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a600f0ce279bbc48c121bd6e31874aff9}{w\+Task\+Sched\+Rdy}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 将任务插入就绪列表（将任务从延时队列中移除时）函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a598536b78a16c960ddfb82d887746cae}{w\+Task\+Sched\+Un\+Rdy}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 将任务从就绪列表中删除函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_ad212054b17e4733e330c97f3d3274767}{w\+Task\+Sched\+Remove}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 将任务从优先级列表中删除函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a231177ae77d1af6c5239c4ca95be8760}{w\+Task\+Sched}} (void)
+\begin{DoxyCompactList}\small\item\em 任务调度函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a1163983eff6acb009950c69f3a55b629}{w\+Time\+Task\+Wait}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task, uint32\+\_\+t ticks)
+\begin{DoxyCompactList}\small\item\em 将任务插入延时队列函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a85848b63b5fe499d55e6c4196c43f306}{w\+Time\+Task\+Wake\+Up}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 将任务从延时队列唤醒函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a135f5a694c1f6b01cb1499ecaf2ee0a5}{w\+Time\+Task\+Remove}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 将任务从延时队列删除函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a36ab31adb9bd20b1fe3337cf8ac6baf2}{w\+Task\+System\+Tick\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em 任务\+System\+Tick中断服务函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a618d37ec82abeef9a32a8fd08ece8845}{w\+Task\+Delay}} (uint32\+\_\+t \mbox{\hyperlink{app_8c_a8eacdcdfdfb9ba0c6a62ee6206d0b1d4}{delay}})
+\begin{DoxyCompactList}\small\item\em 任务延时函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a6d057c3d9ca7b24e905152d05b3772fa}{w\+Set\+Sys\+Tick\+Period}} (uint32\+\_\+t ms)
+\begin{DoxyCompactList}\small\item\em Sys\+Tick初始化函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_w_q___o_s_8h_a01fa04097be631417a34fc2b5de3441a}{w\+Init\+App}} (void)
+\begin{DoxyCompactList}\small\item\em 任务初始化函数 \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_w_q___o_s_8h_ad5542021022dfa330f2c2fe68b057677}{t\+Cpu\+Usage\+Get}} (void)
+\end{DoxyCompactItemize}
+\subsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$ \mbox{\hyperlink{_w_q___o_s_8h_a6bec055003640755e2481f3cf0692894}{current\+Task}}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$ \mbox{\hyperlink{_w_q___o_s_8h_a44a5b29a47ca1930c940bc88c9051e0e}{next\+Task}}
+\end{DoxyCompactItemize}
+
+
+\subsection{宏定义说明}
+\mbox{\Hypertarget{_w_q___o_s_8h_a4a0c770328891d8916c1142a26481e4a}\label{_w_q___o_s_8h_a4a0c770328891d8916c1142a26481e4a}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC@{T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC}}
+\index{T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC@{T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC}{TICKS\_PER\_SEC}}
+{\footnotesize\ttfamily \#define T\+I\+C\+K\+S\+\_\+\+P\+E\+R\+\_\+\+S\+EC~(1000 / \mbox{\hyperlink{w_config_8h_a6bc17a7cd7bcd5c8e3f43b80eb38efbf}{W\+Q\+\_\+\+O\+S\+\_\+\+S\+Y\+S\+T\+I\+C\+K\+\_\+\+MS}})}
+
+
+
+\subsection{类型定义说明}
+\mbox{\Hypertarget{_w_q___o_s_8h_ac3174e22c7d59578fef62b85fab018d3}\label{_w_q___o_s_8h_ac3174e22c7d59578fef62b85fab018d3}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Error@{w\+Error}}
+\index{w\+Error@{w\+Error}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Error}{wError}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98b}{\+\_\+w\+Error}} \mbox{\hyperlink{_w_q___o_s_8h_ac3174e22c7d59578fef62b85fab018d3}{w\+Error}}}
+
+
+
+W\+Q\+\_\+\+O\+S的错误码 
+
+
+
+\subsection{枚举类型说明}
+\mbox{\Hypertarget{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98b}\label{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98b}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!\+\_\+w\+Error@{\+\_\+w\+Error}}
+\index{\+\_\+w\+Error@{\+\_\+w\+Error}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+w\+Error}{\_wError}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98b}{\+\_\+w\+Error}}}
+
+
+
+W\+Q\+\_\+\+O\+S的错误码 
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Error\+No\+Error@{w\+Error\+No\+Error}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Error\+No\+Error@{w\+Error\+No\+Error}}}\mbox{\Hypertarget{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98bafd726eb2f6e7bfa60b95543c22dff717}\label{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98bafd726eb2f6e7bfa60b95543c22dff717}} 
+w\+Error\+No\+Error&没有错误 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Error\+Timeout@{w\+Error\+Timeout}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Error\+Timeout@{w\+Error\+Timeout}}}\mbox{\Hypertarget{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98ba68cae0d083658dc174b4a23278feefea}\label{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98ba68cae0d083658dc174b4a23278feefea}} 
+w\+Error\+Timeout&超时 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Error\+Resource\+Unavaliable@{w\+Error\+Resource\+Unavaliable}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Error\+Resource\+Unavaliable@{w\+Error\+Resource\+Unavaliable}}}\mbox{\Hypertarget{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98ba8aeddda7b4c5f8c90ab8f1028a47ef51}\label{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98ba8aeddda7b4c5f8c90ab8f1028a47ef51}} 
+w\+Error\+Resource\+Unavaliable&没有资源可用 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Error\+Del@{w\+Error\+Del}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Error\+Del@{w\+Error\+Del}}}\mbox{\Hypertarget{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98bac28937d33cb8e257178e7497a1c6bc5a}\label{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98bac28937d33cb8e257178e7497a1c6bc5a}} 
+w\+Error\+Del&删除任务 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Error\+Resourse\+Full@{w\+Error\+Resourse\+Full}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Error\+Resourse\+Full@{w\+Error\+Resourse\+Full}}}\mbox{\Hypertarget{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98ba5246fc1f19acff698dcd4edb0e87de1d}\label{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98ba5246fc1f19acff698dcd4edb0e87de1d}} 
+w\+Error\+Resourse\+Full&资源已满 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Error\+Owner@{w\+Error\+Owner}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Error\+Owner@{w\+Error\+Owner}}}\mbox{\Hypertarget{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98baa5214fd3c082418078cb412e63d67a2b}\label{_w_q___o_s_8h_a71898a38ddcc7c70cc6185b38d1bd98baa5214fd3c082418078cb412e63d67a2b}} 
+w\+Error\+Owner&不匹配的所有者 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{_w_q___o_s_8h_ad5542021022dfa330f2c2fe68b057677}\label{_w_q___o_s_8h_ad5542021022dfa330f2c2fe68b057677}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!t\+Cpu\+Usage\+Get@{t\+Cpu\+Usage\+Get}}
+\index{t\+Cpu\+Usage\+Get@{t\+Cpu\+Usage\+Get}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{t\+Cpu\+Usage\+Get()}{tCpuUsageGet()}}
+{\footnotesize\ttfamily float t\+Cpu\+Usage\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_w_q___o_s_8h_a01fa04097be631417a34fc2b5de3441a}\label{_w_q___o_s_8h_a01fa04097be631417a34fc2b5de3441a}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Init\+App@{w\+Init\+App}}
+\index{w\+Init\+App@{w\+Init\+App}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Init\+App()}{wInitApp()}}
+{\footnotesize\ttfamily void w\+Init\+App (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+任务初始化函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a01fa04097be631417a34fc2b5de3441a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{_w_q___o_s_8h_a01fa04097be631417a34fc2b5de3441a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a6d057c3d9ca7b24e905152d05b3772fa}\label{_w_q___o_s_8h_a6d057c3d9ca7b24e905152d05b3772fa}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Set\+Sys\+Tick\+Period@{w\+Set\+Sys\+Tick\+Period}}
+\index{w\+Set\+Sys\+Tick\+Period@{w\+Set\+Sys\+Tick\+Period}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Set\+Sys\+Tick\+Period()}{wSetSysTickPeriod()}}
+{\footnotesize\ttfamily void w\+Set\+Sys\+Tick\+Period (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ms }\end{DoxyParamCaption})}
+
+
+
+Sys\+Tick初始化函数 
+
+
+\begin{DoxyParams}{参数}
+{\em ms：} & 定时时间 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a6d057c3d9ca7b24e905152d05b3772fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a618d37ec82abeef9a32a8fd08ece8845}\label{_w_q___o_s_8h_a618d37ec82abeef9a32a8fd08ece8845}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Delay@{w\+Task\+Delay}}
+\index{w\+Task\+Delay@{w\+Task\+Delay}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Delay()}{wTaskDelay()}}
+{\footnotesize\ttfamily void w\+Task\+Delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{delay }\end{DoxyParamCaption})}
+
+
+
+任务延时函数 
+
+
+\begin{DoxyParams}{参数}
+{\em delay：} & 任务延时时间(x10ms) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a618d37ec82abeef9a32a8fd08ece8845_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a618d37ec82abeef9a32a8fd08ece8845_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_ad052c520126af4654831bf45f5cca530}\label{_w_q___o_s_8h_ad052c520126af4654831bf45f5cca530}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Enter\+Critical@{w\+Task\+Enter\+Critical}}
+\index{w\+Task\+Enter\+Critical@{w\+Task\+Enter\+Critical}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Enter\+Critical()}{wTaskEnterCritical()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Task\+Enter\+Critical (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+进入临界区函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 0} & 中断屏蔽 \\
+\hline
+{\em 1} & 中断开启 \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_w_q___o_s_8h_a70fa5a9368387ef47a1d51e2dcb91e32}\label{_w_q___o_s_8h_a70fa5a9368387ef47a1d51e2dcb91e32}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Exit\+Critical@{w\+Task\+Exit\+Critical}}
+\index{w\+Task\+Exit\+Critical@{w\+Task\+Exit\+Critical}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Exit\+Critical()}{wTaskExitCritical()}}
+{\footnotesize\ttfamily void w\+Task\+Exit\+Critical (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{status }\end{DoxyParamCaption})}
+
+
+
+退出临界区函数 
+
+
+\begin{DoxyParams}{参数}
+{\em status} & 中断的状态，由进入临界区函数返回 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_w_q___o_s_8h_a7666aa7be88758a4c37731c268a6131c}\label{_w_q___o_s_8h_a7666aa7be88758a4c37731c268a6131c}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Run\+First@{w\+Task\+Run\+First}}
+\index{w\+Task\+Run\+First@{w\+Task\+Run\+First}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Run\+First()}{wTaskRunFirst()}}
+{\footnotesize\ttfamily void w\+Task\+Run\+First (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+系统开始运行函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{_w_q___o_s_8h_a7666aa7be88758a4c37731c268a6131c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a231177ae77d1af6c5239c4ca95be8760}\label{_w_q___o_s_8h_a231177ae77d1af6c5239c4ca95be8760}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Sched@{w\+Task\+Sched}}
+\index{w\+Task\+Sched@{w\+Task\+Sched}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched()}{wTaskSched()}}
+{\footnotesize\ttfamily void w\+Task\+Sched (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+任务调度函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a231177ae77d1af6c5239c4ca95be8760_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a231177ae77d1af6c5239c4ca95be8760_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a033b0131d8e17bf2e857a743a02313f7}\label{_w_q___o_s_8h_a033b0131d8e17bf2e857a743a02313f7}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Sched\+Disable@{w\+Task\+Sched\+Disable}}
+\index{w\+Task\+Sched\+Disable@{w\+Task\+Sched\+Disable}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Disable()}{wTaskSchedDisable()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Disable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+调度锁上锁函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{_w_q___o_s_8h_a033b0131d8e17bf2e857a743a02313f7_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a033b0131d8e17bf2e857a743a02313f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_ae6dc919e0faa1e15e92c96899202c0a5}\label{_w_q___o_s_8h_ae6dc919e0faa1e15e92c96899202c0a5}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Sched\+Enable@{w\+Task\+Sched\+Enable}}
+\index{w\+Task\+Sched\+Enable@{w\+Task\+Sched\+Enable}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Enable()}{wTaskSchedEnable()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Enable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+允许任务调度函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_ae6dc919e0faa1e15e92c96899202c0a5_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_ae6dc919e0faa1e15e92c96899202c0a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a4d9a0f3090b684084bbe94f148747cd0}\label{_w_q___o_s_8h_a4d9a0f3090b684084bbe94f148747cd0}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Sched\+Init@{w\+Task\+Sched\+Init}}
+\index{w\+Task\+Sched\+Init@{w\+Task\+Sched\+Init}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Init()}{wTaskSchedInit()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+内核初始化函数（初始化调度器） 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{_w_q___o_s_8h_a4d9a0f3090b684084bbe94f148747cd0_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{_w_q___o_s_8h_a4d9a0f3090b684084bbe94f148747cd0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a600f0ce279bbc48c121bd6e31874aff9}\label{_w_q___o_s_8h_a600f0ce279bbc48c121bd6e31874aff9}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Sched\+Rdy@{w\+Task\+Sched\+Rdy}}
+\index{w\+Task\+Sched\+Rdy@{w\+Task\+Sched\+Rdy}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Rdy()}{wTaskSchedRdy()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Rdy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+将任务插入就绪列表（将任务从延时队列中移除时）函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{_w_q___o_s_8h_a600f0ce279bbc48c121bd6e31874aff9_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a600f0ce279bbc48c121bd6e31874aff9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_ad212054b17e4733e330c97f3d3274767}\label{_w_q___o_s_8h_ad212054b17e4733e330c97f3d3274767}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Sched\+Remove@{w\+Task\+Sched\+Remove}}
+\index{w\+Task\+Sched\+Remove@{w\+Task\+Sched\+Remove}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Remove()}{wTaskSchedRemove()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+将任务从优先级列表中删除函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{_w_q___o_s_8h_ad212054b17e4733e330c97f3d3274767_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{_w_q___o_s_8h_ad212054b17e4733e330c97f3d3274767_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a598536b78a16c960ddfb82d887746cae}\label{_w_q___o_s_8h_a598536b78a16c960ddfb82d887746cae}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Sched\+Un\+Rdy@{w\+Task\+Sched\+Un\+Rdy}}
+\index{w\+Task\+Sched\+Un\+Rdy@{w\+Task\+Sched\+Un\+Rdy}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Un\+Rdy()}{wTaskSchedUnRdy()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Un\+Rdy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+将任务从就绪列表中删除函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{_w_q___o_s_8h_a598536b78a16c960ddfb82d887746cae_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a598536b78a16c960ddfb82d887746cae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a664f524a5ad06e5753881c34c9ed96f7}\label{_w_q___o_s_8h_a664f524a5ad06e5753881c34c9ed96f7}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+Switch@{w\+Task\+Switch}}
+\index{w\+Task\+Switch@{w\+Task\+Switch}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Switch()}{wTaskSwitch()}}
+{\footnotesize\ttfamily void w\+Task\+Switch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+任务切换函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a664f524a5ad06e5753881c34c9ed96f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a36ab31adb9bd20b1fe3337cf8ac6baf2}\label{_w_q___o_s_8h_a36ab31adb9bd20b1fe3337cf8ac6baf2}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Task\+System\+Tick\+Handler@{w\+Task\+System\+Tick\+Handler}}
+\index{w\+Task\+System\+Tick\+Handler@{w\+Task\+System\+Tick\+Handler}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+System\+Tick\+Handler()}{wTaskSystemTickHandler()}}
+{\footnotesize\ttfamily void w\+Task\+System\+Tick\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+任务\+System\+Tick中断服务函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a36ab31adb9bd20b1fe3337cf8ac6baf2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{_w_q___o_s_8h_a36ab31adb9bd20b1fe3337cf8ac6baf2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a135f5a694c1f6b01cb1499ecaf2ee0a5}\label{_w_q___o_s_8h_a135f5a694c1f6b01cb1499ecaf2ee0a5}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Time\+Task\+Remove@{w\+Time\+Task\+Remove}}
+\index{w\+Time\+Task\+Remove@{w\+Time\+Task\+Remove}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Time\+Task\+Remove()}{wTimeTaskRemove()}}
+{\footnotesize\ttfamily void w\+Time\+Task\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+将任务从延时队列删除函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 延时结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{_w_q___o_s_8h_a135f5a694c1f6b01cb1499ecaf2ee0a5_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{_w_q___o_s_8h_a135f5a694c1f6b01cb1499ecaf2ee0a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a1163983eff6acb009950c69f3a55b629}\label{_w_q___o_s_8h_a1163983eff6acb009950c69f3a55b629}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Time\+Task\+Wait@{w\+Time\+Task\+Wait}}
+\index{w\+Time\+Task\+Wait@{w\+Time\+Task\+Wait}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Time\+Task\+Wait()}{wTimeTaskWait()}}
+{\footnotesize\ttfamily void w\+Time\+Task\+Wait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task,  }\item[{uint32\+\_\+t}]{ticks }\end{DoxyParamCaption})}
+
+
+
+将任务插入延时队列函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+{\em ticks} & 延时的ticks数 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{_w_q___o_s_8h_a1163983eff6acb009950c69f3a55b629_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a1163983eff6acb009950c69f3a55b629_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{_w_q___o_s_8h_a85848b63b5fe499d55e6c4196c43f306}\label{_w_q___o_s_8h_a85848b63b5fe499d55e6c4196c43f306}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!w\+Time\+Task\+Wake\+Up@{w\+Time\+Task\+Wake\+Up}}
+\index{w\+Time\+Task\+Wake\+Up@{w\+Time\+Task\+Wake\+Up}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{w\+Time\+Task\+Wake\+Up()}{wTimeTaskWakeUp()}}
+{\footnotesize\ttfamily void w\+Time\+Task\+Wake\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+将任务从延时队列唤醒函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 延时结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{_w_q___o_s_8h_a85848b63b5fe499d55e6c4196c43f306_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_w_q___o_s_8h_a85848b63b5fe499d55e6c4196c43f306_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{变量说明}
+\mbox{\Hypertarget{_w_q___o_s_8h_a6bec055003640755e2481f3cf0692894}\label{_w_q___o_s_8h_a6bec055003640755e2481f3cf0692894}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!current\+Task@{current\+Task}}
+\index{current\+Task@{current\+Task}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{current\+Task}{currentTask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}$\ast$ current\+Task}
+
+指向当前任务的指针 \mbox{\Hypertarget{_w_q___o_s_8h_a44a5b29a47ca1930c940bc88c9051e0e}\label{_w_q___o_s_8h_a44a5b29a47ca1930c940bc88c9051e0e}} 
+\index{W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!W\+Q\+\_\+\+O\+S.\+h@{W\+Q\+\_\+\+O\+S.\+h}}
+\subsubsection{\texorpdfstring{next\+Task}{nextTask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}$\ast$ next\+Task}
+
+指向将要运行任务的指针 

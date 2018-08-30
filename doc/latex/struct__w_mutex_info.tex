@@ -1,0 +1,75 @@
+\hypertarget{struct__w_mutex_info}{}\section{\+\_\+w\+Mutex\+Info结构体 参考}
+\label{struct__w_mutex_info}\index{\+\_\+w\+Mutex\+Info@{\+\_\+w\+Mutex\+Info}}
+
+
+定义互斥信号量信息结构  
+
+
+
+
+{\ttfamily \#include $<$w\+Mutex.\+h$>$}
+
+
+
+\+\_\+w\+Mutex\+Info 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{struct__w_mutex_info__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_mutex_info_a80462c64b9184115aa568f08227f7f4a}{task\+Count}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_mutex_info_a2ad329dc18ddf3afd170e73535c5907a}{owner\+Prio}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_mutex_info_ad2ca878c1d7b4012ae3954a79aa664ef}{inherited\+Prio}}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$ \mbox{\hyperlink{struct__w_mutex_info_a1ed47712ef6760f64988107466c22321}{owner}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_mutex_info_a16598f387191bb413e5c802b23e501ef}{locked\+Count}}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+定义互斥信号量信息结构 
+
+\subsection{结构体成员变量说明}
+\mbox{\Hypertarget{struct__w_mutex_info_ad2ca878c1d7b4012ae3954a79aa664ef}\label{struct__w_mutex_info_ad2ca878c1d7b4012ae3954a79aa664ef}} 
+\index{\+\_\+w\+Mutex\+Info@{\+\_\+w\+Mutex\+Info}!inherited\+Prio@{inherited\+Prio}}
+\index{inherited\+Prio@{inherited\+Prio}!\+\_\+w\+Mutex\+Info@{\+\_\+w\+Mutex\+Info}}
+\subsubsection{\texorpdfstring{inherited\+Prio}{inheritedPrio}}
+{\footnotesize\ttfamily uint32\+\_\+t inherited\+Prio}
+
+继承者优先级 \mbox{\Hypertarget{struct__w_mutex_info_a16598f387191bb413e5c802b23e501ef}\label{struct__w_mutex_info_a16598f387191bb413e5c802b23e501ef}} 
+\index{\+\_\+w\+Mutex\+Info@{\+\_\+w\+Mutex\+Info}!locked\+Count@{locked\+Count}}
+\index{locked\+Count@{locked\+Count}!\+\_\+w\+Mutex\+Info@{\+\_\+w\+Mutex\+Info}}
+\subsubsection{\texorpdfstring{locked\+Count}{lockedCount}}
+{\footnotesize\ttfamily uint32\+\_\+t locked\+Count}
+
+锁定次数 \mbox{\Hypertarget{struct__w_mutex_info_a1ed47712ef6760f64988107466c22321}\label{struct__w_mutex_info_a1ed47712ef6760f64988107466c22321}} 
+\index{\+\_\+w\+Mutex\+Info@{\+\_\+w\+Mutex\+Info}!owner@{owner}}
+\index{owner@{owner}!\+\_\+w\+Mutex\+Info@{\+\_\+w\+Mutex\+Info}}
+\subsubsection{\texorpdfstring{owner}{owner}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}$\ast$ owner}
+
+拥有者 \mbox{\Hypertarget{struct__w_mutex_info_a2ad329dc18ddf3afd170e73535c5907a}\label{struct__w_mutex_info_a2ad329dc18ddf3afd170e73535c5907a}} 
+\index{\+\_\+w\+Mutex\+Info@{\+\_\+w\+Mutex\+Info}!owner\+Prio@{owner\+Prio}}
+\index{owner\+Prio@{owner\+Prio}!\+\_\+w\+Mutex\+Info@{\+\_\+w\+Mutex\+Info}}
+\subsubsection{\texorpdfstring{owner\+Prio}{ownerPrio}}
+{\footnotesize\ttfamily uint32\+\_\+t owner\+Prio}
+
+拥有者原始优先级 \mbox{\Hypertarget{struct__w_mutex_info_a80462c64b9184115aa568f08227f7f4a}\label{struct__w_mutex_info_a80462c64b9184115aa568f08227f7f4a}} 
+\index{\+\_\+w\+Mutex\+Info@{\+\_\+w\+Mutex\+Info}!task\+Count@{task\+Count}}
+\index{task\+Count@{task\+Count}!\+\_\+w\+Mutex\+Info@{\+\_\+w\+Mutex\+Info}}
+\subsubsection{\texorpdfstring{task\+Count}{taskCount}}
+{\footnotesize\ttfamily uint32\+\_\+t task\+Count}
+
+等待的任务数量 
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/\mbox{\hyperlink{w_mutex_8h}{w\+Mutex.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,171 @@
+\hypertarget{w_mbox_8c}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Mbox.c 文件参考}
+\label{w_mbox_8c}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Mbox.\+c@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Mbox.\+c}}
+{\ttfamily \#include \char`\"{}W\+Q\+\_\+\+O\+S.\+h\char`\"{}}\newline
+w\+Mbox.\+c 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mbox_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{w_mbox_8c_afe826b919c83f703507b1af8b0ac3e87}{w\+Mbox\+Init}} (\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$mbox, void $\ast$$\ast$msg\+Buffer, uint32\+\_\+t max\+Count)
+\begin{DoxyCompactList}\small\item\em 初始化邮箱函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_mbox_8c_aad740e70a9369ba8b891c6832cf7148d}{w\+Mbox\+Wait}} (\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$mbox, void $\ast$$\ast$msg, uint32\+\_\+t wait\+Ticks)
+\begin{DoxyCompactList}\small\item\em 等待邮箱获取消息函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_mbox_8c_ad82b179c557a58647d5863081e816235}{w\+Mbox\+No\+Wait\+Get}} (\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$mbox, void $\ast$$\ast$msg)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{w_mbox_8c_a5c7498a44f255cff65093f9e45d8631d}{w\+Mbox\+Notify}} (\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$mbox, void $\ast$msg, uint32\+\_\+t notify\+Option)
+\item 
+void \mbox{\hyperlink{w_mbox_8c_a889b0eca65717559856ea9e493dfe1b8}{w\+Mbox\+Flush}} (\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$mbox)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{w_mbox_8c_ad2bdaf4ad2b0ab20f096b912aad72831}{w\+Mbox\+Destory}} (\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$mbox)
+\item 
+void \mbox{\hyperlink{w_mbox_8c_a360eea2a4dd5f366384c34de45009b90}{w\+Mbox\+Get\+Info}} (\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$mbox, \mbox{\hyperlink{w_mbox_8h_aa75ce7b6c98e2a4ca1ac0350b6567a4a}{w\+Mbox\+Info}} $\ast$info)
+\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{w_mbox_8c_ad2bdaf4ad2b0ab20f096b912aad72831}\label{w_mbox_8c_ad2bdaf4ad2b0ab20f096b912aad72831}} 
+\index{w\+Mbox.\+c@{w\+Mbox.\+c}!w\+Mbox\+Destory@{w\+Mbox\+Destory}}
+\index{w\+Mbox\+Destory@{w\+Mbox\+Destory}!w\+Mbox.\+c@{w\+Mbox.\+c}}
+\subsubsection{\texorpdfstring{w\+Mbox\+Destory()}{wMboxDestory()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Mbox\+Destory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$}]{mbox }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mbox_8c_ad2bdaf4ad2b0ab20f096b912aad72831_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mbox_8c_a889b0eca65717559856ea9e493dfe1b8}\label{w_mbox_8c_a889b0eca65717559856ea9e493dfe1b8}} 
+\index{w\+Mbox.\+c@{w\+Mbox.\+c}!w\+Mbox\+Flush@{w\+Mbox\+Flush}}
+\index{w\+Mbox\+Flush@{w\+Mbox\+Flush}!w\+Mbox.\+c@{w\+Mbox.\+c}}
+\subsubsection{\texorpdfstring{w\+Mbox\+Flush()}{wMboxFlush()}}
+{\footnotesize\ttfamily void w\+Mbox\+Flush (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$}]{mbox }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mbox_8c_a889b0eca65717559856ea9e493dfe1b8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mbox_8c_a360eea2a4dd5f366384c34de45009b90}\label{w_mbox_8c_a360eea2a4dd5f366384c34de45009b90}} 
+\index{w\+Mbox.\+c@{w\+Mbox.\+c}!w\+Mbox\+Get\+Info@{w\+Mbox\+Get\+Info}}
+\index{w\+Mbox\+Get\+Info@{w\+Mbox\+Get\+Info}!w\+Mbox.\+c@{w\+Mbox.\+c}}
+\subsubsection{\texorpdfstring{w\+Mbox\+Get\+Info()}{wMboxGetInfo()}}
+{\footnotesize\ttfamily void w\+Mbox\+Get\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$}]{mbox,  }\item[{\mbox{\hyperlink{w_mbox_8h_aa75ce7b6c98e2a4ca1ac0350b6567a4a}{w\+Mbox\+Info}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mbox_8c_a360eea2a4dd5f366384c34de45009b90_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mbox_8c_afe826b919c83f703507b1af8b0ac3e87}\label{w_mbox_8c_afe826b919c83f703507b1af8b0ac3e87}} 
+\index{w\+Mbox.\+c@{w\+Mbox.\+c}!w\+Mbox\+Init@{w\+Mbox\+Init}}
+\index{w\+Mbox\+Init@{w\+Mbox\+Init}!w\+Mbox.\+c@{w\+Mbox.\+c}}
+\subsubsection{\texorpdfstring{w\+Mbox\+Init()}{wMboxInit()}}
+{\footnotesize\ttfamily void w\+Mbox\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$}]{mbox,  }\item[{void $\ast$$\ast$}]{msg\+Buffer,  }\item[{uint32\+\_\+t}]{max\+Count }\end{DoxyParamCaption})}
+
+
+
+初始化邮箱函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mbox} & 邮箱结构指针 \\
+\hline
+{\em msg\+Buffer} & 消息存储缓冲区 \\
+\hline
+{\em max\+Count} & 最大消息计数值 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{w_mbox_8c_afe826b919c83f703507b1af8b0ac3e87_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mbox_8c_a5c7498a44f255cff65093f9e45d8631d}\label{w_mbox_8c_a5c7498a44f255cff65093f9e45d8631d}} 
+\index{w\+Mbox.\+c@{w\+Mbox.\+c}!w\+Mbox\+Notify@{w\+Mbox\+Notify}}
+\index{w\+Mbox\+Notify@{w\+Mbox\+Notify}!w\+Mbox.\+c@{w\+Mbox.\+c}}
+\subsubsection{\texorpdfstring{w\+Mbox\+Notify()}{wMboxNotify()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Mbox\+Notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$}]{mbox,  }\item[{void $\ast$}]{msg,  }\item[{uint32\+\_\+t}]{notify\+Option }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mbox_8c_a5c7498a44f255cff65093f9e45d8631d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mbox_8c_ad82b179c557a58647d5863081e816235}\label{w_mbox_8c_ad82b179c557a58647d5863081e816235}} 
+\index{w\+Mbox.\+c@{w\+Mbox.\+c}!w\+Mbox\+No\+Wait\+Get@{w\+Mbox\+No\+Wait\+Get}}
+\index{w\+Mbox\+No\+Wait\+Get@{w\+Mbox\+No\+Wait\+Get}!w\+Mbox.\+c@{w\+Mbox.\+c}}
+\subsubsection{\texorpdfstring{w\+Mbox\+No\+Wait\+Get()}{wMboxNoWaitGet()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Mbox\+No\+Wait\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$}]{mbox,  }\item[{void $\ast$$\ast$}]{msg }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{w_mbox_8c_ad82b179c557a58647d5863081e816235_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mbox_8c_aad740e70a9369ba8b891c6832cf7148d}\label{w_mbox_8c_aad740e70a9369ba8b891c6832cf7148d}} 
+\index{w\+Mbox.\+c@{w\+Mbox.\+c}!w\+Mbox\+Wait@{w\+Mbox\+Wait}}
+\index{w\+Mbox\+Wait@{w\+Mbox\+Wait}!w\+Mbox.\+c@{w\+Mbox.\+c}}
+\subsubsection{\texorpdfstring{w\+Mbox\+Wait()}{wMboxWait()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Mbox\+Wait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mbox_8h_ad91f600eb4609d7484bd719ff270bd53}{w\+Mbox}} $\ast$}]{mbox,  }\item[{void $\ast$$\ast$}]{msg,  }\item[{uint32\+\_\+t}]{wait\+Ticks }\end{DoxyParamCaption})}
+
+
+
+等待邮箱获取消息函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mbox} & 邮箱结构指针 \\
+\hline
+{\em msg} & 消息存储缓存区 \\
+\hline
+{\em wait\+Ticks} & 等待的最大ticks数 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em w\+Error\+Resource\+Unavaliable} & 等待结果为资源不可用 ~\newline
+\\
+\hline
+{\em w\+Error\+No\+Error} & 等待结果为正确 ~\newline
+\\
+\hline
+{\em w\+Error\+Timeout} & 等待结果为超时 \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mbox_8c_aad740e70a9369ba8b891c6832cf7148d_cgraph}
+\end{center}
+\end{figure}

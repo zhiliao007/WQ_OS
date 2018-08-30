@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>WQ_OS: C:/Users/pc/Desktop/WQ_OS/Project/Sourse/wMbox.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">WQ_OS
+   &#160;<span id="projectnumber">1.0.2</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_ffd1f789ec7bd0a45fc6ad92579c5070.html">Project</a></li><li class="navelem"><a class="el" href="dir_b501bcf3bb7dab25ca2ca4e3e12c7fe9.html">Sourse</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">wMbox.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="w_mbox_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef WMBOX_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define WMBOX_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="w_event_8h.html">wEvent.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="w_mbox_8h.html#a2799c605bbf851bb5fd0ab8cebb9d8c1">    6</a></span>&#160;<span class="preprocessor">#define wMBOXSendNormal       0x00  </span></div><div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="w_mbox_8h.html#a2142b734f62ccbf44b399470028b38f5">    7</a></span>&#160;<span class="preprocessor">#define wMBOXSendFront        0x01</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct__w_mbox.html">   12</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct__w_mbox.html">_wMbox</a>        </div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct__w_mbox.html#ad737d3f95a5cf9ee457f37f1cedfa44a">   14</a></span>&#160;    <a class="code" href="struct__w_event.html">wEvent</a> <a class="code" href="struct__w_mbox.html#ad737d3f95a5cf9ee457f37f1cedfa44a">event</a>;            </div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct__w_mbox.html#a86988a65e0d3ece7990c032c159786d6">   16</a></span>&#160;    uint32_t <a class="code" href="struct__w_mbox.html#a86988a65e0d3ece7990c032c159786d6">count</a>;          </div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct__w_mbox.html#a0a71cf941cf2509857d61e1443ad8eaa">   18</a></span>&#160;    uint32_t <a class="code" href="struct__w_mbox.html#a0a71cf941cf2509857d61e1443ad8eaa">read</a>;           </div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct__w_mbox.html#ac4c9f9c5eac363cc22ecc18669cc3891">   20</a></span>&#160;    uint32_t <a class="code" href="struct__w_mbox.html#ac4c9f9c5eac363cc22ecc18669cc3891">write</a>;          </div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct__w_mbox.html#a1cc8a4ba5eee24b560f9869012941e91">   22</a></span>&#160;    uint32_t <a class="code" href="struct__w_mbox.html#a1cc8a4ba5eee24b560f9869012941e91">maxCount</a>;       </div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct__w_mbox.html#a42b4bab76140c12b77b72ec381001c6c">   24</a></span>&#160;    <span class="keywordtype">void</span> ** <a class="code" href="struct__w_mbox.html#a42b4bab76140c12b77b72ec381001c6c">msgBuffer</a>;       </div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}<a class="code" href="w_mbox_8h.html#ad91f600eb4609d7484bd719ff270bd53">wMbox</a>;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct__w_mbox_info.html">   30</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct__w_mbox_info.html">_wMboxInfo</a>    </div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="struct__w_mbox_info.html#a86988a65e0d3ece7990c032c159786d6">   32</a></span>&#160;    uint32_t <a class="code" href="struct__w_mbox_info.html#a86988a65e0d3ece7990c032c159786d6">count</a>;          </div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct__w_mbox_info.html#a1cc8a4ba5eee24b560f9869012941e91">   33</a></span>&#160;    uint32_t <a class="code" href="struct__w_mbox_info.html#a1cc8a4ba5eee24b560f9869012941e91">maxCount</a>;       </div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="struct__w_mbox_info.html#a80462c64b9184115aa568f08227f7f4a">   34</a></span>&#160;    uint32_t <a class="code" href="struct__w_mbox_info.html#a80462c64b9184115aa568f08227f7f4a">taskCount</a>;      </div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}<a class="code" href="w_mbox_8h.html#aa75ce7b6c98e2a4ca1ac0350b6567a4a">wMboxInfo</a>;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="w_mbox_8h.html#afe826b919c83f703507b1af8b0ac3e87">wMboxInit</a>(<a class="code" href="struct__w_mbox.html">wMbox</a> * mbox, <span class="keywordtype">void</span> **msgBuffer, uint32_t maxCount);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;uint32_t <a class="code" href="w_mbox_8h.html#aad740e70a9369ba8b891c6832cf7148d">wMboxWait</a>(<a class="code" href="struct__w_mbox.html">wMbox</a> * mbox, <span class="keywordtype">void</span> **msg, uint32_t waitTicks);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;uint32_t <a class="code" href="w_mbox_8h.html#ad82b179c557a58647d5863081e816235">wMboxNoWaitGet</a>(<a class="code" href="struct__w_mbox.html">wMbox</a> * mbox,<span class="keywordtype">void</span> **msg);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;uint32_t <a class="code" href="w_mbox_8h.html#a5c7498a44f255cff65093f9e45d8631d">wMboxNotify</a>(<a class="code" href="struct__w_mbox.html">wMbox</a> * mbox, <span class="keywordtype">void</span> *msg, uint32_t notifyOption);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="w_mbox_8h.html#a889b0eca65717559856ea9e493dfe1b8">wMboxFlush</a>(<a class="code" href="struct__w_mbox.html">wMbox</a> * mbox);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;uint32_t <a class="code" href="w_mbox_8h.html#ad2bdaf4ad2b0ab20f096b912aad72831">wMboxDestory</a>(<a class="code" href="struct__w_mbox.html">wMbox</a> * mbox);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="w_mbox_8h.html#a360eea2a4dd5f366384c34de45009b90">wMboxGetInfo</a>(<a class="code" href="struct__w_mbox.html">wMbox</a> * mbox, <a class="code" href="struct__w_mbox_info.html">wMboxInfo</a> * info);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="struct__w_mbox_html_ad737d3f95a5cf9ee457f37f1cedfa44a"><div class="ttname"><a href="struct__w_mbox.html#ad737d3f95a5cf9ee457f37f1cedfa44a">_wMbox::event</a></div><div class="ttdeci">wEvent event</div><div class="ttdef"><b>Definition:</b> wMbox.h:14</div></div>
+<div class="ttc" id="struct__w_mbox_info_html_a80462c64b9184115aa568f08227f7f4a"><div class="ttname"><a href="struct__w_mbox_info.html#a80462c64b9184115aa568f08227f7f4a">_wMboxInfo::taskCount</a></div><div class="ttdeci">uint32_t taskCount</div><div class="ttdef"><b>Definition:</b> wMbox.h:34</div></div>
+<div class="ttc" id="w_mbox_8h_html_ad2bdaf4ad2b0ab20f096b912aad72831"><div class="ttname"><a href="w_mbox_8h.html#ad2bdaf4ad2b0ab20f096b912aad72831">wMboxDestory</a></div><div class="ttdeci">uint32_t wMboxDestory(wMbox *mbox)</div><div class="ttdef"><b>Definition:</b> wMbox.c:183</div></div>
+<div class="ttc" id="struct__w_mbox_html_ac4c9f9c5eac363cc22ecc18669cc3891"><div class="ttname"><a href="struct__w_mbox.html#ac4c9f9c5eac363cc22ecc18669cc3891">_wMbox::write</a></div><div class="ttdeci">uint32_t write</div><div class="ttdef"><b>Definition:</b> wMbox.h:20</div></div>
+<div class="ttc" id="w_mbox_8h_html_a889b0eca65717559856ea9e493dfe1b8"><div class="ttname"><a href="w_mbox_8h.html#a889b0eca65717559856ea9e493dfe1b8">wMboxFlush</a></div><div class="ttdeci">void wMboxFlush(wMbox *mbox)</div><div class="ttdef"><b>Definition:</b> wMbox.c:165</div></div>
+<div class="ttc" id="struct__w_mbox_info_html"><div class="ttname"><a href="struct__w_mbox_info.html">_wMboxInfo</a></div><div class="ttdoc">定义邮箱信息结构 </div><div class="ttdef"><b>Definition:</b> wMbox.h:30</div></div>
+<div class="ttc" id="w_mbox_8h_html_a360eea2a4dd5f366384c34de45009b90"><div class="ttname"><a href="w_mbox_8h.html#a360eea2a4dd5f366384c34de45009b90">wMboxGetInfo</a></div><div class="ttdeci">void wMboxGetInfo(wMbox *mbox, wMboxInfo *info)</div><div class="ttdef"><b>Definition:</b> wMbox.c:202</div></div>
+<div class="ttc" id="w_mbox_8h_html_ad91f600eb4609d7484bd719ff270bd53"><div class="ttname"><a href="w_mbox_8h.html#ad91f600eb4609d7484bd719ff270bd53">wMbox</a></div><div class="ttdeci">struct _wMbox wMbox</div><div class="ttdoc">定义邮箱类型 </div></div>
+<div class="ttc" id="struct__w_mbox_html_a1cc8a4ba5eee24b560f9869012941e91"><div class="ttname"><a href="struct__w_mbox.html#a1cc8a4ba5eee24b560f9869012941e91">_wMbox::maxCount</a></div><div class="ttdeci">uint32_t maxCount</div><div class="ttdef"><b>Definition:</b> wMbox.h:22</div></div>
+<div class="ttc" id="struct__w_mbox_info_html_a1cc8a4ba5eee24b560f9869012941e91"><div class="ttname"><a href="struct__w_mbox_info.html#a1cc8a4ba5eee24b560f9869012941e91">_wMboxInfo::maxCount</a></div><div class="ttdeci">uint32_t maxCount</div><div class="ttdef"><b>Definition:</b> wMbox.h:33</div></div>
+<div class="ttc" id="w_mbox_8h_html_a5c7498a44f255cff65093f9e45d8631d"><div class="ttname"><a href="w_mbox_8h.html#a5c7498a44f255cff65093f9e45d8631d">wMboxNotify</a></div><div class="ttdeci">uint32_t wMboxNotify(wMbox *mbox, void *msg, uint32_t notifyOption)</div><div class="ttdef"><b>Definition:</b> wMbox.c:113</div></div>
+<div class="ttc" id="w_event_8h_html"><div class="ttname"><a href="w_event_8h.html">wEvent.h</a></div></div>
+<div class="ttc" id="w_mbox_8h_html_afe826b919c83f703507b1af8b0ac3e87"><div class="ttname"><a href="w_mbox_8h.html#afe826b919c83f703507b1af8b0ac3e87">wMboxInit</a></div><div class="ttdeci">void wMboxInit(wMbox *mbox, void **msgBuffer, uint32_t maxCount)</div><div class="ttdoc">初始化邮箱函数 </div><div class="ttdef"><b>Definition:</b> wMbox.c:26</div></div>
+<div class="ttc" id="struct__w_mbox_html"><div class="ttname"><a href="struct__w_mbox.html">_wMbox</a></div><div class="ttdoc">定义邮箱类型 </div><div class="ttdef"><b>Definition:</b> wMbox.h:12</div></div>
+<div class="ttc" id="struct__w_mbox_html_a86988a65e0d3ece7990c032c159786d6"><div class="ttname"><a href="struct__w_mbox.html#a86988a65e0d3ece7990c032c159786d6">_wMbox::count</a></div><div class="ttdeci">uint32_t count</div><div class="ttdef"><b>Definition:</b> wMbox.h:16</div></div>
+<div class="ttc" id="w_mbox_8h_html_aa75ce7b6c98e2a4ca1ac0350b6567a4a"><div class="ttname"><a href="w_mbox_8h.html#aa75ce7b6c98e2a4ca1ac0350b6567a4a">wMboxInfo</a></div><div class="ttdeci">struct _wMboxInfo wMboxInfo</div><div class="ttdoc">定义邮箱信息结构 </div></div>
+<div class="ttc" id="w_mbox_8h_html_ad82b179c557a58647d5863081e816235"><div class="ttname"><a href="w_mbox_8h.html#ad82b179c557a58647d5863081e816235">wMboxNoWaitGet</a></div><div class="ttdeci">uint32_t wMboxNoWaitGet(wMbox *mbox, void **msg)</div><div class="ttdef"><b>Definition:</b> wMbox.c:82</div></div>
+<div class="ttc" id="w_mbox_8h_html_aad740e70a9369ba8b891c6832cf7148d"><div class="ttname"><a href="w_mbox_8h.html#aad740e70a9369ba8b891c6832cf7148d">wMboxWait</a></div><div class="ttdeci">uint32_t wMboxWait(wMbox *mbox, void **msg, uint32_t waitTicks)</div><div class="ttdoc">等待邮箱获取消息函数 </div><div class="ttdef"><b>Definition:</b> wMbox.c:46</div></div>
+<div class="ttc" id="struct__w_mbox_info_html_a86988a65e0d3ece7990c032c159786d6"><div class="ttname"><a href="struct__w_mbox_info.html#a86988a65e0d3ece7990c032c159786d6">_wMboxInfo::count</a></div><div class="ttdeci">uint32_t count</div><div class="ttdef"><b>Definition:</b> wMbox.h:32</div></div>
+<div class="ttc" id="struct__w_mbox_html_a42b4bab76140c12b77b72ec381001c6c"><div class="ttname"><a href="struct__w_mbox.html#a42b4bab76140c12b77b72ec381001c6c">_wMbox::msgBuffer</a></div><div class="ttdeci">void ** msgBuffer</div><div class="ttdef"><b>Definition:</b> wMbox.h:24</div></div>
+<div class="ttc" id="struct__w_mbox_html_a0a71cf941cf2509857d61e1443ad8eaa"><div class="ttname"><a href="struct__w_mbox.html#a0a71cf941cf2509857d61e1443ad8eaa">_wMbox::read</a></div><div class="ttdeci">uint32_t read</div><div class="ttdef"><b>Definition:</b> wMbox.h:18</div></div>
+<div class="ttc" id="struct__w_event_html"><div class="ttname"><a href="struct__w_event.html">_wEvent</a></div><div class="ttdoc">事件控制结构 </div><div class="ttdef"><b>Definition:</b> wEvent.h:24</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

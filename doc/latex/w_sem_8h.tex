@@ -1,0 +1,284 @@
+\hypertarget{w_sem_8h}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Sem.h 文件参考}
+\label{w_sem_8h}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Sem.\+h@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Sem.\+h}}
+{\ttfamily \#include \char`\"{}w\+Event.\+h\char`\"{}}\newline
+w\+Sem.\+h 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{w_sem_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_sem_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__w_sem}{\+\_\+w\+Sem}}
+\begin{DoxyCompactList}\small\item\em 定义信号量类型 \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct__w_sem_info}{\+\_\+w\+Sem\+Info}}
+\begin{DoxyCompactList}\small\item\em 定义信号量的信息类型 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct__w_sem}{\+\_\+w\+Sem}} \mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}}
+\begin{DoxyCompactList}\small\item\em 定义信号量类型 \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct__w_sem_info}{\+\_\+w\+Sem\+Info}} \mbox{\hyperlink{w_sem_8h_a01e400265a4f19e8edf9805ce66a5719}{w\+Sem\+Info}}
+\begin{DoxyCompactList}\small\item\em 定义信号量的信息类型 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{w_sem_8h_a58b5038369ccd8e83cc661e2b0b1fe35}{w\+Sem\+Init}} (\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$sem, uint32\+\_\+t start\+Count, uint32\+\_\+t max\+Count)
+\begin{DoxyCompactList}\small\item\em 初始化信号量函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_sem_8h_aa7a46b25993a9e7f6b02479977813103}{w\+Sem\+Wait}} (\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$sem, uint32\+\_\+t wait\+Ticks)
+\begin{DoxyCompactList}\small\item\em 等待信号量函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_sem_8h_afc80960c35e38e5806352d48ac4bcc57}{w\+Sem\+No\+Wait\+Get}} (\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$sem)
+\begin{DoxyCompactList}\small\item\em 获取信号量函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_sem_8h_a476ed9929f4653703136c41d22d9ab6c}{w\+Sem\+Notify}} (\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$sem)
+\begin{DoxyCompactList}\small\item\em 信号量唤醒任务函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_sem_8h_a03ae89f808ea265bf354b8b3943d1574}{w\+Sem\+Get\+Info}} (\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$sem, \mbox{\hyperlink{w_sem_8h_a01e400265a4f19e8edf9805ce66a5719}{w\+Sem\+Info}} $\ast$info)
+\begin{DoxyCompactList}\small\item\em 信号量状态查询函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_sem_8h_a40bb9f0a25969285525dc9d83b85f9ab}{w\+Sem\+Destroy}} (\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$sem)
+\begin{DoxyCompactList}\small\item\em 销毁信号量函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{类型定义说明}
+\mbox{\Hypertarget{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}\label{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}} 
+\index{w\+Sem.\+h@{w\+Sem.\+h}!w\+Sem@{w\+Sem}}
+\index{w\+Sem@{w\+Sem}!w\+Sem.\+h@{w\+Sem.\+h}}
+\subsubsection{\texorpdfstring{w\+Sem}{wSem}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__w_sem}{\+\_\+w\+Sem}} \mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}}}
+
+
+
+定义信号量类型 
+
+\mbox{\Hypertarget{w_sem_8h_a01e400265a4f19e8edf9805ce66a5719}\label{w_sem_8h_a01e400265a4f19e8edf9805ce66a5719}} 
+\index{w\+Sem.\+h@{w\+Sem.\+h}!w\+Sem\+Info@{w\+Sem\+Info}}
+\index{w\+Sem\+Info@{w\+Sem\+Info}!w\+Sem.\+h@{w\+Sem.\+h}}
+\subsubsection{\texorpdfstring{w\+Sem\+Info}{wSemInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__w_sem_info}{\+\_\+w\+Sem\+Info}} \mbox{\hyperlink{w_sem_8h_a01e400265a4f19e8edf9805ce66a5719}{w\+Sem\+Info}}}
+
+
+
+定义信号量的信息类型 
+
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{w_sem_8h_a40bb9f0a25969285525dc9d83b85f9ab}\label{w_sem_8h_a40bb9f0a25969285525dc9d83b85f9ab}} 
+\index{w\+Sem.\+h@{w\+Sem.\+h}!w\+Sem\+Destroy@{w\+Sem\+Destroy}}
+\index{w\+Sem\+Destroy@{w\+Sem\+Destroy}!w\+Sem.\+h@{w\+Sem.\+h}}
+\subsubsection{\texorpdfstring{w\+Sem\+Destroy()}{wSemDestroy()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Sem\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$}]{sem }\end{DoxyParamCaption})}
+
+
+
+销毁信号量函数 
+
+
+\begin{DoxyParams}{参数}
+{\em sem} & 信号量结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 因销毁该信号量而唤醒的任务数量} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_sem_8h_a40bb9f0a25969285525dc9d83b85f9ab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_sem_8h_a03ae89f808ea265bf354b8b3943d1574}\label{w_sem_8h_a03ae89f808ea265bf354b8b3943d1574}} 
+\index{w\+Sem.\+h@{w\+Sem.\+h}!w\+Sem\+Get\+Info@{w\+Sem\+Get\+Info}}
+\index{w\+Sem\+Get\+Info@{w\+Sem\+Get\+Info}!w\+Sem.\+h@{w\+Sem.\+h}}
+\subsubsection{\texorpdfstring{w\+Sem\+Get\+Info()}{wSemGetInfo()}}
+{\footnotesize\ttfamily void w\+Sem\+Get\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$}]{sem,  }\item[{\mbox{\hyperlink{w_sem_8h_a01e400265a4f19e8edf9805ce66a5719}{w\+Sem\+Info}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+信号量状态查询函数 
+
+
+\begin{DoxyParams}{参数}
+{\em sem} & 信号量结构指针 \\
+\hline
+{\em info} & 状态查询结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_sem_8h_a03ae89f808ea265bf354b8b3943d1574_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_sem_8h_a58b5038369ccd8e83cc661e2b0b1fe35}\label{w_sem_8h_a58b5038369ccd8e83cc661e2b0b1fe35}} 
+\index{w\+Sem.\+h@{w\+Sem.\+h}!w\+Sem\+Init@{w\+Sem\+Init}}
+\index{w\+Sem\+Init@{w\+Sem\+Init}!w\+Sem.\+h@{w\+Sem.\+h}}
+\subsubsection{\texorpdfstring{w\+Sem\+Init()}{wSemInit()}}
+{\footnotesize\ttfamily void w\+Sem\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$}]{sem,  }\item[{uint32\+\_\+t}]{start\+Count,  }\item[{uint32\+\_\+t}]{max\+Count }\end{DoxyParamCaption})}
+
+
+
+初始化信号量函数 
+
+
+\begin{DoxyParams}{参数}
+{\em sem} & 信号量结构指针 \\
+\hline
+{\em start\+Count} & 初始计数值 \\
+\hline
+{\em max\+Count} & 最大计数值，若为0则不限数量 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{w_sem_8h_a58b5038369ccd8e83cc661e2b0b1fe35_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{w_sem_8h_a58b5038369ccd8e83cc661e2b0b1fe35_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_sem_8h_a476ed9929f4653703136c41d22d9ab6c}\label{w_sem_8h_a476ed9929f4653703136c41d22d9ab6c}} 
+\index{w\+Sem.\+h@{w\+Sem.\+h}!w\+Sem\+Notify@{w\+Sem\+Notify}}
+\index{w\+Sem\+Notify@{w\+Sem\+Notify}!w\+Sem.\+h@{w\+Sem.\+h}}
+\subsubsection{\texorpdfstring{w\+Sem\+Notify()}{wSemNotify()}}
+{\footnotesize\ttfamily void w\+Sem\+Notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$}]{sem }\end{DoxyParamCaption})}
+
+
+
+信号量唤醒任务函数 
+
+
+\begin{DoxyParams}{参数}
+{\em sem} & 信号量结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_sem_8h_a476ed9929f4653703136c41d22d9ab6c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_sem_8h_a476ed9929f4653703136c41d22d9ab6c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_sem_8h_afc80960c35e38e5806352d48ac4bcc57}\label{w_sem_8h_afc80960c35e38e5806352d48ac4bcc57}} 
+\index{w\+Sem.\+h@{w\+Sem.\+h}!w\+Sem\+No\+Wait\+Get@{w\+Sem\+No\+Wait\+Get}}
+\index{w\+Sem\+No\+Wait\+Get@{w\+Sem\+No\+Wait\+Get}!w\+Sem.\+h@{w\+Sem.\+h}}
+\subsubsection{\texorpdfstring{w\+Sem\+No\+Wait\+Get()}{wSemNoWaitGet()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Sem\+No\+Wait\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$}]{sem }\end{DoxyParamCaption})}
+
+
+
+获取信号量函数 
+
+
+\begin{DoxyParams}{参数}
+{\em sem} & 信号量结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em w\+Error\+No\+Error} & 等待结果为正确 ~\newline
+\\
+\hline
+{\em w\+Error\+Timeout} & 等待结果为超时 \\
+\hline
+{\em w\+Error\+Resource\+Unavaliable} & 等待结果为资源不可用 \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{w_sem_8h_afc80960c35e38e5806352d48ac4bcc57_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_sem_8h_aa7a46b25993a9e7f6b02479977813103}\label{w_sem_8h_aa7a46b25993a9e7f6b02479977813103}} 
+\index{w\+Sem.\+h@{w\+Sem.\+h}!w\+Sem\+Wait@{w\+Sem\+Wait}}
+\index{w\+Sem\+Wait@{w\+Sem\+Wait}!w\+Sem.\+h@{w\+Sem.\+h}}
+\subsubsection{\texorpdfstring{w\+Sem\+Wait()}{wSemWait()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Sem\+Wait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_sem_8h_ae44ece69cc1dbe8aed141cbe6cc17821}{w\+Sem}} $\ast$}]{sem,  }\item[{uint32\+\_\+t}]{wait\+Ticks }\end{DoxyParamCaption})}
+
+
+
+等待信号量函数 
+
+
+\begin{DoxyParams}{参数}
+{\em sem} & 信号量结构指针 \\
+\hline
+{\em wait\+Ticks} & 等待的最大ticks数 ,当信号量计数为0时，等待的ticks数，为0时表示永远等待 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em w\+Error\+No\+Error} & 等待结果为正确 ~\newline
+\\
+\hline
+{\em w\+Error\+Timeout} & 等待结果为超时 \\
+\hline
+{\em w\+Error\+Resource\+Unavaliable} & 等待结果为资源不可用 \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_sem_8h_aa7a46b25993a9e7f6b02479977813103_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_sem_8h_aa7a46b25993a9e7f6b02479977813103_icgraph}
+\end{center}
+\end{figure}

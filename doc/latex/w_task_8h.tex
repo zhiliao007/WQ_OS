@@ -1,0 +1,387 @@
+\hypertarget{w_task_8h}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Task.h 文件参考}
+\label{w_task_8h}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Task.\+h@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Task.\+h}}
+此图展示该文件直接或间接的被哪些文件引用了\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_task_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__w_task}{\+\_\+w\+Task}}
+\begin{DoxyCompactList}\small\item\em 任务结构 \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct__w_task_info}{\+\_\+w\+Task\+Info}}
+\begin{DoxyCompactList}\small\item\em 任务相关信息结构 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{w_task_8h_a2893f2f6d9f17151711c73be880cd99c}{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+DY}}~0
+\item 
+\#define \mbox{\hyperlink{w_task_8h_a4e0e8550ce1370f3da1a07f4e9b56198}{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+S\+T\+O\+R\+Y\+ED}}~(1 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{w_task_8h_ac678eee743c17451bae1989f12188926}{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+L\+A\+Y\+ED}}~(1 $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{w_task_8h_aff8a0ea8ab25b285a79570fd0187a1b3}{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+S\+P\+E\+ND}}~(1 $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{w_task_8h_a414d617139d70b6d2733d2a4afcee7ad}{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+W\+A\+I\+T\+\_\+\+M\+A\+SK}}~(0x\+F\+F $<$$<$ 16)
+\end{DoxyCompactItemize}
+\subsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}}
+\item 
+typedef struct \mbox{\hyperlink{struct__w_task}{\+\_\+w\+Task}} \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}
+\begin{DoxyCompactList}\small\item\em 任务结构 \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct__w_task_info}{\+\_\+w\+Task\+Info}} \mbox{\hyperlink{w_task_8h_a85a39f6e7c847e9d4eb86fcdc77db644}{w\+Task\+Info}}
+\begin{DoxyCompactList}\small\item\em 任务相关信息结构 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{w_task_8h_aab000edf7c64d617282f878f72a51821}{w\+Task\+Init}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task, void($\ast$entry)(void $\ast$), void $\ast$param, uint32\+\_\+t prio, \mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} $\ast$stack, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em 任务初始化函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_task_8h_ae370094e4c18ae8d108be5d8d4bca358}{w\+Task\+Suspend}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 任务挂起函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_task_8h_a040c393cbeb9ac354a13330140b3b5a1}{w\+Task\+Wake\+Up}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 恢复被挂起函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_task_8h_a47f2f87188f5f35fba94942399c6e344}{w\+Task\+Set\+Clean\+Call\+Func}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task, void($\ast$clean)(void $\ast$param), void $\ast$param)
+\begin{DoxyCompactList}\small\item\em 任务被删除时调用的清理函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_task_8h_a3746b86341530f743b27051f9e527192}{w\+Task\+Force\+Delete}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 任务强制删除函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_task_8h_a7ed3719bf21d5dbe0c823846881863ae}{w\+Task\+Request\+Delete}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 任务请求删除函数 \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{w_task_8h_a353c3797674dd9a52d5f4c6fd5917f4b}{w\+Task\+Is\+Requested\+Delete}} (void)
+\begin{DoxyCompactList}\small\item\em 检查任务是否请求删除函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_task_8h_a26d4cde2cb6d23ceb7f9d1475dbe5aff}{w\+Task\+Delete\+Self}} (void)
+\begin{DoxyCompactList}\small\item\em 任务自删除函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_task_8h_adfc3d829c5b306efa543365a60c5a101}{w\+Task\+Get\+Info}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task, \mbox{\hyperlink{w_task_8h_a85a39f6e7c847e9d4eb86fcdc77db644}{w\+Task\+Info}} $\ast$info)
+\begin{DoxyCompactList}\small\item\em 任务状态查询函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{宏定义说明}
+\mbox{\Hypertarget{w_task_8h_ac678eee743c17451bae1989f12188926}\label{w_task_8h_ac678eee743c17451bae1989f12188926}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+L\+A\+Y\+ED@{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+L\+A\+Y\+ED}}
+\index{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+L\+A\+Y\+ED@{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+L\+A\+Y\+ED}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+L\+A\+Y\+ED}{WQOS\_TASK\_STATE\_DELAYED}}
+{\footnotesize\ttfamily \#define W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+L\+A\+Y\+ED~(1 $<$$<$ 2)}
+
+\mbox{\Hypertarget{w_task_8h_a4e0e8550ce1370f3da1a07f4e9b56198}\label{w_task_8h_a4e0e8550ce1370f3da1a07f4e9b56198}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+S\+T\+O\+R\+Y\+ED@{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+S\+T\+O\+R\+Y\+ED}}
+\index{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+S\+T\+O\+R\+Y\+ED@{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+S\+T\+O\+R\+Y\+ED}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+S\+T\+O\+R\+Y\+ED}{WQOS\_TASK\_STATE\_DESTORYED}}
+{\footnotesize\ttfamily \#define W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+D\+E\+S\+T\+O\+R\+Y\+ED~(1 $<$$<$ 1)}
+
+\mbox{\Hypertarget{w_task_8h_a2893f2f6d9f17151711c73be880cd99c}\label{w_task_8h_a2893f2f6d9f17151711c73be880cd99c}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+DY@{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+DY}}
+\index{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+DY@{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+DY}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+DY}{WQOS\_TASK\_STATE\_RDY}}
+{\footnotesize\ttfamily \#define W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+R\+DY~0}
+
+\mbox{\Hypertarget{w_task_8h_aff8a0ea8ab25b285a79570fd0187a1b3}\label{w_task_8h_aff8a0ea8ab25b285a79570fd0187a1b3}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+S\+P\+E\+ND@{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+S\+P\+E\+ND}}
+\index{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+S\+P\+E\+ND@{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+S\+P\+E\+ND}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+S\+P\+E\+ND}{WQOS\_TASK\_STATE\_SUSPEND}}
+{\footnotesize\ttfamily \#define W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+E\+\_\+\+S\+U\+S\+P\+E\+ND~(1 $<$$<$ 3)}
+
+\mbox{\Hypertarget{w_task_8h_a414d617139d70b6d2733d2a4afcee7ad}\label{w_task_8h_a414d617139d70b6d2733d2a4afcee7ad}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+W\+A\+I\+T\+\_\+\+M\+A\+SK@{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+W\+A\+I\+T\+\_\+\+M\+A\+SK}}
+\index{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+W\+A\+I\+T\+\_\+\+M\+A\+SK@{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+W\+A\+I\+T\+\_\+\+M\+A\+SK}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+W\+A\+I\+T\+\_\+\+M\+A\+SK}{WQOS\_TASK\_WAIT\_MASK}}
+{\footnotesize\ttfamily \#define W\+Q\+O\+S\+\_\+\+T\+A\+S\+K\+\_\+\+W\+A\+I\+T\+\_\+\+M\+A\+SK~(0x\+F\+F $<$$<$ 16)}
+
+
+
+\subsection{类型定义说明}
+\mbox{\Hypertarget{w_task_8h_acd0e6238476f631a6ac4588629bac372}\label{w_task_8h_acd0e6238476f631a6ac4588629bac372}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task@{w\+Task}}
+\index{w\+Task@{w\+Task}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task}{wTask}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__w_task}{\+\_\+w\+Task}} \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}}
+
+
+
+任务结构 
+
+\mbox{\Hypertarget{w_task_8h_a85a39f6e7c847e9d4eb86fcdc77db644}\label{w_task_8h_a85a39f6e7c847e9d4eb86fcdc77db644}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task\+Info@{w\+Task\+Info}}
+\index{w\+Task\+Info@{w\+Task\+Info}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Info}{wTaskInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__w_task_info}{\+\_\+w\+Task\+Info}} \mbox{\hyperlink{w_task_8h_a85a39f6e7c847e9d4eb86fcdc77db644}{w\+Task\+Info}}}
+
+
+
+任务相关信息结构 
+
+\mbox{\Hypertarget{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}\label{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task\+Stack@{w\+Task\+Stack}}
+\index{w\+Task\+Stack@{w\+Task\+Stack}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Stack}{wTaskStack}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}}}
+
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{w_task_8h_a26d4cde2cb6d23ceb7f9d1475dbe5aff}\label{w_task_8h_a26d4cde2cb6d23ceb7f9d1475dbe5aff}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task\+Delete\+Self@{w\+Task\+Delete\+Self}}
+\index{w\+Task\+Delete\+Self@{w\+Task\+Delete\+Self}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Delete\+Self()}{wTaskDeleteSelf()}}
+{\footnotesize\ttfamily void w\+Task\+Delete\+Self (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+任务自删除函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_task_8h_a26d4cde2cb6d23ceb7f9d1475dbe5aff_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_task_8h_a3746b86341530f743b27051f9e527192}\label{w_task_8h_a3746b86341530f743b27051f9e527192}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task\+Force\+Delete@{w\+Task\+Force\+Delete}}
+\index{w\+Task\+Force\+Delete@{w\+Task\+Force\+Delete}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Force\+Delete()}{wTaskForceDelete()}}
+{\footnotesize\ttfamily void w\+Task\+Force\+Delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+任务强制删除函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_task_8h_a3746b86341530f743b27051f9e527192_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_task_8h_adfc3d829c5b306efa543365a60c5a101}\label{w_task_8h_adfc3d829c5b306efa543365a60c5a101}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task\+Get\+Info@{w\+Task\+Get\+Info}}
+\index{w\+Task\+Get\+Info@{w\+Task\+Get\+Info}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Get\+Info()}{wTaskGetInfo()}}
+{\footnotesize\ttfamily void w\+Task\+Get\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task,  }\item[{\mbox{\hyperlink{w_task_8h_a85a39f6e7c847e9d4eb86fcdc77db644}{w\+Task\+Info}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+任务状态查询函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em info} & 状态查询结构指针 \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{w_task_8h_adfc3d829c5b306efa543365a60c5a101_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_task_8h_aab000edf7c64d617282f878f72a51821}\label{w_task_8h_aab000edf7c64d617282f878f72a51821}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task\+Init@{w\+Task\+Init}}
+\index{w\+Task\+Init@{w\+Task\+Init}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Init()}{wTaskInit()}}
+{\footnotesize\ttfamily void w\+Task\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task,  }\item[{void($\ast$)(void $\ast$)}]{entry,  }\item[{void $\ast$}]{param,  }\item[{uint32\+\_\+t}]{prio,  }\item[{\mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} $\ast$}]{stack,  }\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+任务初始化函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task：} & 任务结构体地址 \\
+\hline
+{\em entry：任务入口函数名} & \\
+\hline
+{\em param：传递给任务的参数} & \\
+\hline
+{\em stack：任务栈空间地址} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_task_8h_aab000edf7c64d617282f878f72a51821_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_task_8h_aab000edf7c64d617282f878f72a51821_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_task_8h_a353c3797674dd9a52d5f4c6fd5917f4b}\label{w_task_8h_a353c3797674dd9a52d5f4c6fd5917f4b}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task\+Is\+Requested\+Delete@{w\+Task\+Is\+Requested\+Delete}}
+\index{w\+Task\+Is\+Requested\+Delete@{w\+Task\+Is\+Requested\+Delete}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Is\+Requested\+Delete()}{wTaskIsRequestedDelete()}}
+{\footnotesize\ttfamily uint8\+\_\+t w\+Task\+Is\+Requested\+Delete (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+检查任务是否请求删除函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 请求删除标志} & 非0表示请求删除，0表示无请求 \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{w_task_8h_a353c3797674dd9a52d5f4c6fd5917f4b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_task_8h_a7ed3719bf21d5dbe0c823846881863ae}\label{w_task_8h_a7ed3719bf21d5dbe0c823846881863ae}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task\+Request\+Delete@{w\+Task\+Request\+Delete}}
+\index{w\+Task\+Request\+Delete@{w\+Task\+Request\+Delete}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Request\+Delete()}{wTaskRequestDelete()}}
+{\footnotesize\ttfamily void w\+Task\+Request\+Delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+任务请求删除函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{w_task_8h_a7ed3719bf21d5dbe0c823846881863ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_task_8h_a47f2f87188f5f35fba94942399c6e344}\label{w_task_8h_a47f2f87188f5f35fba94942399c6e344}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task\+Set\+Clean\+Call\+Func@{w\+Task\+Set\+Clean\+Call\+Func}}
+\index{w\+Task\+Set\+Clean\+Call\+Func@{w\+Task\+Set\+Clean\+Call\+Func}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Set\+Clean\+Call\+Func()}{wTaskSetCleanCallFunc()}}
+{\footnotesize\ttfamily void w\+Task\+Set\+Clean\+Call\+Func (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task,  }\item[{void($\ast$)(void $\ast$param)}]{clean,  }\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+任务被删除时调用的清理函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+{\em clean} & 清理函数入口地址 \\
+\hline
+{\em param} & 传递给清理函数的参数 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{w_task_8h_ae370094e4c18ae8d108be5d8d4bca358}\label{w_task_8h_ae370094e4c18ae8d108be5d8d4bca358}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task\+Suspend@{w\+Task\+Suspend}}
+\index{w\+Task\+Suspend@{w\+Task\+Suspend}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Suspend()}{wTaskSuspend()}}
+{\footnotesize\ttfamily void w\+Task\+Suspend (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+任务挂起函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_task_8h_ae370094e4c18ae8d108be5d8d4bca358_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_task_8h_a040c393cbeb9ac354a13330140b3b5a1}\label{w_task_8h_a040c393cbeb9ac354a13330140b3b5a1}} 
+\index{w\+Task.\+h@{w\+Task.\+h}!w\+Task\+Wake\+Up@{w\+Task\+Wake\+Up}}
+\index{w\+Task\+Wake\+Up@{w\+Task\+Wake\+Up}!w\+Task.\+h@{w\+Task.\+h}}
+\subsubsection{\texorpdfstring{w\+Task\+Wake\+Up()}{wTaskWakeUp()}}
+{\footnotesize\ttfamily void w\+Task\+Wake\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+恢复被挂起函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_task_8h_a040c393cbeb9ac354a13330140b3b5a1_cgraph}
+\end{center}
+\end{figure}

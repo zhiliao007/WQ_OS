@@ -1,0 +1,219 @@
+\hypertarget{w_mutex_8c}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Mutex.c 文件参考}
+\label{w_mutex_8c}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Mutex.\+c@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Mutex.\+c}}
+{\ttfamily \#include \char`\"{}W\+Q\+\_\+\+O\+S.\+h\char`\"{}}\newline
+w\+Mutex.\+c 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mutex_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{w_mutex_8c_a332a5b4d7e0e6c58f264741f48c19a1c}{w\+Mutex\+Init}} (\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em 初始化互斥信号量函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_mutex_8c_a8de822cb1c98f7def8cd4552654280db}{w\+Mutex\+Wait}} (\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$mutex, uint32\+\_\+t wait\+Ticks)
+\begin{DoxyCompactList}\small\item\em 等待互斥信号量函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_mutex_8c_a28bcec460e6c5d88666a2c223bba0c9d}{w\+Mutex\+No\+Wait\+Get}} (\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em 获取互斥信号量函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_mutex_8c_a309031c0e8763c0c8335bcdc050c2ee6}{w\+Mutex\+Notify}} (\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em 互斥信号量唤醒任务函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_mutex_8c_ab2e6c82b24ce341caae64ba2955548d5}{w\+Mutex\+Destroy}} (\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$mutex)
+\begin{DoxyCompactList}\small\item\em 删除互斥信号量函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_mutex_8c_a2055cbfde55d8480150b5441b330af69}{w\+Mutex\+Get\+Info}} (\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$mutex, \mbox{\hyperlink{w_mutex_8h_a582420160190a936406b0289d708bc23}{w\+Mutex\+Info}} $\ast$info)
+\begin{DoxyCompactList}\small\item\em 互斥信号量状态查询函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{w_mutex_8c_ab2e6c82b24ce341caae64ba2955548d5}\label{w_mutex_8c_ab2e6c82b24ce341caae64ba2955548d5}} 
+\index{w\+Mutex.\+c@{w\+Mutex.\+c}!w\+Mutex\+Destroy@{w\+Mutex\+Destroy}}
+\index{w\+Mutex\+Destroy@{w\+Mutex\+Destroy}!w\+Mutex.\+c@{w\+Mutex.\+c}}
+\subsubsection{\texorpdfstring{w\+Mutex\+Destroy()}{wMutexDestroy()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Mutex\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$}]{mutex }\end{DoxyParamCaption})}
+
+
+
+删除互斥信号量函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mutex} & 互斥信号量结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 因销毁该信号量而唤醒的任务数量} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mutex_8c_ab2e6c82b24ce341caae64ba2955548d5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mutex_8c_a2055cbfde55d8480150b5441b330af69}\label{w_mutex_8c_a2055cbfde55d8480150b5441b330af69}} 
+\index{w\+Mutex.\+c@{w\+Mutex.\+c}!w\+Mutex\+Get\+Info@{w\+Mutex\+Get\+Info}}
+\index{w\+Mutex\+Get\+Info@{w\+Mutex\+Get\+Info}!w\+Mutex.\+c@{w\+Mutex.\+c}}
+\subsubsection{\texorpdfstring{w\+Mutex\+Get\+Info()}{wMutexGetInfo()}}
+{\footnotesize\ttfamily void w\+Mutex\+Get\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$}]{mutex,  }\item[{\mbox{\hyperlink{w_mutex_8h_a582420160190a936406b0289d708bc23}{w\+Mutex\+Info}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+互斥信号量状态查询函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mutex} & 互斥信号量结构指针 \\
+\hline
+{\em info} & 状态查询结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mutex_8c_a2055cbfde55d8480150b5441b330af69_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mutex_8c_a332a5b4d7e0e6c58f264741f48c19a1c}\label{w_mutex_8c_a332a5b4d7e0e6c58f264741f48c19a1c}} 
+\index{w\+Mutex.\+c@{w\+Mutex.\+c}!w\+Mutex\+Init@{w\+Mutex\+Init}}
+\index{w\+Mutex\+Init@{w\+Mutex\+Init}!w\+Mutex.\+c@{w\+Mutex.\+c}}
+\subsubsection{\texorpdfstring{w\+Mutex\+Init()}{wMutexInit()}}
+{\footnotesize\ttfamily void w\+Mutex\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$}]{mutex }\end{DoxyParamCaption})}
+
+
+
+初始化互斥信号量函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mutex} & 互斥信号量结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{w_mutex_8c_a332a5b4d7e0e6c58f264741f48c19a1c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mutex_8c_a309031c0e8763c0c8335bcdc050c2ee6}\label{w_mutex_8c_a309031c0e8763c0c8335bcdc050c2ee6}} 
+\index{w\+Mutex.\+c@{w\+Mutex.\+c}!w\+Mutex\+Notify@{w\+Mutex\+Notify}}
+\index{w\+Mutex\+Notify@{w\+Mutex\+Notify}!w\+Mutex.\+c@{w\+Mutex.\+c}}
+\subsubsection{\texorpdfstring{w\+Mutex\+Notify()}{wMutexNotify()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Mutex\+Notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$}]{mutex }\end{DoxyParamCaption})}
+
+
+
+互斥信号量唤醒任务函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mutex} & 互斥信号量结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em w\+Error\+Resource\+Unavaliable} & 等待结果为资源不可用 ~\newline
+\\
+\hline
+{\em w\+Error\+No\+Error} & 等待结果为正确 ~\newline
+\\
+\hline
+{\em w\+Error\+Timeout} & 等待结果为超时 \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mutex_8c_a309031c0e8763c0c8335bcdc050c2ee6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mutex_8c_a28bcec460e6c5d88666a2c223bba0c9d}\label{w_mutex_8c_a28bcec460e6c5d88666a2c223bba0c9d}} 
+\index{w\+Mutex.\+c@{w\+Mutex.\+c}!w\+Mutex\+No\+Wait\+Get@{w\+Mutex\+No\+Wait\+Get}}
+\index{w\+Mutex\+No\+Wait\+Get@{w\+Mutex\+No\+Wait\+Get}!w\+Mutex.\+c@{w\+Mutex.\+c}}
+\subsubsection{\texorpdfstring{w\+Mutex\+No\+Wait\+Get()}{wMutexNoWaitGet()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Mutex\+No\+Wait\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$}]{mutex }\end{DoxyParamCaption})}
+
+
+
+获取互斥信号量函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mutex} & 互斥信号量结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em w\+Error\+Resource\+Unavaliable} & 等待结果为资源不可用 ~\newline
+\\
+\hline
+{\em w\+Error\+No\+Error} & 等待结果为正确 ~\newline
+\\
+\hline
+{\em w\+Error\+Timeout} & 等待结果为超时 \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{w_mutex_8c_a28bcec460e6c5d88666a2c223bba0c9d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mutex_8c_a8de822cb1c98f7def8cd4552654280db}\label{w_mutex_8c_a8de822cb1c98f7def8cd4552654280db}} 
+\index{w\+Mutex.\+c@{w\+Mutex.\+c}!w\+Mutex\+Wait@{w\+Mutex\+Wait}}
+\index{w\+Mutex\+Wait@{w\+Mutex\+Wait}!w\+Mutex.\+c@{w\+Mutex.\+c}}
+\subsubsection{\texorpdfstring{w\+Mutex\+Wait()}{wMutexWait()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Mutex\+Wait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mutex_8h_a5d3b4a854ef91b82a6e483901dc55137}{w\+Mutex}} $\ast$}]{mutex,  }\item[{uint32\+\_\+t}]{wait\+Ticks }\end{DoxyParamCaption})}
+
+
+
+等待互斥信号量函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mutex} & 互斥信号量结构指针 \\
+\hline
+{\em wait\+Ticks} & 等待的最大ticks数 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em w\+Error\+Resource\+Unavaliable} & 等待结果为资源不可用 ~\newline
+\\
+\hline
+{\em w\+Error\+No\+Error} & 等待结果为正确 ~\newline
+\\
+\hline
+{\em w\+Error\+Timeout} & 等待结果为超时 \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mutex_8c_a8de822cb1c98f7def8cd4552654280db_cgraph}
+\end{center}
+\end{figure}

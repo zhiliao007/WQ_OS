@@ -1,0 +1,225 @@
+\hypertarget{w_mem_block_8c}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Mem\+Block.c 文件参考}
+\label{w_mem_block_8c}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Mem\+Block.\+c@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Mem\+Block.\+c}}
+{\ttfamily \#include \char`\"{}W\+Q\+\_\+\+O\+S.\+h\char`\"{}}\newline
+w\+Mem\+Block.\+c 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mem_block_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{w_mem_block_8c_a144aefcd6558a50b3ffa05738e648bf2}{w\+Mem\+Block\+Init}} (\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$mem\+Block, uint8\+\_\+t $\ast$mem\+Start, uint32\+\_\+t block\+Size, uint32\+\_\+t block\+Cnt)
+\begin{DoxyCompactList}\small\item\em 初始化存储块函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_mem_block_8c_a127e3e701769d846e54cb2d7106156a4}{w\+Mem\+Block\+Wait}} (\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$mem\+Block, uint8\+\_\+t $\ast$$\ast$mem, uint32\+\_\+t wait\+Ticks)
+\begin{DoxyCompactList}\small\item\em 等待存储块函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_mem_block_8c_ab0f59237b37a765d9dd8f6e0fab0d7f6}{w\+Mem\+Block\+No\+Wait\+Get}} (\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$mem\+Block, void $\ast$$\ast$mem)
+\begin{DoxyCompactList}\small\item\em 获取存储块函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_mem_block_8c_a967d1b37820264a3f637431fcf36be45}{w\+Mem\+Block\+Notify}} (\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$mem\+Block, uint8\+\_\+t $\ast$mem)
+\begin{DoxyCompactList}\small\item\em 存储块唤醒任务函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_mem_block_8c_ada4eed353db8b132b68cc28f26ad737a}{w\+Mem\+Block\+Get\+Info}} (\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$mem\+Block, \mbox{\hyperlink{w_mem_block_8h_aab608c024717e91ff1a59eb8ef7fcc63}{w\+Mem\+Block\+Info}} $\ast$info)
+\begin{DoxyCompactList}\small\item\em 存储块状态查询函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_mem_block_8c_a544d17f03b3348272fd3853bf3a7129c}{w\+Mem\+Block\+Destroy}} (\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$mem\+Block)
+\begin{DoxyCompactList}\small\item\em 删除存储块函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{w_mem_block_8c_a544d17f03b3348272fd3853bf3a7129c}\label{w_mem_block_8c_a544d17f03b3348272fd3853bf3a7129c}} 
+\index{w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}!w\+Mem\+Block\+Destroy@{w\+Mem\+Block\+Destroy}}
+\index{w\+Mem\+Block\+Destroy@{w\+Mem\+Block\+Destroy}!w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}}
+\subsubsection{\texorpdfstring{w\+Mem\+Block\+Destroy()}{wMemBlockDestroy()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Mem\+Block\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$}]{mem\+Block }\end{DoxyParamCaption})}
+
+
+
+删除存储块函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mem\+Block} & 存储块结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 存储块中任务数量} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mem_block_8c_a544d17f03b3348272fd3853bf3a7129c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mem_block_8c_ada4eed353db8b132b68cc28f26ad737a}\label{w_mem_block_8c_ada4eed353db8b132b68cc28f26ad737a}} 
+\index{w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}!w\+Mem\+Block\+Get\+Info@{w\+Mem\+Block\+Get\+Info}}
+\index{w\+Mem\+Block\+Get\+Info@{w\+Mem\+Block\+Get\+Info}!w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}}
+\subsubsection{\texorpdfstring{w\+Mem\+Block\+Get\+Info()}{wMemBlockGetInfo()}}
+{\footnotesize\ttfamily void w\+Mem\+Block\+Get\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$}]{mem\+Block,  }\item[{\mbox{\hyperlink{w_mem_block_8h_aab608c024717e91ff1a59eb8ef7fcc63}{w\+Mem\+Block\+Info}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+存储块状态查询函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mem\+Block} & 存储块结构指针 \\
+\hline
+{\em info} & 状态查询结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mem_block_8c_ada4eed353db8b132b68cc28f26ad737a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mem_block_8c_a144aefcd6558a50b3ffa05738e648bf2}\label{w_mem_block_8c_a144aefcd6558a50b3ffa05738e648bf2}} 
+\index{w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}!w\+Mem\+Block\+Init@{w\+Mem\+Block\+Init}}
+\index{w\+Mem\+Block\+Init@{w\+Mem\+Block\+Init}!w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}}
+\subsubsection{\texorpdfstring{w\+Mem\+Block\+Init()}{wMemBlockInit()}}
+{\footnotesize\ttfamily void w\+Mem\+Block\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$}]{mem\+Block,  }\item[{uint8\+\_\+t $\ast$}]{mem\+Start,  }\item[{uint32\+\_\+t}]{block\+Size,  }\item[{uint32\+\_\+t}]{block\+Cnt }\end{DoxyParamCaption})}
+
+
+
+初始化存储块函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mem\+Block} & 存储块结构指针 \\
+\hline
+{\em mem\+Start} & 存储块首地址 \\
+\hline
+{\em block\+Size} & 每个存储块大小 \\
+\hline
+{\em block\+Cnt} & 存储块个数 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mem_block_8c_a144aefcd6558a50b3ffa05738e648bf2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mem_block_8c_a967d1b37820264a3f637431fcf36be45}\label{w_mem_block_8c_a967d1b37820264a3f637431fcf36be45}} 
+\index{w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}!w\+Mem\+Block\+Notify@{w\+Mem\+Block\+Notify}}
+\index{w\+Mem\+Block\+Notify@{w\+Mem\+Block\+Notify}!w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}}
+\subsubsection{\texorpdfstring{w\+Mem\+Block\+Notify()}{wMemBlockNotify()}}
+{\footnotesize\ttfamily void w\+Mem\+Block\+Notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$}]{mem\+Block,  }\item[{uint8\+\_\+t $\ast$}]{mem }\end{DoxyParamCaption})}
+
+
+
+存储块唤醒任务函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mem\+Block} & 存储块结构指针 \\
+\hline
+{\em mem} & 存储块存储的地址 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mem_block_8c_a967d1b37820264a3f637431fcf36be45_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mem_block_8c_ab0f59237b37a765d9dd8f6e0fab0d7f6}\label{w_mem_block_8c_ab0f59237b37a765d9dd8f6e0fab0d7f6}} 
+\index{w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}!w\+Mem\+Block\+No\+Wait\+Get@{w\+Mem\+Block\+No\+Wait\+Get}}
+\index{w\+Mem\+Block\+No\+Wait\+Get@{w\+Mem\+Block\+No\+Wait\+Get}!w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}}
+\subsubsection{\texorpdfstring{w\+Mem\+Block\+No\+Wait\+Get()}{wMemBlockNoWaitGet()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Mem\+Block\+No\+Wait\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$}]{mem\+Block,  }\item[{void $\ast$$\ast$}]{mem }\end{DoxyParamCaption})}
+
+
+
+获取存储块函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mem\+Block} & 存储块结构指针 \\
+\hline
+{\em mem} & 存储块存储的地址 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em w\+Error\+Resource\+Unavaliable} & 等待结果为资源不可用 ~\newline
+\\
+\hline
+{\em w\+Error\+No\+Error} & 等待结果为正确 ~\newline
+\\
+\hline
+{\em w\+Error\+Timeout} & 等待结果为超时 \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{w_mem_block_8c_ab0f59237b37a765d9dd8f6e0fab0d7f6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_mem_block_8c_a127e3e701769d846e54cb2d7106156a4}\label{w_mem_block_8c_a127e3e701769d846e54cb2d7106156a4}} 
+\index{w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}!w\+Mem\+Block\+Wait@{w\+Mem\+Block\+Wait}}
+\index{w\+Mem\+Block\+Wait@{w\+Mem\+Block\+Wait}!w\+Mem\+Block.\+c@{w\+Mem\+Block.\+c}}
+\subsubsection{\texorpdfstring{w\+Mem\+Block\+Wait()}{wMemBlockWait()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Mem\+Block\+Wait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_mem_block_8h_a4bd74d0d3717fe6956895e1865848725}{w\+Mem\+Block}} $\ast$}]{mem\+Block,  }\item[{uint8\+\_\+t $\ast$$\ast$}]{mem,  }\item[{uint32\+\_\+t}]{wait\+Ticks }\end{DoxyParamCaption})}
+
+
+
+等待存储块函数 
+
+
+\begin{DoxyParams}{参数}
+{\em mem\+Block} & 存储块结构指针 \\
+\hline
+{\em mem} & 存储块存储的地址 \\
+\hline
+{\em wait\+Ticks} & 等待的最大ticks数 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em w\+Error\+Resource\+Unavaliable} & 等待结果为资源不可用 ~\newline
+\\
+\hline
+{\em w\+Error\+No\+Error} & 等待结果为正确 ~\newline
+\\
+\hline
+{\em w\+Error\+Timeout} & 等待结果为超时 \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_mem_block_8c_a127e3e701769d846e54cb2d7106156a4_cgraph}
+\end{center}
+\end{figure}

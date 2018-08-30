@@ -1,0 +1,706 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>WQ_OS: C:/Users/pc/Desktop/WQ_OS/Project/Sourse/wTimer.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">WQ_OS
+   &#160;<span id="projectnumber">1.0.2</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_ffd1f789ec7bd0a45fc6ad92579c5070.html">Project</a></li><li class="navelem"><a class="el" href="dir_b501bcf3bb7dab25ca2ca4e3e12c7fe9.html">Sourse</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#enum-members">枚举</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">wTimer.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="w_event_8h_source.html">wEvent.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+wTimer.h 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h__incl.png" border="0" usemap="#_c_1_2_users_2pc_2_desktop_2_w_q___o_s_2_project_2_sourse_2w_timer_8h" alt=""/></div>
+<map name="_c_1_2_users_2pc_2_desktop_2_w_q___o_s_2_project_2_sourse_2w_timer_8h" id="_c_1_2_users_2pc_2_desktop_2_w_q___o_s_2_project_2_sourse_2w_timer_8h">
+<area shape="rect" id="node2" href="w_event_8h.html" title="wEvent.h" alt="" coords="94,109,169,136"/>
+<area shape="rect" id="node3" href="w_lib_8h.html" title="wLib.h" alt="" coords="9,184,67,211"/>
+<area shape="rect" id="node5" href="w_config_8h.html" title="wConfig.h" alt="" coords="92,184,171,211"/>
+<area shape="rect" id="node6" href="w_task_8h.html" title="wTask.h" alt="" coords="195,184,265,211"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h__dep__incl.png" border="0" usemap="#_c_1_2_users_2pc_2_desktop_2_w_q___o_s_2_project_2_sourse_2w_timer_8hdep" alt=""/></div>
+<map name="_c_1_2_users_2pc_2_desktop_2_w_q___o_s_2_project_2_sourse_2w_timer_8hdep" id="_c_1_2_users_2pc_2_desktop_2_w_q___o_s_2_project_2_sourse_2w_timer_8hdep">
+<area shape="rect" id="node2" href="_w_q___o_s_8h.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/WQ_OS.h" alt="" coords="1273,109,1438,165"/>
+<area shape="rect" id="node3" href="app_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse/app.c" alt="" coords="5,221,207,262"/>
+<area shape="rect" id="node4" href="w_hooks_8h.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wHooks.h" alt="" coords="231,213,397,269"/>
+<area shape="rect" id="node5" href="main_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/main.c" alt="" coords="421,213,586,269"/>
+<area shape="rect" id="node6" href="switch_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/switch.c" alt="" coords="610,213,775,269"/>
+<area shape="rect" id="node7" href="wcpu_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wcpu.c" alt="" coords="799,213,965,269"/>
+<area shape="rect" id="node8" href="w_event_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wEvent.c" alt="" coords="989,213,1154,269"/>
+<area shape="rect" id="node9" href="w_flag_group_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wFlagGroup.c" alt="" coords="1178,213,1343,269"/>
+<area shape="rect" id="node10" href="w_hooks_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wHooks.c" alt="" coords="1367,213,1533,269"/>
+<area shape="rect" id="node11" href="w_mbox_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wMbox.c" alt="" coords="1557,213,1722,269"/>
+<area shape="rect" id="node12" href="w_mem_block_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wMemBlock.c" alt="" coords="1746,213,1911,269"/>
+<area shape="rect" id="node13" href="w_mutex_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wMutex.c" alt="" coords="1935,213,2101,269"/>
+<area shape="rect" id="node14" href="w_sem_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wSem.c" alt="" coords="2125,213,2290,269"/>
+<area shape="rect" id="node15" href="wtask_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wtask.c" alt="" coords="2314,213,2479,269"/>
+<area shape="rect" id="node16" href="wtime_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wtime.c" alt="" coords="2503,213,2669,269"/>
+<area shape="rect" id="node17" href="w_timer_8c.html" title="C:/Users/pc/Desktop\l/WQ_OS/Project/Sourse\l/wTimer.c" alt="" coords="2693,213,2858,269"/>
+</map>
+</div>
+</div>
+<p><a href="w_timer_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__w_timer.html">_wTimer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义软件定时器类型  <a href="struct__w_timer.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__w_timer_info.html">_wTimerInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义软件定时器信息结构  <a href="struct__w_timer_info.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:adde5594113d4922dd2c044b7033e979c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#adde5594113d4922dd2c044b7033e979c">TIMER_CONFIG_TYPE_HARD</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="separator:adde5594113d4922dd2c044b7033e979c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab47055541c84bda578ed3a9e913e4be2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#ab47055541c84bda578ed3a9e913e4be2">TIMER_CONFIG_TYPE_SOFT</a>&#160;&#160;&#160;(0 &lt;&lt; 0)</td></tr>
+<tr class="separator:ab47055541c84bda578ed3a9e913e4be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:afd5ce485f9f6080eb16b9b0d11c09dcd"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="w_timer_8h.html#ad33b7cdf236a7937e6adc8eeae4a843b">_wTimerState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#afd5ce485f9f6080eb16b9b0d11c09dcd">wTimerState</a></td></tr>
+<tr class="memdesc:afd5ce485f9f6080eb16b9b0d11c09dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">定时器状态类型  <a href="#afd5ce485f9f6080eb16b9b0d11c09dcd">更多...</a><br /></td></tr>
+<tr class="separator:afd5ce485f9f6080eb16b9b0d11c09dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a5f1e4387316ff65ca5b844d455ddfd"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__w_timer.html">_wTimer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a></td></tr>
+<tr class="memdesc:a1a5f1e4387316ff65ca5b844d455ddfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义软件定时器类型  <a href="#a1a5f1e4387316ff65ca5b844d455ddfd">更多...</a><br /></td></tr>
+<tr class="separator:a1a5f1e4387316ff65ca5b844d455ddfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a017b502c7230e3dcc99b8a5b6ad6cfe3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__w_timer_info.html">_wTimerInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#a017b502c7230e3dcc99b8a5b6ad6cfe3">wTimerInfo</a></td></tr>
+<tr class="memdesc:a017b502c7230e3dcc99b8a5b6ad6cfe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义软件定时器信息结构  <a href="#a017b502c7230e3dcc99b8a5b6ad6cfe3">更多...</a><br /></td></tr>
+<tr class="separator:a017b502c7230e3dcc99b8a5b6ad6cfe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:ad33b7cdf236a7937e6adc8eeae4a843b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#ad33b7cdf236a7937e6adc8eeae4a843b">_wTimerState</a> { <br />
+&#160;&#160;<a class="el" href="w_timer_8h.html#ad33b7cdf236a7937e6adc8eeae4a843baac17524d70ca056c2b0de8ffb429fd5c">timerCreated</a>, 
+<a class="el" href="w_timer_8h.html#ad33b7cdf236a7937e6adc8eeae4a843ba99944fc729e04e57619748e44f82bf5b">timerStarted</a>, 
+<a class="el" href="w_timer_8h.html#ad33b7cdf236a7937e6adc8eeae4a843ba3664a16d189cb543f4d55d1adcdda0b3">timerRunning</a>, 
+<a class="el" href="w_timer_8h.html#ad33b7cdf236a7937e6adc8eeae4a843ba84fdc141868bb00954b771383a601076">timerStopped</a>, 
+<br />
+&#160;&#160;<a class="el" href="w_timer_8h.html#ad33b7cdf236a7937e6adc8eeae4a843bae5864f6493488bc2ec216dacf79649f8">timerDestroyed</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ad33b7cdf236a7937e6adc8eeae4a843b"><td class="mdescLeft">&#160;</td><td class="mdescRight">定时器状态类型  <a href="w_timer_8h.html#ad33b7cdf236a7937e6adc8eeae4a843b">更多...</a><br /></td></tr>
+<tr class="separator:ad33b7cdf236a7937e6adc8eeae4a843b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a4cf942be6906c4c192a3092056326c8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#a4cf942be6906c4c192a3092056326c8f">wTimerInit</a> (<a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a> *timer, uint32_t delayTicks, uint32_t derationTicks, void(*timerFunc)(void *arg), void *arg, uint32_t config)</td></tr>
+<tr class="separator:a4cf942be6906c4c192a3092056326c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40729833185b7cc7935933207bb03417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#a40729833185b7cc7935933207bb03417">wTimerStart</a> (<a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a> *timer)</td></tr>
+<tr class="separator:a40729833185b7cc7935933207bb03417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3109e6d18d70fd873e1c539f3facdf11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#a3109e6d18d70fd873e1c539f3facdf11">wTimerStop</a> (<a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a> *timer)</td></tr>
+<tr class="separator:a3109e6d18d70fd873e1c539f3facdf11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7457cd5a4626b135169975a71f064fce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#a7457cd5a4626b135169975a71f064fce">wTimerDestroy</a> (<a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a> *timer)</td></tr>
+<tr class="separator:a7457cd5a4626b135169975a71f064fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6915b7b795d84491188d5bfe016fffbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#a6915b7b795d84491188d5bfe016fffbe">wTimerGetInfo</a> (<a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a> *timer, <a class="el" href="w_timer_8h.html#a017b502c7230e3dcc99b8a5b6ad6cfe3">wTimerInfo</a> *info)</td></tr>
+<tr class="separator:a6915b7b795d84491188d5bfe016fffbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e56499ec98c395523ffd7ef0dd7f946"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#a8e56499ec98c395523ffd7ef0dd7f946">wTimerModuleTickNotify</a> (void)</td></tr>
+<tr class="separator:a8e56499ec98c395523ffd7ef0dd7f946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a789d18864df0119aaefd7e09499042db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#a789d18864df0119aaefd7e09499042db">wTimerModuleInit</a> (void)</td></tr>
+<tr class="separator:a789d18864df0119aaefd7e09499042db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f45f849cc0c3b03701dfbe03cdca2f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="w_timer_8h.html#a5f45f849cc0c3b03701dfbe03cdca2f2">wTimerInitTask</a> (void)</td></tr>
+<tr class="separator:a5f45f849cc0c3b03701dfbe03cdca2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="adde5594113d4922dd2c044b7033e979c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adde5594113d4922dd2c044b7033e979c">&#9670;&nbsp;</a></span>TIMER_CONFIG_TYPE_HARD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIMER_CONFIG_TYPE_HARD&#160;&#160;&#160;(1 &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>硬件定时器（中断函数里） </p>
+
+</div>
+</div>
+<a id="ab47055541c84bda578ed3a9e913e4be2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab47055541c84bda578ed3a9e913e4be2">&#9670;&nbsp;</a></span>TIMER_CONFIG_TYPE_SOFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIMER_CONFIG_TYPE_SOFT&#160;&#160;&#160;(0 &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>软件定时器（任务函数里） </p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a1a5f1e4387316ff65ca5b844d455ddfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a5f1e4387316ff65ca5b844d455ddfd">&#9670;&nbsp;</a></span>wTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__w_timer.html">_wTimer</a> <a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>定义软件定时器类型 </p>
+
+</div>
+</div>
+<a id="a017b502c7230e3dcc99b8a5b6ad6cfe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a017b502c7230e3dcc99b8a5b6ad6cfe3">&#9670;&nbsp;</a></span>wTimerInfo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__w_timer_info.html">_wTimerInfo</a> <a class="el" href="w_timer_8h.html#a017b502c7230e3dcc99b8a5b6ad6cfe3">wTimerInfo</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>定义软件定时器信息结构 </p>
+
+</div>
+</div>
+<a id="afd5ce485f9f6080eb16b9b0d11c09dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd5ce485f9f6080eb16b9b0d11c09dcd">&#9670;&nbsp;</a></span>wTimerState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="w_timer_8h.html#ad33b7cdf236a7937e6adc8eeae4a843b">_wTimerState</a> <a class="el" href="w_timer_8h.html#afd5ce485f9f6080eb16b9b0d11c09dcd">wTimerState</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>定时器状态类型 </p>
+
+</div>
+</div>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="ad33b7cdf236a7937e6adc8eeae4a843b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33b7cdf236a7937e6adc8eeae4a843b">&#9670;&nbsp;</a></span>_wTimerState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="w_timer_8h.html#ad33b7cdf236a7937e6adc8eeae4a843b">_wTimerState</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>定时器状态类型 </p>
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="ad33b7cdf236a7937e6adc8eeae4a843baac17524d70ca056c2b0de8ffb429fd5c"></a>timerCreated&#160;</td><td class="fielddoc"><p>定时器已创建 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad33b7cdf236a7937e6adc8eeae4a843ba99944fc729e04e57619748e44f82bf5b"></a>timerStarted&#160;</td><td class="fielddoc"><p>定时器已启动 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad33b7cdf236a7937e6adc8eeae4a843ba3664a16d189cb543f4d55d1adcdda0b3"></a>timerRunning&#160;</td><td class="fielddoc"><p>定时器正在执行回调函数 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad33b7cdf236a7937e6adc8eeae4a843ba84fdc141868bb00954b771383a601076"></a>timerStopped&#160;</td><td class="fielddoc"><p>定时器已停止 </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad33b7cdf236a7937e6adc8eeae4a843bae5864f6493488bc2ec216dacf79649f8"></a>timerDestroyed&#160;</td><td class="fielddoc"><p>定时器已销毁 </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a7457cd5a4626b135169975a71f064fce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7457cd5a4626b135169975a71f064fce">&#9670;&nbsp;</a></span>wTimerDestroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTimerDestroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a> *&#160;</td>
+          <td class="paramname"><em>timer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a7457cd5a4626b135169975a71f064fce_cgraph.png" border="0" usemap="#w_timer_8h_a7457cd5a4626b135169975a71f064fce_cgraph" alt=""/></div>
+<map name="w_timer_8h_a7457cd5a4626b135169975a71f064fce_cgraph" id="w_timer_8h_a7457cd5a4626b135169975a71f064fce_cgraph">
+<area shape="rect" id="node2" href="w_timer_8c.html#a3109e6d18d70fd873e1c539f3facdf11" title="wTimerStop" alt="" coords="161,309,252,336"/>
+<area shape="rect" id="node3" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="615,208,746,235"/>
+<area shape="rect" id="node4" href="w_lib_8h.html#a3a79549b0921e14d6bed1eb8674b720f" title="移除链表中指定结点函数 " alt="" coords="819,461,917,488"/>
+<area shape="rect" id="node5" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="619,411,742,437"/>
+<area shape="rect" id="node6" href="w_sem_8c.html#aa7a46b25993a9e7f6b02479977813103" title="等待信号量函数 " alt="" coords="303,259,388,285"/>
+<area shape="rect" id="node20" href="w_sem_8c.html#a476ed9929f4653703136c41d22d9ab6c" title="信号量唤醒任务函数 " alt="" coords="300,309,391,336"/>
+<area shape="rect" id="node7" href="w_event_8c.html#a1f841793727f21c2daefe6064935a6aa" title="将等待事件发生的任务插入事件控制块函数 " alt="" coords="455,56,546,83"/>
+<area shape="rect" id="node13" href="main_8c.html#a231177ae77d1af6c5239c4ca95be8760" title="任务调度函数 " alt="" coords="453,259,549,285"/>
+<area shape="rect" id="node8" href="main_8c.html#a598536b78a16c960ddfb82d887746cae" title="将任务从就绪列表中删除函数 " alt="" coords="613,157,748,184"/>
+<area shape="rect" id="node11" href="w_lib_8h.html#a2cbc75ad50d6813f0c208a41d565b6d9" title="添加指定结点到链表尾部函数 " alt="" coords="818,5,918,32"/>
+<area shape="rect" id="node12" href="main_8c.html#a1163983eff6acb009950c69f3a55b629" title="将任务插入延时队列函数 " alt="" coords="623,5,738,32"/>
+<area shape="rect" id="node9" href="w_lib_8h.html#a7d33baac6b25d816f7cfc67ffdeee8cb" title="链表结点数计数函数 " alt="" coords="825,284,911,311"/>
+<area shape="rect" id="node10" href="w_bitmap_8c.html#a87b3dd6be6acb1f4cbfb9a78e1c05dc9" title="位图结构清零函数 " alt="" coords="817,157,919,184"/>
+<area shape="rect" id="node14" href="main_8c.html#aecc5337584ee14a8c816f9ce689ba128" title="获取当前最高优先级且可运行的任务函数 " alt="" coords="611,107,751,133"/>
+<area shape="rect" id="node18" href="switch_8c.html#acd081e6d47a18f3f6e59bffca7e284f1" title="任务切换函数 " alt="" coords="631,309,730,336"/>
+<area shape="rect" id="node19" href="w_hooks_8c.html#afa57babb3f5e5b5ec50b08b6bfe77435" title="任务切换hooks函数 " alt="" coords="613,259,748,285"/>
+<area shape="rect" id="node15" href="w_bitmap_8c.html#a9386bff9baa067efe85d7f2f976a4512" title="位图查找函数 &#160;&#160;" alt="" coords="799,56,937,83"/>
+<area shape="rect" id="node17" href="w_lib_8h.html#a3221ea08ff11c2cfbca5c473c2fd6a07" title="返回首个结点函数 " alt="" coords="829,107,907,133"/>
+<area shape="rect" id="node16" href="w_bitmap_8c.html#a3795d2f22dfc0af5eb9b43b19f7a5dd7" title="位图长度函数 " alt="" coords="985,56,1115,83"/>
+<area shape="rect" id="node21" href="w_event_8c.html#ae8ed542398c8bcfe6bd33532f6aca4a2" title="查询事件控制块中等待的任务数量函数 " alt="" coords="439,309,563,336"/>
+<area shape="rect" id="node22" href="w_event_8c.html#a03595819b6b21e4eea4c0fc142a42f6c" title="将首个任务从事件控制块中唤醒函数 " alt="" coords="444,512,557,539"/>
+<area shape="rect" id="node23" href="w_lib_8h.html#a3821ea86084ec39dd0e9bab5a5924504" title="移除链表中的第1个结点函数 " alt="" coords="619,512,743,539"/>
+<area shape="rect" id="node24" href="main_8c.html#a85848b63b5fe499d55e6c4196c43f306" title="将任务从延时队列唤醒函数 " alt="" coords="612,461,749,488"/>
+<area shape="rect" id="node25" href="main_8c.html#a600f0ce279bbc48c121bd6e31874aff9" title="将任务插入就绪列表（将任务从延时队列中移除时）函数 " alt="" coords="621,613,740,640"/>
+<area shape="rect" id="node26" href="w_lib_8h.html#a2346f45406d665accfd808f3a1eea052" title="添加指定结点到链表头部函数 " alt="" coords="817,588,919,615"/>
+<area shape="rect" id="node27" href="w_bitmap_8c.html#a77d05fe3886a9d768df06de7f403326b" title="wBitmapSet" alt="" coords="822,639,914,665"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6915b7b795d84491188d5bfe016fffbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6915b7b795d84491188d5bfe016fffbe">&#9670;&nbsp;</a></span>wTimerGetInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTimerGetInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a> *&#160;</td>
+          <td class="paramname"><em>timer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="w_timer_8h.html#a017b502c7230e3dcc99b8a5b6ad6cfe3">wTimerInfo</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a6915b7b795d84491188d5bfe016fffbe_cgraph.png" border="0" usemap="#w_timer_8h_a6915b7b795d84491188d5bfe016fffbe_cgraph" alt=""/></div>
+<map name="w_timer_8h_a6915b7b795d84491188d5bfe016fffbe_cgraph" id="w_timer_8h_a6915b7b795d84491188d5bfe016fffbe_cgraph">
+<area shape="rect" id="node2" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="157,5,288,32"/>
+<area shape="rect" id="node3" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="161,56,284,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4cf942be6906c4c192a3092056326c8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cf942be6906c4c192a3092056326c8f">&#9670;&nbsp;</a></span>wTimerInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTimerInit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a> *&#160;</td>
+          <td class="paramname"><em>timer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>delayTicks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>derationTicks</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *arg)&#160;</td>
+          <td class="paramname"><em>timerFunc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a4cf942be6906c4c192a3092056326c8f_cgraph.png" border="0" usemap="#w_timer_8h_a4cf942be6906c4c192a3092056326c8f_cgraph" alt=""/></div>
+<map name="w_timer_8h_a4cf942be6906c4c192a3092056326c8f_cgraph" id="w_timer_8h_a4cf942be6906c4c192a3092056326c8f_cgraph">
+<area shape="rect" id="node2" href="w_lib_8h.html#a3506d080ed161c2866b73ad2b2595fdf" title="结点初始化函数 " alt="" coords="133,5,212,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5f45f849cc0c3b03701dfbe03cdca2f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f45f849cc0c3b03701dfbe03cdca2f2">&#9670;&nbsp;</a></span>wTimerInitTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTimerInitTask </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2_cgraph.png" border="0" usemap="#w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2_cgraph" alt=""/></div>
+<map name="w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2_cgraph" id="w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2_cgraph">
+<area shape="rect" id="node2" href="wtask_8c.html#aab000edf7c64d617282f878f72a51821" title="任务初始化函数 " alt="" coords="181,81,257,108"/>
+<area shape="rect" id="node8" href="w_timer_8c.html#a28e9f35d88b57c49ef28944b59a9616d" title="wTimerSoftTask" alt="" coords="161,309,276,336"/>
+<area shape="rect" id="node3" href="w_lib_8h.html#a3506d080ed161c2866b73ad2b2595fdf" title="结点初始化函数 " alt="" coords="341,5,420,32"/>
+<area shape="rect" id="node4" href="main_8c.html#a600f0ce279bbc48c121bd6e31874aff9" title="将任务插入就绪列表（将任务从延时队列中移除时）函数 " alt="" coords="679,56,797,83"/>
+<area shape="rect" id="node7" href="w_hooks_8c.html#ac1fd0c11b2cb3744862c3c5f20bfbdf1" title="任务初始化的hooks函数 " alt="" coords="324,107,437,133"/>
+<area shape="rect" id="node5" href="w_lib_8h.html#a2346f45406d665accfd808f3a1eea052" title="添加指定结点到链表头部函数 " alt="" coords="875,31,976,57"/>
+<area shape="rect" id="node6" href="w_bitmap_8c.html#a77d05fe3886a9d768df06de7f403326b" title="wBitmapSet" alt="" coords="879,81,971,108"/>
+<area shape="rect" id="node9" href="w_sem_8c.html#aa7a46b25993a9e7f6b02479977813103" title="等待信号量函数 " alt="" coords="338,360,423,387"/>
+<area shape="rect" id="node26" href="w_timer_8c.html#a969a44ed889f8390da61c52a07f0156f" title="wTimerCallFuncList" alt="" coords="485,613,620,640"/>
+<area shape="rect" id="node27" href="w_sem_8c.html#a476ed9929f4653703136c41d22d9ab6c" title="信号量唤醒任务函数 " alt="" coords="335,259,426,285"/>
+<area shape="rect" id="node10" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="673,309,803,336"/>
+<area shape="rect" id="node11" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="677,259,799,285"/>
+<area shape="rect" id="node12" href="w_event_8c.html#a1f841793727f21c2daefe6064935a6aa" title="将等待事件发生的任务插入事件控制块函数 " alt="" coords="507,487,598,513"/>
+<area shape="rect" id="node19" href="main_8c.html#a231177ae77d1af6c5239c4ca95be8760" title="任务调度函数 " alt="" coords="505,411,601,437"/>
+<area shape="rect" id="node13" href="main_8c.html#a598536b78a16c960ddfb82d887746cae" title="将任务从就绪列表中删除函数 " alt="" coords="671,512,805,539"/>
+<area shape="rect" id="node17" href="w_lib_8h.html#a2cbc75ad50d6813f0c208a41d565b6d9" title="添加指定结点到链表尾部函数 " alt="" coords="875,595,975,621"/>
+<area shape="rect" id="node18" href="main_8c.html#a1163983eff6acb009950c69f3a55b629" title="将任务插入延时队列函数 " alt="" coords="681,613,795,640"/>
+<area shape="rect" id="node14" href="w_lib_8h.html#a3a79549b0921e14d6bed1eb8674b720f" title="移除链表中指定结点函数 " alt="" coords="876,475,975,501"/>
+<area shape="rect" id="node15" href="w_lib_8h.html#a7d33baac6b25d816f7cfc67ffdeee8cb" title="链表结点数计数函数 " alt="" coords="882,208,969,235"/>
+<area shape="rect" id="node16" href="w_bitmap_8c.html#a87b3dd6be6acb1f4cbfb9a78e1c05dc9" title="位图结构清零函数 " alt="" coords="874,525,977,552"/>
+<area shape="rect" id="node20" href="main_8c.html#aecc5337584ee14a8c816f9ce689ba128" title="获取当前最高优先级且可运行的任务函数 " alt="" coords="668,360,808,387"/>
+<area shape="rect" id="node24" href="switch_8c.html#acd081e6d47a18f3f6e59bffca7e284f1" title="任务切换函数 " alt="" coords="689,411,787,437"/>
+<area shape="rect" id="node25" href="w_hooks_8c.html#afa57babb3f5e5b5ec50b08b6bfe77435" title="任务切换hooks函数 " alt="" coords="671,461,805,488"/>
+<area shape="rect" id="node21" href="w_bitmap_8c.html#a9386bff9baa067efe85d7f2f976a4512" title="位图查找函数 &#160;&#160;" alt="" coords="856,348,995,375"/>
+<area shape="rect" id="node23" href="w_lib_8h.html#a3221ea08ff11c2cfbca5c473c2fd6a07" title="返回首个结点函数 " alt="" coords="886,399,965,425"/>
+<area shape="rect" id="node22" href="w_bitmap_8c.html#a3795d2f22dfc0af5eb9b43b19f7a5dd7" title="位图长度函数 " alt="" coords="1043,348,1172,375"/>
+<area shape="rect" id="node28" href="w_event_8c.html#ae8ed542398c8bcfe6bd33532f6aca4a2" title="查询事件控制块中等待的任务数量函数 " alt="" coords="491,208,615,235"/>
+<area shape="rect" id="node29" href="w_event_8c.html#a03595819b6b21e4eea4c0fc142a42f6c" title="将首个任务从事件控制块中唤醒函数 " alt="" coords="496,107,609,133"/>
+<area shape="rect" id="node30" href="w_lib_8h.html#a3821ea86084ec39dd0e9bab5a5924504" title="移除链表中的第1个结点函数 " alt="" coords="676,107,800,133"/>
+<area shape="rect" id="node31" href="main_8c.html#a85848b63b5fe499d55e6c4196c43f306" title="将任务从延时队列唤醒函数 " alt="" coords="669,208,807,235"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2_icgraph.png" border="0" usemap="#w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2_icgraph" alt=""/></div>
+<map name="w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2_icgraph" id="w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2_icgraph">
+<area shape="rect" id="node2" href="main_8c.html#a1949c76c0bc7d4b976d447fbaa947f53" title="空闲任务函数 " alt="" coords="161,5,263,32"/>
+<area shape="rect" id="node3" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="主函数 " alt="" coords="311,5,361,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a789d18864df0119aaefd7e09499042db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a789d18864df0119aaefd7e09499042db">&#9670;&nbsp;</a></span>wTimerModuleInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTimerModuleInit </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a789d18864df0119aaefd7e09499042db_cgraph.png" border="0" usemap="#w_timer_8h_a789d18864df0119aaefd7e09499042db_cgraph" alt=""/></div>
+<map name="w_timer_8h_a789d18864df0119aaefd7e09499042db_cgraph" id="w_timer_8h_a789d18864df0119aaefd7e09499042db_cgraph">
+<area shape="rect" id="node2" href="w_lib_8h.html#aeb31b6fb82b205a25dbf1b11ce8a9c14" title="链表初始化函数 " alt="" coords="427,5,496,32"/>
+<area shape="rect" id="node3" href="w_sem_8c.html#a58b5038369ccd8e83cc661e2b0b1fe35" title="初始化信号量函数 " alt="" coords="176,31,251,57"/>
+<area shape="rect" id="node4" href="w_event_8c.html#a5150dadc2bca60248555023bc0cde4fc" title="初始化事件控制块函数 " alt="" coords="299,31,379,57"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a789d18864df0119aaefd7e09499042db_icgraph.png" border="0" usemap="#w_timer_8h_a789d18864df0119aaefd7e09499042db_icgraph" alt=""/></div>
+<map name="w_timer_8h_a789d18864df0119aaefd7e09499042db_icgraph" id="w_timer_8h_a789d18864df0119aaefd7e09499042db_icgraph">
+<area shape="rect" id="node2" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="主函数 " alt="" coords="176,5,227,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8e56499ec98c395523ffd7ef0dd7f946"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e56499ec98c395523ffd7ef0dd7f946">&#9670;&nbsp;</a></span>wTimerModuleTickNotify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTimerModuleTickNotify </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946_cgraph.png" border="0" usemap="#w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946_cgraph" alt=""/></div>
+<map name="w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946_cgraph" id="w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946_cgraph">
+<area shape="rect" id="node2" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="575,309,706,336"/>
+<area shape="rect" id="node3" href="w_timer_8c.html#a969a44ed889f8390da61c52a07f0156f" title="wTimerCallFuncList" alt="" coords="216,5,351,32"/>
+<area shape="rect" id="node5" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="579,107,702,133"/>
+<area shape="rect" id="node6" href="w_sem_8c.html#a476ed9929f4653703136c41d22d9ab6c" title="信号量唤醒任务函数 " alt="" coords="238,183,329,209"/>
+<area shape="rect" id="node4" href="w_lib_8h.html#a3a79549b0921e14d6bed1eb8674b720f" title="移除链表中指定结点函数 " alt="" coords="779,81,877,108"/>
+<area shape="rect" id="node7" href="w_event_8c.html#ae8ed542398c8bcfe6bd33532f6aca4a2" title="查询事件控制块中等待的任务数量函数 " alt="" coords="399,107,523,133"/>
+<area shape="rect" id="node9" href="w_event_8c.html#a03595819b6b21e4eea4c0fc142a42f6c" title="将首个任务从事件控制块中唤醒函数 " alt="" coords="404,208,517,235"/>
+<area shape="rect" id="node15" href="main_8c.html#a231177ae77d1af6c5239c4ca95be8760" title="任务调度函数 " alt="" coords="413,360,509,387"/>
+<area shape="rect" id="node8" href="w_lib_8h.html#a7d33baac6b25d816f7cfc67ffdeee8cb" title="链表结点数计数函数 " alt="" coords="597,56,684,83"/>
+<area shape="rect" id="node10" href="w_lib_8h.html#a3821ea86084ec39dd0e9bab5a5924504" title="移除链表中的第1个结点函数 " alt="" coords="579,208,703,235"/>
+<area shape="rect" id="node11" href="main_8c.html#a85848b63b5fe499d55e6c4196c43f306" title="将任务从延时队列唤醒函数 " alt="" coords="572,157,709,184"/>
+<area shape="rect" id="node12" href="main_8c.html#a600f0ce279bbc48c121bd6e31874aff9" title="将任务插入就绪列表（将任务从延时队列中移除时）函数 " alt="" coords="581,259,700,285"/>
+<area shape="rect" id="node13" href="w_lib_8h.html#a2346f45406d665accfd808f3a1eea052" title="添加指定结点到链表头部函数 " alt="" coords="777,284,879,311"/>
+<area shape="rect" id="node14" href="w_bitmap_8c.html#a77d05fe3886a9d768df06de7f403326b" title="wBitmapSet" alt="" coords="782,233,874,260"/>
+<area shape="rect" id="node16" href="main_8c.html#aecc5337584ee14a8c816f9ce689ba128" title="获取当前最高优先级且可运行的任务函数 " alt="" coords="571,411,711,437"/>
+<area shape="rect" id="node20" href="switch_8c.html#acd081e6d47a18f3f6e59bffca7e284f1" title="任务切换函数 " alt="" coords="591,461,690,488"/>
+<area shape="rect" id="node21" href="w_hooks_8c.html#afa57babb3f5e5b5ec50b08b6bfe77435" title="任务切换hooks函数 " alt="" coords="573,360,708,387"/>
+<area shape="rect" id="node17" href="w_bitmap_8c.html#a9386bff9baa067efe85d7f2f976a4512" title="位图查找函数 &#160;&#160;" alt="" coords="759,436,897,463"/>
+<area shape="rect" id="node19" href="w_lib_8h.html#a3221ea08ff11c2cfbca5c473c2fd6a07" title="返回首个结点函数 " alt="" coords="789,385,867,412"/>
+<area shape="rect" id="node18" href="w_bitmap_8c.html#a3795d2f22dfc0af5eb9b43b19f7a5dd7" title="位图长度函数 " alt="" coords="945,436,1075,463"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946_icgraph.png" border="0" usemap="#w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946_icgraph" alt=""/></div>
+<map name="w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946_icgraph" id="w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946_icgraph">
+<area shape="rect" id="node2" href="_w_q___o_s_8h.html#a36ab31adb9bd20b1fe3337cf8ac6baf2" title="任务SystemTick中断服务函数 " alt="" coords="216,5,388,32"/>
+<area shape="rect" id="node3" href="wcpu_8c.html#aafb8d3e0fd06464b1ee0ae1edbc3c7d6" title="SysTick中断服务函数 " alt="" coords="436,5,556,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a40729833185b7cc7935933207bb03417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40729833185b7cc7935933207bb03417">&#9670;&nbsp;</a></span>wTimerStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTimerStart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a> *&#160;</td>
+          <td class="paramname"><em>timer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a40729833185b7cc7935933207bb03417_cgraph.png" border="0" usemap="#w_timer_8h_a40729833185b7cc7935933207bb03417_cgraph" alt=""/></div>
+<map name="w_timer_8h_a40729833185b7cc7935933207bb03417_cgraph" id="w_timer_8h_a40729833185b7cc7935933207bb03417_cgraph">
+<area shape="rect" id="node2" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="459,175,590,202"/>
+<area shape="rect" id="node3" href="w_lib_8h.html#a2cbc75ad50d6813f0c208a41d565b6d9" title="添加指定结点到链表尾部函数 " alt="" coords="662,23,762,50"/>
+<area shape="rect" id="node4" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="463,429,586,455"/>
+<area shape="rect" id="node5" href="w_sem_8c.html#aa7a46b25993a9e7f6b02479977813103" title="等待信号量函数 " alt="" coords="147,201,232,227"/>
+<area shape="rect" id="node19" href="w_sem_8c.html#a476ed9929f4653703136c41d22d9ab6c" title="信号量唤醒任务函数 " alt="" coords="144,302,235,329"/>
+<area shape="rect" id="node6" href="w_event_8c.html#a1f841793727f21c2daefe6064935a6aa" title="将等待事件发生的任务插入事件控制块函数 " alt="" coords="299,74,390,101"/>
+<area shape="rect" id="node12" href="main_8c.html#a231177ae77d1af6c5239c4ca95be8760" title="任务调度函数 " alt="" coords="297,327,393,354"/>
+<area shape="rect" id="node7" href="main_8c.html#a598536b78a16c960ddfb82d887746cae" title="将任务从就绪列表中删除函数 " alt="" coords="457,125,592,151"/>
+<area shape="rect" id="node11" href="main_8c.html#a1163983eff6acb009950c69f3a55b629" title="将任务插入延时队列函数 " alt="" coords="467,23,582,50"/>
+<area shape="rect" id="node8" href="w_lib_8h.html#a3a79549b0921e14d6bed1eb8674b720f" title="移除链表中指定结点函数 " alt="" coords="663,271,761,298"/>
+<area shape="rect" id="node9" href="w_lib_8h.html#a7d33baac6b25d816f7cfc67ffdeee8cb" title="链表结点数计数函数 " alt="" coords="669,201,755,227"/>
+<area shape="rect" id="node10" href="w_bitmap_8c.html#a87b3dd6be6acb1f4cbfb9a78e1c05dc9" title="位图结构清零函数 " alt="" coords="661,125,763,151"/>
+<area shape="rect" id="node13" href="main_8c.html#aecc5337584ee14a8c816f9ce689ba128" title="获取当前最高优先级且可运行的任务函数 " alt="" coords="455,378,595,405"/>
+<area shape="rect" id="node17" href="switch_8c.html#acd081e6d47a18f3f6e59bffca7e284f1" title="任务切换函数 " alt="" coords="475,327,574,354"/>
+<area shape="rect" id="node18" href="w_hooks_8c.html#afa57babb3f5e5b5ec50b08b6bfe77435" title="任务切换hooks函数 " alt="" coords="457,277,592,303"/>
+<area shape="rect" id="node14" href="w_bitmap_8c.html#a9386bff9baa067efe85d7f2f976a4512" title="位图查找函数 &#160;&#160;" alt="" coords="643,359,781,386"/>
+<area shape="rect" id="node16" href="w_lib_8h.html#a3221ea08ff11c2cfbca5c473c2fd6a07" title="返回首个结点函数 " alt="" coords="673,410,751,437"/>
+<area shape="rect" id="node15" href="w_bitmap_8c.html#a3795d2f22dfc0af5eb9b43b19f7a5dd7" title="位图长度函数 " alt="" coords="829,359,959,386"/>
+<area shape="rect" id="node20" href="w_event_8c.html#ae8ed542398c8bcfe6bd33532f6aca4a2" title="查询事件控制块中等待的任务数量函数 " alt="" coords="283,277,407,303"/>
+<area shape="rect" id="node21" href="w_event_8c.html#a03595819b6b21e4eea4c0fc142a42f6c" title="将首个任务从事件控制块中唤醒函数 " alt="" coords="288,530,401,557"/>
+<area shape="rect" id="node22" href="w_lib_8h.html#a3821ea86084ec39dd0e9bab5a5924504" title="移除链表中的第1个结点函数 " alt="" coords="463,479,587,506"/>
+<area shape="rect" id="node23" href="main_8c.html#a85848b63b5fe499d55e6c4196c43f306" title="将任务从延时队列唤醒函数 " alt="" coords="456,530,593,557"/>
+<area shape="rect" id="node24" href="main_8c.html#a600f0ce279bbc48c121bd6e31874aff9" title="将任务插入就绪列表（将任务从延时队列中移除时）函数 " alt="" coords="465,581,584,607"/>
+<area shape="rect" id="node25" href="w_lib_8h.html#a2346f45406d665accfd808f3a1eea052" title="添加指定结点到链表头部函数 " alt="" coords="661,555,763,582"/>
+<area shape="rect" id="node26" href="w_bitmap_8c.html#a77d05fe3886a9d768df06de7f403326b" title="wBitmapSet" alt="" coords="666,606,758,633"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3109e6d18d70fd873e1c539f3facdf11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3109e6d18d70fd873e1c539f3facdf11">&#9670;&nbsp;</a></span>wTimerStop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTimerStop </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_timer_8h.html#a1a5f1e4387316ff65ca5b844d455ddfd">wTimer</a> *&#160;</td>
+          <td class="paramname"><em>timer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11_cgraph.png" border="0" usemap="#w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11_cgraph" alt=""/></div>
+<map name="w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11_cgraph" id="w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11_cgraph">
+<area shape="rect" id="node2" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="459,208,590,235"/>
+<area shape="rect" id="node3" href="w_lib_8h.html#a3a79549b0921e14d6bed1eb8674b720f" title="移除链表中指定结点函数 " alt="" coords="663,461,761,488"/>
+<area shape="rect" id="node4" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="463,411,586,437"/>
+<area shape="rect" id="node5" href="w_sem_8c.html#aa7a46b25993a9e7f6b02479977813103" title="等待信号量函数 " alt="" coords="147,259,232,285"/>
+<area shape="rect" id="node19" href="w_sem_8c.html#a476ed9929f4653703136c41d22d9ab6c" title="信号量唤醒任务函数 " alt="" coords="144,309,235,336"/>
+<area shape="rect" id="node6" href="w_event_8c.html#a1f841793727f21c2daefe6064935a6aa" title="将等待事件发生的任务插入事件控制块函数 " alt="" coords="299,56,390,83"/>
+<area shape="rect" id="node12" href="main_8c.html#a231177ae77d1af6c5239c4ca95be8760" title="任务调度函数 " alt="" coords="297,259,393,285"/>
+<area shape="rect" id="node7" href="main_8c.html#a598536b78a16c960ddfb82d887746cae" title="将任务从就绪列表中删除函数 " alt="" coords="457,157,592,184"/>
+<area shape="rect" id="node10" href="w_lib_8h.html#a2cbc75ad50d6813f0c208a41d565b6d9" title="添加指定结点到链表尾部函数 " alt="" coords="662,5,762,32"/>
+<area shape="rect" id="node11" href="main_8c.html#a1163983eff6acb009950c69f3a55b629" title="将任务插入延时队列函数 " alt="" coords="467,5,582,32"/>
+<area shape="rect" id="node8" href="w_lib_8h.html#a7d33baac6b25d816f7cfc67ffdeee8cb" title="链表结点数计数函数 " alt="" coords="669,284,755,311"/>
+<area shape="rect" id="node9" href="w_bitmap_8c.html#a87b3dd6be6acb1f4cbfb9a78e1c05dc9" title="位图结构清零函数 " alt="" coords="661,157,763,184"/>
+<area shape="rect" id="node13" href="main_8c.html#aecc5337584ee14a8c816f9ce689ba128" title="获取当前最高优先级且可运行的任务函数 " alt="" coords="455,107,595,133"/>
+<area shape="rect" id="node17" href="switch_8c.html#acd081e6d47a18f3f6e59bffca7e284f1" title="任务切换函数 " alt="" coords="475,309,574,336"/>
+<area shape="rect" id="node18" href="w_hooks_8c.html#afa57babb3f5e5b5ec50b08b6bfe77435" title="任务切换hooks函数 " alt="" coords="457,259,592,285"/>
+<area shape="rect" id="node14" href="w_bitmap_8c.html#a9386bff9baa067efe85d7f2f976a4512" title="位图查找函数 &#160;&#160;" alt="" coords="643,56,781,83"/>
+<area shape="rect" id="node16" href="w_lib_8h.html#a3221ea08ff11c2cfbca5c473c2fd6a07" title="返回首个结点函数 " alt="" coords="673,107,751,133"/>
+<area shape="rect" id="node15" href="w_bitmap_8c.html#a3795d2f22dfc0af5eb9b43b19f7a5dd7" title="位图长度函数 " alt="" coords="829,56,959,83"/>
+<area shape="rect" id="node20" href="w_event_8c.html#ae8ed542398c8bcfe6bd33532f6aca4a2" title="查询事件控制块中等待的任务数量函数 " alt="" coords="283,309,407,336"/>
+<area shape="rect" id="node21" href="w_event_8c.html#a03595819b6b21e4eea4c0fc142a42f6c" title="将首个任务从事件控制块中唤醒函数 " alt="" coords="288,512,401,539"/>
+<area shape="rect" id="node22" href="w_lib_8h.html#a3821ea86084ec39dd0e9bab5a5924504" title="移除链表中的第1个结点函数 " alt="" coords="463,512,587,539"/>
+<area shape="rect" id="node23" href="main_8c.html#a85848b63b5fe499d55e6c4196c43f306" title="将任务从延时队列唤醒函数 " alt="" coords="456,461,593,488"/>
+<area shape="rect" id="node24" href="main_8c.html#a600f0ce279bbc48c121bd6e31874aff9" title="将任务插入就绪列表（将任务从延时队列中移除时）函数 " alt="" coords="465,613,584,640"/>
+<area shape="rect" id="node25" href="w_lib_8h.html#a2346f45406d665accfd808f3a1eea052" title="添加指定结点到链表头部函数 " alt="" coords="661,588,763,615"/>
+<area shape="rect" id="node26" href="w_bitmap_8c.html#a77d05fe3886a9d768df06de7f403326b" title="wBitmapSet" alt="" coords="666,639,758,665"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11_icgraph.png" border="0" usemap="#w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11_icgraph" alt=""/></div>
+<map name="w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11_icgraph" id="w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11_icgraph">
+<area shape="rect" id="node2" href="w_timer_8h.html#a7457cd5a4626b135169975a71f064fce" title="wTimerDestroy" alt="" coords="144,5,252,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

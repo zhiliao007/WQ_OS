@@ -1,0 +1,179 @@
+\hypertarget{w_bitmap_8c}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Bitmap.c 文件参考}
+\label{w_bitmap_8c}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Bitmap.\+c@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Bitmap.\+c}}
+{\ttfamily \#include \char`\"{}w\+Lib.\+h\char`\"{}}\newline
+w\+Bitmap.\+c 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{w_bitmap_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{w_bitmap_8c_a83491dfc50c8702d4ee83f29008ec193}{w\+Bitmap\+Init}} (\mbox{\hyperlink{structw_bitmap}{w\+Bitmap}} $\ast$bitmap)
+\begin{DoxyCompactList}\small\item\em 位图结构初始化函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_bitmap_8c_a3795d2f22dfc0af5eb9b43b19f7a5dd7}{w\+Bitmap\+Pos\+Count}} (void)
+\begin{DoxyCompactList}\small\item\em 位图长度函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_bitmap_8c_a77d05fe3886a9d768df06de7f403326b}{w\+Bitmap\+Set}} (\mbox{\hyperlink{structw_bitmap}{w\+Bitmap}} $\ast$bitmap, uint32\+\_\+t pos)
+\item 
+void \mbox{\hyperlink{w_bitmap_8c_a87b3dd6be6acb1f4cbfb9a78e1c05dc9}{w\+Bitmap\+Clear}} (\mbox{\hyperlink{structw_bitmap}{w\+Bitmap}} $\ast$bitmap, uint32\+\_\+t pos)
+\begin{DoxyCompactList}\small\item\em 位图结构清零函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_bitmap_8c_a9386bff9baa067efe85d7f2f976a4512}{w\+Bitmap\+Get\+First\+Set}} (\mbox{\hyperlink{structw_bitmap}{w\+Bitmap}} $\ast$bitmap)
+\begin{DoxyCompactList}\small\item\em 位图查找函数 ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{w_bitmap_8c_a87b3dd6be6acb1f4cbfb9a78e1c05dc9}\label{w_bitmap_8c_a87b3dd6be6acb1f4cbfb9a78e1c05dc9}} 
+\index{w\+Bitmap.\+c@{w\+Bitmap.\+c}!w\+Bitmap\+Clear@{w\+Bitmap\+Clear}}
+\index{w\+Bitmap\+Clear@{w\+Bitmap\+Clear}!w\+Bitmap.\+c@{w\+Bitmap.\+c}}
+\subsubsection{\texorpdfstring{w\+Bitmap\+Clear()}{wBitmapClear()}}
+{\footnotesize\ttfamily void w\+Bitmap\+Clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structw_bitmap}{w\+Bitmap}} $\ast$}]{bitmap,  }\item[{uint32\+\_\+t}]{pos }\end{DoxyParamCaption})}
+
+
+
+位图结构清零函数 
+
+
+\begin{DoxyParams}{参数}
+{\em pos} & 需要清零的位 \\
+\hline
+{\em bitmap} & 位图结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_bitmap_8c_a87b3dd6be6acb1f4cbfb9a78e1c05dc9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_bitmap_8c_a9386bff9baa067efe85d7f2f976a4512}\label{w_bitmap_8c_a9386bff9baa067efe85d7f2f976a4512}} 
+\index{w\+Bitmap.\+c@{w\+Bitmap.\+c}!w\+Bitmap\+Get\+First\+Set@{w\+Bitmap\+Get\+First\+Set}}
+\index{w\+Bitmap\+Get\+First\+Set@{w\+Bitmap\+Get\+First\+Set}!w\+Bitmap.\+c@{w\+Bitmap.\+c}}
+\subsubsection{\texorpdfstring{w\+Bitmap\+Get\+First\+Set()}{wBitmapGetFirstSet()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Bitmap\+Get\+First\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structw_bitmap}{w\+Bitmap}} $\ast$}]{bitmap }\end{DoxyParamCaption})}
+
+
+
+位图查找函数 ~\newline
+ 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 第一个被置位的位序号} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{w_bitmap_8c_a9386bff9baa067efe85d7f2f976a4512_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_bitmap_8c_a9386bff9baa067efe85d7f2f976a4512_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_bitmap_8c_a83491dfc50c8702d4ee83f29008ec193}\label{w_bitmap_8c_a83491dfc50c8702d4ee83f29008ec193}} 
+\index{w\+Bitmap.\+c@{w\+Bitmap.\+c}!w\+Bitmap\+Init@{w\+Bitmap\+Init}}
+\index{w\+Bitmap\+Init@{w\+Bitmap\+Init}!w\+Bitmap.\+c@{w\+Bitmap.\+c}}
+\subsubsection{\texorpdfstring{w\+Bitmap\+Init()}{wBitmapInit()}}
+{\footnotesize\ttfamily void w\+Bitmap\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structw_bitmap}{w\+Bitmap}} $\ast$}]{bitmap }\end{DoxyParamCaption})}
+
+
+
+位图结构初始化函数 
+
+
+\begin{DoxyParams}{参数}
+{\em bitmap} & 位图结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{w_bitmap_8c_a83491dfc50c8702d4ee83f29008ec193_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_bitmap_8c_a3795d2f22dfc0af5eb9b43b19f7a5dd7}\label{w_bitmap_8c_a3795d2f22dfc0af5eb9b43b19f7a5dd7}} 
+\index{w\+Bitmap.\+c@{w\+Bitmap.\+c}!w\+Bitmap\+Pos\+Count@{w\+Bitmap\+Pos\+Count}}
+\index{w\+Bitmap\+Pos\+Count@{w\+Bitmap\+Pos\+Count}!w\+Bitmap.\+c@{w\+Bitmap.\+c}}
+\subsubsection{\texorpdfstring{w\+Bitmap\+Pos\+Count()}{wBitmapPosCount()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Bitmap\+Pos\+Count (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+位图长度函数 
+
+位图结构置位函数
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 位图长度} & \\
+\hline
+\end{DoxyRetVals}
+
+\begin{DoxyParams}{参数}
+{\em pos} & 需要置位的位 \\
+\hline
+{\em bitmap} & 位图结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_bitmap_8c_a3795d2f22dfc0af5eb9b43b19f7a5dd7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_bitmap_8c_a77d05fe3886a9d768df06de7f403326b}\label{w_bitmap_8c_a77d05fe3886a9d768df06de7f403326b}} 
+\index{w\+Bitmap.\+c@{w\+Bitmap.\+c}!w\+Bitmap\+Set@{w\+Bitmap\+Set}}
+\index{w\+Bitmap\+Set@{w\+Bitmap\+Set}!w\+Bitmap.\+c@{w\+Bitmap.\+c}}
+\subsubsection{\texorpdfstring{w\+Bitmap\+Set()}{wBitmapSet()}}
+{\footnotesize\ttfamily void w\+Bitmap\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structw_bitmap}{w\+Bitmap}} $\ast$}]{bitmap,  }\item[{uint32\+\_\+t}]{pos }\end{DoxyParamCaption})}
+
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_bitmap_8c_a77d05fe3886a9d768df06de7f403326b_icgraph}
+\end{center}
+\end{figure}

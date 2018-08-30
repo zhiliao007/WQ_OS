@@ -1,0 +1,85 @@
+\hypertarget{system___a_r_m_c_m3_8c}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+R\+T\+E/\+Device/\+A\+R\+M\+C\+M3/system\+\_\+\+A\+R\+M\+C\+M3.c 文件参考}
+\label{system___a_r_m_c_m3_8c}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+R\+T\+E/\+Device/\+A\+R\+M\+C\+M3/system\+\_\+\+A\+R\+M\+C\+M3.\+c@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+R\+T\+E/\+Device/\+A\+R\+M\+C\+M3/system\+\_\+\+A\+R\+M\+C\+M3.\+c}}
+
+
+C\+M\+S\+IS Device System Source File for A\+R\+M\+C\+M3 Device Series  
+
+
+{\ttfamily \#include \char`\"{}A\+R\+M\+C\+M3.\+h\char`\"{}}\newline
+system\+\_\+\+A\+R\+M\+C\+M3.\+c 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{system___a_r_m_c_m3_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{system___a_r_m_c_m3_8c_a3cad0f9b3c40159bd2fbd7f5e60f2fff}{X\+T\+AL}}~( 12000000\+U )      /$\ast$ Oscillator frequency $\ast$/
+\item 
+\#define \mbox{\hyperlink{system___a_r_m_c_m3_8c_a95982eccb57c2ae35f8ba3d8f0b05653}{S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}}~(1 $\ast$ \mbox{\hyperlink{system___a_r_m_c_m3_8c_a3cad0f9b3c40159bd2fbd7f5e60f2fff}{X\+T\+AL}})
+\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{system___a_r_m_c_m3_8c_ae0c36a9591fe6e9c45ecb21a794f0f0f}{System\+Core\+Clock\+Update}} (void)
+\item 
+void \mbox{\hyperlink{system___a_r_m_c_m3_8c_a93f514700ccf00d08dbdcff7f1224eb2}{System\+Init}} (void)
+\end{DoxyCompactItemize}
+\subsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{system___a_r_m_c_m3_8c_aa3cd3e43291e81e795d642b79b6088e6}{System\+Core\+Clock}} = \mbox{\hyperlink{system___a_r_m_c_m3_8c_a95982eccb57c2ae35f8ba3d8f0b05653}{S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+C\+M\+S\+IS Device System Source File for A\+R\+M\+C\+M3 Device Series 
+
+\begin{DoxyVersion}{版本}
+V5.\+00 
+\end{DoxyVersion}
+\begin{DoxyDate}{日期}
+07. September 2016 
+\end{DoxyDate}
+
+
+\subsection{宏定义说明}
+\mbox{\Hypertarget{system___a_r_m_c_m3_8c_a95982eccb57c2ae35f8ba3d8f0b05653}\label{system___a_r_m_c_m3_8c_a95982eccb57c2ae35f8ba3d8f0b05653}} 
+\index{system\+\_\+\+A\+R\+M\+C\+M3.\+c@{system\+\_\+\+A\+R\+M\+C\+M3.\+c}!S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK@{S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}}
+\index{S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK@{S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}!system\+\_\+\+A\+R\+M\+C\+M3.\+c@{system\+\_\+\+A\+R\+M\+C\+M3.\+c}}
+\subsubsection{\texorpdfstring{S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}{SYSTEM\_CLOCK}}
+{\footnotesize\ttfamily \#define S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK~(1 $\ast$ \mbox{\hyperlink{system___a_r_m_c_m3_8c_a3cad0f9b3c40159bd2fbd7f5e60f2fff}{X\+T\+AL}})}
+
+\mbox{\Hypertarget{system___a_r_m_c_m3_8c_a3cad0f9b3c40159bd2fbd7f5e60f2fff}\label{system___a_r_m_c_m3_8c_a3cad0f9b3c40159bd2fbd7f5e60f2fff}} 
+\index{system\+\_\+\+A\+R\+M\+C\+M3.\+c@{system\+\_\+\+A\+R\+M\+C\+M3.\+c}!X\+T\+AL@{X\+T\+AL}}
+\index{X\+T\+AL@{X\+T\+AL}!system\+\_\+\+A\+R\+M\+C\+M3.\+c@{system\+\_\+\+A\+R\+M\+C\+M3.\+c}}
+\subsubsection{\texorpdfstring{X\+T\+AL}{XTAL}}
+{\footnotesize\ttfamily \#define X\+T\+AL~( 12000000\+U )      /$\ast$ Oscillator frequency $\ast$/}
+
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{system___a_r_m_c_m3_8c_ae0c36a9591fe6e9c45ecb21a794f0f0f}\label{system___a_r_m_c_m3_8c_ae0c36a9591fe6e9c45ecb21a794f0f0f}} 
+\index{system\+\_\+\+A\+R\+M\+C\+M3.\+c@{system\+\_\+\+A\+R\+M\+C\+M3.\+c}!System\+Core\+Clock\+Update@{System\+Core\+Clock\+Update}}
+\index{System\+Core\+Clock\+Update@{System\+Core\+Clock\+Update}!system\+\_\+\+A\+R\+M\+C\+M3.\+c@{system\+\_\+\+A\+R\+M\+C\+M3.\+c}}
+\subsubsection{\texorpdfstring{System\+Core\+Clock\+Update()}{SystemCoreClockUpdate()}}
+{\footnotesize\ttfamily void System\+Core\+Clock\+Update (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system___a_r_m_c_m3_8c_a93f514700ccf00d08dbdcff7f1224eb2}\label{system___a_r_m_c_m3_8c_a93f514700ccf00d08dbdcff7f1224eb2}} 
+\index{system\+\_\+\+A\+R\+M\+C\+M3.\+c@{system\+\_\+\+A\+R\+M\+C\+M3.\+c}!System\+Init@{System\+Init}}
+\index{System\+Init@{System\+Init}!system\+\_\+\+A\+R\+M\+C\+M3.\+c@{system\+\_\+\+A\+R\+M\+C\+M3.\+c}}
+\subsubsection{\texorpdfstring{System\+Init()}{SystemInit()}}
+{\footnotesize\ttfamily void System\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{变量说明}
+\mbox{\Hypertarget{system___a_r_m_c_m3_8c_aa3cd3e43291e81e795d642b79b6088e6}\label{system___a_r_m_c_m3_8c_aa3cd3e43291e81e795d642b79b6088e6}} 
+\index{system\+\_\+\+A\+R\+M\+C\+M3.\+c@{system\+\_\+\+A\+R\+M\+C\+M3.\+c}!System\+Core\+Clock@{System\+Core\+Clock}}
+\index{System\+Core\+Clock@{System\+Core\+Clock}!system\+\_\+\+A\+R\+M\+C\+M3.\+c@{system\+\_\+\+A\+R\+M\+C\+M3.\+c}}
+\subsubsection{\texorpdfstring{System\+Core\+Clock}{SystemCoreClock}}
+{\footnotesize\ttfamily uint32\+\_\+t System\+Core\+Clock = \mbox{\hyperlink{system___a_r_m_c_m3_8c_a95982eccb57c2ae35f8ba3d8f0b05653}{S\+Y\+S\+T\+E\+M\+\_\+\+C\+L\+O\+CK}}}
+

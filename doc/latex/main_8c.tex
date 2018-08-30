@@ -1,0 +1,858 @@
+\hypertarget{main_8c}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/main.c 文件参考}
+\label{main_8c}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/main.\+c@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/main.\+c}}
+{\ttfamily \#include \char`\"{}W\+Q\+\_\+\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$A\+R\+M\+C\+M3.\+h$>$}\newline
+main.\+c 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{main_8c_a71898b6fe71a66a9230dd5a1b7c75521}{init\+Cpu\+Usage\+Stat}} (void)
+\begin{DoxyCompactList}\small\item\em 初始化\+C\+P\+U统计函数 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_a80aff2f9f799b816897b10c0c3fe700f}{check\+Cpu\+Usage}} (void)
+\begin{DoxyCompactList}\small\item\em 检查\+C\+P\+U使用率函数 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{main_8c_ada21b0376c48e6165a98ba2f26a8ce59}{cpu\+Usage\+Sync\+With\+Sys\+Tick}} (void)
+\begin{DoxyCompactList}\small\item\em 等待时钟同步函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$ \mbox{\hyperlink{main_8c_aecc5337584ee14a8c816f9ce689ba128}{w\+Task\+Highest\+Ready}} (void)
+\begin{DoxyCompactList}\small\item\em 获取当前最高优先级且可运行的任务函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a4d9a0f3090b684084bbe94f148747cd0}{w\+Task\+Sched\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em 内核初始化函数（初始化调度器） \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a033b0131d8e17bf2e857a743a02313f7}{w\+Task\+Sched\+Disable}} (void)
+\begin{DoxyCompactList}\small\item\em 调度锁上锁函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ae6dc919e0faa1e15e92c96899202c0a5}{w\+Task\+Sched\+Enable}} (void)
+\begin{DoxyCompactList}\small\item\em 允许任务调度函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a600f0ce279bbc48c121bd6e31874aff9}{w\+Task\+Sched\+Rdy}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 将任务插入就绪列表（将任务从延时队列中移除时）函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a598536b78a16c960ddfb82d887746cae}{w\+Task\+Sched\+Un\+Rdy}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 将任务从就绪列表中删除函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ad212054b17e4733e330c97f3d3274767}{w\+Task\+Sched\+Remove}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 将任务从优先级列表中删除函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a231177ae77d1af6c5239c4ca95be8760}{w\+Task\+Sched}} (void)
+\begin{DoxyCompactList}\small\item\em 任务调度函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a9198e3ccd3e666f8caf7587679165ef8}{w\+Task\+Delay\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em 任务延时初始化函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a1163983eff6acb009950c69f3a55b629}{w\+Time\+Task\+Wait}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task, uint32\+\_\+t ticks)
+\begin{DoxyCompactList}\small\item\em 将任务插入延时队列函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a85848b63b5fe499d55e6c4196c43f306}{w\+Time\+Task\+Wake\+Up}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 将任务从延时队列唤醒函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a135f5a694c1f6b01cb1499ecaf2ee0a5}{w\+Time\+Task\+Remove}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 将任务从延时队列删除函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ad2cede6eea6a293ae82a1cedb76bc6f3}{w\+Time\+Tick\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em 时钟节拍计数器初始化函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a36ab31adb9bd20b1fe3337cf8ac6baf2}{w\+Task\+System\+Tick\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em 任务\+System\+Tick中断服务函数 \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{main_8c_a741910b18aa077abc57d210e73d03465}{w\+Cpu\+Usage\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em 获取\+C\+P\+U使用率函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a1949c76c0bc7d4b976d447fbaa947f53}{idle\+Task\+Entry}} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em 空闲任务函数 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em 主函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$ \mbox{\hyperlink{main_8c_a6bec055003640755e2481f3cf0692894}{current\+Task}}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$ \mbox{\hyperlink{main_8c_a44a5b29a47ca1930c940bc88c9051e0e}{next\+Task}}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$ \mbox{\hyperlink{main_8c_a23c0ee4b0c015f3388e9e2dde31c66bb}{idle\+Task}}
+\item 
+\mbox{\hyperlink{structw_bitmap}{w\+Bitmap}} \mbox{\hyperlink{main_8c_a59fae34e401c2e655eee7ffc8981189f}{task\+Prio\+Bitmap}}
+\item 
+\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} \mbox{\hyperlink{main_8c_aad68ddf20dbfe94a640011019f2e2bbc}{task\+Table}} \mbox{[}\mbox{\hyperlink{w_config_8h_ac74e7af2bb0660ccb34d04ef1e5a48d2}{W\+Q\+\_\+\+O\+S\+\_\+\+P\+R\+O\+\_\+\+C\+O\+U\+NT}}\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_a9fcac63fa1ff9049d9b30424558b1d30}{schedlock\+Count}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{main_8c_af4fc7964f7a64a2a55f189f4533015f4}{tick\+Count}}
+\item 
+\mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} \mbox{\hyperlink{main_8c_a5fb74394eca3c48232b60346daa851b7}{w\+Task\+Delay\+List}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{main_8c_a9979e3c27f522bb6d13cff22efd2e488}{idle\+Count}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{main_8c_aba65b5ed5e394f5ca1f346b4a53364cf}{idle\+Max\+Count}}
+\item 
+static float \mbox{\hyperlink{main_8c_a4d3fcca6f9564b4467b34cfa39cd5310}{cpu\+Usage}}
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{main_8c_ae640b280f11b1ff0b28135982bbac7f5}{enable\+Cpu\+Usage\+Stat}}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} \mbox{\hyperlink{main_8c_aa6ce5811e5fc82d1c0b0c9526e3ee2dc}{w\+Task\+Idle}}
+\item 
+\mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} \mbox{\hyperlink{main_8c_ad6edc236a894fc8b921be2739d43ff24}{idle\+Task\+Env}} \mbox{[}\mbox{\hyperlink{w_config_8h_a9991397c90242f684eb25692adbfdc77}{W\+Q\+\_\+\+O\+S\+\_\+\+I\+D\+L\+E\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{main_8c_a80aff2f9f799b816897b10c0c3fe700f}\label{main_8c_a80aff2f9f799b816897b10c0c3fe700f}} 
+\index{main.\+c@{main.\+c}!check\+Cpu\+Usage@{check\+Cpu\+Usage}}
+\index{check\+Cpu\+Usage@{check\+Cpu\+Usage}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{check\+Cpu\+Usage()}{checkCpuUsage()}}
+{\footnotesize\ttfamily static void check\+Cpu\+Usage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+检查\+C\+P\+U使用率函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a80aff2f9f799b816897b10c0c3fe700f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a80aff2f9f799b816897b10c0c3fe700f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_ada21b0376c48e6165a98ba2f26a8ce59}\label{main_8c_ada21b0376c48e6165a98ba2f26a8ce59}} 
+\index{main.\+c@{main.\+c}!cpu\+Usage\+Sync\+With\+Sys\+Tick@{cpu\+Usage\+Sync\+With\+Sys\+Tick}}
+\index{cpu\+Usage\+Sync\+With\+Sys\+Tick@{cpu\+Usage\+Sync\+With\+Sys\+Tick}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{cpu\+Usage\+Sync\+With\+Sys\+Tick()}{cpuUsageSyncWithSysTick()}}
+{\footnotesize\ttfamily static void cpu\+Usage\+Sync\+With\+Sys\+Tick (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+等待时钟同步函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ada21b0376c48e6165a98ba2f26a8ce59_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a1949c76c0bc7d4b976d447fbaa947f53}\label{main_8c_a1949c76c0bc7d4b976d447fbaa947f53}} 
+\index{main.\+c@{main.\+c}!idle\+Task\+Entry@{idle\+Task\+Entry}}
+\index{idle\+Task\+Entry@{idle\+Task\+Entry}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{idle\+Task\+Entry()}{idleTaskEntry()}}
+{\footnotesize\ttfamily void idle\+Task\+Entry (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+空闲任务函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a1949c76c0bc7d4b976d447fbaa947f53_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{main_8c_a1949c76c0bc7d4b976d447fbaa947f53_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a71898b6fe71a66a9230dd5a1b7c75521}\label{main_8c_a71898b6fe71a66a9230dd5a1b7c75521}} 
+\index{main.\+c@{main.\+c}!init\+Cpu\+Usage\+Stat@{init\+Cpu\+Usage\+Stat}}
+\index{init\+Cpu\+Usage\+Stat@{init\+Cpu\+Usage\+Stat}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{init\+Cpu\+Usage\+Stat()}{initCpuUsageStat()}}
+{\footnotesize\ttfamily static void init\+Cpu\+Usage\+Stat (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+初始化\+C\+P\+U统计函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{main_8c_a71898b6fe71a66a9230dd5a1b7c75521_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+主函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a741910b18aa077abc57d210e73d03465}\label{main_8c_a741910b18aa077abc57d210e73d03465}} 
+\index{main.\+c@{main.\+c}!w\+Cpu\+Usage\+Get@{w\+Cpu\+Usage\+Get}}
+\index{w\+Cpu\+Usage\+Get@{w\+Cpu\+Usage\+Get}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Cpu\+Usage\+Get()}{wCpuUsageGet()}}
+{\footnotesize\ttfamily float w\+Cpu\+Usage\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+获取\+C\+P\+U使用率函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em C\+P\+U使用率} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{main_8c_a741910b18aa077abc57d210e73d03465_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a9198e3ccd3e666f8caf7587679165ef8}\label{main_8c_a9198e3ccd3e666f8caf7587679165ef8}} 
+\index{main.\+c@{main.\+c}!w\+Task\+Delay\+Init@{w\+Task\+Delay\+Init}}
+\index{w\+Task\+Delay\+Init@{w\+Task\+Delay\+Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Delay\+Init()}{wTaskDelayInit()}}
+{\footnotesize\ttfamily void w\+Task\+Delay\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+任务延时初始化函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{main_8c_a9198e3ccd3e666f8caf7587679165ef8_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{main_8c_a9198e3ccd3e666f8caf7587679165ef8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_aecc5337584ee14a8c816f9ce689ba128}\label{main_8c_aecc5337584ee14a8c816f9ce689ba128}} 
+\index{main.\+c@{main.\+c}!w\+Task\+Highest\+Ready@{w\+Task\+Highest\+Ready}}
+\index{w\+Task\+Highest\+Ready@{w\+Task\+Highest\+Ready}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Highest\+Ready()}{wTaskHighestReady()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}$\ast$ w\+Task\+Highest\+Ready (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+获取当前最高优先级且可运行的任务函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 优先级最高的且可运行的任务} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_aecc5337584ee14a8c816f9ce689ba128_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_aecc5337584ee14a8c816f9ce689ba128_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a231177ae77d1af6c5239c4ca95be8760}\label{main_8c_a231177ae77d1af6c5239c4ca95be8760}} 
+\index{main.\+c@{main.\+c}!w\+Task\+Sched@{w\+Task\+Sched}}
+\index{w\+Task\+Sched@{w\+Task\+Sched}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched()}{wTaskSched()}}
+{\footnotesize\ttfamily void w\+Task\+Sched (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+任务调度函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a231177ae77d1af6c5239c4ca95be8760_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a231177ae77d1af6c5239c4ca95be8760_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a033b0131d8e17bf2e857a743a02313f7}\label{main_8c_a033b0131d8e17bf2e857a743a02313f7}} 
+\index{main.\+c@{main.\+c}!w\+Task\+Sched\+Disable@{w\+Task\+Sched\+Disable}}
+\index{w\+Task\+Sched\+Disable@{w\+Task\+Sched\+Disable}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Disable()}{wTaskSchedDisable()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Disable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+调度锁上锁函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{main_8c_a033b0131d8e17bf2e857a743a02313f7_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a033b0131d8e17bf2e857a743a02313f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_ae6dc919e0faa1e15e92c96899202c0a5}\label{main_8c_ae6dc919e0faa1e15e92c96899202c0a5}} 
+\index{main.\+c@{main.\+c}!w\+Task\+Sched\+Enable@{w\+Task\+Sched\+Enable}}
+\index{w\+Task\+Sched\+Enable@{w\+Task\+Sched\+Enable}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Enable()}{wTaskSchedEnable()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Enable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+允许任务调度函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ae6dc919e0faa1e15e92c96899202c0a5_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ae6dc919e0faa1e15e92c96899202c0a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a4d9a0f3090b684084bbe94f148747cd0}\label{main_8c_a4d9a0f3090b684084bbe94f148747cd0}} 
+\index{main.\+c@{main.\+c}!w\+Task\+Sched\+Init@{w\+Task\+Sched\+Init}}
+\index{w\+Task\+Sched\+Init@{w\+Task\+Sched\+Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Init()}{wTaskSchedInit()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+内核初始化函数（初始化调度器） 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{main_8c_a4d9a0f3090b684084bbe94f148747cd0_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{main_8c_a4d9a0f3090b684084bbe94f148747cd0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a600f0ce279bbc48c121bd6e31874aff9}\label{main_8c_a600f0ce279bbc48c121bd6e31874aff9}} 
+\index{main.\+c@{main.\+c}!w\+Task\+Sched\+Rdy@{w\+Task\+Sched\+Rdy}}
+\index{w\+Task\+Sched\+Rdy@{w\+Task\+Sched\+Rdy}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Rdy()}{wTaskSchedRdy()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Rdy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+将任务插入就绪列表（将任务从延时队列中移除时）函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{main_8c_a600f0ce279bbc48c121bd6e31874aff9_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a600f0ce279bbc48c121bd6e31874aff9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_ad212054b17e4733e330c97f3d3274767}\label{main_8c_ad212054b17e4733e330c97f3d3274767}} 
+\index{main.\+c@{main.\+c}!w\+Task\+Sched\+Remove@{w\+Task\+Sched\+Remove}}
+\index{w\+Task\+Sched\+Remove@{w\+Task\+Sched\+Remove}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Remove()}{wTaskSchedRemove()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+将任务从优先级列表中删除函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{main_8c_ad212054b17e4733e330c97f3d3274767_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{main_8c_ad212054b17e4733e330c97f3d3274767_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a598536b78a16c960ddfb82d887746cae}\label{main_8c_a598536b78a16c960ddfb82d887746cae}} 
+\index{main.\+c@{main.\+c}!w\+Task\+Sched\+Un\+Rdy@{w\+Task\+Sched\+Un\+Rdy}}
+\index{w\+Task\+Sched\+Un\+Rdy@{w\+Task\+Sched\+Un\+Rdy}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Sched\+Un\+Rdy()}{wTaskSchedUnRdy()}}
+{\footnotesize\ttfamily void w\+Task\+Sched\+Un\+Rdy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+将任务从就绪列表中删除函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{main_8c_a598536b78a16c960ddfb82d887746cae_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a598536b78a16c960ddfb82d887746cae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a36ab31adb9bd20b1fe3337cf8ac6baf2}\label{main_8c_a36ab31adb9bd20b1fe3337cf8ac6baf2}} 
+\index{main.\+c@{main.\+c}!w\+Task\+System\+Tick\+Handler@{w\+Task\+System\+Tick\+Handler}}
+\index{w\+Task\+System\+Tick\+Handler@{w\+Task\+System\+Tick\+Handler}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+System\+Tick\+Handler()}{wTaskSystemTickHandler()}}
+{\footnotesize\ttfamily void w\+Task\+System\+Tick\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+任务\+System\+Tick中断服务函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a36ab31adb9bd20b1fe3337cf8ac6baf2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{main_8c_a36ab31adb9bd20b1fe3337cf8ac6baf2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a135f5a694c1f6b01cb1499ecaf2ee0a5}\label{main_8c_a135f5a694c1f6b01cb1499ecaf2ee0a5}} 
+\index{main.\+c@{main.\+c}!w\+Time\+Task\+Remove@{w\+Time\+Task\+Remove}}
+\index{w\+Time\+Task\+Remove@{w\+Time\+Task\+Remove}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Time\+Task\+Remove()}{wTimeTaskRemove()}}
+{\footnotesize\ttfamily void w\+Time\+Task\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+将任务从延时队列删除函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 延时结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{main_8c_a135f5a694c1f6b01cb1499ecaf2ee0a5_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{main_8c_a135f5a694c1f6b01cb1499ecaf2ee0a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a1163983eff6acb009950c69f3a55b629}\label{main_8c_a1163983eff6acb009950c69f3a55b629}} 
+\index{main.\+c@{main.\+c}!w\+Time\+Task\+Wait@{w\+Time\+Task\+Wait}}
+\index{w\+Time\+Task\+Wait@{w\+Time\+Task\+Wait}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Time\+Task\+Wait()}{wTimeTaskWait()}}
+{\footnotesize\ttfamily void w\+Time\+Task\+Wait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task,  }\item[{uint32\+\_\+t}]{ticks }\end{DoxyParamCaption})}
+
+
+
+将任务插入延时队列函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 任务结构指针 \\
+\hline
+{\em ticks} & 延时的ticks数 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{main_8c_a1163983eff6acb009950c69f3a55b629_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a1163983eff6acb009950c69f3a55b629_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a85848b63b5fe499d55e6c4196c43f306}\label{main_8c_a85848b63b5fe499d55e6c4196c43f306}} 
+\index{main.\+c@{main.\+c}!w\+Time\+Task\+Wake\+Up@{w\+Time\+Task\+Wake\+Up}}
+\index{w\+Time\+Task\+Wake\+Up@{w\+Time\+Task\+Wake\+Up}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Time\+Task\+Wake\+Up()}{wTimeTaskWakeUp()}}
+{\footnotesize\ttfamily void w\+Time\+Task\+Wake\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+将任务从延时队列唤醒函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 延时结构指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{main_8c_a85848b63b5fe499d55e6c4196c43f306_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a85848b63b5fe499d55e6c4196c43f306_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_ad2cede6eea6a293ae82a1cedb76bc6f3}\label{main_8c_ad2cede6eea6a293ae82a1cedb76bc6f3}} 
+\index{main.\+c@{main.\+c}!w\+Time\+Tick\+Init@{w\+Time\+Tick\+Init}}
+\index{w\+Time\+Tick\+Init@{w\+Time\+Tick\+Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Time\+Tick\+Init()}{wTimeTickInit()}}
+{\footnotesize\ttfamily void w\+Time\+Tick\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+时钟节拍计数器初始化函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{main_8c_ad2cede6eea6a293ae82a1cedb76bc6f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{变量说明}
+\mbox{\Hypertarget{main_8c_a4d3fcca6f9564b4467b34cfa39cd5310}\label{main_8c_a4d3fcca6f9564b4467b34cfa39cd5310}} 
+\index{main.\+c@{main.\+c}!cpu\+Usage@{cpu\+Usage}}
+\index{cpu\+Usage@{cpu\+Usage}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{cpu\+Usage}{cpuUsage}}
+{\footnotesize\ttfamily float cpu\+Usage\hspace{0.3cm}{\ttfamily [static]}}
+
+cpu使用率统计 \mbox{\Hypertarget{main_8c_a6bec055003640755e2481f3cf0692894}\label{main_8c_a6bec055003640755e2481f3cf0692894}} 
+\index{main.\+c@{main.\+c}!current\+Task@{current\+Task}}
+\index{current\+Task@{current\+Task}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{current\+Task}{currentTask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}$\ast$ current\+Task}
+
+指向当前任务的指针 \mbox{\Hypertarget{main_8c_ae640b280f11b1ff0b28135982bbac7f5}\label{main_8c_ae640b280f11b1ff0b28135982bbac7f5}} 
+\index{main.\+c@{main.\+c}!enable\+Cpu\+Usage\+Stat@{enable\+Cpu\+Usage\+Stat}}
+\index{enable\+Cpu\+Usage\+Stat@{enable\+Cpu\+Usage\+Stat}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{enable\+Cpu\+Usage\+Stat}{enableCpuUsageStat}}
+{\footnotesize\ttfamily uint32\+\_\+t enable\+Cpu\+Usage\+Stat\hspace{0.3cm}{\ttfamily [static]}}
+
+是否使能cpu统计 \mbox{\Hypertarget{main_8c_a9979e3c27f522bb6d13cff22efd2e488}\label{main_8c_a9979e3c27f522bb6d13cff22efd2e488}} 
+\index{main.\+c@{main.\+c}!idle\+Count@{idle\+Count}}
+\index{idle\+Count@{idle\+Count}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{idle\+Count}{idleCount}}
+{\footnotesize\ttfamily uint32\+\_\+t idle\+Count}
+
+空闲任务计数器 \mbox{\Hypertarget{main_8c_aba65b5ed5e394f5ca1f346b4a53364cf}\label{main_8c_aba65b5ed5e394f5ca1f346b4a53364cf}} 
+\index{main.\+c@{main.\+c}!idle\+Max\+Count@{idle\+Max\+Count}}
+\index{idle\+Max\+Count@{idle\+Max\+Count}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{idle\+Max\+Count}{idleMaxCount}}
+{\footnotesize\ttfamily uint32\+\_\+t idle\+Max\+Count}
+
+空闲任务最大计数器 \mbox{\Hypertarget{main_8c_a23c0ee4b0c015f3388e9e2dde31c66bb}\label{main_8c_a23c0ee4b0c015f3388e9e2dde31c66bb}} 
+\index{main.\+c@{main.\+c}!idle\+Task@{idle\+Task}}
+\index{idle\+Task@{idle\+Task}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{idle\+Task}{idleTask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}$\ast$ idle\+Task}
+
+指向空闲任务的指针 \mbox{\Hypertarget{main_8c_ad6edc236a894fc8b921be2739d43ff24}\label{main_8c_ad6edc236a894fc8b921be2739d43ff24}} 
+\index{main.\+c@{main.\+c}!idle\+Task\+Env@{idle\+Task\+Env}}
+\index{idle\+Task\+Env@{idle\+Task\+Env}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{idle\+Task\+Env}{idleTaskEnv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} idle\+Task\+Env\mbox{[}\mbox{\hyperlink{w_config_8h_a9991397c90242f684eb25692adbfdc77}{W\+Q\+\_\+\+O\+S\+\_\+\+I\+D\+L\+E\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}\mbox{]}}
+
+\mbox{\Hypertarget{main_8c_a44a5b29a47ca1930c940bc88c9051e0e}\label{main_8c_a44a5b29a47ca1930c940bc88c9051e0e}} 
+\index{main.\+c@{main.\+c}!next\+Task@{next\+Task}}
+\index{next\+Task@{next\+Task}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{next\+Task}{nextTask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}$\ast$ next\+Task}
+
+指向将要运行任务的指针 \mbox{\Hypertarget{main_8c_a9fcac63fa1ff9049d9b30424558b1d30}\label{main_8c_a9fcac63fa1ff9049d9b30424558b1d30}} 
+\index{main.\+c@{main.\+c}!schedlock\+Count@{schedlock\+Count}}
+\index{schedlock\+Count@{schedlock\+Count}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{schedlock\+Count}{schedlockCount}}
+{\footnotesize\ttfamily uint8\+\_\+t schedlock\+Count}
+
+调度锁计数器 \mbox{\Hypertarget{main_8c_a59fae34e401c2e655eee7ffc8981189f}\label{main_8c_a59fae34e401c2e655eee7ffc8981189f}} 
+\index{main.\+c@{main.\+c}!task\+Prio\+Bitmap@{task\+Prio\+Bitmap}}
+\index{task\+Prio\+Bitmap@{task\+Prio\+Bitmap}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{task\+Prio\+Bitmap}{taskPrioBitmap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structw_bitmap}{w\+Bitmap}} task\+Prio\+Bitmap}
+
+任务优先级位图 \mbox{\Hypertarget{main_8c_aad68ddf20dbfe94a640011019f2e2bbc}\label{main_8c_aad68ddf20dbfe94a640011019f2e2bbc}} 
+\index{main.\+c@{main.\+c}!task\+Table@{task\+Table}}
+\index{task\+Table@{task\+Table}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{task\+Table}{taskTable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} task\+Table\mbox{[}\mbox{\hyperlink{w_config_8h_ac74e7af2bb0660ccb34d04ef1e5a48d2}{W\+Q\+\_\+\+O\+S\+\_\+\+P\+R\+O\+\_\+\+C\+O\+U\+NT}}\mbox{]}}
+
+任务就绪表 \mbox{\Hypertarget{main_8c_af4fc7964f7a64a2a55f189f4533015f4}\label{main_8c_af4fc7964f7a64a2a55f189f4533015f4}} 
+\index{main.\+c@{main.\+c}!tick\+Count@{tick\+Count}}
+\index{tick\+Count@{tick\+Count}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{tick\+Count}{tickCount}}
+{\footnotesize\ttfamily uint32\+\_\+t tick\+Count}
+
+时钟节拍计数器 \mbox{\Hypertarget{main_8c_a5fb74394eca3c48232b60346daa851b7}\label{main_8c_a5fb74394eca3c48232b60346daa851b7}} 
+\index{main.\+c@{main.\+c}!w\+Task\+Delay\+List@{w\+Task\+Delay\+List}}
+\index{w\+Task\+Delay\+List@{w\+Task\+Delay\+List}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Delay\+List}{wTaskDelayList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_lib_8h_a3f922f977222a1e1fc18bd2ce6d668c3}{w\+List}} w\+Task\+Delay\+List}
+
+延时队列 \mbox{\Hypertarget{main_8c_aa6ce5811e5fc82d1c0b0c9526e3ee2dc}\label{main_8c_aa6ce5811e5fc82d1c0b0c9526e3ee2dc}} 
+\index{main.\+c@{main.\+c}!w\+Task\+Idle@{w\+Task\+Idle}}
+\index{w\+Task\+Idle@{w\+Task\+Idle}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Idle}{wTaskIdle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} w\+Task\+Idle}
+

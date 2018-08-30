@@ -1,0 +1,339 @@
+\hypertarget{app_8c}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/app.c 文件参考}
+\label{app_8c}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/app.\+c@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/app.\+c}}
+{\ttfamily \#include \char`\"{}W\+Q\+\_\+\+O\+S.\+h\char`\"{}}\newline
+app.\+c 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_8c_a8eacdcdfdfb9ba0c6a62ee6206d0b1d4}{delay}} (int count)
+\begin{DoxyCompactList}\small\item\em 粗暴延时函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_8c_af8df096cffaabcd535dc2cdfb39a495f}{task1\+Entry}} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em 任务1入口函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_8c_a58232f2ac8acb8a9d60349af0fd7e8e2}{task2\+Entry}} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em 任务2入口函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_8c_a771d21a21f591f1b9cdc8b2f834c4a7b}{task3\+Entry}} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em 任务3入口函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_8c_afe228a3d2729e128c20c88e66a0de25a}{task4\+Entry}} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em 任务4入口函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_8c_a01fa04097be631417a34fc2b5de3441a}{w\+Init\+App}} (void)
+\begin{DoxyCompactList}\small\item\em 任务初始化函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{app_8c_ad9cda71fc70dc1a2c00cc6e2c34df5af}{task1\+Flag}}
+\item 
+int \mbox{\hyperlink{app_8c_aee561f6d9d7701291dc07ed736264942}{task2\+Flag}}
+\item 
+int \mbox{\hyperlink{app_8c_a421a992fc3f38902de45cf746516b7f6}{task3\+Flag}}
+\item 
+int \mbox{\hyperlink{app_8c_afd6a73505313e637d637b9887894b2a8}{task4\+Flag}}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} \mbox{\hyperlink{app_8c_a4712a28475b04585701eb7f2a0050581}{w\+Task1}}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} \mbox{\hyperlink{app_8c_ab9f2aab5dabeeef56286973a4195feb4}{w\+Task2}}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} \mbox{\hyperlink{app_8c_ab9dc37c449a10dd700b08f218f7ec2d3}{w\+Task3}}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} \mbox{\hyperlink{app_8c_a942791273dec5ba24f2c36a6db1c8955}{w\+Task4}}
+\item 
+\mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} \mbox{\hyperlink{app_8c_a5748ce11fa93ad0bd2caf38e20d9f46a}{Task1\+Env}} \mbox{[}1024\mbox{]}
+\item 
+\mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} \mbox{\hyperlink{app_8c_a3228f67bea2c914f9e32333ed07a165f}{Task2\+Env}} \mbox{[}1024\mbox{]}
+\item 
+\mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} \mbox{\hyperlink{app_8c_a71e290c848fe4fe968c811cc1ef1c46b}{Task3\+Env}} \mbox{[}1024\mbox{]}
+\item 
+\mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} \mbox{\hyperlink{app_8c_ad3dd75e9a7c1bca3a5f1cc41aecf13a0}{Task4\+Env}} \mbox{[}1024\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{app_8c_a8eacdcdfdfb9ba0c6a62ee6206d0b1d4}\label{app_8c_a8eacdcdfdfb9ba0c6a62ee6206d0b1d4}} 
+\index{app.\+c@{app.\+c}!delay@{delay}}
+\index{delay@{delay}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{delay()}{delay()}}
+{\footnotesize\ttfamily void delay (\begin{DoxyParamCaption}\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+粗暴延时函数 
+
+
+\begin{DoxyParams}{参数}
+{\em count：} & 延时时间 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8c_a8eacdcdfdfb9ba0c6a62ee6206d0b1d4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{app_8c_af8df096cffaabcd535dc2cdfb39a495f}\label{app_8c_af8df096cffaabcd535dc2cdfb39a495f}} 
+\index{app.\+c@{app.\+c}!task1\+Entry@{task1\+Entry}}
+\index{task1\+Entry@{task1\+Entry}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{task1\+Entry()}{task1Entry()}}
+{\footnotesize\ttfamily void task1\+Entry (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+任务1入口函数 
+
+
+\begin{DoxyParams}{参数}
+{\em param：传给任务的参数} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8c_af8df096cffaabcd535dc2cdfb39a495f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8c_af8df096cffaabcd535dc2cdfb39a495f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{app_8c_a58232f2ac8acb8a9d60349af0fd7e8e2}\label{app_8c_a58232f2ac8acb8a9d60349af0fd7e8e2}} 
+\index{app.\+c@{app.\+c}!task2\+Entry@{task2\+Entry}}
+\index{task2\+Entry@{task2\+Entry}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{task2\+Entry()}{task2Entry()}}
+{\footnotesize\ttfamily void task2\+Entry (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+任务2入口函数 
+
+
+\begin{DoxyParams}{参数}
+{\em param：传给任务的参数} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8c_a58232f2ac8acb8a9d60349af0fd7e8e2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8c_a58232f2ac8acb8a9d60349af0fd7e8e2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{app_8c_a771d21a21f591f1b9cdc8b2f834c4a7b}\label{app_8c_a771d21a21f591f1b9cdc8b2f834c4a7b}} 
+\index{app.\+c@{app.\+c}!task3\+Entry@{task3\+Entry}}
+\index{task3\+Entry@{task3\+Entry}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{task3\+Entry()}{task3Entry()}}
+{\footnotesize\ttfamily void task3\+Entry (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+任务3入口函数 
+
+
+\begin{DoxyParams}{参数}
+{\em param：传给任务的参数} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8c_a771d21a21f591f1b9cdc8b2f834c4a7b_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8c_a771d21a21f591f1b9cdc8b2f834c4a7b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{app_8c_afe228a3d2729e128c20c88e66a0de25a}\label{app_8c_afe228a3d2729e128c20c88e66a0de25a}} 
+\index{app.\+c@{app.\+c}!task4\+Entry@{task4\+Entry}}
+\index{task4\+Entry@{task4\+Entry}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{task4\+Entry()}{task4Entry()}}
+{\footnotesize\ttfamily void task4\+Entry (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+任务4入口函数 
+
+
+\begin{DoxyParams}{参数}
+{\em param：传给任务的参数} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8c_afe228a3d2729e128c20c88e66a0de25a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8c_afe228a3d2729e128c20c88e66a0de25a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{app_8c_a01fa04097be631417a34fc2b5de3441a}\label{app_8c_a01fa04097be631417a34fc2b5de3441a}} 
+\index{app.\+c@{app.\+c}!w\+Init\+App@{w\+Init\+App}}
+\index{w\+Init\+App@{w\+Init\+App}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{w\+Init\+App()}{wInitApp()}}
+{\footnotesize\ttfamily void w\+Init\+App (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+任务初始化函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8c_a01fa04097be631417a34fc2b5de3441a_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{app_8c_a01fa04097be631417a34fc2b5de3441a_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{变量说明}
+\mbox{\Hypertarget{app_8c_a5748ce11fa93ad0bd2caf38e20d9f46a}\label{app_8c_a5748ce11fa93ad0bd2caf38e20d9f46a}} 
+\index{app.\+c@{app.\+c}!Task1\+Env@{Task1\+Env}}
+\index{Task1\+Env@{Task1\+Env}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{Task1\+Env}{Task1Env}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} Task1\+Env\mbox{[}1024\mbox{]}}
+
+\mbox{\Hypertarget{app_8c_ad9cda71fc70dc1a2c00cc6e2c34df5af}\label{app_8c_ad9cda71fc70dc1a2c00cc6e2c34df5af}} 
+\index{app.\+c@{app.\+c}!task1\+Flag@{task1\+Flag}}
+\index{task1\+Flag@{task1\+Flag}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{task1\+Flag}{task1Flag}}
+{\footnotesize\ttfamily int task1\+Flag}
+
+\mbox{\Hypertarget{app_8c_a3228f67bea2c914f9e32333ed07a165f}\label{app_8c_a3228f67bea2c914f9e32333ed07a165f}} 
+\index{app.\+c@{app.\+c}!Task2\+Env@{Task2\+Env}}
+\index{Task2\+Env@{Task2\+Env}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{Task2\+Env}{Task2Env}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} Task2\+Env\mbox{[}1024\mbox{]}}
+
+\mbox{\Hypertarget{app_8c_aee561f6d9d7701291dc07ed736264942}\label{app_8c_aee561f6d9d7701291dc07ed736264942}} 
+\index{app.\+c@{app.\+c}!task2\+Flag@{task2\+Flag}}
+\index{task2\+Flag@{task2\+Flag}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{task2\+Flag}{task2Flag}}
+{\footnotesize\ttfamily int task2\+Flag}
+
+\mbox{\Hypertarget{app_8c_a71e290c848fe4fe968c811cc1ef1c46b}\label{app_8c_a71e290c848fe4fe968c811cc1ef1c46b}} 
+\index{app.\+c@{app.\+c}!Task3\+Env@{Task3\+Env}}
+\index{Task3\+Env@{Task3\+Env}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{Task3\+Env}{Task3Env}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} Task3\+Env\mbox{[}1024\mbox{]}}
+
+\mbox{\Hypertarget{app_8c_a421a992fc3f38902de45cf746516b7f6}\label{app_8c_a421a992fc3f38902de45cf746516b7f6}} 
+\index{app.\+c@{app.\+c}!task3\+Flag@{task3\+Flag}}
+\index{task3\+Flag@{task3\+Flag}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{task3\+Flag}{task3Flag}}
+{\footnotesize\ttfamily int task3\+Flag}
+
+\mbox{\Hypertarget{app_8c_ad3dd75e9a7c1bca3a5f1cc41aecf13a0}\label{app_8c_ad3dd75e9a7c1bca3a5f1cc41aecf13a0}} 
+\index{app.\+c@{app.\+c}!Task4\+Env@{Task4\+Env}}
+\index{Task4\+Env@{Task4\+Env}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{Task4\+Env}{Task4Env}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} Task4\+Env\mbox{[}1024\mbox{]}}
+
+\mbox{\Hypertarget{app_8c_afd6a73505313e637d637b9887894b2a8}\label{app_8c_afd6a73505313e637d637b9887894b2a8}} 
+\index{app.\+c@{app.\+c}!task4\+Flag@{task4\+Flag}}
+\index{task4\+Flag@{task4\+Flag}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{task4\+Flag}{task4Flag}}
+{\footnotesize\ttfamily int task4\+Flag}
+
+\mbox{\Hypertarget{app_8c_a4712a28475b04585701eb7f2a0050581}\label{app_8c_a4712a28475b04585701eb7f2a0050581}} 
+\index{app.\+c@{app.\+c}!w\+Task1@{w\+Task1}}
+\index{w\+Task1@{w\+Task1}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{w\+Task1}{wTask1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} w\+Task1}
+
+\mbox{\Hypertarget{app_8c_ab9f2aab5dabeeef56286973a4195feb4}\label{app_8c_ab9f2aab5dabeeef56286973a4195feb4}} 
+\index{app.\+c@{app.\+c}!w\+Task2@{w\+Task2}}
+\index{w\+Task2@{w\+Task2}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{w\+Task2}{wTask2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} w\+Task2}
+
+\mbox{\Hypertarget{app_8c_ab9dc37c449a10dd700b08f218f7ec2d3}\label{app_8c_ab9dc37c449a10dd700b08f218f7ec2d3}} 
+\index{app.\+c@{app.\+c}!w\+Task3@{w\+Task3}}
+\index{w\+Task3@{w\+Task3}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{w\+Task3}{wTask3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} w\+Task3}
+
+\mbox{\Hypertarget{app_8c_a942791273dec5ba24f2c36a6db1c8955}\label{app_8c_a942791273dec5ba24f2c36a6db1c8955}} 
+\index{app.\+c@{app.\+c}!w\+Task4@{w\+Task4}}
+\index{w\+Task4@{w\+Task4}!app.\+c@{app.\+c}}
+\subsubsection{\texorpdfstring{w\+Task4}{wTask4}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} w\+Task4}
+

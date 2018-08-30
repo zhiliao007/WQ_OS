@@ -1,0 +1,139 @@
+\hypertarget{w_hooks_8c}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Hooks.c 文件参考}
+\label{w_hooks_8c}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Hooks.\+c@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Hooks.\+c}}
+{\ttfamily \#include \char`\"{}W\+Q\+\_\+\+O\+S.\+h\char`\"{}}\newline
+w\+Hooks.\+c 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_hooks_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{w_hooks_8c_a970099ddbd5baf8ea38efa7caa4f1775}{w\+Hooks\+Cpu\+Idle}} (void)
+\begin{DoxyCompactList}\small\item\em C\+P\+U空闲时的hooks函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_hooks_8c_a3a2af6af4657c8572bf30a4c8c4a09ac}{w\+Hooks\+Sys\+Tick}} (void)
+\begin{DoxyCompactList}\small\item\em 时钟节拍hooks函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_hooks_8c_afa57babb3f5e5b5ec50b08b6bfe77435}{w\+Hooks\+Task\+Switch}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$from, \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$to)
+\begin{DoxyCompactList}\small\item\em 任务切换hooks函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_hooks_8c_ac1fd0c11b2cb3744862c3c5f20bfbdf1}{w\+Hooks\+Task\+Init}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task)
+\begin{DoxyCompactList}\small\item\em 任务初始化的hooks函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{w_hooks_8c_a970099ddbd5baf8ea38efa7caa4f1775}\label{w_hooks_8c_a970099ddbd5baf8ea38efa7caa4f1775}} 
+\index{w\+Hooks.\+c@{w\+Hooks.\+c}!w\+Hooks\+Cpu\+Idle@{w\+Hooks\+Cpu\+Idle}}
+\index{w\+Hooks\+Cpu\+Idle@{w\+Hooks\+Cpu\+Idle}!w\+Hooks.\+c@{w\+Hooks.\+c}}
+\subsubsection{\texorpdfstring{w\+Hooks\+Cpu\+Idle()}{wHooksCpuIdle()}}
+{\footnotesize\ttfamily void w\+Hooks\+Cpu\+Idle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+C\+P\+U空闲时的hooks函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{w_hooks_8c_a970099ddbd5baf8ea38efa7caa4f1775_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_hooks_8c_a3a2af6af4657c8572bf30a4c8c4a09ac}\label{w_hooks_8c_a3a2af6af4657c8572bf30a4c8c4a09ac}} 
+\index{w\+Hooks.\+c@{w\+Hooks.\+c}!w\+Hooks\+Sys\+Tick@{w\+Hooks\+Sys\+Tick}}
+\index{w\+Hooks\+Sys\+Tick@{w\+Hooks\+Sys\+Tick}!w\+Hooks.\+c@{w\+Hooks.\+c}}
+\subsubsection{\texorpdfstring{w\+Hooks\+Sys\+Tick()}{wHooksSysTick()}}
+{\footnotesize\ttfamily void w\+Hooks\+Sys\+Tick (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+时钟节拍hooks函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_hooks_8c_a3a2af6af4657c8572bf30a4c8c4a09ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_hooks_8c_ac1fd0c11b2cb3744862c3c5f20bfbdf1}\label{w_hooks_8c_ac1fd0c11b2cb3744862c3c5f20bfbdf1}} 
+\index{w\+Hooks.\+c@{w\+Hooks.\+c}!w\+Hooks\+Task\+Init@{w\+Hooks\+Task\+Init}}
+\index{w\+Hooks\+Task\+Init@{w\+Hooks\+Task\+Init}!w\+Hooks.\+c@{w\+Hooks.\+c}}
+\subsubsection{\texorpdfstring{w\+Hooks\+Task\+Init()}{wHooksTaskInit()}}
+{\footnotesize\ttfamily void w\+Hooks\+Task\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task }\end{DoxyParamCaption})}
+
+
+
+任务初始化的hooks函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 等待初始化的任务 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_hooks_8c_ac1fd0c11b2cb3744862c3c5f20bfbdf1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_hooks_8c_afa57babb3f5e5b5ec50b08b6bfe77435}\label{w_hooks_8c_afa57babb3f5e5b5ec50b08b6bfe77435}} 
+\index{w\+Hooks.\+c@{w\+Hooks.\+c}!w\+Hooks\+Task\+Switch@{w\+Hooks\+Task\+Switch}}
+\index{w\+Hooks\+Task\+Switch@{w\+Hooks\+Task\+Switch}!w\+Hooks.\+c@{w\+Hooks.\+c}}
+\subsubsection{\texorpdfstring{w\+Hooks\+Task\+Switch()}{wHooksTaskSwitch()}}
+{\footnotesize\ttfamily void w\+Hooks\+Task\+Switch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{from,  }\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{to }\end{DoxyParamCaption})}
+
+
+
+任务切换hooks函数 
+
+
+\begin{DoxyParams}{参数}
+{\em from} & 从哪个任务开始切换 \\
+\hline
+{\em to} & 切换至哪个任务 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_hooks_8c_afa57babb3f5e5b5ec50b08b6bfe77435_icgraph}
+\end{center}
+\end{figure}

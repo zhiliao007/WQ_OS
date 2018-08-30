@@ -1,0 +1,67 @@
+\hypertarget{struct__w_mutex}{}\section{\+\_\+w\+Mutex结构体 参考}
+\label{struct__w_mutex}\index{\+\_\+w\+Mutex@{\+\_\+w\+Mutex}}
+
+
+定义互斥信号量类型  
+
+
+
+
+{\ttfamily \#include $<$w\+Mutex.\+h$>$}
+
+
+
+\+\_\+w\+Mutex 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{struct__w_mutex__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} \mbox{\hyperlink{struct__w_mutex_ad737d3f95a5cf9ee457f37f1cedfa44a}{event}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_mutex_a16598f387191bb413e5c802b23e501ef}{locked\+Count}}
+\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$ \mbox{\hyperlink{struct__w_mutex_a1ed47712ef6760f64988107466c22321}{owner}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_mutex_aa1d8803bb70576a417cba7092640ebd3}{owner\+Original\+Prio}}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+定义互斥信号量类型 
+
+\subsection{结构体成员变量说明}
+\mbox{\Hypertarget{struct__w_mutex_ad737d3f95a5cf9ee457f37f1cedfa44a}\label{struct__w_mutex_ad737d3f95a5cf9ee457f37f1cedfa44a}} 
+\index{\+\_\+w\+Mutex@{\+\_\+w\+Mutex}!event@{event}}
+\index{event@{event}!\+\_\+w\+Mutex@{\+\_\+w\+Mutex}}
+\subsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} event}
+
+事件控制块，w\+Mutex同时是一个w\+Event \mbox{\Hypertarget{struct__w_mutex_a16598f387191bb413e5c802b23e501ef}\label{struct__w_mutex_a16598f387191bb413e5c802b23e501ef}} 
+\index{\+\_\+w\+Mutex@{\+\_\+w\+Mutex}!locked\+Count@{locked\+Count}}
+\index{locked\+Count@{locked\+Count}!\+\_\+w\+Mutex@{\+\_\+w\+Mutex}}
+\subsubsection{\texorpdfstring{locked\+Count}{lockedCount}}
+{\footnotesize\ttfamily uint32\+\_\+t locked\+Count}
+
+已被锁定的次数 \mbox{\Hypertarget{struct__w_mutex_a1ed47712ef6760f64988107466c22321}\label{struct__w_mutex_a1ed47712ef6760f64988107466c22321}} 
+\index{\+\_\+w\+Mutex@{\+\_\+w\+Mutex}!owner@{owner}}
+\index{owner@{owner}!\+\_\+w\+Mutex@{\+\_\+w\+Mutex}}
+\subsubsection{\texorpdfstring{owner}{owner}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}$\ast$ owner}
+
+拥有者 \mbox{\Hypertarget{struct__w_mutex_aa1d8803bb70576a417cba7092640ebd3}\label{struct__w_mutex_aa1d8803bb70576a417cba7092640ebd3}} 
+\index{\+\_\+w\+Mutex@{\+\_\+w\+Mutex}!owner\+Original\+Prio@{owner\+Original\+Prio}}
+\index{owner\+Original\+Prio@{owner\+Original\+Prio}!\+\_\+w\+Mutex@{\+\_\+w\+Mutex}}
+\subsubsection{\texorpdfstring{owner\+Original\+Prio}{ownerOriginalPrio}}
+{\footnotesize\ttfamily uint32\+\_\+t owner\+Original\+Prio}
+
+拥有者原始的优先级 
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/\mbox{\hyperlink{w_mutex_8h}{w\+Mutex.\+h}}\end{DoxyCompactItemize}

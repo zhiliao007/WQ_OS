@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>WQ_OS: C:/Users/pc/Desktop/WQ_OS/Project/Sourse/wtask.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">WQ_OS
+   &#160;<span id="projectnumber">1.0.2</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_ffd1f789ec7bd0a45fc6ad92579c5070.html">Project</a></li><li class="navelem"><a class="el" href="dir_b501bcf3bb7dab25ca2ca4e3e12c7fe9.html">Sourse</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">wtask.c 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_w_q___o_s_8h_source.html">WQ_OS.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+wtask.c 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="wtask_8c__incl.png" border="0" usemap="#_c_1_2_users_2pc_2_desktop_2_w_q___o_s_2_project_2_sourse_2wtask_8c" alt=""/></div>
+<map name="_c_1_2_users_2pc_2_desktop_2_w_q___o_s_2_project_2_sourse_2wtask_8c" id="_c_1_2_users_2pc_2_desktop_2_w_q___o_s_2_project_2_sourse_2wtask_8c">
+<area shape="rect" id="node2" href="_w_q___o_s_8h.html" title="WQ_OS.h" alt="" coords="397,109,479,136"/>
+<area shape="rect" id="node4" href="w_config_8h.html" title="wConfig.h" alt="" coords="276,333,355,360"/>
+<area shape="rect" id="node5" href="w_lib_8h.html" title="wLib.h" alt="" coords="42,333,101,360"/>
+<area shape="rect" id="node6" href="w_task_8h.html" title="wTask.h" alt="" coords="409,333,480,360"/>
+<area shape="rect" id="node7" href="w_event_8h.html" title="wEvent.h" alt="" coords="343,259,418,285"/>
+<area shape="rect" id="node8" href="w_sem_8h.html" title="wSem.h" alt="" coords="194,184,263,211"/>
+<area shape="rect" id="node9" href="w_mbox_8h.html" title="wMbox.h" alt="" coords="287,184,362,211"/>
+<area shape="rect" id="node10" href="w_mem_block_8h.html" title="wMemBlock.h" alt="" coords="386,184,490,211"/>
+<area shape="rect" id="node11" href="w_flag_group_8h.html" title="wFlagGroup.h" alt="" coords="515,184,617,211"/>
+<area shape="rect" id="node12" href="w_mutex_8h.html" title="wMutex.h" alt="" coords="641,184,720,211"/>
+<area shape="rect" id="node13" href="w_timer_8h.html" title="wTimer.h" alt="" coords="745,184,819,211"/>
+<area shape="rect" id="node14" href="w_hooks_8h.html" title="wHooks.h" alt="" coords="895,184,973,211"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aab000edf7c64d617282f878f72a51821"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wtask_8c.html#aab000edf7c64d617282f878f72a51821">wTaskInit</a> (<a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *task, void(*entry)(void *), void *param, uint32_t prio, <a class="el" href="w_task_8h.html#ae1dd34929f40dd21d0ea81f2d3f1c2e0">wTaskStack</a> *stack, uint32_t size)</td></tr>
+<tr class="memdesc:aab000edf7c64d617282f878f72a51821"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务初始化函数  <a href="#aab000edf7c64d617282f878f72a51821">更多...</a><br /></td></tr>
+<tr class="separator:aab000edf7c64d617282f878f72a51821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae370094e4c18ae8d108be5d8d4bca358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wtask_8c.html#ae370094e4c18ae8d108be5d8d4bca358">wTaskSuspend</a> (<a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *task)</td></tr>
+<tr class="memdesc:ae370094e4c18ae8d108be5d8d4bca358"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务挂起函数  <a href="#ae370094e4c18ae8d108be5d8d4bca358">更多...</a><br /></td></tr>
+<tr class="separator:ae370094e4c18ae8d108be5d8d4bca358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a040c393cbeb9ac354a13330140b3b5a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wtask_8c.html#a040c393cbeb9ac354a13330140b3b5a1">wTaskWakeUp</a> (<a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *task)</td></tr>
+<tr class="memdesc:a040c393cbeb9ac354a13330140b3b5a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">恢复被挂起函数  <a href="#a040c393cbeb9ac354a13330140b3b5a1">更多...</a><br /></td></tr>
+<tr class="separator:a040c393cbeb9ac354a13330140b3b5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f2f87188f5f35fba94942399c6e344"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wtask_8c.html#a47f2f87188f5f35fba94942399c6e344">wTaskSetCleanCallFunc</a> (<a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *task, void(*clean)(void *param), void *param)</td></tr>
+<tr class="memdesc:a47f2f87188f5f35fba94942399c6e344"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务被删除时调用的清理函数  <a href="#a47f2f87188f5f35fba94942399c6e344">更多...</a><br /></td></tr>
+<tr class="separator:a47f2f87188f5f35fba94942399c6e344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3746b86341530f743b27051f9e527192"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wtask_8c.html#a3746b86341530f743b27051f9e527192">wTaskForceDelete</a> (<a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *task)</td></tr>
+<tr class="memdesc:a3746b86341530f743b27051f9e527192"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务强制删除函数  <a href="#a3746b86341530f743b27051f9e527192">更多...</a><br /></td></tr>
+<tr class="separator:a3746b86341530f743b27051f9e527192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ed3719bf21d5dbe0c823846881863ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wtask_8c.html#a7ed3719bf21d5dbe0c823846881863ae">wTaskRequestDelete</a> (<a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *task)</td></tr>
+<tr class="memdesc:a7ed3719bf21d5dbe0c823846881863ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务请求删除函数  <a href="#a7ed3719bf21d5dbe0c823846881863ae">更多...</a><br /></td></tr>
+<tr class="separator:a7ed3719bf21d5dbe0c823846881863ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353c3797674dd9a52d5f4c6fd5917f4b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wtask_8c.html#a353c3797674dd9a52d5f4c6fd5917f4b">wTaskIsRequestedDelete</a> (void)</td></tr>
+<tr class="memdesc:a353c3797674dd9a52d5f4c6fd5917f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查任务是否请求删除函数  <a href="#a353c3797674dd9a52d5f4c6fd5917f4b">更多...</a><br /></td></tr>
+<tr class="separator:a353c3797674dd9a52d5f4c6fd5917f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d4cde2cb6d23ceb7f9d1475dbe5aff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wtask_8c.html#a26d4cde2cb6d23ceb7f9d1475dbe5aff">wTaskDeleteSelf</a> (void)</td></tr>
+<tr class="memdesc:a26d4cde2cb6d23ceb7f9d1475dbe5aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务自删除函数  <a href="#a26d4cde2cb6d23ceb7f9d1475dbe5aff">更多...</a><br /></td></tr>
+<tr class="separator:a26d4cde2cb6d23ceb7f9d1475dbe5aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc3d829c5b306efa543365a60c5a101"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wtask_8c.html#adfc3d829c5b306efa543365a60c5a101">wTaskGetInfo</a> (<a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *task, <a class="el" href="w_task_8h.html#a85a39f6e7c847e9d4eb86fcdc77db644">wTaskInfo</a> *info)</td></tr>
+<tr class="memdesc:adfc3d829c5b306efa543365a60c5a101"><td class="mdescLeft">&#160;</td><td class="mdescRight">任务状态查询函数  <a href="#adfc3d829c5b306efa543365a60c5a101">更多...</a><br /></td></tr>
+<tr class="separator:adfc3d829c5b306efa543365a60c5a101"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a26d4cde2cb6d23ceb7f9d1475dbe5aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26d4cde2cb6d23ceb7f9d1475dbe5aff">&#9670;&nbsp;</a></span>wTaskDeleteSelf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTaskDeleteSelf </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>任务自删除函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="wtask_8c_a26d4cde2cb6d23ceb7f9d1475dbe5aff_cgraph.png" border="0" usemap="#wtask_8c_a26d4cde2cb6d23ceb7f9d1475dbe5aff_cgraph" alt=""/></div>
+<map name="wtask_8c_a26d4cde2cb6d23ceb7f9d1475dbe5aff_cgraph" id="wtask_8c_a26d4cde2cb6d23ceb7f9d1475dbe5aff_cgraph">
+<area shape="rect" id="node2" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="367,5,498,32"/>
+<area shape="rect" id="node3" href="main_8c.html#ad212054b17e4733e330c97f3d3274767" title="将任务从优先级列表中删除函数 " alt="" coords="172,284,315,311"/>
+<area shape="rect" id="node7" href="main_8c.html#a231177ae77d1af6c5239c4ca95be8760" title="任务调度函数 " alt="" coords="195,107,291,133"/>
+<area shape="rect" id="node8" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="371,56,494,83"/>
+<area shape="rect" id="node4" href="w_lib_8h.html#a3a79549b0921e14d6bed1eb8674b720f" title="移除链表中指定结点函数 " alt="" coords="383,259,482,285"/>
+<area shape="rect" id="node5" href="w_lib_8h.html#a7d33baac6b25d816f7cfc67ffdeee8cb" title="链表结点数计数函数 " alt="" coords="389,309,476,336"/>
+<area shape="rect" id="node6" href="w_bitmap_8c.html#a87b3dd6be6acb1f4cbfb9a78e1c05dc9" title="位图结构清零函数 " alt="" coords="381,360,484,387"/>
+<area shape="rect" id="node9" href="main_8c.html#aecc5337584ee14a8c816f9ce689ba128" title="获取当前最高优先级且可运行的任务函数 " alt="" coords="363,107,503,133"/>
+<area shape="rect" id="node13" href="switch_8c.html#acd081e6d47a18f3f6e59bffca7e284f1" title="任务切换函数 " alt="" coords="383,157,482,184"/>
+<area shape="rect" id="node14" href="w_hooks_8c.html#afa57babb3f5e5b5ec50b08b6bfe77435" title="任务切换hooks函数 " alt="" coords="365,208,500,235"/>
+<area shape="rect" id="node10" href="w_bitmap_8c.html#a9386bff9baa067efe85d7f2f976a4512" title="位图查找函数 &#160;&#160;" alt="" coords="551,81,689,108"/>
+<area shape="rect" id="node12" href="w_lib_8h.html#a3221ea08ff11c2cfbca5c473c2fd6a07" title="返回首个结点函数 " alt="" coords="581,132,659,159"/>
+<area shape="rect" id="node11" href="w_bitmap_8c.html#a3795d2f22dfc0af5eb9b43b19f7a5dd7" title="位图长度函数 " alt="" coords="737,81,867,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3746b86341530f743b27051f9e527192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3746b86341530f743b27051f9e527192">&#9670;&nbsp;</a></span>wTaskForceDelete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTaskForceDelete </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *&#160;</td>
+          <td class="paramname"><em>task</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>任务强制删除函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>任务结构指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="wtask_8c_a3746b86341530f743b27051f9e527192_cgraph.png" border="0" usemap="#wtask_8c_a3746b86341530f743b27051f9e527192_cgraph" alt=""/></div>
+<map name="wtask_8c_a3746b86341530f743b27051f9e527192_cgraph" id="wtask_8c_a3746b86341530f743b27051f9e527192_cgraph">
+<area shape="rect" id="node2" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="378,5,509,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a135f5a694c1f6b01cb1499ecaf2ee0a5" title="将任务从延时队列删除函数 " alt="" coords="187,183,321,209"/>
+<area shape="rect" id="node5" href="main_8c.html#ad212054b17e4733e330c97f3d3274767" title="将任务从优先级列表中删除函数 " alt="" coords="183,284,325,311"/>
+<area shape="rect" id="node8" href="main_8c.html#a231177ae77d1af6c5239c4ca95be8760" title="任务调度函数 " alt="" coords="206,107,302,133"/>
+<area shape="rect" id="node9" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="382,56,505,83"/>
+<area shape="rect" id="node4" href="w_lib_8h.html#a3a79549b0921e14d6bed1eb8674b720f" title="移除链表中指定结点函数 " alt="" coords="394,259,493,285"/>
+<area shape="rect" id="node6" href="w_lib_8h.html#a7d33baac6b25d816f7cfc67ffdeee8cb" title="链表结点数计数函数 " alt="" coords="400,309,487,336"/>
+<area shape="rect" id="node7" href="w_bitmap_8c.html#a87b3dd6be6acb1f4cbfb9a78e1c05dc9" title="位图结构清零函数 " alt="" coords="392,360,495,387"/>
+<area shape="rect" id="node10" href="main_8c.html#aecc5337584ee14a8c816f9ce689ba128" title="获取当前最高优先级且可运行的任务函数 " alt="" coords="373,107,513,133"/>
+<area shape="rect" id="node14" href="switch_8c.html#acd081e6d47a18f3f6e59bffca7e284f1" title="任务切换函数 " alt="" coords="394,157,493,184"/>
+<area shape="rect" id="node15" href="w_hooks_8c.html#afa57babb3f5e5b5ec50b08b6bfe77435" title="任务切换hooks函数 " alt="" coords="376,208,511,235"/>
+<area shape="rect" id="node11" href="w_bitmap_8c.html#a9386bff9baa067efe85d7f2f976a4512" title="位图查找函数 &#160;&#160;" alt="" coords="561,81,700,108"/>
+<area shape="rect" id="node13" href="w_lib_8h.html#a3221ea08ff11c2cfbca5c473c2fd6a07" title="返回首个结点函数 " alt="" coords="591,132,670,159"/>
+<area shape="rect" id="node12" href="w_bitmap_8c.html#a3795d2f22dfc0af5eb9b43b19f7a5dd7" title="位图长度函数 " alt="" coords="748,81,877,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adfc3d829c5b306efa543365a60c5a101"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc3d829c5b306efa543365a60c5a101">&#9670;&nbsp;</a></span>wTaskGetInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTaskGetInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *&#160;</td>
+          <td class="paramname"><em>task</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="w_task_8h.html#a85a39f6e7c847e9d4eb86fcdc77db644">wTaskInfo</a> *&#160;</td>
+          <td class="paramname"><em>info</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>任务状态查询函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>任务结构指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">info</td><td>状态查询结构指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="wtask_8c_adfc3d829c5b306efa543365a60c5a101_cgraph.png" border="0" usemap="#wtask_8c_adfc3d829c5b306efa543365a60c5a101_cgraph" alt=""/></div>
+<map name="wtask_8c_adfc3d829c5b306efa543365a60c5a101_cgraph" id="wtask_8c_adfc3d829c5b306efa543365a60c5a101_cgraph">
+<area shape="rect" id="node2" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="153,5,284,32"/>
+<area shape="rect" id="node3" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="157,56,280,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aab000edf7c64d617282f878f72a51821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab000edf7c64d617282f878f72a51821">&#9670;&nbsp;</a></span>wTaskInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTaskInit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *&#160;</td>
+          <td class="paramname"><em>task</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>prio</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="w_task_8h.html#ae1dd34929f40dd21d0ea81f2d3f1c2e0">wTaskStack</a> *&#160;</td>
+          <td class="paramname"><em>stack</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>任务初始化函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task：</td><td>任务结构体地址 </td></tr>
+    <tr><td class="paramname">entry：任务入口函数名</td><td></td></tr>
+    <tr><td class="paramname">param：传递给任务的参数</td><td></td></tr>
+    <tr><td class="paramname">stack：任务栈空间地址</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="wtask_8c_aab000edf7c64d617282f878f72a51821_cgraph.png" border="0" usemap="#wtask_8c_aab000edf7c64d617282f878f72a51821_cgraph" alt=""/></div>
+<map name="wtask_8c_aab000edf7c64d617282f878f72a51821_cgraph" id="wtask_8c_aab000edf7c64d617282f878f72a51821_cgraph">
+<area shape="rect" id="node2" href="w_lib_8h.html#a3506d080ed161c2866b73ad2b2595fdf" title="结点初始化函数 " alt="" coords="149,5,228,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a600f0ce279bbc48c121bd6e31874aff9" title="将任务插入就绪列表（将任务从延时队列中移除时）函数 " alt="" coords="129,56,248,83"/>
+<area shape="rect" id="node6" href="w_hooks_8c.html#ac1fd0c11b2cb3744862c3c5f20bfbdf1" title="任务初始化的hooks函数 " alt="" coords="132,107,245,133"/>
+<area shape="rect" id="node4" href="w_lib_8h.html#a2346f45406d665accfd808f3a1eea052" title="添加指定结点到链表头部函数 " alt="" coords="296,31,397,57"/>
+<area shape="rect" id="node5" href="w_bitmap_8c.html#a77d05fe3886a9d768df06de7f403326b" title="wBitmapSet" alt="" coords="301,81,393,108"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="wtask_8c_aab000edf7c64d617282f878f72a51821_icgraph.png" border="0" usemap="#wtask_8c_aab000edf7c64d617282f878f72a51821_icgraph" alt=""/></div>
+<map name="wtask_8c_aab000edf7c64d617282f878f72a51821_icgraph" id="wtask_8c_aab000edf7c64d617282f878f72a51821_icgraph">
+<area shape="rect" id="node2" href="_w_q___o_s_8h.html#a01fa04097be631417a34fc2b5de3441a" title="任务初始化函数 " alt="" coords="148,5,219,32"/>
+<area shape="rect" id="node4" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="主函数 " alt="" coords="435,81,485,108"/>
+<area shape="rect" id="node5" href="w_timer_8h.html#a5f45f849cc0c3b03701dfbe03cdca2f2" title="wTimerInitTask" alt="" coords="129,56,237,83"/>
+<area shape="rect" id="node3" href="main_8c.html#a1949c76c0bc7d4b976d447fbaa947f53" title="空闲任务函数 " alt="" coords="285,56,387,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a353c3797674dd9a52d5f4c6fd5917f4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353c3797674dd9a52d5f4c6fd5917f4b">&#9670;&nbsp;</a></span>wTaskIsRequestedDelete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t wTaskIsRequestedDelete </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查任务是否请求删除函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">请求删除标志</td><td>非0表示请求删除，0表示无请求 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="wtask_8c_a353c3797674dd9a52d5f4c6fd5917f4b_cgraph.png" border="0" usemap="#wtask_8c_a353c3797674dd9a52d5f4c6fd5917f4b_cgraph" alt=""/></div>
+<map name="wtask_8c_a353c3797674dd9a52d5f4c6fd5917f4b_cgraph" id="wtask_8c_a353c3797674dd9a52d5f4c6fd5917f4b_cgraph">
+<area shape="rect" id="node2" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="221,5,352,32"/>
+<area shape="rect" id="node3" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="225,56,348,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7ed3719bf21d5dbe0c823846881863ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ed3719bf21d5dbe0c823846881863ae">&#9670;&nbsp;</a></span>wTaskRequestDelete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTaskRequestDelete </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *&#160;</td>
+          <td class="paramname"><em>task</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>任务请求删除函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>任务结构指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="wtask_8c_a7ed3719bf21d5dbe0c823846881863ae_cgraph.png" border="0" usemap="#wtask_8c_a7ed3719bf21d5dbe0c823846881863ae_cgraph" alt=""/></div>
+<map name="wtask_8c_a7ed3719bf21d5dbe0c823846881863ae_cgraph" id="wtask_8c_a7ed3719bf21d5dbe0c823846881863ae_cgraph">
+<area shape="rect" id="node2" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="197,5,328,32"/>
+<area shape="rect" id="node3" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="201,56,324,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a47f2f87188f5f35fba94942399c6e344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47f2f87188f5f35fba94942399c6e344">&#9670;&nbsp;</a></span>wTaskSetCleanCallFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTaskSetCleanCallFunc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *&#160;</td>
+          <td class="paramname"><em>task</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *param)&#160;</td>
+          <td class="paramname"><em>clean</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>param</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>任务被删除时调用的清理函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>任务结构指针 </td></tr>
+    <tr><td class="paramname">clean</td><td>清理函数入口地址 </td></tr>
+    <tr><td class="paramname">param</td><td>传递给清理函数的参数 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae370094e4c18ae8d108be5d8d4bca358"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae370094e4c18ae8d108be5d8d4bca358">&#9670;&nbsp;</a></span>wTaskSuspend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTaskSuspend </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *&#160;</td>
+          <td class="paramname"><em>task</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>任务挂起函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>任务结构指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="wtask_8c_ae370094e4c18ae8d108be5d8d4bca358_cgraph.png" border="0" usemap="#wtask_8c_ae370094e4c18ae8d108be5d8d4bca358_cgraph" alt=""/></div>
+<map name="wtask_8c_ae370094e4c18ae8d108be5d8d4bca358_cgraph" id="wtask_8c_ae370094e4c18ae8d108be5d8d4bca358_cgraph">
+<area shape="rect" id="node2" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="351,5,482,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a598536b78a16c960ddfb82d887746cae" title="将任务从就绪列表中删除函数 " alt="" coords="164,284,299,311"/>
+<area shape="rect" id="node7" href="main_8c.html#a231177ae77d1af6c5239c4ca95be8760" title="任务调度函数 " alt="" coords="183,107,279,133"/>
+<area shape="rect" id="node8" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="355,56,478,83"/>
+<area shape="rect" id="node4" href="w_lib_8h.html#a3a79549b0921e14d6bed1eb8674b720f" title="移除链表中指定结点函数 " alt="" coords="367,259,466,285"/>
+<area shape="rect" id="node5" href="w_lib_8h.html#a7d33baac6b25d816f7cfc67ffdeee8cb" title="链表结点数计数函数 " alt="" coords="373,309,460,336"/>
+<area shape="rect" id="node6" href="w_bitmap_8c.html#a87b3dd6be6acb1f4cbfb9a78e1c05dc9" title="位图结构清零函数 " alt="" coords="365,360,468,387"/>
+<area shape="rect" id="node9" href="main_8c.html#aecc5337584ee14a8c816f9ce689ba128" title="获取当前最高优先级且可运行的任务函数 " alt="" coords="347,107,487,133"/>
+<area shape="rect" id="node13" href="switch_8c.html#acd081e6d47a18f3f6e59bffca7e284f1" title="任务切换函数 " alt="" coords="367,157,466,184"/>
+<area shape="rect" id="node14" href="w_hooks_8c.html#afa57babb3f5e5b5ec50b08b6bfe77435" title="任务切换hooks函数 " alt="" coords="349,208,484,235"/>
+<area shape="rect" id="node10" href="w_bitmap_8c.html#a9386bff9baa067efe85d7f2f976a4512" title="位图查找函数 &#160;&#160;" alt="" coords="535,81,673,108"/>
+<area shape="rect" id="node12" href="w_lib_8h.html#a3221ea08ff11c2cfbca5c473c2fd6a07" title="返回首个结点函数 " alt="" coords="565,132,643,159"/>
+<area shape="rect" id="node11" href="w_bitmap_8c.html#a3795d2f22dfc0af5eb9b43b19f7a5dd7" title="位图长度函数 " alt="" coords="721,81,851,108"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a040c393cbeb9ac354a13330140b3b5a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a040c393cbeb9ac354a13330140b3b5a1">&#9670;&nbsp;</a></span>wTaskWakeUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wTaskWakeUp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="w_task_8h.html#acd0e6238476f631a6ac4588629bac372">wTask</a> *&#160;</td>
+          <td class="paramname"><em>task</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>恢复被挂起函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">task</td><td>任务结构指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>返回值</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">无</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="wtask_8c_a040c393cbeb9ac354a13330140b3b5a1_cgraph.png" border="0" usemap="#wtask_8c_a040c393cbeb9ac354a13330140b3b5a1_cgraph" alt=""/></div>
+<map name="wtask_8c_a040c393cbeb9ac354a13330140b3b5a1_cgraph" id="wtask_8c_a040c393cbeb9ac354a13330140b3b5a1_cgraph">
+<area shape="rect" id="node2" href="switch_8c.html#ad052c520126af4654831bf45f5cca530" title="进入临界区函数 " alt="" coords="334,5,465,32"/>
+<area shape="rect" id="node3" href="main_8c.html#a600f0ce279bbc48c121bd6e31874aff9" title="将任务插入就绪列表（将任务从延时队列中移除时）函数 " alt="" coords="163,259,281,285"/>
+<area shape="rect" id="node6" href="main_8c.html#a231177ae77d1af6c5239c4ca95be8760" title="任务调度函数 " alt="" coords="174,107,270,133"/>
+<area shape="rect" id="node7" href="switch_8c.html#a70fa5a9368387ef47a1d51e2dcb91e32" title="退出临界区函数 " alt="" coords="338,56,461,83"/>
+<area shape="rect" id="node4" href="w_lib_8h.html#a2346f45406d665accfd808f3a1eea052" title="添加指定结点到链表头部函数 " alt="" coords="349,309,450,336"/>
+<area shape="rect" id="node5" href="w_bitmap_8c.html#a77d05fe3886a9d768df06de7f403326b" title="wBitmapSet" alt="" coords="353,259,445,285"/>
+<area shape="rect" id="node8" href="main_8c.html#aecc5337584ee14a8c816f9ce689ba128" title="获取当前最高优先级且可运行的任务函数 " alt="" coords="329,107,469,133"/>
+<area shape="rect" id="node12" href="switch_8c.html#acd081e6d47a18f3f6e59bffca7e284f1" title="任务切换函数 " alt="" coords="350,157,449,184"/>
+<area shape="rect" id="node13" href="w_hooks_8c.html#afa57babb3f5e5b5ec50b08b6bfe77435" title="任务切换hooks函数 " alt="" coords="332,208,467,235"/>
+<area shape="rect" id="node9" href="w_bitmap_8c.html#a9386bff9baa067efe85d7f2f976a4512" title="位图查找函数 &#160;&#160;" alt="" coords="517,81,656,108"/>
+<area shape="rect" id="node11" href="w_lib_8h.html#a3221ea08ff11c2cfbca5c473c2fd6a07" title="返回首个结点函数 " alt="" coords="547,132,626,159"/>
+<area shape="rect" id="node10" href="w_bitmap_8c.html#a3795d2f22dfc0af5eb9b43b19f7a5dd7" title="位图长度函数 " alt="" coords="704,81,833,108"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者 &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.14
+</small></address>
+</body>
+</html>

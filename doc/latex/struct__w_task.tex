@@ -1,0 +1,179 @@
+\hypertarget{struct__w_task}{}\section{\+\_\+w\+Task结构体 参考}
+\label{struct__w_task}\index{\+\_\+w\+Task@{\+\_\+w\+Task}}
+
+
+任务结构  
+
+
+
+
+{\ttfamily \#include $<$w\+Task.\+h$>$}
+
+
+
+\+\_\+w\+Task 的协作图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{struct__w_task__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}} $\ast$ \mbox{\hyperlink{struct__w_task_aab79976fc944e26844168b6c262e33f8}{stack}}
+\item 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{struct__w_task_a57eb489f59ea6a56ccff2efea7f92c33}{stack\+Base}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_ae20ace955faaa4fb797b69b75feef3d3}{stack\+Size}}
+\item 
+\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} \mbox{\hyperlink{struct__w_task_aace0256afebaf717de11433d186f53b2}{link\+Node}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_a0c1ef2b42e60232fd2355246df290c68}{delay\+Ticks}}
+\item 
+\mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} \mbox{\hyperlink{struct__w_task_a2dfdbd06053445a3e8869801ea875edc}{delay\+Node}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_a6871573fefee3ad102e26a09e7a2f493}{prio}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_a1b0c7bd4d79798ef4e0ce23894c9aeb2}{state}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_a4fe7f19d35a11368d300b99348451fdd}{slice}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_a70023864793bcef3ab18d4a66832ca6d}{suspend\+Count}}
+\item 
+void($\ast$ \mbox{\hyperlink{struct__w_task_a9350eb6ea9f174b0711e8835a1543a87}{clean}} )(void $\ast$param)
+\item 
+void $\ast$ \mbox{\hyperlink{struct__w_task_a44efa3d1143953e06ee78314f155aa92}{cleanparam}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct__w_task_a3b197900b58be56e296d46207dec079f}{request\+Delete\+Flag}}
+\item 
+struct \mbox{\hyperlink{struct__w_event}{\+\_\+w\+Event}} $\ast$ \mbox{\hyperlink{struct__w_task_a52896f1a7ded634042291bac3f2b109e}{wait\+Event}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct__w_task_ae1ae004c581e0cc9fd22662535700001}{event\+Msg}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_a37707d87e42a484588393e5b3683ffbb}{wait\+Event\+Result}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_a35ba8bba537f36efd05f084a5531825a}{wait\+Flags\+Type}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_af713ddc7d68fde45ace722a554f41918}{event\+Flags}}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+任务结构 
+
+\subsection{结构体成员变量说明}
+\mbox{\Hypertarget{struct__w_task_a9350eb6ea9f174b0711e8835a1543a87}\label{struct__w_task_a9350eb6ea9f174b0711e8835a1543a87}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!clean@{clean}}
+\index{clean@{clean}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{clean}{clean}}
+{\footnotesize\ttfamily void($\ast$ clean) (void $\ast$param)}
+
+任务被删除时调用的清理函数 \mbox{\Hypertarget{struct__w_task_a44efa3d1143953e06ee78314f155aa92}\label{struct__w_task_a44efa3d1143953e06ee78314f155aa92}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!cleanparam@{cleanparam}}
+\index{cleanparam@{cleanparam}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{cleanparam}{cleanparam}}
+{\footnotesize\ttfamily void$\ast$ cleanparam}
+
+传递给清理函数的参数 \mbox{\Hypertarget{struct__w_task_a2dfdbd06053445a3e8869801ea875edc}\label{struct__w_task_a2dfdbd06053445a3e8869801ea875edc}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!delay\+Node@{delay\+Node}}
+\index{delay\+Node@{delay\+Node}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{delay\+Node}{delayNode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} delay\+Node}
+
+通用延时结点结构 \mbox{\Hypertarget{struct__w_task_a0c1ef2b42e60232fd2355246df290c68}\label{struct__w_task_a0c1ef2b42e60232fd2355246df290c68}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!delay\+Ticks@{delay\+Ticks}}
+\index{delay\+Ticks@{delay\+Ticks}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{delay\+Ticks}{delayTicks}}
+{\footnotesize\ttfamily uint32\+\_\+t delay\+Ticks}
+
+任务延时个数 \mbox{\Hypertarget{struct__w_task_af713ddc7d68fde45ace722a554f41918}\label{struct__w_task_af713ddc7d68fde45ace722a554f41918}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!event\+Flags@{event\+Flags}}
+\index{event\+Flags@{event\+Flags}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{event\+Flags}{eventFlags}}
+{\footnotesize\ttfamily uint32\+\_\+t event\+Flags}
+
+等待的事件标志 \mbox{\Hypertarget{struct__w_task_ae1ae004c581e0cc9fd22662535700001}\label{struct__w_task_ae1ae004c581e0cc9fd22662535700001}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!event\+Msg@{event\+Msg}}
+\index{event\+Msg@{event\+Msg}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{event\+Msg}{eventMsg}}
+{\footnotesize\ttfamily void$\ast$ event\+Msg}
+
+等待事件的数据存放位置 \mbox{\Hypertarget{struct__w_task_aace0256afebaf717de11433d186f53b2}\label{struct__w_task_aace0256afebaf717de11433d186f53b2}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!link\+Node@{link\+Node}}
+\index{link\+Node@{link\+Node}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{link\+Node}{linkNode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_lib_8h_a98363f2fc9ff1bef5993786140d900f2}{w\+Node}} link\+Node}
+
+优先级队列链接结点 \mbox{\Hypertarget{struct__w_task_a6871573fefee3ad102e26a09e7a2f493}\label{struct__w_task_a6871573fefee3ad102e26a09e7a2f493}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!prio@{prio}}
+\index{prio@{prio}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{prio}{prio}}
+{\footnotesize\ttfamily uint32\+\_\+t prio}
+
+任务优先级 \mbox{\Hypertarget{struct__w_task_a3b197900b58be56e296d46207dec079f}\label{struct__w_task_a3b197900b58be56e296d46207dec079f}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!request\+Delete\+Flag@{request\+Delete\+Flag}}
+\index{request\+Delete\+Flag@{request\+Delete\+Flag}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{request\+Delete\+Flag}{requestDeleteFlag}}
+{\footnotesize\ttfamily uint8\+\_\+t request\+Delete\+Flag}
+
+请求删除标志 \mbox{\Hypertarget{struct__w_task_a4fe7f19d35a11368d300b99348451fdd}\label{struct__w_task_a4fe7f19d35a11368d300b99348451fdd}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!slice@{slice}}
+\index{slice@{slice}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{slice}{slice}}
+{\footnotesize\ttfamily uint32\+\_\+t slice}
+
+时间片计数器 \mbox{\Hypertarget{struct__w_task_aab79976fc944e26844168b6c262e33f8}\label{struct__w_task_aab79976fc944e26844168b6c262e33f8}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!stack@{stack}}
+\index{stack@{stack}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{stack}{stack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_ae1dd34929f40dd21d0ea81f2d3f1c2e0}{w\+Task\+Stack}}$\ast$ stack}
+
+任务堆栈指针 \mbox{\Hypertarget{struct__w_task_a57eb489f59ea6a56ccff2efea7f92c33}\label{struct__w_task_a57eb489f59ea6a56ccff2efea7f92c33}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!stack\+Base@{stack\+Base}}
+\index{stack\+Base@{stack\+Base}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{stack\+Base}{stackBase}}
+{\footnotesize\ttfamily uint32\+\_\+t$\ast$ stack\+Base}
+
+任务堆栈首地址 \mbox{\Hypertarget{struct__w_task_ae20ace955faaa4fb797b69b75feef3d3}\label{struct__w_task_ae20ace955faaa4fb797b69b75feef3d3}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!stack\+Size@{stack\+Size}}
+\index{stack\+Size@{stack\+Size}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{stack\+Size}{stackSize}}
+{\footnotesize\ttfamily uint32\+\_\+t stack\+Size}
+
+堆栈大小 \mbox{\Hypertarget{struct__w_task_a1b0c7bd4d79798ef4e0ce23894c9aeb2}\label{struct__w_task_a1b0c7bd4d79798ef4e0ce23894c9aeb2}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!state@{state}}
+\index{state@{state}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily uint32\+\_\+t state}
+
+状态字段，用于判断是不是处于延时状态 \mbox{\Hypertarget{struct__w_task_a70023864793bcef3ab18d4a66832ca6d}\label{struct__w_task_a70023864793bcef3ab18d4a66832ca6d}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!suspend\+Count@{suspend\+Count}}
+\index{suspend\+Count@{suspend\+Count}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{suspend\+Count}{suspendCount}}
+{\footnotesize\ttfamily uint32\+\_\+t suspend\+Count}
+
+挂起状态计数器 \mbox{\Hypertarget{struct__w_task_a52896f1a7ded634042291bac3f2b109e}\label{struct__w_task_a52896f1a7ded634042291bac3f2b109e}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!wait\+Event@{wait\+Event}}
+\index{wait\+Event@{wait\+Event}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{wait\+Event}{waitEvent}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct__w_event}{\+\_\+w\+Event}}$\ast$ wait\+Event}
+
+正在等待的任务控制块 \mbox{\Hypertarget{struct__w_task_a37707d87e42a484588393e5b3683ffbb}\label{struct__w_task_a37707d87e42a484588393e5b3683ffbb}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!wait\+Event\+Result@{wait\+Event\+Result}}
+\index{wait\+Event\+Result@{wait\+Event\+Result}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{wait\+Event\+Result}{waitEventResult}}
+{\footnotesize\ttfamily uint32\+\_\+t wait\+Event\+Result}
+
+等待事件的结果 \mbox{\Hypertarget{struct__w_task_a35ba8bba537f36efd05f084a5531825a}\label{struct__w_task_a35ba8bba537f36efd05f084a5531825a}} 
+\index{\+\_\+w\+Task@{\+\_\+w\+Task}!wait\+Flags\+Type@{wait\+Flags\+Type}}
+\index{wait\+Flags\+Type@{wait\+Flags\+Type}!\+\_\+w\+Task@{\+\_\+w\+Task}}
+\subsubsection{\texorpdfstring{wait\+Flags\+Type}{waitFlagsType}}
+{\footnotesize\ttfamily uint32\+\_\+t wait\+Flags\+Type}
+
+等待的事件方式 
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/\mbox{\hyperlink{w_task_8h}{w\+Task.\+h}}\end{DoxyCompactItemize}

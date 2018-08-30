@@ -1,0 +1,200 @@
+\hypertarget{switch_8c}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/switch.c 文件参考}
+\label{switch_8c}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/switch.\+c@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/switch.\+c}}
+{\ttfamily \#include \char`\"{}W\+Q\+\_\+\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+R\+M\+C\+M3.\+h\char`\"{}}\newline
+switch.\+c 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{switch_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{switch_8c_afa1ca44ad548bf5bfa2f19d7438c722a}{N\+V\+I\+C\+\_\+\+I\+N\+T\+\_\+\+C\+T\+RL}}~0x\+E000\+E\+D04
+\item 
+\#define \mbox{\hyperlink{switch_8c_a11166a59c430ba34e6da8e20571b58d7}{N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+S\+ET}}~0x10000000
+\item 
+\#define \mbox{\hyperlink{switch_8c_a23694ffa1ac38dfdfcc1ae1160be7397}{N\+V\+I\+C\+\_\+\+S\+Y\+S\+P\+R\+I2}}~0x\+E000\+E\+D22
+\item 
+\#define \mbox{\hyperlink{switch_8c_a39caf8bb045502e6f5611403dc4d121d}{N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+\_\+\+P\+RT}}~0x000000\+FF
+\item 
+\#define \mbox{\hyperlink{switch_8c_ade1e623e8a7851917439eeac2019ff3f}{M\+E\+M32}}(addr)~$\ast$(volatile unsigned long $\ast$)(addr)
+\item 
+\#define \mbox{\hyperlink{switch_8c_ac66df9e288958f808f7308f40d5ebd66}{M\+E\+M8}}(addr)~$\ast$(volatile unsigned char $\ast$)(addr)
+\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{switch_8c_ad052c520126af4654831bf45f5cca530}{w\+Task\+Enter\+Critical}} (void)
+\begin{DoxyCompactList}\small\item\em 进入临界区函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{switch_8c_a70fa5a9368387ef47a1d51e2dcb91e32}{w\+Task\+Exit\+Critical}} (uint32\+\_\+t status)
+\begin{DoxyCompactList}\small\item\em 退出临界区函数 \end{DoxyCompactList}\item 
+\+\_\+\+\_\+asm void \mbox{\hyperlink{switch_8c_ad628297c6eafc9b3a38fdd08377b42c5}{Pend\+S\+V\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Pend\+S\+V异常处理函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{switch_8c_aaafc4dd68718f4b0179aeef17c6d868f}{w\+Task\+Run\+First}} ()
+\begin{DoxyCompactList}\small\item\em 系统开始运行函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{switch_8c_acd081e6d47a18f3f6e59bffca7e284f1}{w\+Task\+Switch}} ()
+\begin{DoxyCompactList}\small\item\em 任务切换函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{宏定义说明}
+\mbox{\Hypertarget{switch_8c_ade1e623e8a7851917439eeac2019ff3f}\label{switch_8c_ade1e623e8a7851917439eeac2019ff3f}} 
+\index{switch.\+c@{switch.\+c}!M\+E\+M32@{M\+E\+M32}}
+\index{M\+E\+M32@{M\+E\+M32}!switch.\+c@{switch.\+c}}
+\subsubsection{\texorpdfstring{M\+E\+M32}{MEM32}}
+{\footnotesize\ttfamily \#define M\+E\+M32(\begin{DoxyParamCaption}\item[{}]{addr }\end{DoxyParamCaption})~$\ast$(volatile unsigned long $\ast$)(addr)}
+
+\mbox{\Hypertarget{switch_8c_ac66df9e288958f808f7308f40d5ebd66}\label{switch_8c_ac66df9e288958f808f7308f40d5ebd66}} 
+\index{switch.\+c@{switch.\+c}!M\+E\+M8@{M\+E\+M8}}
+\index{M\+E\+M8@{M\+E\+M8}!switch.\+c@{switch.\+c}}
+\subsubsection{\texorpdfstring{M\+E\+M8}{MEM8}}
+{\footnotesize\ttfamily \#define M\+E\+M8(\begin{DoxyParamCaption}\item[{}]{addr }\end{DoxyParamCaption})~$\ast$(volatile unsigned char $\ast$)(addr)}
+
+\mbox{\Hypertarget{switch_8c_afa1ca44ad548bf5bfa2f19d7438c722a}\label{switch_8c_afa1ca44ad548bf5bfa2f19d7438c722a}} 
+\index{switch.\+c@{switch.\+c}!N\+V\+I\+C\+\_\+\+I\+N\+T\+\_\+\+C\+T\+RL@{N\+V\+I\+C\+\_\+\+I\+N\+T\+\_\+\+C\+T\+RL}}
+\index{N\+V\+I\+C\+\_\+\+I\+N\+T\+\_\+\+C\+T\+RL@{N\+V\+I\+C\+\_\+\+I\+N\+T\+\_\+\+C\+T\+RL}!switch.\+c@{switch.\+c}}
+\subsubsection{\texorpdfstring{N\+V\+I\+C\+\_\+\+I\+N\+T\+\_\+\+C\+T\+RL}{NVIC\_INT\_CTRL}}
+{\footnotesize\ttfamily \#define N\+V\+I\+C\+\_\+\+I\+N\+T\+\_\+\+C\+T\+RL~0x\+E000\+E\+D04}
+
+相关寄存器 \mbox{\Hypertarget{switch_8c_a39caf8bb045502e6f5611403dc4d121d}\label{switch_8c_a39caf8bb045502e6f5611403dc4d121d}} 
+\index{switch.\+c@{switch.\+c}!N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+\_\+\+P\+RT@{N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+\_\+\+P\+RT}}
+\index{N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+\_\+\+P\+RT@{N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+\_\+\+P\+RT}!switch.\+c@{switch.\+c}}
+\subsubsection{\texorpdfstring{N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+\_\+\+P\+RT}{NVIC\_PENDSV\_PRT}}
+{\footnotesize\ttfamily \#define N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+\_\+\+P\+RT~0x000000\+FF}
+
+\mbox{\Hypertarget{switch_8c_a11166a59c430ba34e6da8e20571b58d7}\label{switch_8c_a11166a59c430ba34e6da8e20571b58d7}} 
+\index{switch.\+c@{switch.\+c}!N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+S\+ET@{N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+S\+ET}}
+\index{N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+S\+ET@{N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+S\+ET}!switch.\+c@{switch.\+c}}
+\subsubsection{\texorpdfstring{N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+S\+ET}{NVIC\_PENDSVSET}}
+{\footnotesize\ttfamily \#define N\+V\+I\+C\+\_\+\+P\+E\+N\+D\+S\+V\+S\+ET~0x10000000}
+
+\mbox{\Hypertarget{switch_8c_a23694ffa1ac38dfdfcc1ae1160be7397}\label{switch_8c_a23694ffa1ac38dfdfcc1ae1160be7397}} 
+\index{switch.\+c@{switch.\+c}!N\+V\+I\+C\+\_\+\+S\+Y\+S\+P\+R\+I2@{N\+V\+I\+C\+\_\+\+S\+Y\+S\+P\+R\+I2}}
+\index{N\+V\+I\+C\+\_\+\+S\+Y\+S\+P\+R\+I2@{N\+V\+I\+C\+\_\+\+S\+Y\+S\+P\+R\+I2}!switch.\+c@{switch.\+c}}
+\subsubsection{\texorpdfstring{N\+V\+I\+C\+\_\+\+S\+Y\+S\+P\+R\+I2}{NVIC\_SYSPRI2}}
+{\footnotesize\ttfamily \#define N\+V\+I\+C\+\_\+\+S\+Y\+S\+P\+R\+I2~0x\+E000\+E\+D22}
+
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{switch_8c_ad628297c6eafc9b3a38fdd08377b42c5}\label{switch_8c_ad628297c6eafc9b3a38fdd08377b42c5}} 
+\index{switch.\+c@{switch.\+c}!Pend\+S\+V\+\_\+\+Handler@{Pend\+S\+V\+\_\+\+Handler}}
+\index{Pend\+S\+V\+\_\+\+Handler@{Pend\+S\+V\+\_\+\+Handler}!switch.\+c@{switch.\+c}}
+\subsubsection{\texorpdfstring{Pend\+S\+V\+\_\+\+Handler()}{PendSV\_Handler()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+asm void Pend\+S\+V\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Pend\+S\+V异常处理函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{switch_8c_ad052c520126af4654831bf45f5cca530}\label{switch_8c_ad052c520126af4654831bf45f5cca530}} 
+\index{switch.\+c@{switch.\+c}!w\+Task\+Enter\+Critical@{w\+Task\+Enter\+Critical}}
+\index{w\+Task\+Enter\+Critical@{w\+Task\+Enter\+Critical}!switch.\+c@{switch.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Enter\+Critical()}{wTaskEnterCritical()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Task\+Enter\+Critical (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+进入临界区函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 0} & 中断屏蔽 \\
+\hline
+{\em 1} & 中断开启 \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{switch_8c_a70fa5a9368387ef47a1d51e2dcb91e32}\label{switch_8c_a70fa5a9368387ef47a1d51e2dcb91e32}} 
+\index{switch.\+c@{switch.\+c}!w\+Task\+Exit\+Critical@{w\+Task\+Exit\+Critical}}
+\index{w\+Task\+Exit\+Critical@{w\+Task\+Exit\+Critical}!switch.\+c@{switch.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Exit\+Critical()}{wTaskExitCritical()}}
+{\footnotesize\ttfamily void w\+Task\+Exit\+Critical (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{status }\end{DoxyParamCaption})}
+
+
+
+退出临界区函数 
+
+
+\begin{DoxyParams}{参数}
+{\em status} & 中断的状态，由进入临界区函数返回 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{switch_8c_aaafc4dd68718f4b0179aeef17c6d868f}\label{switch_8c_aaafc4dd68718f4b0179aeef17c6d868f}} 
+\index{switch.\+c@{switch.\+c}!w\+Task\+Run\+First@{w\+Task\+Run\+First}}
+\index{w\+Task\+Run\+First@{w\+Task\+Run\+First}!switch.\+c@{switch.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Run\+First()}{wTaskRunFirst()}}
+{\footnotesize\ttfamily void w\+Task\+Run\+First (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+系统开始运行函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{switch_8c_aaafc4dd68718f4b0179aeef17c6d868f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{switch_8c_acd081e6d47a18f3f6e59bffca7e284f1}\label{switch_8c_acd081e6d47a18f3f6e59bffca7e284f1}} 
+\index{switch.\+c@{switch.\+c}!w\+Task\+Switch@{w\+Task\+Switch}}
+\index{w\+Task\+Switch@{w\+Task\+Switch}!switch.\+c@{switch.\+c}}
+\subsubsection{\texorpdfstring{w\+Task\+Switch()}{wTaskSwitch()}}
+{\footnotesize\ttfamily void w\+Task\+Switch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+任务切换函数 
+
+
+\begin{DoxyParams}{参数}
+{\em 无} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{switch_8c_acd081e6d47a18f3f6e59bffca7e284f1_icgraph}
+\end{center}
+\end{figure}

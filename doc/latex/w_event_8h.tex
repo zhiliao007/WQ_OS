@@ -1,0 +1,408 @@
+\hypertarget{w_event_8h}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Event.h 文件参考}
+\label{w_event_8h}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Event.\+h@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Event.\+h}}
+{\ttfamily \#include \char`\"{}w\+Lib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}w\+Task.\+h\char`\"{}}\newline
+w\+Event.\+h 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{w_event_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_event_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__w_event}{\+\_\+w\+Event}}
+\begin{DoxyCompactList}\small\item\em 事件控制结构 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198}{\+\_\+w\+Event\+Type}} \mbox{\hyperlink{w_event_8h_ab0672c982196a07535850096d01686c6}{w\+Event\+Type}}
+\begin{DoxyCompactList}\small\item\em 事件类型 \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct__w_event}{\+\_\+w\+Event}} \mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}}
+\begin{DoxyCompactList}\small\item\em 事件控制结构 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198}{\+\_\+w\+Event\+Type}} \{ \newline
+\mbox{\hyperlink{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a58918a91b46e51f90f6905f3809bbea6}{w\+Event\+Type\+Unknown}}, 
+\mbox{\hyperlink{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a432aac829bee7e2859037e3fe3abb781}{w\+Event\+Type\+Sem}}, 
+\mbox{\hyperlink{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a80783d5cf994d618420238d0008ddcda}{w\+Event\+Type\+Mbox}}, 
+\mbox{\hyperlink{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a7fe2e9f8edebfceea4bbb3a6afe36101}{w\+Event\+Type\+Mem\+Block}}, 
+\newline
+\mbox{\hyperlink{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198ac8bed7139201967fcc1cb1362fe89f71}{w\+Event\+Type\+Flag\+Group}}, 
+\mbox{\hyperlink{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198ac848184d4cc87af4d64003dae703ef27}{w\+Event\+Type\+Mutex}}
+ \}
+\begin{DoxyCompactList}\small\item\em 事件类型 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{w_event_8h_a5150dadc2bca60248555023bc0cde4fc}{w\+Event\+Init}} (\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$event, \mbox{\hyperlink{w_event_8h_ab0672c982196a07535850096d01686c6}{w\+Event\+Type}} type)
+\begin{DoxyCompactList}\small\item\em 初始化事件控制块函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_event_8h_a1f841793727f21c2daefe6064935a6aa}{w\+Event\+Wait}} (\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$event, \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task, void $\ast$msg, uint32\+\_\+t state, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em 将等待事件发生的任务插入事件控制块函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$ \mbox{\hyperlink{w_event_8h_a03595819b6b21e4eea4c0fc142a42f6c}{w\+Event\+Wake\+Up}} (\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$event, void $\ast$msg, uint32\+\_\+t result)
+\begin{DoxyCompactList}\small\item\em 将首个任务从事件控制块中唤醒函数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$ \mbox{\hyperlink{w_event_8h_ae149bf6004322c934dcfbc99254fa0e8}{w\+Event\+Wake\+Up\+Task}} (\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$event, \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task, void $\ast$msg, uint32\+\_\+t result)
+\begin{DoxyCompactList}\small\item\em 将特定任务从事件控制块中唤醒函数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{w_event_8h_ae981ecdcd406e42b051ac4ef144d9e11}{w\+Event\+Remove\+Task}} (\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$task, void $\ast$msg, uint32\+\_\+t result)
+\begin{DoxyCompactList}\small\item\em 将任务强制从等待队列中删除函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_event_8h_a260a322fddff6b1b283b87315fa6f84f}{w\+Event\+Remove\+All}} (\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$event, void $\ast$msg, uint32\+\_\+t result)
+\begin{DoxyCompactList}\small\item\em 初始化事件控制块函数 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{w_event_8h_ae8ed542398c8bcfe6bd33532f6aca4a2}{w\+Event\+Wait\+Count}} (\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$event)
+\begin{DoxyCompactList}\small\item\em 查询事件控制块中等待的任务数量函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{类型定义说明}
+\mbox{\Hypertarget{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}\label{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}} 
+\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event@{w\+Event}}
+\index{w\+Event@{w\+Event}!w\+Event.\+h@{w\+Event.\+h}}
+\subsubsection{\texorpdfstring{w\+Event}{wEvent}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__w_event}{\+\_\+w\+Event}} \mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}}}
+
+
+
+事件控制结构 
+
+\mbox{\Hypertarget{w_event_8h_ab0672c982196a07535850096d01686c6}\label{w_event_8h_ab0672c982196a07535850096d01686c6}} 
+\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Type@{w\+Event\+Type}}
+\index{w\+Event\+Type@{w\+Event\+Type}!w\+Event.\+h@{w\+Event.\+h}}
+\subsubsection{\texorpdfstring{w\+Event\+Type}{wEventType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198}{\+\_\+w\+Event\+Type}} \mbox{\hyperlink{w_event_8h_ab0672c982196a07535850096d01686c6}{w\+Event\+Type}}}
+
+
+
+事件类型 
+
+
+
+\subsection{枚举类型说明}
+\mbox{\Hypertarget{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198}\label{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198}} 
+\index{w\+Event.\+h@{w\+Event.\+h}!\+\_\+w\+Event\+Type@{\+\_\+w\+Event\+Type}}
+\index{\+\_\+w\+Event\+Type@{\+\_\+w\+Event\+Type}!w\+Event.\+h@{w\+Event.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+w\+Event\+Type}{\_wEventType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198}{\+\_\+w\+Event\+Type}}}
+
+
+
+事件类型 
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Event\+Type\+Unknown@{w\+Event\+Type\+Unknown}!w\+Event.\+h@{w\+Event.\+h}}\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Type\+Unknown@{w\+Event\+Type\+Unknown}}}\mbox{\Hypertarget{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a58918a91b46e51f90f6905f3809bbea6}\label{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a58918a91b46e51f90f6905f3809bbea6}} 
+w\+Event\+Type\+Unknown&未知类型 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Event\+Type\+Sem@{w\+Event\+Type\+Sem}!w\+Event.\+h@{w\+Event.\+h}}\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Type\+Sem@{w\+Event\+Type\+Sem}}}\mbox{\Hypertarget{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a432aac829bee7e2859037e3fe3abb781}\label{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a432aac829bee7e2859037e3fe3abb781}} 
+w\+Event\+Type\+Sem&信号量类型 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Event\+Type\+Mbox@{w\+Event\+Type\+Mbox}!w\+Event.\+h@{w\+Event.\+h}}\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Type\+Mbox@{w\+Event\+Type\+Mbox}}}\mbox{\Hypertarget{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a80783d5cf994d618420238d0008ddcda}\label{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a80783d5cf994d618420238d0008ddcda}} 
+w\+Event\+Type\+Mbox&邮箱类型 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Event\+Type\+Mem\+Block@{w\+Event\+Type\+Mem\+Block}!w\+Event.\+h@{w\+Event.\+h}}\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Type\+Mem\+Block@{w\+Event\+Type\+Mem\+Block}}}\mbox{\Hypertarget{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a7fe2e9f8edebfceea4bbb3a6afe36101}\label{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198a7fe2e9f8edebfceea4bbb3a6afe36101}} 
+w\+Event\+Type\+Mem\+Block&存储块类型 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Event\+Type\+Flag\+Group@{w\+Event\+Type\+Flag\+Group}!w\+Event.\+h@{w\+Event.\+h}}\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Type\+Flag\+Group@{w\+Event\+Type\+Flag\+Group}}}\mbox{\Hypertarget{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198ac8bed7139201967fcc1cb1362fe89f71}\label{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198ac8bed7139201967fcc1cb1362fe89f71}} 
+w\+Event\+Type\+Flag\+Group&事件标志组类型 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{w\+Event\+Type\+Mutex@{w\+Event\+Type\+Mutex}!w\+Event.\+h@{w\+Event.\+h}}\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Type\+Mutex@{w\+Event\+Type\+Mutex}}}\mbox{\Hypertarget{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198ac848184d4cc87af4d64003dae703ef27}\label{w_event_8h_ab685fbbcb46bbc460aa51d1da66b2198ac848184d4cc87af4d64003dae703ef27}} 
+w\+Event\+Type\+Mutex&互斥信号量类型 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{w_event_8h_a5150dadc2bca60248555023bc0cde4fc}\label{w_event_8h_a5150dadc2bca60248555023bc0cde4fc}} 
+\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Init@{w\+Event\+Init}}
+\index{w\+Event\+Init@{w\+Event\+Init}!w\+Event.\+h@{w\+Event.\+h}}
+\subsubsection{\texorpdfstring{w\+Event\+Init()}{wEventInit()}}
+{\footnotesize\ttfamily void w\+Event\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$}]{event,  }\item[{\mbox{\hyperlink{w_event_8h_ab0672c982196a07535850096d01686c6}{w\+Event\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+初始化事件控制块函数 
+
+
+\begin{DoxyParams}{参数}
+{\em event} & 事件控制块指针 \\
+\hline
+{\em type} & 事件控制块的类型 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{w_event_8h_a5150dadc2bca60248555023bc0cde4fc_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_event_8h_a5150dadc2bca60248555023bc0cde4fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_event_8h_a260a322fddff6b1b283b87315fa6f84f}\label{w_event_8h_a260a322fddff6b1b283b87315fa6f84f}} 
+\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Remove\+All@{w\+Event\+Remove\+All}}
+\index{w\+Event\+Remove\+All@{w\+Event\+Remove\+All}!w\+Event.\+h@{w\+Event.\+h}}
+\subsubsection{\texorpdfstring{w\+Event\+Remove\+All()}{wEventRemoveAll()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Event\+Remove\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$}]{event,  }\item[{void $\ast$}]{msg,  }\item[{uint32\+\_\+t}]{result }\end{DoxyParamCaption})}
+
+
+
+初始化事件控制块函数 
+
+
+\begin{DoxyParams}{参数}
+{\em event} & 事件控制块指针 \\
+\hline
+{\em msg} & 事件消息 \\
+\hline
+{\em result} & 事件等待结果 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 唤醒的任务数量} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_event_8h_a260a322fddff6b1b283b87315fa6f84f_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{w_event_8h_a260a322fddff6b1b283b87315fa6f84f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_event_8h_ae981ecdcd406e42b051ac4ef144d9e11}\label{w_event_8h_ae981ecdcd406e42b051ac4ef144d9e11}} 
+\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Remove\+Task@{w\+Event\+Remove\+Task}}
+\index{w\+Event\+Remove\+Task@{w\+Event\+Remove\+Task}!w\+Event.\+h@{w\+Event.\+h}}
+\subsubsection{\texorpdfstring{w\+Event\+Remove\+Task()}{wEventRemoveTask()}}
+{\footnotesize\ttfamily void w\+Event\+Remove\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task,  }\item[{void $\ast$}]{msg,  }\item[{uint32\+\_\+t}]{result }\end{DoxyParamCaption})}
+
+
+
+将任务强制从等待队列中删除函数 
+
+
+\begin{DoxyParams}{参数}
+{\em task} & 将要移除的任务 \\
+\hline
+{\em msg} & 事件消息 \\
+\hline
+{\em result} & 事件等待结果 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{w_event_8h_ae981ecdcd406e42b051ac4ef144d9e11_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_event_8h_ae981ecdcd406e42b051ac4ef144d9e11_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_event_8h_a1f841793727f21c2daefe6064935a6aa}\label{w_event_8h_a1f841793727f21c2daefe6064935a6aa}} 
+\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Wait@{w\+Event\+Wait}}
+\index{w\+Event\+Wait@{w\+Event\+Wait}!w\+Event.\+h@{w\+Event.\+h}}
+\subsubsection{\texorpdfstring{w\+Event\+Wait()}{wEventWait()}}
+{\footnotesize\ttfamily void w\+Event\+Wait (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$}]{event,  }\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task,  }\item[{void $\ast$}]{msg,  }\item[{uint32\+\_\+t}]{state,  }\item[{uint32\+\_\+t}]{timeout }\end{DoxyParamCaption})}
+
+
+
+将等待事件发生的任务插入事件控制块函数 
+
+
+\begin{DoxyParams}{参数}
+{\em event} & 事件控制块指针 \\
+\hline
+{\em task} & 等待事件发生的任务 \\
+\hline
+{\em msg} & 事件消息存储的具体位置 \\
+\hline
+{\em state} & 事件状态 \\
+\hline
+{\em timeout} & 等待时间 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 无} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_event_8h_a1f841793727f21c2daefe6064935a6aa_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_event_8h_a1f841793727f21c2daefe6064935a6aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_event_8h_ae8ed542398c8bcfe6bd33532f6aca4a2}\label{w_event_8h_ae8ed542398c8bcfe6bd33532f6aca4a2}} 
+\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Wait\+Count@{w\+Event\+Wait\+Count}}
+\index{w\+Event\+Wait\+Count@{w\+Event\+Wait\+Count}!w\+Event.\+h@{w\+Event.\+h}}
+\subsubsection{\texorpdfstring{w\+Event\+Wait\+Count()}{wEventWaitCount()}}
+{\footnotesize\ttfamily uint32\+\_\+t w\+Event\+Wait\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+查询事件控制块中等待的任务数量函数 
+
+
+\begin{DoxyParams}{参数}
+{\em event} & 事件控制块指针 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 唤醒的任务数量} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{w_event_8h_ae8ed542398c8bcfe6bd33532f6aca4a2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_event_8h_ae8ed542398c8bcfe6bd33532f6aca4a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_event_8h_a03595819b6b21e4eea4c0fc142a42f6c}\label{w_event_8h_a03595819b6b21e4eea4c0fc142a42f6c}} 
+\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Wake\+Up@{w\+Event\+Wake\+Up}}
+\index{w\+Event\+Wake\+Up@{w\+Event\+Wake\+Up}!w\+Event.\+h@{w\+Event.\+h}}
+\subsubsection{\texorpdfstring{w\+Event\+Wake\+Up()}{wEventWakeUp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}$\ast$ w\+Event\+Wake\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$}]{event,  }\item[{void $\ast$}]{msg,  }\item[{uint32\+\_\+t}]{result }\end{DoxyParamCaption})}
+
+
+
+将首个任务从事件控制块中唤醒函数 
+
+
+\begin{DoxyParams}{参数}
+{\em event} & 事件控制块指针 \\
+\hline
+{\em msg} & 事件消息 \\
+\hline
+{\em result} & 事件等待结果 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 首个等待的任务，若无任务则返回0} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_event_8h_a03595819b6b21e4eea4c0fc142a42f6c_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_event_8h_a03595819b6b21e4eea4c0fc142a42f6c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_event_8h_ae149bf6004322c934dcfbc99254fa0e8}\label{w_event_8h_ae149bf6004322c934dcfbc99254fa0e8}} 
+\index{w\+Event.\+h@{w\+Event.\+h}!w\+Event\+Wake\+Up\+Task@{w\+Event\+Wake\+Up\+Task}}
+\index{w\+Event\+Wake\+Up\+Task@{w\+Event\+Wake\+Up\+Task}!w\+Event.\+h@{w\+Event.\+h}}
+\subsubsection{\texorpdfstring{w\+Event\+Wake\+Up\+Task()}{wEventWakeUpTask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}}$\ast$ w\+Event\+Wake\+Up\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_event_8h_af8b15988a26e1ac0d63eaf3fc5afe9d3}{w\+Event}} $\ast$}]{event,  }\item[{\mbox{\hyperlink{w_task_8h_acd0e6238476f631a6ac4588629bac372}{w\+Task}} $\ast$}]{task,  }\item[{void $\ast$}]{msg,  }\item[{uint32\+\_\+t}]{result }\end{DoxyParamCaption})}
+
+
+
+将特定任务从事件控制块中唤醒函数 
+
+
+\begin{DoxyParams}{参数}
+{\em event} & 事件控制块指针 \\
+\hline
+{\em task} & 指定的任务结构指针 \\
+\hline
+{\em msg} & 事件消息 \\
+\hline
+{\em result} & 事件等待结果 \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{返回值}
+{\em 首个等待的任务，若无任务则返回0} & \\
+\hline
+\end{DoxyRetVals}
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_event_8h_ae149bf6004322c934dcfbc99254fa0e8_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{w_event_8h_ae149bf6004322c934dcfbc99254fa0e8_icgraph}
+\end{center}
+\end{figure}

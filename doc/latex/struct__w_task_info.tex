@@ -1,0 +1,81 @@
+\hypertarget{struct__w_task_info}{}\section{\+\_\+w\+Task\+Info结构体 参考}
+\label{struct__w_task_info}\index{\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}}
+
+
+任务相关信息结构  
+
+
+
+
+{\ttfamily \#include $<$w\+Task.\+h$>$}
+
+\subsection*{成员变量}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_info_a0c1ef2b42e60232fd2355246df290c68}{delay\+Ticks}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_info_a6871573fefee3ad102e26a09e7a2f493}{prio}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_info_a1b0c7bd4d79798ef4e0ce23894c9aeb2}{state}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_info_a4fe7f19d35a11368d300b99348451fdd}{slice}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_info_a70023864793bcef3ab18d4a66832ca6d}{suspend\+Count}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_info_ae20ace955faaa4fb797b69b75feef3d3}{stack\+Size}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct__w_task_info_ab8b8202c533d50459f39dfab24e8873d}{stack\+Free}}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+任务相关信息结构 
+
+\subsection{结构体成员变量说明}
+\mbox{\Hypertarget{struct__w_task_info_a0c1ef2b42e60232fd2355246df290c68}\label{struct__w_task_info_a0c1ef2b42e60232fd2355246df290c68}} 
+\index{\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}!delay\+Ticks@{delay\+Ticks}}
+\index{delay\+Ticks@{delay\+Ticks}!\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}}
+\subsubsection{\texorpdfstring{delay\+Ticks}{delayTicks}}
+{\footnotesize\ttfamily uint32\+\_\+t delay\+Ticks}
+
+延时计数器 \mbox{\Hypertarget{struct__w_task_info_a6871573fefee3ad102e26a09e7a2f493}\label{struct__w_task_info_a6871573fefee3ad102e26a09e7a2f493}} 
+\index{\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}!prio@{prio}}
+\index{prio@{prio}!\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}}
+\subsubsection{\texorpdfstring{prio}{prio}}
+{\footnotesize\ttfamily uint32\+\_\+t prio}
+
+任务优先级 \mbox{\Hypertarget{struct__w_task_info_a4fe7f19d35a11368d300b99348451fdd}\label{struct__w_task_info_a4fe7f19d35a11368d300b99348451fdd}} 
+\index{\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}!slice@{slice}}
+\index{slice@{slice}!\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}}
+\subsubsection{\texorpdfstring{slice}{slice}}
+{\footnotesize\ttfamily uint32\+\_\+t slice}
+
+当前剩余的时间片 \mbox{\Hypertarget{struct__w_task_info_ab8b8202c533d50459f39dfab24e8873d}\label{struct__w_task_info_ab8b8202c533d50459f39dfab24e8873d}} 
+\index{\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}!stack\+Free@{stack\+Free}}
+\index{stack\+Free@{stack\+Free}!\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}}
+\subsubsection{\texorpdfstring{stack\+Free}{stackFree}}
+{\footnotesize\ttfamily uint32\+\_\+t stack\+Free}
+
+空闲堆栈大小 \mbox{\Hypertarget{struct__w_task_info_ae20ace955faaa4fb797b69b75feef3d3}\label{struct__w_task_info_ae20ace955faaa4fb797b69b75feef3d3}} 
+\index{\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}!stack\+Size@{stack\+Size}}
+\index{stack\+Size@{stack\+Size}!\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}}
+\subsubsection{\texorpdfstring{stack\+Size}{stackSize}}
+{\footnotesize\ttfamily uint32\+\_\+t stack\+Size}
+
+堆栈大小 \mbox{\Hypertarget{struct__w_task_info_a1b0c7bd4d79798ef4e0ce23894c9aeb2}\label{struct__w_task_info_a1b0c7bd4d79798ef4e0ce23894c9aeb2}} 
+\index{\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}!state@{state}}
+\index{state@{state}!\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily uint32\+\_\+t state}
+
+任务当前状态 \mbox{\Hypertarget{struct__w_task_info_a70023864793bcef3ab18d4a66832ca6d}\label{struct__w_task_info_a70023864793bcef3ab18d4a66832ca6d}} 
+\index{\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}!suspend\+Count@{suspend\+Count}}
+\index{suspend\+Count@{suspend\+Count}!\+\_\+w\+Task\+Info@{\+\_\+w\+Task\+Info}}
+\subsubsection{\texorpdfstring{suspend\+Count}{suspendCount}}
+{\footnotesize\ttfamily uint32\+\_\+t suspend\+Count}
+
+被挂起的次数 
+
+该结构体的文档由以下文件生成\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/\mbox{\hyperlink{w_task_8h}{w\+Task.\+h}}\end{DoxyCompactItemize}

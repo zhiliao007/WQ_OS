@@ -1,0 +1,303 @@
+\hypertarget{w_timer_8h}{}\section{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Timer.h 文件参考}
+\label{w_timer_8h}\index{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Timer.\+h@{C\+:/\+Users/pc/\+Desktop/\+W\+Q\+\_\+\+O\+S/\+Project/\+Sourse/w\+Timer.\+h}}
+{\ttfamily \#include \char`\"{}w\+Event.\+h\char`\"{}}\newline
+w\+Timer.\+h 的引用(Include)关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{w_timer_8h__incl}
+\end{center}
+\end{figure}
+此图展示该文件直接或间接的被哪些文件引用了\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_timer_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__w_timer}{\+\_\+w\+Timer}}
+\begin{DoxyCompactList}\small\item\em 定义软件定时器类型 \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct__w_timer_info}{\+\_\+w\+Timer\+Info}}
+\begin{DoxyCompactList}\small\item\em 定义软件定时器信息结构 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{宏定义}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{w_timer_8h_adde5594113d4922dd2c044b7033e979c}{T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+A\+RD}}~(1 $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{w_timer_8h_ab47055541c84bda578ed3a9e913e4be2}{T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+O\+FT}}~(0 $<$$<$ 0)
+\end{DoxyCompactItemize}
+\subsection*{类型定义}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843b}{\+\_\+w\+Timer\+State}} \mbox{\hyperlink{w_timer_8h_afd5ce485f9f6080eb16b9b0d11c09dcd}{w\+Timer\+State}}
+\begin{DoxyCompactList}\small\item\em 定时器状态类型 \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct__w_timer}{\+\_\+w\+Timer}} \mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}}
+\begin{DoxyCompactList}\small\item\em 定义软件定时器类型 \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct__w_timer_info}{\+\_\+w\+Timer\+Info}} \mbox{\hyperlink{w_timer_8h_a017b502c7230e3dcc99b8a5b6ad6cfe3}{w\+Timer\+Info}}
+\begin{DoxyCompactList}\small\item\em 定义软件定时器信息结构 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{枚举}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843b}{\+\_\+w\+Timer\+State}} \{ \newline
+\mbox{\hyperlink{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843baac17524d70ca056c2b0de8ffb429fd5c}{timer\+Created}}, 
+\mbox{\hyperlink{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843ba99944fc729e04e57619748e44f82bf5b}{timer\+Started}}, 
+\mbox{\hyperlink{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843ba3664a16d189cb543f4d55d1adcdda0b3}{timer\+Running}}, 
+\mbox{\hyperlink{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843ba84fdc141868bb00954b771383a601076}{timer\+Stopped}}, 
+\newline
+\mbox{\hyperlink{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843bae5864f6493488bc2ec216dacf79649f8}{timer\+Destroyed}}
+ \}
+\begin{DoxyCompactList}\small\item\em 定时器状态类型 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{w_timer_8h_a4cf942be6906c4c192a3092056326c8f}{w\+Timer\+Init}} (\mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}} $\ast$timer, uint32\+\_\+t delay\+Ticks, uint32\+\_\+t deration\+Ticks, void($\ast$timer\+Func)(void $\ast$arg), void $\ast$arg, uint32\+\_\+t config)
+\item 
+void \mbox{\hyperlink{w_timer_8h_a40729833185b7cc7935933207bb03417}{w\+Timer\+Start}} (\mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}} $\ast$timer)
+\item 
+void \mbox{\hyperlink{w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11}{w\+Timer\+Stop}} (\mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}} $\ast$timer)
+\item 
+void \mbox{\hyperlink{w_timer_8h_a7457cd5a4626b135169975a71f064fce}{w\+Timer\+Destroy}} (\mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}} $\ast$timer)
+\item 
+void \mbox{\hyperlink{w_timer_8h_a6915b7b795d84491188d5bfe016fffbe}{w\+Timer\+Get\+Info}} (\mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}} $\ast$timer, \mbox{\hyperlink{w_timer_8h_a017b502c7230e3dcc99b8a5b6ad6cfe3}{w\+Timer\+Info}} $\ast$info)
+\item 
+void \mbox{\hyperlink{w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946}{w\+Timer\+Module\+Tick\+Notify}} (void)
+\item 
+void \mbox{\hyperlink{w_timer_8h_a789d18864df0119aaefd7e09499042db}{w\+Timer\+Module\+Init}} (void)
+\item 
+void \mbox{\hyperlink{w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2}{w\+Timer\+Init\+Task}} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{宏定义说明}
+\mbox{\Hypertarget{w_timer_8h_adde5594113d4922dd2c044b7033e979c}\label{w_timer_8h_adde5594113d4922dd2c044b7033e979c}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+A\+RD@{T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+A\+RD}}
+\index{T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+A\+RD@{T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+A\+RD}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+A\+RD}{TIMER\_CONFIG\_TYPE\_HARD}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+H\+A\+RD~(1 $<$$<$ 0)}
+
+硬件定时器（中断函数里） \mbox{\Hypertarget{w_timer_8h_ab47055541c84bda578ed3a9e913e4be2}\label{w_timer_8h_ab47055541c84bda578ed3a9e913e4be2}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+O\+FT@{T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+O\+FT}}
+\index{T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+O\+FT@{T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+O\+FT}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+O\+FT}{TIMER\_CONFIG\_TYPE\_SOFT}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+Y\+P\+E\+\_\+\+S\+O\+FT~(0 $<$$<$ 0)}
+
+软件定时器（任务函数里） 
+
+\subsection{类型定义说明}
+\mbox{\Hypertarget{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}\label{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!w\+Timer@{w\+Timer}}
+\index{w\+Timer@{w\+Timer}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{w\+Timer}{wTimer}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__w_timer}{\+\_\+w\+Timer}} \mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}}}
+
+
+
+定义软件定时器类型 
+
+\mbox{\Hypertarget{w_timer_8h_a017b502c7230e3dcc99b8a5b6ad6cfe3}\label{w_timer_8h_a017b502c7230e3dcc99b8a5b6ad6cfe3}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!w\+Timer\+Info@{w\+Timer\+Info}}
+\index{w\+Timer\+Info@{w\+Timer\+Info}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{w\+Timer\+Info}{wTimerInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__w_timer_info}{\+\_\+w\+Timer\+Info}} \mbox{\hyperlink{w_timer_8h_a017b502c7230e3dcc99b8a5b6ad6cfe3}{w\+Timer\+Info}}}
+
+
+
+定义软件定时器信息结构 
+
+\mbox{\Hypertarget{w_timer_8h_afd5ce485f9f6080eb16b9b0d11c09dcd}\label{w_timer_8h_afd5ce485f9f6080eb16b9b0d11c09dcd}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!w\+Timer\+State@{w\+Timer\+State}}
+\index{w\+Timer\+State@{w\+Timer\+State}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{w\+Timer\+State}{wTimerState}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843b}{\+\_\+w\+Timer\+State}} \mbox{\hyperlink{w_timer_8h_afd5ce485f9f6080eb16b9b0d11c09dcd}{w\+Timer\+State}}}
+
+
+
+定时器状态类型 
+
+
+
+\subsection{枚举类型说明}
+\mbox{\Hypertarget{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843b}\label{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843b}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!\+\_\+w\+Timer\+State@{\+\_\+w\+Timer\+State}}
+\index{\+\_\+w\+Timer\+State@{\+\_\+w\+Timer\+State}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+w\+Timer\+State}{\_wTimerState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843b}{\+\_\+w\+Timer\+State}}}
+
+
+
+定时器状态类型 
+
+\begin{DoxyEnumFields}{枚举值}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{timer\+Created@{timer\+Created}!w\+Timer.\+h@{w\+Timer.\+h}}\index{w\+Timer.\+h@{w\+Timer.\+h}!timer\+Created@{timer\+Created}}}\mbox{\Hypertarget{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843baac17524d70ca056c2b0de8ffb429fd5c}\label{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843baac17524d70ca056c2b0de8ffb429fd5c}} 
+timer\+Created&定时器已创建 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{timer\+Started@{timer\+Started}!w\+Timer.\+h@{w\+Timer.\+h}}\index{w\+Timer.\+h@{w\+Timer.\+h}!timer\+Started@{timer\+Started}}}\mbox{\Hypertarget{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843ba99944fc729e04e57619748e44f82bf5b}\label{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843ba99944fc729e04e57619748e44f82bf5b}} 
+timer\+Started&定时器已启动 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{timer\+Running@{timer\+Running}!w\+Timer.\+h@{w\+Timer.\+h}}\index{w\+Timer.\+h@{w\+Timer.\+h}!timer\+Running@{timer\+Running}}}\mbox{\Hypertarget{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843ba3664a16d189cb543f4d55d1adcdda0b3}\label{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843ba3664a16d189cb543f4d55d1adcdda0b3}} 
+timer\+Running&定时器正在执行回调函数 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{timer\+Stopped@{timer\+Stopped}!w\+Timer.\+h@{w\+Timer.\+h}}\index{w\+Timer.\+h@{w\+Timer.\+h}!timer\+Stopped@{timer\+Stopped}}}\mbox{\Hypertarget{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843ba84fdc141868bb00954b771383a601076}\label{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843ba84fdc141868bb00954b771383a601076}} 
+timer\+Stopped&定时器已停止 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{timer\+Destroyed@{timer\+Destroyed}!w\+Timer.\+h@{w\+Timer.\+h}}\index{w\+Timer.\+h@{w\+Timer.\+h}!timer\+Destroyed@{timer\+Destroyed}}}\mbox{\Hypertarget{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843bae5864f6493488bc2ec216dacf79649f8}\label{w_timer_8h_ad33b7cdf236a7937e6adc8eeae4a843bae5864f6493488bc2ec216dacf79649f8}} 
+timer\+Destroyed&定时器已销毁 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{函数说明}
+\mbox{\Hypertarget{w_timer_8h_a7457cd5a4626b135169975a71f064fce}\label{w_timer_8h_a7457cd5a4626b135169975a71f064fce}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!w\+Timer\+Destroy@{w\+Timer\+Destroy}}
+\index{w\+Timer\+Destroy@{w\+Timer\+Destroy}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{w\+Timer\+Destroy()}{wTimerDestroy()}}
+{\footnotesize\ttfamily void w\+Timer\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}} $\ast$}]{timer }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_timer_8h_a7457cd5a4626b135169975a71f064fce_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_timer_8h_a6915b7b795d84491188d5bfe016fffbe}\label{w_timer_8h_a6915b7b795d84491188d5bfe016fffbe}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!w\+Timer\+Get\+Info@{w\+Timer\+Get\+Info}}
+\index{w\+Timer\+Get\+Info@{w\+Timer\+Get\+Info}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{w\+Timer\+Get\+Info()}{wTimerGetInfo()}}
+{\footnotesize\ttfamily void w\+Timer\+Get\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}} $\ast$}]{timer,  }\item[{\mbox{\hyperlink{w_timer_8h_a017b502c7230e3dcc99b8a5b6ad6cfe3}{w\+Timer\+Info}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{w_timer_8h_a6915b7b795d84491188d5bfe016fffbe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_timer_8h_a4cf942be6906c4c192a3092056326c8f}\label{w_timer_8h_a4cf942be6906c4c192a3092056326c8f}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!w\+Timer\+Init@{w\+Timer\+Init}}
+\index{w\+Timer\+Init@{w\+Timer\+Init}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{w\+Timer\+Init()}{wTimerInit()}}
+{\footnotesize\ttfamily void w\+Timer\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}} $\ast$}]{timer,  }\item[{uint32\+\_\+t}]{delay\+Ticks,  }\item[{uint32\+\_\+t}]{deration\+Ticks,  }\item[{void($\ast$)(void $\ast$arg)}]{timer\+Func,  }\item[{void $\ast$}]{arg,  }\item[{uint32\+\_\+t}]{config }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{w_timer_8h_a4cf942be6906c4c192a3092056326c8f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2}\label{w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!w\+Timer\+Init\+Task@{w\+Timer\+Init\+Task}}
+\index{w\+Timer\+Init\+Task@{w\+Timer\+Init\+Task}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{w\+Timer\+Init\+Task()}{wTimerInitTask()}}
+{\footnotesize\ttfamily void w\+Timer\+Init\+Task (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{w_timer_8h_a5f45f849cc0c3b03701dfbe03cdca2f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_timer_8h_a789d18864df0119aaefd7e09499042db}\label{w_timer_8h_a789d18864df0119aaefd7e09499042db}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!w\+Timer\+Module\+Init@{w\+Timer\+Module\+Init}}
+\index{w\+Timer\+Module\+Init@{w\+Timer\+Module\+Init}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{w\+Timer\+Module\+Init()}{wTimerModuleInit()}}
+{\footnotesize\ttfamily void w\+Timer\+Module\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_timer_8h_a789d18864df0119aaefd7e09499042db_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{w_timer_8h_a789d18864df0119aaefd7e09499042db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946}\label{w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!w\+Timer\+Module\+Tick\+Notify@{w\+Timer\+Module\+Tick\+Notify}}
+\index{w\+Timer\+Module\+Tick\+Notify@{w\+Timer\+Module\+Tick\+Notify}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{w\+Timer\+Module\+Tick\+Notify()}{wTimerModuleTickNotify()}}
+{\footnotesize\ttfamily void w\+Timer\+Module\+Tick\+Notify (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_timer_8h_a8e56499ec98c395523ffd7ef0dd7f946_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_timer_8h_a40729833185b7cc7935933207bb03417}\label{w_timer_8h_a40729833185b7cc7935933207bb03417}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!w\+Timer\+Start@{w\+Timer\+Start}}
+\index{w\+Timer\+Start@{w\+Timer\+Start}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{w\+Timer\+Start()}{wTimerStart()}}
+{\footnotesize\ttfamily void w\+Timer\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}} $\ast$}]{timer }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_timer_8h_a40729833185b7cc7935933207bb03417_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11}\label{w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11}} 
+\index{w\+Timer.\+h@{w\+Timer.\+h}!w\+Timer\+Stop@{w\+Timer\+Stop}}
+\index{w\+Timer\+Stop@{w\+Timer\+Stop}!w\+Timer.\+h@{w\+Timer.\+h}}
+\subsubsection{\texorpdfstring{w\+Timer\+Stop()}{wTimerStop()}}
+{\footnotesize\ttfamily void w\+Timer\+Stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{w_timer_8h_a1a5f1e4387316ff65ca5b844d455ddfd}{w\+Timer}} $\ast$}]{timer }\end{DoxyParamCaption})}
+
+函数调用图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11_cgraph}
+\end{center}
+\end{figure}
+这是这个函数的调用关系图\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{w_timer_8h_a3109e6d18d70fd873e1c539f3facdf11_icgraph}
+\end{center}
+\end{figure}
